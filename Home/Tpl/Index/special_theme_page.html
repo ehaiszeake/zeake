@@ -99,8 +99,8 @@
 											$.each(data.data.list.list,function(i,item){
 												var img=(item.img==null ||  item.img=="")  ? imgRoute+"images/head_sculpture.png" : golbalIp+ item.img;
 													str+='<li class="f_fl">';
-													str+='	<div class="special_theme_cover_img f_pr"><a href="special_detail.html?id='+item.id+'" class="f_dib f_full f_pa"><img src="'+img+'" width="100%" height="100%"/></a></div>';
-													str+='	<div class="special_theme_item_title"><a href="special_detail.html?id='+item.id+'">'+item.title+'</a></div>';
+													str+='	<div class="special_theme_cover_img f_pr"><a href="special_detail.php?id='+item.id+'" class="f_dib f_full f_pa"><img src="'+img+'" width="100%" height="100%"/></a></div>';
+													str+='	<div class="special_theme_item_title"><a href="special_detail.php?id='+item.id+'">'+item.title+'</a></div>';
 													str+='</li>';
 											});
 											$(".special_theme_page_list").append(str);

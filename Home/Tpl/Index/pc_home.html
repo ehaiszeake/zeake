@@ -108,7 +108,7 @@
 													html+='		<div class="pc_name f_pr" author-id="'+item.author_id+'">'+item.author+'</div>';
 													html+='	</div>';
 													html+='</div>';
-													html+='<div class="pc_title f_wwb"><a href="article_detail.html?id='+item.id+'">'+item.title+'</a></div>';
+													html+='<div class="pc_title f_wwb"><a href="article_detail.php?id='+item.id+'">'+item.title+'</a></div>';
 													html+='<div class="pc_intro f_wwb">'+item.abstract+'</div>';
 													html+='<div class="pc_date_view_message f_cf">';
 													html+='	<div class="pc_date f_fl">'+variable_obj.formatDate(item.created*1000)+'</div>';
@@ -121,7 +121,7 @@
 													html+='</li>';
 											}else if(item.type==2){
 												html+='<li data-type="1">';//快讯
-												html+='<div class="pc_title f_wwb"><a href="article_detail.html?id='+item.id+'">'+item.title+'</a></div>';
+												html+='<div class="pc_title f_wwb"><a href="article_detail.php?id='+item.id+'">'+item.title+'</a></div>';
 												html+='<div class="pc_date_view_message f_cf">';
 												html+='<div class="pc_date f_fl">'+variable_obj.formatDate(item.created*1000)+'</div>';
 												html+='<div class="pc_view_message f_pr f_tar">';
@@ -132,11 +132,11 @@
 												var img=(item.img==null || item.img=="")  ? imgRoute+"images/placeholder_img_L04.jpg" : golbalIp+item.img;
 													html+='<li data-type="2">';//视频
 													html+='<div class="pc_video_cover f_pr">';
-													html+='<a href="video_detail.html?id='+item.id+'" class="f_db">';
+													html+='<a href="video_detail.php?id='+item.id+'" class="f_db">';
 													html+='<img src="'+img+'" class="f_vat" width="100%" onerror="this.src=\'images/placeholder_img_L04.jpg\'"/>';
 													html+='<div class="pc_play_btn f_pa f_two"></div>';
 													html+='</a></div>';
-													html+='<div class="pc_title f_wwb"><a href="video_detail.html?id='+item.id+'">'+item.title+'</a></div>';
+													html+='<div class="pc_title f_wwb"><a href="video_detail.php?id='+item.id+'">'+item.title+'</a></div>';
 													html+='<div class="pc_name_date"><em>'+item.author+'</em><i>  /   </i><span>'+variable_obj.formatDate(item.created*1000)+'</span></div>';
 													html+='</li>';
 											}
@@ -166,9 +166,9 @@
 											}
 											html+='<div class="pc_article_title_des">';
 											if(item.article.type!=3){
-												html+='	<a href="article_detail.html?id='+item.article.id+'" class="f_db f_wwb">'+item.article.title+'</a>';
+												html+='	<a href="article_detail.php?id='+item.article.id+'" class="f_db f_wwb">'+item.article.title+'</a>';
 											}else {
-												html+='	<a href="video_detail.html?id='+item.article.id+'" class="f_db f_wwb">'+item.article.title+'</a>';
+												html+='	<a href="video_detail.php?id='+item.article.id+'" class="f_db f_wwb">'+item.article.title+'</a>';
 											}
 											html+='	<div class="pc_des f_wwb">'+item.article.abstract+'</div>';
 											html+='</div>';
@@ -194,7 +194,7 @@
 													html+='	</div>';
 													html+='	<div class="pc_praise f_pa"></div>';
 													html+='</div>';
-													html+='<div class="pc_title f_wwb"><a href="article_detail.html?id='+item.id+'">'+item.title+'</a></div>';
+													html+='<div class="pc_title f_wwb"><a href="article_detail.php?id='+item.id+'">'+item.title+'</a></div>';
 													html+='<div class="pc_intro f_wwb">'+item.abstract+'</div>';
 													html+='<div class="pc_date_view_message f_cf">';
 													html+='	<div class="pc_date f_fl">'+variable_obj.formatDate(item.created*1000)+'</div>';
@@ -206,7 +206,7 @@
 													html+='</li>';
 											}else if(item.type==2){
 												html+='<li data-type="1">';//快讯
-												html+='<div class="pc_title f_wwb"><a href="article_detail.html?id='+item.id+'">'+item.titlle+'</a></div>';
+												html+='<div class="pc_title f_wwb"><a href="article_detail.php?id='+item.id+'">'+item.titlle+'</a></div>';
 												//html+='	<div class="pc_praise f_pa"></div>';
 												html+='<div class="pc_date_view_message f_cf">';
 												html+='<div class="pc_date f_fl">'+variable_obj.formatDate(item.created*1000)+'</div>';
@@ -218,12 +218,12 @@
 												var img=(item.img==null || item.img=="")  ? imgRoute+"images/placeholder_img_L04.jpg" : golbalIp+item.img;
 													html+='<li data-type="2">';//视频
 													html+='<div class="pc_video_cover f_pr">';
-													html+='<a href="video_detail.html?id='+item.id+'" class="f_db">';
+													html+='<a href="video_detail.php?id='+item.id+'" class="f_db">';
 													html+='<img src="'+img+'" class="f_vat" width="100%" onerror="this.src=\'images/placeholder_img_L04.jpg\'"/>';
 													html+='<div class="pc_play_btn f_pa f_two"></div>';
 													//html+='	<div class="pc_praise f_pa"></div>';
 													html+='</a></div>';
-													html+='<div class="pc_title f_wwb"><a href="video_detail.html?id='+item.id+'">'+item.title+'</a></div>';
+													html+='<div class="pc_title f_wwb"><a href="video_detail.php?id='+item.id+'">'+item.title+'</a></div>';
 													html+='<div class="pc_name_date"><em>'+item.author+'</em><i>  /   </i><span>'+variable_obj.formatDate(item.created*1000)+'</span></div>';
 													html+='</li>';
 											}
@@ -242,7 +242,7 @@
 											if((state==1 || state==2) && (item.status==0 || item.status==1 || item.status==2)){
 												var type="other";
 												if(item.status_name=="草稿"){type="cg";}
-												html+='		<div class="pc_editor_link"><a href="pc_public.html?id='+item.id+'&type='+type+'">编辑</a></div>';
+												html+='		<div class="pc_editor_link"><a href="pc_public.php?id='+item.id+'&type='+type+'">编辑</a></div>';
 											}else if(state==3){
 												var type="other";
 												if(item.status_name=="草稿"){type="cg";}
@@ -250,20 +250,20 @@
 												html+='		<a href="javascript:;" class="pc_new_pass" data-id="'+item.id+'" data-type="'+item.type+'">通过</a>';
 												html+='		<a href="javascript:;" class="pc_new_noPass" data-id="'+item.id+'">不通过</a>';
 												html+='		<a href="javascript:;" class="pc_new_delete" data-id="'+item.id+'">删除</a>';
-												html+='		<a href="pc_public.html?id='+item.id+'&type='+type+'">编辑</a></div>';
+												html+='		<a href="pc_public.php?id='+item.id+'&type='+type+'">编辑</a></div>';
 											}
 											html+='		<div class="pc_state f_dib f_vat" data-type="'+item.status+'">#'+item.status_name+'：</div><div class="pc_title f_dib f_vat">';
 											if(item.type!=3){
 													if(item.status==0 || item.status==1 || item.status==2){
 														html+='	<a href="javascript:;" class="f_wwb">'+item.title+'</a>';
 													}else {
-														html+='	<a href="article_detail.html?id='+item.id+'" class="f_wwb">'+item.title+'</a>';
+														html+='	<a href="article_detail.php?id='+item.id+'" class="f_wwb">'+item.title+'</a>';
 													}
 											}else {
 													if(item.status==0 || item.status==1 || item.status==2){
 														html+='	<a href="javascript:;" class="f_wwb">'+item.title+'</a>';
 													}else {
-														html+='	<a href="video_detail.html?id='+item.id+'" class="f_wwb">'+item.title+'</a>';
+														html+='	<a href="video_detail.php?id='+item.id+'" class="f_wwb">'+item.title+'</a>';
 													}
 												
 											}
@@ -461,10 +461,10 @@
 												if(data.code==1){
 													if(target.attr("data-type")!=3){
 														target.parent(".pc_editor_link").next(".pc_state").attr("data-type",3).html("#已发布")
-														.next(".pc_title").find("a").attr("href","article_detail.html?id="+target.attr("data-id"));
+														.next(".pc_title").find("a").attr("href","article_detail.php?id="+target.attr("data-id"));
 													}else {
 														target.parent(".pc_editor_link").next(".pc_state").attr("data-type",3).html("#已发布")
-														.next(".pc_title").find("a").attr("href","video_detail.html?id="+target.attr("data-id"));
+														.next(".pc_title").find("a").attr("href","video_detail.php?id="+target.attr("data-id"));
 													}
 													alert("文章审核通过");
 												}else {

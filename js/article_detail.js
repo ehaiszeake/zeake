@@ -164,9 +164,9 @@
 									str2 +='	</div>';
 									str2 +='	<div class="l_title f_dn">'+item.title+'</div>';
 									if(item.type!=3){
-										str2 +='	<div class="article_intro"><a href="article_detail.html?id='+item.id+'">'+item.abstract+'</a></div>';
+										str2 +='	<div class="article_intro"><a href="article_detail.php?id='+item.id+'">'+item.abstract+'</a></div>';
 									}else {
-										str2 +='	<div class="article_intro"><a href="video_detail.html?id='+item.id+'">'+item.abstract+'</a></div>';
+										str2 +='	<div class="article_intro"><a href="video_detail.php?id='+item.id+'">'+item.abstract+'</a></div>';
 									}
 									str2 +='	<div class="article_date_view_message f_cf">';
 									str2 +='		<div class="date f_fl jump_personal_info"><span  data-author_id="'+item.author_id+'">'+item.author_id+'</span><i>   / '+updated+'  </i><em></em></div>';

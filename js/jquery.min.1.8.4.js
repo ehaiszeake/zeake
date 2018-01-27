@@ -490,7 +490,7 @@ $(function(){
 								console.log(data);
 								if(data.code==1){
 									//请求成功
-									if(t.attr("data-author_id")==data.data.id){window.location.href="pc_personal_info.html";}
+									if(t.attr("data-author_id")==data.data.id){window.location.href="pc_personal_info.php";}
 								}
 								units.lockPerosonalInfo=false;
 							},
@@ -585,11 +585,11 @@ $(function(){
 //				$.each(data.data,function(i,item){
 //					var active=(units.getUrlParam("column")!=null && item.id==units.getUrlParam("column")) ? "on" : "";
 //						if(item.id==0){
-//							html+='<li class="f_fl"><a href="special_theme_page.html?column='+item.id+'" class="f_dib '+active+'">'+item.name+'</a></li>';
+//							html+='<li class="f_fl"><a href="special_theme_page.php?column='+item.id+'" class="f_dib '+active+'">'+item.name+'</a></li>';
 //						}else if(item.id==-1){
-//							html+='<li class="f_fl"><a href="hall_of_fame.html?column='+item.id+'" class="f_dib '+active+'">'+item.name+'</a></li>';
+//							html+='<li class="f_fl"><a href="hall_of_fame.php?column='+item.id+'" class="f_dib '+active+'">'+item.name+'</a></li>';
 //						}else {
-//							html+='<li class="f_fl"><a href="column.html?id='+item.id+'&column='+item.id+'" class="f_dib '+active+'">'+item.name+'</a></li>';
+//							html+='<li class="f_fl"><a href="column.php?id='+item.id+'&column='+item.id+'" class="f_dib '+active+'">'+item.name+'</a></li>';
 //						}
 //				});
 //				$(".nav_search").find("ul").html("").append(html);

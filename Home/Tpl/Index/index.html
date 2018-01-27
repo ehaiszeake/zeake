@@ -68,7 +68,7 @@
 												<div class="article_cover f_pr">
 												
 												    <empty name="item['skip_url']">
-												    	<div class="article_cover_box"><a href="article_detail.html?id={$item.id}" class="f_db"><img src="{$item.img|webImg=$website}" class="f_vat placeholderImg2" width="100%"/></a></div>
+												    	<div class="article_cover_box"><a href="article_detail.php?id={$item.id}" class="f_db"><img src="{$item.img|webImg=$website}" class="f_vat placeholderImg2" width="100%"/></a></div>
 												    <else />
 												    	<div class="article_cover_box"><a href="{$item.skip_url}" class="f_db"><img src="{$item.img|webImg=$website}" class="f_vat placeholderImg2" width="100%"/></a></div>
 												    </empty>
@@ -83,7 +83,7 @@
 											
 											
 												<empty name="item['skip_url']">
-											    	<div class="article_title f_toe"><a href="article_detail.html?id='+item.id+'">{$item.title}</a></div>
+											    	<div class="article_title f_toe"><a href="article_detail.php?id='+item.id+'">{$item.title}</a></div>
 											    <else />
 											    	<div class="article_title f_toe"><a href="'+item.skip_url+'">{$item.title}</a></div>
 											    </empty>
@@ -103,7 +103,7 @@
 									<li class="l_news_flash">
 									 
 									 <empty name="item['skip_url']">
-									 	<div class="article_title f_toe"><a href="article_detail.html?id='+item.id+'">${item.title}</a></div>
+									 	<div class="article_title f_toe"><a href="article_detail.php?id='+item.id+'">${item.title}</a></div>
 									 <else />
 									 	<div class="article_title f_toe"><a href="'+item.skip_url+'">${item.title}</a></div>
 									 </empty>
@@ -117,8 +117,8 @@
 								
 									<li class="video_view">
 											<empty name="item['skip_url']">
-												<div class="video_cover_box f_pr"><a href="video_detail.html?id=${item.id}" class="f_db"><img src="${item.img|webImg=$website}" width="100%"/></a><div class="play_ico f_pa"></div></div>
-												<div class="video_title f_toe"><a href="video_detail.html?id=${item.id}">${item.title}</a></div>
+												<div class="video_cover_box f_pr"><a href="video_detail.php?id=${item.id}" class="f_db"><img src="${item.img|webImg=$website}" width="100%"/></a><div class="play_ico f_pa"></div></div>
+												<div class="video_title f_toe"><a href="video_detail.php?id=${item.id}">${item.title}</a></div>
 											<else />
 												<div class="video_cover_box f_pr"><a href="${item.skip_url}" class="f_db"><img src="${item.img|webImg=$website}" width="100%"/></a><div class="play_ico f_pa"></div></div>
 												<div class="video_title f_toe"><a href="${item.skip_url}">${item.title}</a></div>
@@ -151,7 +151,7 @@
                         <dl class="special_theme">
                             <dt class="f_cf"><span class="f_fl">知客专题</span></dt>
 							<volist name="index['data']['right_info']['new_special']" id="special">
-								<dd><a href="special_theme_page.html?id={$special.id}"><img src="{$special.img|webImg=$website}" class="f_vat placeholderImg2"/></a></dd>
+								<dd><a href="special_theme_page.php?id={$special.id}"><img src="{$special.img|webImg=$website}" class="f_vat placeholderImg2"/></a></dd>
 							</volist>
                         </dl>
                     </div>
@@ -213,7 +213,7 @@
                         $.each(data.data.right_info.new_live,function(i,item){
                             var unixTimestamp =item.created*1000;
                             var created = variable_obj.formatDate(unixTimestamp);
-							var link=item.skip_url ? item.skip_url : "live_broadcast_detail.html?id="+item.id;
+							var link=item.skip_url ? item.skip_url : "live_broadcast_detail.php?id="+item.id;
                             str += ' <dd><div class="state_intro f_cf"><div class="state state1 f_fl">'+ item.status + '</div><div class="intro f_fl"><a href="'+link+'">'+ item.title+'</a></div></div><div class="activities_date f_tar">'+created+'</div></dd>'
                         });
                         $(".activities_newest").append(str);
@@ -226,7 +226,7 @@
                             var updated = variable_obj.formatDate(unixTimestamp);
 								img=item.img;
 								img=(img) ? ((img.substr(0,7).toLowerCase()=="http://" || img.substr(0,8).toLowerCase()=="https://") ? img : golbalIp+img) : imgRoute+"images/placeholder_img_L04.jpg";
-							var link=item.skip_url ? item.skip_url : "article_detail.html?id="+item.id;
+							var link=item.skip_url ? item.skip_url : "article_detail.php?id="+item.id;
                             str2 += ' <dd><div class="img_intro_date f_cf"><div class="news_flash_img f_fl"><a href="'+link+'" class="f_db" style="height:100%"><img src="'+ img+'" class="f_vat placeholderImg2"/></a></div> <div class="intro f_fl"><p><a href="'+link+'">'+ item.title +'</a></p><div class="news_flash_date f_tar">'+ updated +'</div></div> </div></dd>'
                         });
                         $(".news_flash").append(str2);
@@ -239,7 +239,7 @@
 								img=item.img;
 								img=(img) ? ((img.substr(0,7).toLowerCase()=="http://" || img.substr(0,8).toLowerCase()=="https://") ? img : golbalIp+img) : imgRoute+"images/placeholder_img_L04.jpg";
 							
-                            str3 += '<dd><a href="article_detail.html?id='+item.id+'"><img src="'+img+'" class="f_vat placeholderImg2"/></a></dd>';
+                            str3 += '<dd><a href="article_detail.php?id='+item.id+'"><img src="'+img+'" class="f_vat placeholderImg2"/></a></dd>';
                         });
                         $(".special_theme").append(str3);
                         var str3 = '';
@@ -249,7 +249,7 @@
 								img=item.img;
 								img=(img) ? ((img.substr(0,7).toLowerCase()=="http://" || img.substr(0,8).toLowerCase()=="https://") ? img : golbalIp+img) : imgRoute+"images/placeholder_img_L04.jpg";
 							
-                            str3 += '<dd><a href="special_theme_page.html?id='+item.id+'"><img src="'+img+'" class="f_vat placeholderImg2"/></a></dd>';
+                            str3 += '<dd><a href="special_theme_page.php?id='+item.id+'"><img src="'+img+'" class="f_vat placeholderImg2"/></a></dd>';
                         });
                         $(".special_theme").append(str3);
 						
@@ -267,8 +267,8 @@
 												str4+='	<div class="video_cover_box f_pr"><a href="'+item.skip_url+'" class="f_db"><img src="'+img+'" width="100%"/></a><div class="play_ico f_pa"></div></div>';
 												str4+='	<div class="video_title f_toe"><a href="'+item.skip_url+'">'+item.title+'</a></div>';
 											}else {
-												str4+='	<div class="video_cover_box f_pr"><a href="video_detail.html?id='+item.id+'"" class="f_db"><img src="'+img+'" width="100%"/></a><div class="play_ico f_pa"></div></div>';
-												str4+='	<div class="video_title f_toe"><a href="video_detail.html?id='+item.id+'">'+item.title+'</a></div>';
+												str4+='	<div class="video_cover_box f_pr"><a href="video_detail.php?id='+item.id+'"" class="f_db"><img src="'+img+'" width="100%"/></a><div class="play_ico f_pa"></div></div>';
+												str4+='	<div class="video_title f_toe"><a href="video_detail.php?id='+item.id+'">'+item.title+'</a></div>';
 											}
 											str4+='	<div class="author_date"><span>'+item.author+'</span><i>/</i><em>'+variable_obj.formatDate(item.created*1000)+'</em></div>';
 											str4+='</li>';
@@ -277,7 +277,7 @@
 											 if(item.skip_url){
 											 	str4+='	<div class="article_title f_toe"><a href="'+item.skip_url+'">'+item.title+'</a></div>';
 											 }else {
-												 str4+='	<div class="article_title f_toe"><a href="article_detail.html?id='+item.id+'">'+item.title+'</a></div>';
+												 str4+='	<div class="article_title f_toe"><a href="article_detail.php?id='+item.id+'">'+item.title+'</a></div>';
 											 }
 											 str4+='	<div class="article_date_view_message f_cf">';
 											 str4+='		<div class="date f_fl">'+variable_obj.formatDate(item.created*1000)+'</div>';
@@ -292,7 +292,7 @@
 											if(item.skip_url){
 												str4+='		<div class="article_cover_box"><a href="'+item.skip_url+'" class="f_db"><img src="'+img+'" class="f_vat placeholderImg2" width="100%"/></a></div>';
 											}else {
-												str4+='		<div class="article_cover_box"><a href="article_detail.html?id='+item.id+'"" class="f_db"><img src="'+img+'" class="f_vat placeholderImg2" width="100%"/></a></div>';
+												str4+='		<div class="article_cover_box"><a href="article_detail.php?id='+item.id+'"" class="f_db"><img src="'+img+'" class="f_vat placeholderImg2" width="100%"/></a></div>';
 											}
 											str4+='	</div>';
 											str4+='	<div class="article_author f_cf f_pr">';
@@ -302,7 +302,7 @@
 											if(item.skip_url){
 												str4+='	<div class="article_title f_toe"><a href="'+item.skip_url+'">'+item.title+'</a></div>';
 											}else {
-												str4+='	<div class="article_title f_toe"><a href="article_detail.html?id='+item.id+'">'+item.title+'</a></div>';
+												str4+='	<div class="article_title f_toe"><a href="article_detail.php?id='+item.id+'">'+item.title+'</a></div>';
 											}
 											str4+='	<div class="article_intro">'+item.abstract+'</div>';
 											str4+='	<div class="article_date_view_message f_cf">';
@@ -328,7 +328,7 @@
 							sy=top_article_length>=5 ? "width:326px;margin-right:18px;" : "";
                         $.each(data.data.top_article,function(i,item){
 							var img=(item.img==null || item.img=="")  ? imgRoute+"images/placeholder_img_L04.jpg" : (item.img.substr(0,7).toLowerCase()=="http://" || item.img.substr(0,8).toLowerCase()=="https://") ? item.img : golbalIp+item.img,
-								link=item.type==2 ? "video_detail.html?id="+item.id : "article_detail.html?id="+item.id;
+								link=item.type==2 ? "video_detail.php?id="+item.id : "article_detail.php?id="+item.id;
 								str5 += '<li class="f_fl" style="'+sy+'"><div class="ad2_place_img"><a href="'+link+'"><img src="'+img+'" class="placeholderImg2 f_vat"/></a></div>';
 								str5 += '<p><a href="'+link+'">'+item.title+'</a></p> <div class="view_num">'+item.pv+'</div> </li>';
                         });
@@ -398,8 +398,8 @@
 														str4+='	<div class="video_cover_box f_pr"><a href="'+item.skip_url+'" class="f_db"><img src="'+img+'" width="100%"/></a><div class="play_ico f_pa"></div></div>';
 														str4+='	<div class="video_title f_toe"><a href="'+item.skip_url+'">'+item.title+'</a></div>';
 													}else {
-														str4+='	<div class="video_cover_box f_pr"><a href="video_detail.html?id='+item.id+'"" class="f_db"><img src="'+img+'" width="100%"/></a><div class="play_ico f_pa"></div></div>';
-														str4+='	<div class="video_title f_toe"><a href="video_detail.html?id='+item.id+'">'+item.title+'</a></div>';
+														str4+='	<div class="video_cover_box f_pr"><a href="video_detail.php?id='+item.id+'"" class="f_db"><img src="'+img+'" width="100%"/></a><div class="play_ico f_pa"></div></div>';
+														str4+='	<div class="video_title f_toe"><a href="video_detail.php?id='+item.id+'">'+item.title+'</a></div>';
 													}
 													str4+='	<div class="author_date"><span>'+item.author+'</span><i>/</i><em>'+variable_obj.formatDate(item.created*1000)+'</em></div>';
 													str4+='</li>';
@@ -408,7 +408,7 @@
 													 if(item.skip_url){
 													 	str4+='	<div class="article_title f_toe"><a href="'+item.skip_url+'">'+item.title+'</a></div>';
 													 }else {
-														str4+='	<div class="article_title f_toe"><a href="article_detail.html?id='+item.id+'">'+item.title+'</a></div>'; 
+														str4+='	<div class="article_title f_toe"><a href="article_detail.php?id='+item.id+'">'+item.title+'</a></div>'; 
 													 }
 													 str4+='	<div class="article_date_view_message f_cf">';
 													 str4+='		<div class="date f_fl">'+variable_obj.formatDate(item.created*1000)+'</div>';
@@ -423,7 +423,7 @@
 													if(item.skip_url){
 														str4+='		<div class="article_cover_box"><a href="'+item.skip_url+'" class="f_db"><img src="'+img+'" class="f_vat placeholderImg2" width="100%"/></a></div>';
 													}else {
-														str4+='		<div class="article_cover_box"><a href="article_detail.html?id='+item.id+'"" class="f_db"><img src="'+img+'" class="f_vat placeholderImg2" width="100%"/></a></div>';
+														str4+='		<div class="article_cover_box"><a href="article_detail.php?id='+item.id+'"" class="f_db"><img src="'+img+'" class="f_vat placeholderImg2" width="100%"/></a></div>';
 													}
 													str4+='	</div>';
 													str4+='	<div class="article_author f_cf f_pr">';
@@ -433,7 +433,7 @@
 													if(item.skip_url){
 														str4+='	<div class="article_title f_toe"><a href="'+item.skip_url+'">'+item.title+'</a></div>';
 													}else {
-														str4+='	<div class="article_title f_toe"><a href="article_detail.html?id='+item.id+'">'+item.title+'</a></div>';
+														str4+='	<div class="article_title f_toe"><a href="article_detail.php?id='+item.id+'">'+item.title+'</a></div>';
 													}
 													str4+='	<div class="article_intro">'+item.abstract+'</div>';
 													str4+='	<div class="article_date_view_message f_cf">';
