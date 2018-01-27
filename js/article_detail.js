@@ -18,9 +18,9 @@
 						
 						if(data.data.skip_url!=null && data.data.skip_url!=""){window.location.href=data.data.skip_url;}
 						
-					    $("#title").html(data.data.title);
-						
-						$("#doc-content").find("textarea").val(data.data.content);
+//					    $("#title").html(data.data.title);
+//						
+//						$("#doc-content").find("textarea").val(data.data.content);
 						editormd.markdownToHTML("doc-content", {//注意：这里是上面DIV的id
 								htmlDecode: "style,script,iframe",
 								emoji: true,

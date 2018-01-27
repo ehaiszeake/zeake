@@ -1,5 +1,5 @@
 <volist name="column_nav" id="nav">
-	<li class="f_fl"><a href="column.php?id={$nav.id}&column={$nav.id}"class="f_dib">{$nav.name}</a></li>
+	<li class="f_fl"><a href="column.php?id={$nav.id}&column={$nav.id}" class="f_dib <if condition='$column eq $nav[id]'>on</if>">{$nav.name}</a></li>
 </volist>
-<li class="f_fl"><a href="special_theme_page.php?column=0" class="f_dib ">知客专题</a></li>
-<li class="f_fl"><a href="hall_of_fame.php?column=-1" class="f_dib ">名人堂</a></li>
+<li class="f_fl"><a href="special_theme_page.php?column=0" class="f_dib ${column0}">知客专题</a></li>
+<li class="f_fl"><a href="hall_of_fame.php?column=-1" class="f_dib ${column_1}">名人堂</a></li>

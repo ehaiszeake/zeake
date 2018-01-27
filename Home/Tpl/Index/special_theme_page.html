@@ -22,20 +22,27 @@
             
                 <div class="ad1_place f_cf">
                     <div class="ad1_place1 f_fl">
-                        <a href=""><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" class="placeholderImg f_vat"/></a>
+                        <a href=""><img src="{$data['data']['list']['ad'][0]['img']|webImg=$website}" class="placeholderImg f_vat"/></a>
                     </div>
                     <div class="ad1_place2 f_fl">
                         <div class="ad1_place2_1">
-                            <a href=""><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" class="placeholderImg2 f_vat"/></a>
+                            <a href=""><img src="{$data['data']['list']['ad'][1]['img']|webImg=$website}" class="placeholderImg2 f_vat"/></a>
                         </div>
                         <div class="ad1_place2_2">
-                            <a href=""><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" class="placeholderImg2 f_vat"/></a>
+                            <a href=""><img src="{$data['data']['list']['ad'][2]['img']|webImg=$website}" class="placeholderImg2 f_vat"/></a>
                         </div>
                     </div>
                 </div>
                
                <div class="special_theme_page_list_box">
-					<ul class="f_cf special_theme_page_list"></ul>
+					<ul class="f_cf special_theme_page_list">
+						<volist name="data.data.list.list" id="item">
+							<li class="f_fl">
+								<div class="special_theme_cover_img f_pr"><a href="special_detail.html?id={$item.id}" class="f_dib f_full f_pa"><img src="{$item.img|webImg=$website}" width="100%" height="100%"/></a></div>
+								<div class="special_theme_item_title"><a href="special_detail.html?id={$item.id}">{$item.title}</a></div>
+							</li>
+						</volist>
+					</ul>
                     <div class="load_more_article f_tac">加载更多...</div>
                </div>
                
@@ -54,7 +61,7 @@
         
         
         
-        <script src="js/jquery.min.1.8.3.js?v=1.7"></script>
+        <script src="js/jquery.min.1.8.4.js?v=1.7"></script>
         <script>
         	$(function(){
 
@@ -77,7 +84,7 @@
 							success:function(data){
 								console.log(data);
 								
-									
+								/**	
 								//广告位
 								var ad_box=[".ad1_place1",".ad1_place2_1",".ad1_place2_2"]
 								if(data.data.list.ad.length>0){
@@ -88,12 +95,13 @@
 										$(ad_box[i]).find('img').attr({'src':ad,"title":item.name});	
 									});
 								}
-								
+								**/
 								
 								
 								//请求成功
 								if(data.code==1){
 									//有数据
+									/**
 									if(data.data.list.list.length>0){
 										var str="";
 											$.each(data.data.list.list,function(i,item){
@@ -105,6 +113,7 @@
 											});
 											$(".special_theme_page_list").append(str);
 									}
+									**/
 									
 									//请求页码递增
 									if(data.data.list.length<root.dataNum || data.data.total==root.dataNum){

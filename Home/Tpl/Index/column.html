@@ -25,13 +25,15 @@
                 
                 	<!--文章列表 start-->
                     <div class="article_list_box f_fl">
-                        <ul class="article_list "><!--文章列表直接容器--></ul>
+                        <ul class="article_list "><include file="./Home/Tpl/Index/include/article_list.html" /></ul>
                         <div class="load_more_article f_tac f_dn">加载更多...</div>
                     </div>
                     <!--文章列表   end-->
                     
                     <!--右侧模块 start-->
-                    <div class="right_info f_fl"></div>
+                    <div class="right_info f_fl">
+                    	<include file="./Home/Tpl/Index/include/right_info.html" />                    
+                    </div>
                     <!--右侧模块 end-->
                     
                     
@@ -47,7 +49,7 @@
         <!--底部   end-->
         
         
-        <script src="js/jquery.min.1.8.3.js?v=1.7"></script>
+        <script src="js/jquery.min.1.8.4.js?v=1.7"></script>
         <script>
         	$(function(){
 				
@@ -67,144 +69,7 @@
 							if(data.code==1){
 	
 								
-								//文章列表
-								if(data.data.article_list.length>0){
-									var str1="";
-										$.each(data.data.article_list,function(i,item){
-											if(item.type==3){
-												var img=(item.img==null || item.img=="")  ? imgRoute+"images/placeholder_img_L04.jpg" : (item.img.substr(0,7).toLowerCase()=="http://" || item.img.substr(0,8).toLowerCase()=="https://") ? item.img : golbalIp+item.img;
-												
-													str1+='<li class="video_view">';
-													if(item.skip_url){
-														str1+='	<div class="video_cover_box f_pr"><a href="'+item.skip_url+'" class="f_db"><img src="'+img+'" width="100%"/><div class="play_ico f_pa"></a></div></div>';
-														str1+='	<div class="video_title f_toe"><a href="'+item.skip_url+'">'+item.title+'</a></div>';
-													}else {
-														str1+='	<div class="video_cover_box f_pr"><a href="video_detail.php?id='+item.id+'" class="f_db"><img src="'+img+'" width="100%"/><div class="play_ico f_pa"></a></div></div>';
-														str1+='	<div class="video_title f_toe"><a href="video_detail.php?id='+item.id+'">'+item.title+'</a></div>';
-													}
-													str1+='	<div class="author_date"><span  class="jump_personal_info" data-author_id="'+item.author_id+'">'+item.author+'</span><i>/</i><em>'+variable_obj.formatDate(item.created*1000)+'</em></div>';
-													str1+='</li>';
-											}else if(item.type==2){
-													 str1+='<li class="l_news_flash">';
-													 if(item.skip_url){
-													 	str1+='	<div class="article_title f_toe"><a href="'+item.skip_url+'">'+item.title+'</a></div>';
-													 }else {
-														str1+='	<div class="article_title f_toe"><a href="article_detail.php?id='+item.id+'">'+item.title+'</a></div>'; 
-													 }
-													 str1+='	<div class="article_date_view_message f_cf">';
-													 str1+='		<div class="date f_fl">'+variable_obj.formatDate(item.created*1000)+'</div>';
-													 str1+='		<div class="view_message f_fr"><div class="article_view f_dib f_vat">'+item.pv+'</div><div class="article_message f_dib f_vat">'+item.reply+'</div></div>';
-													 str1+='	</div>';
-													 str1+='</li>';
-											}else if(item.type==1){
-												var img=(item.img==null || item.img=="")  ? imgRoute+"images/placeholder_img_L04.jpg" : (item.img.substr(0,7).toLowerCase()=="http://" || item.img.substr(0,8).toLowerCase()=="https://") ? item.img : golbalIp+item.img;
-													str1+='<li>';
-													str1+='	<div class="article_cover f_pr">';
-													if(item.skip_url){
-														str1+='		<div class="article_cover_box"><a href="'+item.skip_url+'" class="f_db"><img src="'+img+'" class="f_vat placeholderImg2" width="100%"/></a></div>';
-													}else {
-														str1+='		<div class="article_cover_box"><a href="article_detail.php?id='+item.id+'" class="f_db"><img src="'+img+'" class="f_vat placeholderImg2" width="100%"/></a></div>';
-													}
-													str1+='	</div>';
-													str1+='	<div class="article_author f_cf f_pr">';
-													str1+='		<div class="author_head f_fl"><img src="images/head_sculpture.png" class="f_vat"/></div>';
-													str1+='		<div class="author_nickname f_fl f_toe jump_personal_info"  data-author_id="'+item.author_id+'">'+item.author+' </div>';
-													str1+='	</div>';
-													if(item.skip_url){
-														str1+='	<div class="article_title f_toe"><a href="'+item.skip_url+'">'+item.title+'</a></div>';
-													}else {
-														str1+='	<div class="article_title f_toe"><a href="article_detail.php?id='+item.id+'">'+item.title+'</a></div>';
-													}
-													str1+='	<div class="article_intro">'+item.abstract+'</div>';
-													str1+='	<div class="article_date_view_message f_cf">';
-													str1+='		<div class="date f_fl">'+variable_obj.formatDate(item.created*1000)+'</div>';
-													str1+='		<div class="view_message f_fr">';
-													str1+='			<div class="article_view f_dib f_vat">'+item.pv+'</div><div class="article_message f_dib f_vat">'+item.reply+'</div>';
-													str1+='		</div>';
-													str1+='	</div>';
-													str1+='</li>';
-											}
-										});
-										$(".article_list").append(str1);
-								}else {
-									$(".article_list").addClass("no_data");
-								}
-								
-								
-								
-								if(data.data.article_list.length<pagenum || data.data.article_total==pagenum){
-									skipnum=skipnum;
-									$(".load_more_article").addClass("f_dn")	
-								}else {
-									skipnum+=pagenum;
-									var remain=data.data.article_total>=skipnum ? data.data.article_total-skipnum : 0;
-									$(".load_more_article").html("查看更多（"+remain+"）").removeClass("f_dn");
-									if(remain==0){$(".load_more_article").addClass("f_dn");}
-								}
-								
-								
-								
-								
-								//知客最新活动
-								if(data.data.right_info.new_live.length>0){
-									var str2='<dl class="activities_newest"><dt class="f_cf"><span class="f_fl">知客最新活动</span></dt>';
-										$.each(data.data.right_info.new_live,function(i,item){
-											str2+='<dd>';
-											str2+='	<div class="state_intro f_cf">';
-											str2+='		<div class="state state1 f_fl">'+item.status+'</div>';
-											str2+='		<div class="intro f_fl"><a href="live_broadcast_detail.php?id='+ item.id+'">'+item.title+'</a></div>';
-											str2+='	</div>';
-											str2+='	<div class="activities_date f_tar">'+variable_obj.formatDate(item.created*1000)+'</div>';
-											str2+='</dd>';
-										});
-										str2+='</dl>';
-									//右侧添加数据
-									$(".right_info").append(str2);
-								}									
-								
 
-								//知客快讯
-								if(data.data.right_info.new_news.length>0){
-									var str3='<dl class="news_flash"><dt class="f_cf"><span class="f_fl">知客快讯</span></dt>';
-										$.each(data.data.right_info.new_news,function(i,item){
-												var img=(item.img==null || item.img=="")  ? imgRoute+"images/placeholder_img_L04.jpg" : (item.img.substr(0,7).toLowerCase()=="http://" || item.img.substr(0,8).toLowerCase()=="https://") ? item.img : golbalIp+item.img;
-											str3+='<dd>';
-											str3+='	<div class="img_intro_date f_cf">';
-											str3+='		<div class="news_flash_img f_fl"><img src="'+img+'" class="f_vat placeholderImg2"/></div>';
-											str3+='		<div class="intro f_fl">';
-											if(item.type==3){
-												str3+='		<p><a href="video_detail.php?id='+item.id+'">'+item.title+'</a></p>';
-											}else {
-												str3+='		<p><a href="article_detail.php?id='+item.id+'">'+item.title+'</a></p>';
-											}
-											str3+='			<div class="news_flash_date f_tar">'+variable_obj.formatDate(item.created*1000)+'</div>';
-											str3+='		</div>';
-											str3+='	</div>';
-											str3+='</dd>';
-										});
-										str3+='</dl>';
-									//右侧添加数据
-									$(".right_info").append(str3);
-								}			
-												
-								
-								//知客专题
-								if(data.data.right_info.new_special.length>0){
-									var str4='<dl class="special_theme"><dt class="f_cf"><span class="f_fl">知客专题</span></dt>';
-										$.each(data.data.right_info.new_special,function(i,item){
-												var img=(item.img==null || item.img=="")  ? imgRoute+"images/placeholder_img_L04.jpg" : (item.img.substr(0,7).toLowerCase()=="http://" || item.img.substr(0,8).toLowerCase()=="https://") ? item.img : golbalIp+item.img;
-											str4+='<dd>';
-											str4+='	<a href="article_detail.php?id='+item.id+'">';
-											str4+='	<img src="'+img+'" title="'+item.title+'" class="f_vat placeholderImg2"/>';
-											str4+='	</a>';
-											str4+='</dd>';
-										});
-										str4+='</dl>';
-									//右侧添加数据
-									$(".right_info").append(str4);
-								}
-
-								
 								//移除loading的效果
 								$(".main_content[data-type='column_page']").removeClass("loading");
 								

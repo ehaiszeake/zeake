@@ -36,11 +36,11 @@
                 
                 	<!--图文详情  start-->
                     <div class="article_detail_unit">
-                    	<div class="title f_tac" id="title" style="font-size: 48px;color: #263238;line-height: 68px;"></div>
+                    	<div class="title f_tac" id="title" style="font-size: 48px;color: #263238;line-height: 68px;">{$data.data.title}</div>
                         <div class="pulic_time f_tac"></div>
                         <div class="article_detail_main">
                             <div id="doc-content">
-                                <textarea style="display:none;"></textarea>
+                                <textarea style="display:none;">{$data.data.content}</textarea>
                             </div>
                         </div>
                     </div>
@@ -139,7 +139,7 @@
         <include file="./Home/Tpl/Index/include/footer.html" />
         <!--底部   end-->
         
-        <script src="js/jquery.min.1.8.3.js?v=1.7"></script>
+        <script src="js/jquery.min.1.8.4.js?v=1.7"></script>
         <script src="js/common.js?v=1.3"></script>
 		<script src="js/editormd/lib/marked.min.js"></script>
         <script src="js/editormd/lib/prettify.min.js"></script>

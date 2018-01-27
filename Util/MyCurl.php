@@ -93,6 +93,43 @@ class MyCurl {
         return self::doRequest(3);
     }
     
+    
+    
+    public static function quickGet($url,$data = array(), $timeoutMs = 3000)
+    {
+        if(!empty($data))$url.="?".self::dealPostData($data);
+        return json_decode(self::eRequest($url, false, $timeoutMs),true);
+    }
+    
+    public static function quickPost($url, $data, $timeoutMs = 3000)
+    {
+        return self::eRequest($url, $data, $timeoutMs);
+    }
+    
+    protected static function eRequest($url, $data, $timeoutMs = 3000)
+    {
+        $ch = curl_init();
+    
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_HEADER, 0);
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT_MS, $timeoutMs);
+    
+        if (!empty($data)) {
+            curl_setopt($ch, CURLOPT_POST, 1);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+        }
+    
+        $rs = curl_exec($ch);
+    
+        curl_close($ch);
+    
+        return $rs;
+    }
+    
+    
+    
+    
 }
 
 

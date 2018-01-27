@@ -1,0 +1,37 @@
+<dl class="activities_newest">
+                            <dt class="f_cf"><span class="f_fl">知客最新活动</span></dt>
+							<volist name="index['data']['right_info']['new_live']" id="live">
+								<dd>
+									<div class="state_intro f_cf"><div class="state state1 f_fl">{$live.status}</div>
+									<div class="intro f_fl">
+									<a href="<empty name='live.skip_url'>live_broadcast_detail.php?id={$item.id}<else/>{$live.skip_url}</empty>">{$live.title}</a>
+									</div>
+									</div>
+									<div class="activities_date f_tar">{$live['created']|date='Y/m/d',###}</div>
+								</dd>
+							</volist>
+                        </dl>
+                        <dl class="news_flash">
+                            <dt class="f_cf"><span class="f_fl">知客快讯</span></dt>
+                            <volist name="index['data']['right_info']['new_news']" id="item">
+                            	<dd>
+	                            	<div class="img_intro_date f_cf">
+		                            	<div class="news_flash_img f_fl">
+			                            	<a href="<empty name='item.skip_url'>article_detail.php?id={$item.id}<else/>{$item.skip_url}</empty>" class="f_db" style="height:100%">
+			                            		<img src="{$item.img|webImg=$website}" class="f_vat placeholderImg2"/>
+			                            	</a>
+		                            	</div> 
+		                            	<div class="intro f_fl">
+			                            	<p><a href="<empty name='item.skip_url'>article_detail.php?id={$item.id}<else/>{$item.skip_url}</empty>">{$item.title}</a></p>
+			                            	<div class="news_flash_date f_tar">{$item['created']|date='Y/m/d',###}</div>
+		                            	</div> 
+	                            	</div>
+                            	</dd>
+                            </volist>
+                        </dl>
+                        <dl class="special_theme">
+                            <dt class="f_cf"><span class="f_fl">知客专题</span></dt>
+							<volist name="index['data']['right_info']['new_special']" id="special">
+								<dd><a href="special_theme_page.php?id={$special.id}"><img src="{$special.img|webImg=$website}" class="f_vat placeholderImg2"/></a></dd>
+							</volist>
+                        </dl>

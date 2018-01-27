@@ -1,0 +1,67 @@
+<volist name="index['data']['article_list']" id="item">
+	<if condition="$item.type eq 1">
+	
+				<li>
+					<div class="article_cover f_pr">
+					
+					    <empty name="item['skip_url']">
+					    	<div class="article_cover_box"><a href="article_detail.php?id={$item.id}" class="f_db"><img src="{$item.img|webImg=$website}" class="f_vat placeholderImg2" width="100%"/></a></div>
+					    <else />
+					    	<div class="article_cover_box"><a href="{$item.skip_url}" class="f_db"><img src="{$item.img|webImg=$website}" class="f_vat placeholderImg2" width="100%"/></a></div>
+					    </empty>
+					    
+				
+					</div>
+					<div class="article_author f_cf f_pr">
+						<div class="author_head f_fl"><img src="images/head_sculpture.png" class="f_vat"/></div>
+						<div class="author_nickname f_fl f_toe jump_personal_info" data-author_id="'+item.author_id+'">{$item.author}</div>
+					</div>
+				
+				
+				
+					<empty name="item['skip_url']">
+				    	<div class="article_title f_toe"><a href="article_detail.php?id='+item.id+'">{$item.title}</a></div>
+				    <else />
+				    	<div class="article_title f_toe"><a href="'+item.skip_url+'">{$item.title}</a></div>
+				    </empty>
+				
+				
+					<div class="article_intro">{$item.abstract}</div>
+					<div class="article_date_view_message f_cf">
+						<div class="date f_fl">{$item['created']|date='Y/m/d',###}</div>
+						<div class="view_message f_fr">
+							<div class="article_view f_dib f_vat">{$item.pv}</div><div class="article_message f_dib f_vat">{$item.reply}</div>
+						</div>
+					</div>
+				</li>
+	
+	<elseif condition="$item.type eq 2"/>
+	
+		<li class="l_news_flash">
+		 
+		 <empty name="item['skip_url']">
+		 	<div class="article_title f_toe"><a href="article_detail.php?id='+item.id+'">${item.title}</a></div>
+		 <else />
+		 	<div class="article_title f_toe"><a href="'+item.skip_url+'">${item.title}</a></div>
+		 </empty>
+		 	<div class="article_date_view_message f_cf">
+		 		<div class="date f_fl">{$item['created']|date='Y/m/d',###}</div>
+		 		<div class="view_message f_fr"><div class="article_view f_dib f_vat">${item.pv}</div><div class="article_message f_dib f_vat">${item.reply}</div></div>
+		 	</div>
+		 </li>
+	
+	<elseif condition="$item.type eq 3"/>
+	
+		<li class="video_view">
+				<empty name="item['skip_url']">
+					<div class="video_cover_box f_pr"><a href="video_detail.php?id=${item.id}" class="f_db"><img src="${item.img|webImg=$website}" width="100%"/></a><div class="play_ico f_pa"></div></div>
+					<div class="video_title f_toe"><a href="video_detail.php?id=${item.id}">${item.title}</a></div>
+				<else />
+					<div class="video_cover_box f_pr"><a href="${item.skip_url}" class="f_db"><img src="${item.img|webImg=$website}" width="100%"/></a><div class="play_ico f_pa"></div></div>
+					<div class="video_title f_toe"><a href="${item.skip_url}">${item.title}</a></div>
+				</empty>
+					<div class="author_date"><span>${item.author}</span><i>/</i><em>{$item['created']|date='Y/m/d',###}</em></div>
+				</li>
+				
+	</if>
+</volist>
