@@ -67,6 +67,11 @@ class IndexAction extends Action {
     public function hall_of_fame(){
         $this->assign("column_1","on");
         self::construct();
+        
+        $data = MyCurl::quickGet($this->website."/main/vip");//var_dump($data);die();
+        $this->assign("data",$data);
+        
+        
         $this->display("hall_of_fame");
     }
     

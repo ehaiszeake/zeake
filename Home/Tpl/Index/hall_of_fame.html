@@ -26,7 +26,48 @@
                     <div class="fame_list_box_inner">
                     
                         <ul class="fame_list">
+							<volist name="data.data.list" id="item">
+								<li class="f_cf">
+									<div class="fame_info_box f_cf">
+										<div class="fame_info f_fl f_tac">
+											<div class="fame_head_name">
+												<div class="fame_head"><img src="{$item.img|webImgDefault=$website,'./images/head_sculpture.png'}" width="100%"/><div class="head_mask f_pa f_full"></div></div>
+									            <div class="fame_name f_toe jump_personal_info" data-author_id="'+item.member_id+'">{$item.nickname}</div>
+											</div>
+											<div class="fame_article_type f_toe">手机/生活/游戏</div>
+											<div class="fame_article_num">文章：{$item.article_total}篇</div>
+											<div class="fame_mood">{$item.mark}</div>
+										</div>
 
+										<div class="fame_recommend_article f_fl <empty name='item[article]'>noData</empty>">
+										
+										<notempty name="item['article']">
+											
+											<div class="article_cover f_pr">
+													<div class="article_cover_box"><a href="fame_home_page.php?id='+item.id+'"><img src="'+img2+'" class="f_vat placeholderImg2" width="100%"/></a></div>
+												</div>
+												<div class="article_title f_toe"><a href="fame_home_page.php?id='+item.id+'">'+item.article.title+'</a></div>
+										        <div class="article_intro">{$item.article.abstract}</div>
+												<div class="article_date_view_message f_cf">
+												<notempty name="item['created']">
+													<div class="date f_fl">{$item['created']|date='Y/m/d',###}</div>
+												</notempty>
+													<div class="view_message f_fr">
+														<div class="article_view f_dib f_vat">{$item.article.pv}</div>
+														<div class="article_message f_dib f_vat">{$item.article.reply}</div>
+													</div>
+												</div>
+												
+										</notempty>
+								
+										</div>
+							
+									</div>
+									<notempty name="item['article']">
+									<div class="fame_all_article f_tar"><a href="fame_home_page.php?id='+item.id+'">全部文章</a></div>
+									</notempty>
+								</li>
+							</volist>
                         </ul>
                         <div class="load_more_article f_tac f_dn">加载更多...</div>
                             
@@ -48,7 +89,7 @@
         	$(function(){
 
 				var imgRoute="./";
-
+				/*
                 $.ajax({
                     url: golbalIp + "/main/vip",
                     type: "get",
@@ -58,7 +99,7 @@
                     success: function (data) {
                         var str = '';
                         console.log(data);
-                        $.each(data.data.list,function(i,item){
+                         $.each(data.data.list,function(i,item){
 						   	var img=(item.img==null || item.img=="")  ? imgRoute+"images/head_sculpture.png" : golbalIp+item.img;
 								str+='<li class="f_cf">';
 								str+='	<div class="fame_info_box f_cf">';
@@ -100,11 +141,11 @@
 							}
 								str+='</li>';
                         });
-                        $(".fame_list").append(str);
+                        //$(".fame_list").append(str);
 					}
 				});
 
-				
+				 */
 			})
         </script>        
         
