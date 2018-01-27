@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>个人中心-个人信息</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <meta name="format-detection" content="telephone=no, email=no" />
+        <meta http-equiv="Cache-Control" content="no-transform" />
+        <meta http-equiv="Cache-Control" content="no-siteapp" /> 
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+        <link rel="stylesheet" href="css/pc.css?v=1.2" />
+    </head>
+    
+    
+    <body>
+ 		
+        <!--头部 start-->
+    	<div class="header f_pr">
+        	<div class="header_inner f_cf f_pr">
+            
+            	<h1 class="logo f_fl"><a href="index.html" class="f_full f_db f_two">知客网</a></h1>
+                
+                <div class="center_title f_tac f_fl"></div>
+                
+                <div class="nav_search f_fl">
+                
+                    <div class="search_box f_fr">
+                    	<form action="search_result.html" class="f_full f_pr">
+                        	<label class="for_text" for="keyword">想要找点什么</label>
+                            <input type="text" class="keyword placeholder f_fl" id="keyword"/>
+                            <input type="button" class="search_btn f_fr" value="搜索"/>
+                        </form>
+                    </div>
+                    
+                	<ul class="f_fl"></ul>
+                    
+                </div>
+                <div class="l_r f_pa">
+                	<div class="no_login "><a href="javascript:;" class="js_login_pop f_dib">登录</a><i class="f_dib"></i><a href="javascript:;" class="js_register_pop  f_dib">注册</a></div>
+                    <div class="logined f_dn">
+                    	<div class="f_dib f_vat name_man_head">
+                    		<div class="man_head f_pr f_dib"><img src="images/weixin.png" class="f_vart"/><div class="head_mask f_pa"></div><div class="message_info f_pa"></div></div>
+                        	<span class="f_dib f_toe name f_vat"></span>
+                            <span class="f_dn f_toe name f_vat my_home_page_a" data-type="pc_home.html">我的主页</span>
+                            <div class="pc_dropDown f_pa f_dn">
+                            	<div class="pc_dropDown_inner">
+                                    <a href="pc_home.html">个人中心</a>
+                                    <a href="pc_message.html">消息通知<i class="f_dib message_num">76</i></a>
+                                    <a href="pc_public.html">发表文章</a>
+                                    <a href="pc_my_hall.html">我的名人堂</a>
+                                    <a href="pc_personal_info.html">账户设置</a>
+                                    <a href="javascript:;" class="js_logout">退出</a>
+                                </div>
+                            </div>
+                        </div>
+                    	<a href="pc_public.html" class="writing f_dib">写文章</a>
+                    </div>
+                </div>
+                <div class="mobile_nav f_pa f_dn"><div class="mobile_ico f_pa"></div><div class="mobile_mask f_pa"></div></div>
+            </div>
+        </div>
+        <!--头部   end-->
+        
+        
+        <!--主内容  start-->
+        <div class="main_content f_pr loading" data-type="pc_personal_info"> 
+        	<div class="main_contnet_inner f_pr "> 
+            
+				<div class="personal_info_box f_pr f_cf">
+                	
+                    <div class="head_nickName_unit f_pr">
+                        <div class="head_unit f_pr">
+                        	<img src="./images/head_sculpture.png" class="f_vat" id="head_pic" width="100%"/>
+                            <div class="modify_head full_size f_pa f_dn text-align:center;" data-src="">修改头像<input type="file" accept="image/gif,image/jpg,image/png" name="file" id="file" class="full_size f_pa f_o0"/></div>
+                        </div>
+                        <div class="nick_name f_toe f_tac"><input type="text" class="ipt_nickname" value=""/> </div>
+                       
+                    </div>
+                    
+                    <form action="" class="base_info_form">
+                    	<div class="title f_cf">
+                        	<span class="f_fl">基本信息</span>
+                            <div class="f_fr js_save_base_info">保存</div>
+                        </div>
+                        <div class="base_info_item f_cf">
+                        	<label class="f_fl">邮箱：</label>
+                            <input type="text" class="f_fl base_inf_email" placeholder="修改注册邮箱"/>
+                        </div>
+                        <div class="base_info_item f_cf">
+                        	<label class="f_fl">密码：</label>
+                            <input type="password" class="f_fl base_inf_psw" placeholder="修改注册密码(不改,密码留空)"/>
+                        </div>
+                        <div class="base_info_item f_cf">
+                        	<label class="f_fl">确认密码：</label>
+                            <input type="password" class="f_fl base_inf_psw2" placeholder="确认修改注册密码(不改,密码留空)"/>
+                        </div>
+                        <div class="base_info_item f_cf">
+                        	<label class="f_fl base_info_intro_label">简介：</label>
+                            <div class="f_pr base_info_intro">
+                            	<textarea class="base_info_intro_c" placeholder="个性签名"></textarea>
+                            </div>
+                        </div>
+                        <div class="base_info_intro_total">0/100</div>
+                    </form>
+                    
+                    <div class="third_account_base_info f_dn">
+                    	<div class="title">第三方账号</div>
+                        <div class="base_info_item f_cf">
+                        	<label class="f_fl">QQ：</label>
+                            <input type="text" class="f_fl base_info_qq"/>
+                            <div class="modify_qq f_fl">取消绑定</div>
+                        </div>
+                        <div class="base_info_item f_cf">
+                        	<label class="f_fl">微信：</label>
+                            <input type="text" class="f_fl base_info_wetchat"/>
+                            <div class="modify_wetchat f_fl">取消绑定</div>
+                        </div>
+                        <div class="base_info_item f_cf">
+                        	<label class="f_fl">微博：</label>
+                            <input type="text" class="f_fl base_info_weibo"/>
+                            <div class="modify_weibo f_fl">取消绑定</div>
+                        </div>
+                    </div>
+                </div>
+
+            
+            </div>
+        </div>
+        <!--主内容    end-->
+        
+        <!--底部 start-->
+        <div class="footer f_pr">
+        	<div class="footer_inner f_pr f_cf">
+            	<div class="link_qrcode f_cf">
+                    <dl class="f_fl">
+                        <dt>ZAEKE</dt>
+                        <dd class="f_toe"><a href="">加入我们</a></dd>
+                        <dd class="f_toe"><a href="">商务合作</a></dd>
+                        <dd class="f_toe"><a href="">用户协议</a></dd>
+                    </dl>
+                    <dl class="f_fl">
+                        <dt>合作伙伴</dt>
+                        <dd class="f_toe"><a href="">速致</a></dd>
+                        <dd class="f_toe"><a href="">知客数码</a></dd>
+                    </dl>
+                    <dl class="f_fl">
+                        <dt>试用介绍</dt>
+                        <dd class="f_toe"><a href="">试用方式</a></dd>
+                        <dd class="f_toe"><a href="">试用流程</a></dd>
+                        <dd class="f_toe"><a href="">试用须知</a></dd>
+                    </dl>
+                    <dl class="f_fl">
+                        <dt>友情链接</dt>
+                        <dd class="f_toe"><a href="">充电头网</a></dd>
+                        <dd class="f_toe"><a href="">TCL 手机铁粉俱乐部</a></dd>
+                        <dd class="f_toe"><a href="">站长之家</a></dd>
+                        <dd class="f_toe"><a href="">机智猫</a></dd>
+                    </dl>
+                    <ul class="f_fr">
+                        <li><p>知客、让数码更懂你</p></li>
+                        <li><img src="images/qrcode.png" class="f_vat"/></li>
+                    </ul>
+                </div>
+                <div class="web_info f_cf">
+                	<div class="big_logo_us_info f_fl">
+                        <div class="big_logo f_fl"></div>
+                        <div class="about_us_info f_fr">
+                            <p>关于我们</p>
+                            <div class="des">知客数码致力于打造数码玩家一站式完美体验的平台。我们希望能给每一位热爱数码的玩家，提供一个展示自己的平台。</div>
+                            <div class="email_tel"><span class="f_dib f_vat mobile">13049894061</span><span class="f_dib f_vat email">chenwei@zaeke.com</span></div>
+                        </div>
+                    </div>
+                    <div class="other_platform f_fr">
+                    	<p>其他平台账号</p>
+                        <div class="other_platform_list"><div class="l_qq f_dib"></div><div class="l_weixin f_dib"></div><div class="l_weibo f_dib"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--底部   end-->
+
+
+        <script src="js/jquery.min.1.8.3.js?v=1.7"></script>
+        <script src="js/pc_common.js?v=1.2"></script>
+        <script>		
+        	$(function(){
+				
+				var imgRoute="./",updated="";
+				
+				//获取个人资料
+				$.ajax({
+					url:golbalIp+"/user/info",
+					type:"get",
+					dataType:"json",
+					data:{"account":JSON.parse($.cookie('bz')).account,"token":JSON.parse($.cookie('bz')).token},
+					beforeSend:function(){},
+					success:function(data){
+						console.log(data);
+						if(data.code==1){
+							updated=data.data.updated;
+							//请求成功
+							var img=( data.data.img==null ||  data.data.img=="")  ? imgRoute+"images/head_sculpture.png" : golbalIp+ data.data.img;
+								if(data.data.img){
+									$("#head_pic").attr("src",data.data.img);
+									$(".modify_head").attr("data-src",data.data.img);
+								}
+								$(".ipt_nickname").val(data.data.account);
+								$(".base_inf_email").val(data.data.email);
+								if(data.data.mark){$(".base_info_intro_c").val(data.data.mark);}
+								$(".pc_author_info").attr({"data-id":data.data.id,"data-type":data.data.type}).find(".pc_head_unit").find("img").attr("src",img);
+								$(".pc_author_info").find(".nickName").html(data.data.nickname);
+								$(".pc_author_info").find(".sign").html(data.data.mark);
+								$(".main_content").removeClass("loading");
+						}else if(data.code==3){
+						
+						}else {
+							alert(data.message);
+						}
+					},
+					error:function(){
+						alert("网络错误，请稍后再试！");
+					}		
+				})
+
+
+				//个性签名
+				$(".base_info_intro_c").on("input propertychange",function(){
+					var val=$(this).val();
+						val.length>100 ? $(this).val(val.substr(0,100)) : $(".base_info_intro_total").html(val.length+"/100");
+				});
+				
+
+				//修改个人资料
+				var lockInfo=false;
+				$(".js_save_base_info").on("touchstart click",function(e){
+					var nickName=$(".ipt_nickname").val(),
+						email=$(".base_inf_email").val(),
+						ps=$(".base_inf_psw").val(),
+						ps2=$(".base_inf_psw2").val(),
+						content=$(".base_info_intro_c").val(),
+						modify_head=$(".modify_head").attr("data-src");
+					if($.trim(nickName)==""){
+						alert("昵称不能为空");
+					}else if(!modify_head){
+						alert("请上传头像");
+					}else if(!units.regular.e.test(email)){
+						alert("邮箱格式不正确！");	
+					}else if(units.strLen(ps)<6 && $.trim(ps).length>0){
+						alert("密码（不小于6个字符）");
+					}else if($.trim(ps2)!==$.trim(ps)){
+						alert("密码不一致");
+					}else if($.trim(content)==""){
+						alert("请填写个性前面");
+					}else {
+						var send={};
+							if($.trim(ps)===""){
+								send={
+									"account":JSON.parse($.cookie('bz')).account,
+									"token":JSON.parse($.cookie('bz')).token,
+									"email":email,
+									"nickname":nickName,
+									"img":modify_head,
+									"mark":content,
+									"updated":updated
+								}	
+							}else {
+								send={
+									"account":JSON.parse($.cookie('bz')).account,
+									"token":JSON.parse($.cookie('bz')).token,
+									"email":email,
+									"nickname":nickName,
+									"password":ps,
+									"passconf":ps2,
+									"img":modify_head,
+									"mark":content,
+									"updated":updated
+								}	
+							}
+						if(!lockInfo){
+							lockInfo=true;
+							var state=window.confirm("确定修改这些信息？");
+							if(state){
+								$.ajax({
+									url:golbalIp+"/user/update_info",
+									type:"post",
+									dataType:"json",
+									data:send,
+									beforeSend:function(){},
+									success:function(data){
+										console.log(data);
+										if(data.code==1){
+								
+											//更新updated
+											$.ajax({
+												url:golbalIp+"/user/info",
+												type:"get",
+												dataType:"json",
+												data:{"account":JSON.parse($.cookie('bz')).account,"token":JSON.parse($.cookie('bz')).token},
+												beforeSend:function(){},
+												success:function(data){
+													updated=data.data.updated;
+												},
+												error:function(){
+													alert("网络错误，请稍后再试！");
+												}		
+											})
+											
+											
+											//请求成功
+											alert("修改成功！");
+											lockInfo=false;
+										}else if(data.code==3){
+											lockInfo=false;
+										}else {
+											alert(data.message);
+											lockInfo=false;
+										}
+									},
+									error:function(){
+										alert("网络错误，请稍后再试！");
+										lockInfo=false;
+									}		
+								});
+							}else {
+								lockInfo=false;
+							}
+						}
+					}
+					if(e.type=="touchstart"){e.preventDefault();}	
+				});
+				
+				
+				//上传头像
+				$("#file").on("change",function(){
+					var format=this.files[0],
+						formData = new FormData();
+						formData.append('file',$('#file')[0].files[0]);
+						formData.append("account",JSON.parse($.cookie('bz')).account);
+						formData.append("token",JSON.parse($.cookie('bz')).token);
+						$.ajax({
+							url: golbalIp+"/upload/user_img",
+							type: 'post',
+							dataType:"json",
+							cache: false,
+							data: formData,
+							processData: false,
+							contentType: false
+						}).done(function(res) {
+							if(res.code==1){
+								$("#head_pic").attr("src",golbalIp+res.data);
+								$(".modify_head").attr("data-src",golbalIp+res.data);
+								
+							}else {
+								alert(res.message);	
+							}
+						}).fail(function(res) {
+							alert(res.message);
+						}); 	
+				});
+				
+				
+		
+			})
+        </script>
+
+
+
+
+    </body>
+    
+</html>
