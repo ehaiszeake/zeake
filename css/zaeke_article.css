@@ -62,8 +62,12 @@
             width: 960px;
             margin: 48px 50px;
         }
+        
+        .header .header_inner .logo{
+			box-sizing:content-box;
+        }
         /* 头部部分 */
-
+/**
         .header {
             height: 60px;
             line-height: 60px;
@@ -88,6 +92,7 @@
         .header ul li:nth-last-child(2) {
             margin-right: 20px!important;
         }
+        **/
         /* 内容主题部分 */
 
         .main {
@@ -128,7 +133,8 @@
             padding-left: 24px;
             background-image: url("../images/time.png");
             background-repeat: no-repeat;
-            background-position-y: 3px;
+        	font-size:16px;
+            /* background-position-y: 3px; */
         }
 
         .detail .viewer {

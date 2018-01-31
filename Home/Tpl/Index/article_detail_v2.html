@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <include file="./Home/Tpl/Index/include/head.html" />
+    <link rel="stylesheet" href="./css/zaeke_article.css">
+</head>
+
+<body>
+<!--头部 start-->
+    	<include file="./Home/Tpl/Index/include/header.html" />
+        <!--头部   end-->
+        
+    <!-- 文章主体 -->
+    <div class="main banxin">
+        <img src="{$data.data.img}" alt="" class="banner">
+        <div class="detail">
+            <h1 class="tc">{$data.data.title}</h1>
+            <div class="clearfix author">
+               <!--  <span class="avatar fl"></span> -->
+                <span class="name fl" style="font-size:16px;">{$data.data.author}</span>
+                <!-- <span class="fr viewer">23428</span> -->
+                <!-- <span></span> -->
+                <span class="fr pub_time pulic_time">{$data.data.created}</span>
+                <!-- <span></span> -->
+            </div>
+            <div class="content w800">
+                <div id="doc-content">
+                    <textarea style="display:none;">{$data.data.content}</textarea>
+                </div>
+            </div>
+            <div class="banner2 clearfix w960">
+                <img src="./images/Rectangle 13 Copy.png" alt="" class="fl">
+                <img src="./images/Rectangle 13.png" alt="" class="fl">
+            </div>
+            <!-- 
+            <div class="tabs w800 clearfix">
+                <span class="fl green_check pointer">人与生活</span>
+                <span class="fl pointer">游戏本</span>
+                <span class="fl pointer">学生机</span>
+                <span class="fl pointer">笔电</span>
+                <span class="fl pointer">金属</span>
+            </div>
+             -->
+            <p class="tc shenming">
+                <i class="">文章仅代表作者：{$data.data.author} 个人观点，与本站立场无关</i>
+            </p>
+            <div class="share clearfix">
+                <span class="fl qq"></span>
+                <span class="fl weibo"></span>
+                <span class="fl weixin"></span>
+                <span class="fr collect tc collect_btn">收藏 | 84</span>
+                <span class="fr cool tc praise_btn ">点赞 | 149</span>
+            </div>
+        </div>
+    </div>
+    <!-- 点击表态 -->
+    <div class="atitude clearfix banxin">
+        <div class="want tc fl pointer">
+            想要 😍
+        </div>
+        <div class="proportion fl clearfix">
+            <div class="left fl">
+                <span>10248 人表示赞同 </span>
+            </div>
+            <div class="right fl clearfix">
+                <span class="fr">9248 人感到无聊</span>
+            </div>
+        </div>
+        <div class="boring tc fl pointer">
+            无聊 😑
+        </div>
+    </div>
+    <!-- 问答环节 -->
+    <div class="question banxin">
+        <h3>Q&A 问答</h3>
+        <ul id="question_answer">
+
+        </ul>
+    </div>
+    <!-- 评论部分 -->
+    <div class="comment banxin">
+        <p>
+            <span class="pjnum">评论（17）</span>
+        </p>
+        <div class="s_comment">
+            <div class="clearfix">
+                <span class="avatar fl"></span>
+                <textarea id="replyContent" class="content fl"></textarea>
+            </div>
+            <div class="clearfix">
+                <button class="fr tc send pointer public_btn">发送</button>
+            </div>
+        </div>
+        <div class="list">
+            <ul id="comment_list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    
+            <script src="js/jquery.min.1.8.4.js?v=1.7"></script>
+        <script src="js/common.js?v=1.3"></script>
+		<script src="js/editormd/lib/marked.min.js"></script>
+        <script src="js/editormd/lib/prettify.min.js"></script>
+        <script src="js/editormd/lib/raphael.min.js"></script>
+        <script src="js/editormd/lib/underscore.min.js"></script>
+        <script src="js/editormd/lib/sequence-diagram.min.js"></script>
+        <script src="js/editormd/lib/flowchart.min.js"></script>
+        <script src="js/editormd/lib/jquery.flowchart.min.js"></script>
+        <script src="js/editormd/editormd.min.js"></script>        
+        <script src="js/article_detail.js?v=1.1"></script>
+        
+        
+</body>
+
+</html>

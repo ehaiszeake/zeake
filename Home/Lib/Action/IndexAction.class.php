@@ -41,7 +41,7 @@ class IndexAction extends Action {
         $this->assign("data",$article);
         
         
-        $this->display("article_detail");
+        $this->display("article_detail_v2");
     }
     
     

@@ -95,11 +95,11 @@
 						var img=(data.data.img==null || data.data.img=="")  ? imgRoute+"images/placeholder_img_L04.jpg" : 
 							(data.data.img.substr(0,7).toLowerCase()=="http://" || data.data.img.substr(0,8).toLowerCase()=="https://") ? data.data.img : golbalIp+data.data.img;
 						
-					    $(".cover_unit").find('img').attr('src',img);
-					    $(".nickName_unit").html(data.data.author).attr("data-author_id",data.data.author_id);
-                        var updated = variable_obj.formatDate(data.data.created*1000);
-                        $(".pulic_time").html(updated);
-                        $(".article_tip_unit").html("文章仅代表作者："+data.data.author+" 个人观点，与本站立场无关");
+//					    $(".cover_unit").find('img').attr('src',img);
+//					    $(".nickName_unit").html(data.data.author).attr("data-author_id",data.data.author_id);
+//                        var updated = variable_obj.formatDate(data.data.created*1000);
+//                        $(".pulic_time").html(updated);
+//                        $(".article_tip_unit").html("文章仅代表作者："+data.data.author+" 个人观点，与本站立场无关");
                         buy_count = data.data.buy_count;
                         nobuy_count = data.data.nobuy_count;
 						total_count=buy_count+nobuy_count;
@@ -540,19 +540,21 @@
 				
 				
 				//发表评论悬浮
+				/**
 				$(window).on("scroll",units.throttle(function(){
 					var eleTop=$(".comment_unit")[0].getBoundingClientRect().top,t=$(this).scrollTop();
 						eleTop<-100 ? $(".edit_comment").addClass("f_pf") : $(".edit_comment").removeClass("f_pf");
 						if(t>200){$(".float_unit").removeClass("f_dn");}else {$(".float_unit").addClass("f_dn");}
 				},100,600));
-				
+				**/
 				
 				//回到底部
+				/**
 				$(".toTop").on("touchstart click",function(e){
 					if(e.type=="touchstart"){e.preventDefault();}
 					$("html,body").animate({"scrollTop":0})
 				});
-				
+				**/
 				
 				//评论列表
 				root.page=0;
