@@ -1,6 +1,6 @@
 <?php
 
-include_once '/Util/MyCurl.php';
+include_once dirname ( __FILE__ ).'/Util/MyCurl.php';
 
 
 class IndexAction extends Action {
