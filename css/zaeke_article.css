@@ -485,3 +485,14 @@
             border: none;
             margin-top: 24px;
         }
+
+.detail.content{
+	font-family: PingFangSC-Regular;
+    font-size: 18px;
+    color: #464646;
+    letter-spacing: 0.8px;
+    line-height: 36px;
+}
+
+.detail.content img{max-width:100%;}
+

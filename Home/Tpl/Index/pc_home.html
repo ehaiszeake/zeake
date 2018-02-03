@@ -69,19 +69,21 @@
 
 				var url,ary={},paramLen=arguments.length;
 				console.log(paramLen);
-				if(index==0){//收藏
+				
+				if(index==0) { //收藏
 					url=golbalIp+"/user/amass_list";
 					ary={"account":JSON.parse($.cookie('bz')).account,"token":JSON.parse($.cookie('bz')).token,"skipnum":page,"length":firstLength};
-				}else if(index==1){//评论
+				}else if(index==1) { //评论
 					url=golbalIp+"/user/comment_list";
 					ary={"account":JSON.parse($.cookie('bz')).account,"token":JSON.parse($.cookie('bz')).token,"skipnum":page,"length":secondLength};
-				}else if(index==2){//点赞
+				}else if(index==2) { //点赞
 					url=golbalIp+"/user/thumb_list";
 					ary={"account":JSON.parse($.cookie('bz')).account,"token":JSON.parse($.cookie('bz')).token,"skipnum":page,"length":thirdLength};
-				}else if(index==3){//文章
+				}else if(index==3) { //文章
 					url=golbalIp+"/user/article_list";
 					ary={"account":JSON.parse($.cookie('bz')).account,"token":JSON.parse($.cookie('bz')).token,"skipnum":page,"length":fourthLength};
 				}
+				
 				if(!loadLock){
 					loadLock=true;
 					$.ajax({
@@ -92,9 +94,9 @@
 						beforeSend:function(){},
 						success:function(data){
 							
-							if(data.code==1){//数据请求成功
+							if(data.code==1) { //数据请求成功
 								var html="";
-									if(index==0){//收藏列表
+									if(index==0) { //收藏列表
 										$.each(data.data.list,function(i,item){
 											if(item.type==1){
 												var img=(item.img==null || item.img=="")  ? imgRoute+"images/placeholder_img_L04.jpg" : golbalIp+item.img;
@@ -146,7 +148,7 @@
 										}else {
 											$(".pc_fun_list").attr("data-type",0).append(html);
 										}
-									}else if(index==1){//评论列表
+									}else if(index==1) { //评论列表
 										$.each(data.data.list,function(i,item){
 											html+='<li>';
 											html+='<div class="pc_head_name_time_opera f_cf">';
@@ -179,7 +181,7 @@
 										}else {
 											$(".pc_fun_list").attr("data-type",1).append(html);
 										}
-									}else if(index==2){//点赞列表
+									}else if(index==2) { //点赞列表
 										$.each(data.data.list,function(i,item){
 											if(item.type==1){
 												var img=(item.img==null || item.img=="")  ? imgRoute+"images/placeholder_img_L04.jpg" : golbalIp+item.img;

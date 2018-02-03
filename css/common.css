@@ -1443,7 +1443,7 @@ img.placeholderImg2 {background:url(../images/placeholderImg2.png) no-repeat 50%
 
 .detail{width:960px;margin:0 auto;}        
  .share {
-    padding: 48px 130px;
+    padding: 48px 130px 68px;
 }
 .share span{display:inline-block;}
 
@@ -1473,6 +1473,7 @@ img.placeholderImg2 {background:url(../images/placeholderImg2.png) no-repeat 50%
     border: 1px solid #263238;
     color: #263238;
     line-height: 38px;
+ 	font-size : 18px;
 }
 
  .share .cool {
@@ -1482,6 +1483,52 @@ img.placeholderImg2 {background:url(../images/placeholderImg2.png) no-repeat 50%
     color: #FF2B2B;
     line-height: 38px;
     margin-right: 32px;
+ 	font-size : 18px;
 }
 /* 想要or无聊 */
+.atitude {
+            padding: 48px 117px;
+            color: #fff;
+            background-color: #fff;
+            margin: 16px auto;
+        }
 
+        .atitude .want {
+            width: 120px;
+            height: 40px;
+            line-height: 40px;
+            background: #10CC70;
+        }
+
+        .atitude .boring {
+            width: 120px;
+            height: 40px;
+            line-height: 40px;
+            background: #263238;
+        }
+
+        .atitude .proportion {
+            width: 520px;
+            height: 40px;
+            margin: 0px 32px;
+            font-family: PingFangSC-Regular;
+            font-size: 14px;
+            color: #F6F6F6;
+            line-height: 40px;
+        }
+
+        .atitude .proportion .left {
+            width: 250px;
+            background-color: #10CC70;
+            padding-left: 16px;
+        }
+
+        .atitude .proportion .right {
+            width: 270px;
+            background-color: #263238;
+            padding-right: 16px;
+        }
+.tc {
+    text-align: center;
+}
+.dn{display:none;}
