@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>视频详情详情</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <meta name="format-detection" content="telephone=no, email=no" />
+        <meta http-equiv="Cache-Control" content="no-transform" />
+        <meta http-equiv="Cache-Control" content="no-siteapp" /> 
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+        <link rel="shortcut icon" href="./images/favicon.ico?v=1.0" type="image/x-icon" />
+        <link rel="stylesheet" href="css/common.css?v=1.4" />
+	<!--<script src="js/ckplayer/ckplayer.js"></script>-->
+    </head>
+    
+    
+    <body>
+ 		
+        <!--头部 start-->
+    	<div class="header f_pr">
+        	<div class="header_inner f_cf f_pr">
+            	<h1 class="logo f_fl"><a href="index.html" class="f_full f_db f_two">知客网</a></h1>
+                <div class="center_title f_tac f_fl"></div>
+                <div class="nav_search f_fl">
+                    <div class="search_box f_fr">
+                    	<form action="search_result.html" class="f_full f_pr"><label class="for_text" for="keyword">想要找点什么</label><input type="text" class="keyword placeholder f_fl" id="keyword"/><input type="button" class="search_btn f_fr" value="搜索"/></form>
+                    </div>
+                	<ul class="f_fl"></ul>
+                </div>
+                <div class="l_r f_pa">
+                	<div class="no_login "><a href="javascript:;" class="js_login_pop f_dib">登录</a><i class="f_dib"></i><a href="javascript:;" class="js_register_pop  f_dib">注册</a></div>
+                    <div class="logined f_dn">
+                    	<div class="f_dib f_vat name_man_head">
+                    		<div class="man_head f_pr f_dib"><img src="images/weixin.png" class="f_vart"/><div class="head_mask f_pa"></div><div class="message_info f_pa"></div></div>
+                        	<span class="f_dib f_toe name f_vat">xxxxxxxx</span>
+                            <span class="f_dn f_toe name f_vat my_home_page_a" data-type="pc_home.html">我的主页</span>
+                            <div class="pc_dropDown f_pa f_dn">
+                            	<div class="pc_dropDown_inner">
+                                    <a href="pc_home.html">个人中心</a>
+                                    <a href="pc_message.html">消息通知<i class="f_dib message_num">76</i></a>
+                                    <a href="pc_public.html">发表文章</a>
+                                    <a href="pc_my_hall.html">我的名人堂</a>
+                                    <a href="pc_personal_info.html">账户设置</a>
+                                    <a href="javascript:;" class="js_logout">退出</a>
+                                </div>
+                            </div>
+                        </div>
+                    	<a href="javascript:;" class="js_logout f_dib logout">退出</a>
+                    </div>
+                </div>
+                <div class="mobile_nav f_pa f_dn"><div class="mobile_ico f_pa"></div><div class="mobile_mask f_pa"></div></div>
+            </div>
+        </div>
+        <!--头部   end-->
+        
+        
+        <!--主内容  start-->
+        <div class="main_content f_pr " data-type="video_detail_page">
+        	<div class="main_contnet_inner f_pr ">
+                
+                <div class="video_detail f_pr">
+ 					
+                    
+                    <div class="video_play_box"></div>
+                    
+                    <div class="video_info f_cf"></div>
+                    
+                    
+                    <!--评论模块  start-->
+                    <div class="comment_unit">
+                        <!--输入评论 start-->
+                        <div class="edit_comment">
+                        	<div class="edit_comment_inner f_cf">
+                                <div class="head_eidtInput f_cf">
+                                    <div class="head_unit f_ofh f_fl"><img src="images/head_sculpture.png" width="100%" class="f_vat"/></div>
+                                    <div class="editInput_box f_pr"><textarea id="replyContent" class="f_db" placeholder="|  我有话要说"></textarea></div>
+                                </div>
+                                <div class="public_comment_box">
+                                    <div class="public_btn f_dib f_vat">发送</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--输入评论   end-->
+                        
+                        <!--评论列表 start-->
+                        <div class="comment_list_box">
+                        
+                            <dl class="comment_list"><dt>评论</dt></dl>
+                            <div class="load_more_comment">查看更多评论（0）</div>
+                        	<!--没有更多评论啦-->
+                        
+                        </div>
+                        <!--评论列表   end-->
+                        
+                    </div>
+                    <!--评论模块  start-->
+                    
+                    
+                </div>
+                         
+            
+            </div>
+        </div>
+        <!--主内容    end-->
+        
+        <!--底部 start-->
+        <div class="footer f_pr">
+        	<div class="footer_inner f_pr f_cf">
+            	<div class="link_qrcode f_cf">
+                    <dl class="f_fl">
+                        <dt>ZAEKE</dt>
+                        <dd class="f_toe"><a href="">加入我们</a></dd>
+                        <dd class="f_toe"><a href="">商务合作</a></dd>
+                        <dd class="f_toe"><a href="">用户协议</a></dd>
+                    </dl>
+                    <dl class="f_fl">
+                        <dt>合作伙伴</dt>
+                        <dd class="f_toe"><a href="">速致</a></dd>
+                        <dd class="f_toe"><a href="">知客数码</a></dd>
+                    </dl>
+                    <dl class="f_fl">
+                        <dt>试用介绍</dt>
+                        <dd class="f_toe"><a href="">试用方式</a></dd>
+                        <dd class="f_toe"><a href="">试用流程</a></dd>
+                        <dd class="f_toe"><a href="">试用须知</a></dd>
+                    </dl>
+                    <dl class="f_fl">
+                        <dt>友情链接</dt>
+                        <dd class="f_toe"><a href="">充电头网</a></dd>
+                        <dd class="f_toe"><a href="">TCL 手机铁粉俱乐部</a></dd>
+                        <dd class="f_toe"><a href="">站长之家</a></dd>
+                        <dd class="f_toe"><a href="">机智猫</a></dd>
+                    </dl>
+                    <ul class="f_fr">
+                        <li><p>知客、让数码更懂你</p></li>
+                        <li><img src="images/qrcode.png" class="f_vat"/></li>
+                    </ul>
+                </div>
+                <div class="web_info f_cf">
+                	<div class="big_logo_us_info f_fl">
+                        <div class="big_logo f_fl"></div>
+                        <div class="about_us_info f_fr">
+                            <p>关于我们</p>
+                            <div class="des">知客数码致力于打造数码玩家一站式完美体验的平台。我们希望能给每一位热爱数码的玩家，提供一个展示自己的平台。</div>
+                            <div class="email_tel">
+                                <span class="f_dib f_vat mobile">13049894061</span>
+                                <span class="f_dib f_vat email">chenwei@zaeke.com</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="other_platform f_fr">
+                    	<p>其他平台账号</p>
+                        <div class="other_platform_list">
+                    		<div class="l_qq f_dib"></div><div class="l_weixin f_dib"></div><div class="l_weibo f_dib"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--底部   end-->
+        <script src="js/jquery.min.1.8.3.js?v=1.7"></script>
+		<script src="http://player.youku.com/jsapi"></script>
+        <script>
+        	$(function(){
+				
+        	    var id = units.getUrlParam('id');
+        	    var buy_count = 0;
+        	    var nobuy_count = 0;
+                var share = 0;
+                var praise = 0;
+				var imgRoute="./";
+				
+				$.ajax({
+					url:golbalIp + "/main/article",
+					type:"get",
+					dataType:"json",
+					data:{"id":id},
+					beforeSend:function(){},
+					success:function(data){
+					    console.log(data);
+						if(data.code==1){
+
+							$(".public_btn").attr("data-article_id",data.data.id);
+							
+/*							$(".video_play_box").html('<div id="youkuplayer" style="width:100%;height:100%"></div>');
+							var ary=data.data.video_url.split("&"),vid_vkey=[];
+								$.each(ary,function(i,item){
+									console.log(item);
+									item.indexOf('vid=') >=0 ? vid_vkey.push(item.substr(4)) : "";
+									item.indexOf('vkey=') >=0 ? vid_vkey.push(item.substr(5)) : "";
+								});
+     						var player = new YKU.Player('youkuplayer',{styleid:'0',vid:vid_vkey[0],client_id:vid_vkey[1],newPlayer: true});*/
+							
+							
+							$(".video_play_box").html('<video width="100%" controls webkit-playsinline playsinline id="video" preload="auto" class="f_vhc f_noEvent"></video><div class="playVideo f_vhc f_two f_dn">播放</div>');
+							var video=$("#video").attr("src",data.data.video_url)[0];
+							
+							var img=( data.data.img==null ||  data.data.img=="")  ? imgRoute+"images/head_sculpture.png" : golbalIp+ data.data.img;
+								$(".video_info").html('<div class="head_name f_fl"><div class="head_unit f_ofh"><img src="'+img+'" width="100%" class="f_vat"/></div><div class="name f_toe jump_personal_info" data-author_id="'+data.data.author_id+'">'+data.data.author+'</div></div><div class="f_pr title_des"><div class="title f_wwb">'+data.data.title+'</div><div class="des f_wwb">'+data.data.abstract+'</div></div>');
+							
+						}else {
+							
+						}
+					},error:function(){
+						
+					}
+				});
+
+
+				//添加评论
+				root.addCommentLock=false;
+				function add_comment(val,article_id){
+					if($.cookie('bz')===undefined || $.trim($.cookie('bz'))==="" || ((new Date().getTime()/1000-JSON.parse($.cookie('bz')).updated) > 3600)){
+						alert("您未登录或者登录超时，请重新登录后操作！");
+						return false;	
+					}
+					if(!root.addCommentLock){
+						root.addCommentLock=!0;
+						
+						//获取个人资料
+						$.ajax({
+							url:golbalIp+"/user/info",
+							type:"get",
+							dataType:"json",
+							data:{"account":JSON.parse($.cookie('bz')).account,"token":JSON.parse($.cookie('bz')).token},
+							beforeSend:function(){},
+							success:function(info){
+								if(info.code==1){
+									
+									//请求成功
+									var img=( info.data.img==null ||  info.data.img=="")  ? imgRoute+"images/head_sculpture.png" : golbalIp+ info.data.img;
+										$.ajax({
+											url:golbalIp+"/user/create_comment",
+											type:"post",
+											dataType:"json",
+											data:{"content":val,"id":article_id,"account":JSON.parse($.cookie('bz')).account,"token":JSON.parse($.cookie('bz')).token},
+											beforeSend:function(){},
+											success:function(data){
+												if(data.code==1){
+														var html='<dd>';
+															html+='<div class="head_name_time_replay f_cf">';
+															html+='<div class="head_unit f_ofh f_fl"><img src="'+img+'" width="100%" class="f_vat"/></div>';
+															html+='<div class="name_time f_fl"><div class="name jump_personal_info" data-author_id="'+info.data.id+'">'+info.data.nickname+'</div><div class="time">刚刚</div></div>';
+															html+='<div class="reply_btn f_fr " data-reply_id="'+data.data.id+'" data-article_id="'+article_id+'">回复</div>';
+															html+='</div>';
+															html+='<div class="edit_content">'+val+'</div>';
+															html+='</dd>';
+															$(".comment_list").find("dt").append(html);
+															$("#replyContent").val("");
+												}else {
+													alert(data.message);	
+												}
+												root.addCommentLock=!1;
+											},error:function(){
+												alert("网络异常，请稍后重试！");
+												root.addCommentLock=!1;
+											}
+										});
+										
+								}else if(info.code==3){//未登录
+									alert("登录超时，请重新登录！");	
+								}else {
+									alert(data.message);
+								}
+								root.addCommentLock=!1;
+							},
+							error:function(){
+								alert("网络错误，请稍后再试！");
+								root.addCommentLock=!1;
+							}		
+						})	
+
+					}
+				}	
+					
+				
+
+
+				//回复评论
+				root.replyLock=false;
+				function reply_comment_list(p,ipt,val,reply_id,article_id){
+					if($.cookie('bz')===undefined || $.trim($.cookie('bz'))==="" || ((new Date().getTime()/1000-JSON.parse($.cookie('bz')).updated) > 3600)){
+						alert("您未登录或者登录超时，请重新登录后操作！");
+						return false;	
+					}
+					if(!root.replyLock){
+						root.replyLock=!0;
+						
+						//获取个人资料
+						$.ajax({
+							url:golbalIp+"/user/info",
+							type:"get",
+							dataType:"json",
+							data:{"account":JSON.parse($.cookie('bz')).account,"token":JSON.parse($.cookie('bz')).token},
+							beforeSend:function(){},
+							success:function(info){
+								if(info.code==1){
+									
+									//请求成功
+									var img=( info.data.img==null ||  info.data.img=="")  ? imgRoute+"images/head_sculpture.png" : golbalIp+ info.data.img;
+										$.ajax({
+											url:golbalIp+"/user/reply_comment",
+											type:"post",
+											dataType:"json",
+											data:{"content":val,"reply_id":reply_id,"article_id":article_id,"account":JSON.parse($.cookie('bz')).account,"token":JSON.parse($.cookie('bz')).token},
+											beforeSend:function(){},
+											success:function(data){
+												if(data.code==1){
+														var html='<li>';
+															html+='<div class="head_name_time_replay f_cf">';
+															html+='<div class="head_unit f_ofh f_fl"><img src="'+img+'" width="100%" class="f_vat"/></div>';
+															html+='<div class="name_time f_fl"><div class="name jump_personal_info" data-author_id="'+info.data.id+'">'+info.data.nickname+'</div><div class="time">刚刚</div></div>';
+															html+='</div>';
+															html+='<div class="edit_content">'+val+'</div>';
+															html+='</li>';
+															ipt.val("");
+															p.parent(".replay_input").next(".reply_list").prepend(html).end().addClass("f_dn");
+												}else {
+													alert(data.message);	
+												}
+												root.replyLock=!1;
+											},error:function(){
+												alert("网络异常，请稍后重试！");
+												root.replyLock=!1;
+											}
+										});
+										
+								}else if(info.code==3){//未登录
+									alert("登录超时，请重新登录！");	
+								}else {
+									alert(data.message);
+								}
+								root.replyLock=!1;
+							},
+							error:function(){
+								alert("网络错误，请稍后再试！");
+								root.replyLock=!1;
+							}		
+						})	
+
+					}
+				}	
+				
+				
+				
+				
+				//发送评论
+				$(".comment_unit").on("click",function(e){
+					var target=$(e.target);
+						if(target.hasClass("public_btn")){
+							//发布评论
+							var comment=$("#replyContent").val();
+								if($.trim(comment)!==""){add_comment(comment,target.attr("data-article_id"));}
+						}else if(target.hasClass("reply_btn")){
+							var ipt_box=target.parents("dd").find(".replay_input");
+								ipt_box.toggleClass("f_dn");
+						}else if(target.hasClass("replay_public_btn")){
+							var ipt=target.prev(".editInput_box").find("textarea");
+							//回复评论
+							if($.trim(ipt.val())!==""){reply_comment_list(target,ipt,ipt.val(),target.attr("data-reply_id"),target.attr("data-article_id"))}
+						}
+				});
+				
+				
+				
+				//评论列表
+				root.page=0;
+				root.dataNum=10;
+				root.comment_listLock=!1;
+				function comment_list(){
+					var paramLen=arguments.length;
+					if(!root.comment_listLock){
+						root.comment_listLock=!0;
+						$.ajax({
+							url:golbalIp+"/main/article_comment",
+							type:"get",
+							dataType:"json",
+							data:{"skipnum":root.page,"id":id,"length":root.dataNum/*,"account":JSON.parse($.cookie('bz')).account,"token":JSON.parse($.cookie('bz')).token*/},
+							beforeSend:function(){},
+							success:function(data){
+								console.log(data);
+								//请求成功
+								if(data.code==1){
+									//有数据
+									if(data.data.list.length>0){
+										var str="";
+											$.each(data.data.list,function(i,item){
+												str+='<dd>';
+												str+='	<div class="head_name_time_replay f_cf">';
+												str+='		<div class="head_unit f_ofh f_fl"><img src="images/head_sculpture.png" width="100%" class="f_vat"/></div>';
+												str+='		<div class="name_time f_fl"><div class="name jump_personal_info" data-author_id="'+item.author_id+'">'+item.author+'</div><div class="time">'+units.getDateDiff(item.created*1000)+'</div></div>';
+												str+='		<div class="reply_btn f_fr " data-reply_id="'+item.id+'" data-article_id="'+item.article_id+'">回复</div>';
+												str+='	</div>';
+												str+='	<div class="edit_content">'+item.content+'</div>';
+												str+='	<div class="replay_input f_cf f_dn">';
+												str+='		<div class="editInput_box f_pr"><textarea class="reply_comment f_db"></textarea></div>';
+												str+='		<div class="replay_public_btn" data-reply_id="'+item.id+'" data-article_id="'+item.article_id+'">发送</div>';
+												str+='	</div>';
+												str+='	<ul class="reply_list">';
+													if(item.reply_comment!=undefined){
+														$.each(item.reply_comment,function(a,list){
+															str+='<li>';
+															str+='<div class="head_name_time_replay f_cf">';
+															str+='<div class="head_unit f_ofh f_fl"><img src="images/head_sculpture.png" width="100%" class="f_vat"/></div>';
+															str+='<div class="name_time f_fl"><div class="name jump_personal_info" data-author_id="'+item.author_id+'">'+list.author+'</div><div class="time">'+units.getDateDiff(list.created*1000)+'</div></div>';
+															str+='</div>';
+															str+='<div class="edit_content">'+list.content+'</div>';
+															str+='</li>';
+														});
+													}
+												str+='</ul>';
+												str+='</dd>';	
+											});
+											$(".comment_list").append(str);
+									}
+									//请求页码递增
+										if(data.data.list.length<root.dataNum || data.data.total==root.dataNum){
+											root.page=root.page;
+											$(".load_more_comment").addClass("f_dn")	
+										}else {
+											root.page+=root.dataNum;
+											var remain=data.data.total>=root.page ? data.data.total-root.page : 0;
+											$(".load_more_comment").html("查看更多评论（"+remain+"）").removeClass("f_dn");
+											if(remain==0){$(".load_more_comment").addClass("f_dn");}
+										}
+
+									
+									//判断是否有评论
+									data.data.total==0 ? $(".comment_list").addClass("no_data") : $(".comment_list").removeClass("no_data");
+									
+								}else if(data.code==3){
+									alert("您未登录或者登录超时，请刷新页面后重新登录！");	
+								}else {
+									alert(data.message);	
+								}
+								root.comment_listLock=!1;
+							},error:function(){
+								alert("网络异常，请稍后重试！");
+								root.comment_listLock=!1;
+							}
+						});
+					}
+				}
+				//进入页面请求评论列表
+				comment_list();
+				
+				//加载更多评论
+				$(".load_more_comment").on("click",function(){comment_list();});
+				
+				
+				
+
+				
+			})
+        </script>
+	       
+    </body>
+    
+</html>
