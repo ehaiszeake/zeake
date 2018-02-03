@@ -1,16 +1,17 @@
 <?php
 
-include_once dirname ( __FILE__ ).'/Util/MyCurl.php';
-
+// include_once dirname ( __FILE__ ).'/Util/MyCurl.php';
+include_once './Util/MyCurl.php';
+// require_once './Util/MyCurl.php';
 
 class IndexAction extends Action {
     
     private $website = "http://118.190.207.80";
-    
+//     private $myCur = new MyCurl();
     
     function construct(){
         $this->assign("website",$this->website);
-        
+//         $column_nav = $this->myCur->get($this->website."/main/column_nav");
         $column_nav = MyCurl::get($this->website."/main/column_nav");//die($column_nav);
         $this->assign("column_nav",$column_nav["data"]);
         
