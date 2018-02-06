@@ -44,9 +44,9 @@
 										<notempty name="item['article']">
 											
 											<div class="article_cover f_pr">
-													<div class="article_cover_box"><a href="fame_home_page.php?id='+item.id+'"><img src="'+img2+'" class="f_vat placeholderImg2" width="100%"/></a></div>
+													<div class="article_cover_box"><a href="fame_home_page.php?id={$item.id}"><img src="'+img2+'" class="f_vat placeholderImg2" width="100%"/></a></div>
 												</div>
-												<div class="article_title f_toe"><a href="fame_home_page.php?id='+item.id+'">'+item.article.title+'</a></div>
+												<div class="article_title f_toe"><a href="fame_home_page.php?id={$item.id}">'+item.article.title+'</a></div>
 										        <div class="article_intro">{$item.article.abstract}</div>
 												<div class="article_date_view_message f_cf">
 												<notempty name="item['created']">
@@ -64,7 +64,7 @@
 							
 									</div>
 									<notempty name="item['article']">
-									<div class="fame_all_article f_tar"><a href="fame_home_page.php?id='+item.id+'">全部文章</a></div>
+									<div class="fame_all_article f_tar"><a href="fame_home_page.php?id={$item.id}">全部文章</a></div>
 									</notempty>
 								</li>
 							</volist>

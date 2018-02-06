@@ -20,7 +20,7 @@
 				
 				
 					<empty name="item['skip_url']">
-				    	<div class="article_title f_toe"><a href="article_detail.php?id='+item.id+'">{$item.title}</a></div>
+				    	<div class="article_title f_toe"><a href="article_detail.php?id={$item.id}">{$item.title}</a></div>
 				    <else />
 				    	<div class="article_title f_toe"><a href="'+item.skip_url+'">{$item.title}</a></div>
 				    </empty>
@@ -40,7 +40,7 @@
 		<li class="l_news_flash">
 		 
 		 <empty name="item['skip_url']">
-		 	<div class="article_title f_toe"><a href="article_detail.php?id='+item.id+'">${item.title}</a></div>
+		 	<div class="article_title f_toe"><a href="article_detail.php?id={$item.id}">${item.title}</a></div>
 		 <else />
 		 	<div class="article_title f_toe"><a href="'+item.skip_url+'">${item.title}</a></div>
 		 </empty>
