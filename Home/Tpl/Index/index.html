@@ -40,13 +40,13 @@
 							<volist name="index[data][top_article]" id="item">
 								
 								<if condition="item.type eq 2">
-									<assign name="link">
-										video_detail.php?id=${item.id}
-									</assign>
+									<defined  name="link">
+										video_detail.php?id={$item.id}
+									</defined>
 								<else/>
-									<assign name="link">
-										article_detail.php?id=${item.id}
-									</assign>
+									<defined name="link">
+										article_detail.php?id={$item.id}
+									</defined>
 								</if>
 								
 								<li class="f_fl" style="'+sy+'">
@@ -55,7 +55,7 @@
 								<img src="{$item.img|webImg=$website}" class="placeholderImg2 f_vat"/>
 								</a>
 								</div>
-								<p><a href="${link}">${item.title}</a></p> <div class="view_num">${item.pv}</div> </li>
+								<p><a href="${link}">{$item.title}</a></p> <div class="view_num">{$item.pv}</div> </li>
 							</volist>        
                         </ul>
                         

@@ -6,7 +6,7 @@ include_once './Util/MyCurl.php';
 
 class IndexAction extends Action {
     
-    private $website = "http://118.190.207.80";
+    private $website = "http://testback.zaeke.com";//118.190.207.80
 //     private $myCur = new MyCurl();
     
     function construct(){

@@ -136,7 +136,7 @@ var units={
 	}
 	
 
-var golbalIp="http://118.190.207.80",//全局链接
+var golbalIp="http://testback.zaeke.com",//全局链接     118.190.207.80
 	root={"account":"","token":"","updated":0};//获取登录的账号和token值
 	if($.cookie('bz')!=undefined){var obj=JSON.parse($.cookie('bz'));root={"account":obj.account,"token":obj.token,"updated":obj.updated};}
 
