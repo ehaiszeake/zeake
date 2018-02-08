@@ -1032,6 +1032,10 @@ img.placeholderImg2 {background:url(../images/placeholderImg2.png) no-repeat 50%
     background-position-y: 12px;
 }
 
+.a_author .avatar{
+	padding-top: 3px;
+}
+
 .wbg{width:1060px;margin: 0 auto;background: #fff;}
 
 .article_detail_main p.p_style {
@@ -1142,7 +1146,32 @@ img.placeholderImg2 {background:url(../images/placeholderImg2.png) no-repeat 50%
 .title{
 		font-size: 32px;color: #263238;line-height: 68px;
 	}
-	
+
+.detail .tabs {
+    margin-top: 32px;
+}
+.detail .tabs .green_check {
+            background: #10CC70!important;
+            color: #FFFFFF!important;
+            border: none!important;
+        }
+
+.detail .tabs span {
+    padding: 4px 12px;
+    margin-right: 8px;
+    font-family: PingFangSC-Regular;
+    font-size: 12px;
+    border: 1px solid #A6A6A6;
+    background-color: #fff;
+    color: #a6a6a6;
+    line-height: 16px;
+}
+
+.pointer {
+            cursor: pointer;
+        }
+        
+
 @media (max-width: 768px) {
 	/* 手机端 */
 

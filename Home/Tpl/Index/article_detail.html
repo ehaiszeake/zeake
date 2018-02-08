@@ -62,9 +62,19 @@
                     <div class="article_tip_unit"></div>
                     
                     	<div class="detail">
+                    			<div class="tabs w800 clearfix">
+					                <volist name="data.data.tags" id="tags">
+					                <span class="fl green_check pointer">{$tags.name}</span>
+					                </volist>
+					                <volist name="data.data.user_tags" id="tags">
+					                <span class="fl pointer">{$tags.name}</span>
+					                </volist>
+					            </div>
+                    	</div>
+                    	<div class="detail">
                     	<p class="tc shenming">
-                <i class="">文章仅代表作者：{$data.data.author} 个人观点，与本站立场无关</i>
-            </p>
+			                <i class="">文章仅代表作者：{$data.data.author} 个人观点，与本站立场无关</i>
+			            </p>
                     	</div>
                   <div class="detail">
                     
