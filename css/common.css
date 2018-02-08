@@ -1009,6 +1009,7 @@ img.placeholderImg2 {background:url(../images/placeholderImg2.png) no-repeat 50%
     color: #464646;
     letter-spacing: 0.8px;
        font-size: 16px;
+       font-family: PingFangSC-Regular;
 }  
 
 .a_author img{
