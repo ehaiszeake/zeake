@@ -51,6 +51,8 @@
         
         <script src="js/jquery.min.1.8.4.js?v=1.7"></script>
         <script>
+        var id = {$id};
+        var column = {$column};
         	$(function(){
 				
 				//图片路径
@@ -58,11 +60,12 @@
 					pagenum=5,
 					skipnum=0;
 					//不同专栏数据请求
+					
 					$.ajax({
 						url:golbalIp+"/main/column_detail",
 						type:"get",
 						dataType:"json",
-						data:{"skipnum":0,"length":pagenum,"id":units.getUrlParam("id")!=null ? units.getUrlParam("id") : ""},
+						data:{"skipnum":0,"length":pagenum,"id":id},
 						beforeSend:function(){},
 						success:function(data){
 							//请求成功
@@ -96,7 +99,7 @@
 								url:golbalIp+"/main/column_detail",
 								type:"get",
 								dataType:"json",
-								data:{"skipnum":skipnum,"length":pagenum,"id":units.getUrlParam("id")!=null ? units.getUrlParam("id") : ""},
+								data:{"skipnum":skipnum,"length":pagenum,"id":id},
 								beforeSend:function(){},
 								success:function(data){
 									//请求成功
@@ -122,7 +125,7 @@
 															 if(item.skip_url){
 															 	str1+='	<div class="article_title f_toe"><a href="'+item.skip_url+'">'+item.title+'</a></div>';
 															 }else{
-																str1+='	<div class="article_title f_toe"><a href="article_detail.php?id='+item.id+'">'+item.title+'</a></div>'; 
+																str1+='	<div class="article_title f_toe"><a href="article_detail_'+item.id+'.php">'+item.title+'</a></div>'; 
 															 }
 															 str1+='	<div class="article_date_view_message f_cf">';
 															 str1+='		<div class="date f_fl">'+variable_obj.formatDate(item.created*1000)+'</div>';
@@ -136,7 +139,7 @@
 															 if(item.skip_url){
 																str1+='		<div class="article_cover_box"><a href="'+item.skip_url+'" class="f_db"><img src="'+img+'" class="f_vat placeholderImg2" width="100%"/></a></div>';
 															 }else {
-																str1+='		<div class="article_cover_box"><a href="article_detail.php?id='+item.id+'" class="f_db"><img src="'+img+'" class="f_vat placeholderImg2" width="100%"/></a></div>';
+																str1+='		<div class="article_cover_box"><a href="article_detail_'+item.id+'.php" class="f_db"><img src="'+img+'" class="f_vat placeholderImg2" width="100%"/></a></div>';
 															 }
 															str1+='	</div>';
 															str1+='	<div class="article_author f_cf f_pr">';
@@ -146,7 +149,7 @@
 															if(item.skip_url){
 																str1+='	<div class="article_title f_toe"><a href="'+item.skip_url+'">'+item.title+'</a></div>';
 															}else {
-																str1+='	<div class="article_title f_toe"><a href="article_detail.php?id='+item.id+'">'+item.title+'</a></div>';	
+																str1+='	<div class="article_title f_toe"><a href="article_detail_'+item.id+'.php">'+item.title+'</a></div>';	
 															}
 															str1+='	<div class="article_intro">'+item.abstract+'</div>';
 															str1+='	<div class="article_date_view_message f_cf">';

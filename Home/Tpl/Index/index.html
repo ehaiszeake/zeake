@@ -45,7 +45,7 @@
 									</defined>
 								<else/>
 									<defined name="link">
-										article_detail.php?id={$item.id}
+										article_detail_{$item.id}.php
 									</defined>
 								</if>
 								
@@ -178,7 +178,7 @@
 													 if(item.skip_url){
 													 	str4+='	<div class="article_title f_toe"><a href="'+item.skip_url+'">'+item.title+'</a></div>';
 													 }else {
-														str4+='	<div class="article_title f_toe"><a href="article_detail.php?id='+item.id+'">'+item.title+'</a></div>'; 
+														str4+='	<div class="article_title f_toe"><a href="article_detail_'+item.id+'.php">'+item.title+'</a></div>'; 
 													 }
 													 str4+='	<div class="article_date_view_message f_cf">';
 													 str4+='		<div class="date f_fl">'+variable_obj.formatDate(item.created*1000)+'</div>';
@@ -193,7 +193,7 @@
 													if(item.skip_url){
 														str4+='		<div class="article_cover_box"><a href="'+item.skip_url+'" class="f_db"><img src="'+img+'" class="f_vat placeholderImg2" width="100%"/></a></div>';
 													}else {
-														str4+='		<div class="article_cover_box"><a href="article_detail.php?id='+item.id+'"" class="f_db"><img src="'+img+'" class="f_vat placeholderImg2" width="100%"/></a></div>';
+														str4+='		<div class="article_cover_box"><a href="article_detail_'+item.id+'.php"" class="f_db"><img src="'+img+'" class="f_vat placeholderImg2" width="100%"/></a></div>';
 													}
 													str4+='	</div>';
 													str4+='	<div class="article_author f_cf f_pr">';
@@ -203,7 +203,7 @@
 													if(item.skip_url){
 														str4+='	<div class="article_title f_toe"><a href="'+item.skip_url+'">'+item.title+'</a></div>';
 													}else {
-														str4+='	<div class="article_title f_toe"><a href="article_detail.php?id='+item.id+'">'+item.title+'</a></div>';
+														str4+='	<div class="article_title f_toe"><a href="article_detail_'+item.id+'.php">'+item.title+'</a></div>';
 													}
 													str4+='	<div class="article_intro">'+item.abstract+'</div>';
 													str4+='	<div class="article_date_view_message f_cf">';

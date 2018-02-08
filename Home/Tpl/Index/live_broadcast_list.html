@@ -38,7 +38,7 @@
         
         <script src="js/jquery.min.1.8.4.js?v=1.7"></script>
         <script>
-        	$(function(){
+        	$(function() { 
 				
 				//图片路径
 				var imgRoute="./",
@@ -50,23 +50,23 @@
 						type:"get",
 						dataType:"json",
 						data:{"skipnum":0,"length":pagenum},
-						beforeSend:function(){},
-						success:function(data){
+						beforeSend:function() { },
+						success:function(data) { 
 							//请求成功
-							if(data.code==1){
+							if(data.code==1) { 
 								
 								//文章列表
-								if(data.data.list.length>0){
+								if(data.data.list.length>0) { 
 									var str="";
-										$.each(data.data.list,function(i,item){
+										$.each(data.data.list,function(i,item) { 
 											var img=(item.img==null || item.img=="")  ? imgRoute+"images/placeholder_img_L04.jpg" : golbalIp+item.img,
 												end_time=data.data.end_time*1000,
 												start_time=data.data.start_time*1000,
 												now_time=new Date().getTime(),
 												state=["未开始","直播中...","已结束"];
-												if(start_time>now_time){
+												if(start_time>now_time) { 
 													state=state[0]
-												}else if(end_time<now_time){
+												}else if(end_time<now_time) { 
 													state=state[2]	
 												}else {
 													state=state[1]
@@ -94,14 +94,14 @@
 								}
 											
 											
-								if(data.data.list.length<pagenum || data.data.total==pagenum){
+								if(data.data.list.length<pagenum || data.data.total==pagenum) { 
 									skipnum=skipnum;
 									$(".load_more_article").addClass("f_dn")	
 								}else {
 									skipnum+=pagenum;
 									var remain=data.data.total>=skipnum ? data.data.total-skipnum : 0;
 									$(".load_more_article").html("查看更多（"+remain+"）").removeClass("f_dn");
-									if(remain==0){$(".load_more_article").addClass("f_dn");}
+									if(remain==0) { $(".load_more_article").addClass("f_dn");}
 								}											
 			
 																
@@ -114,7 +114,7 @@
 								
 							}
 						},
-						error:function(){
+						error:function() { 
 							alert("网络错误，请稍后再试！");
 							load_data_lock=false;
 						}	
@@ -124,21 +124,21 @@
 				
 				//加载更多文章
 				var moreDataLock=false;
-				$(".load_more_article").on("click",function(){
-					if(!moreDataLock){
+				$(".load_more_article").on("click",function() { 
+					if(!moreDataLock) { 
 						moreDataLock=true;
 						$.ajax({
 							url:golbalIp+"/main/live_list",
 							type:"get",
 							dataType:"json",
 							data:{"skipnum":skipnum,"length":pagenum},
-							beforeSend:function(){},
-							success:function(data){
+							beforeSend:function() { },
+							success:function(data) { 
 								//请求成功
-								if(data.code==1){
-									if(data.data.list.length>0){
+								if(data.code==1) { 
+									if(data.data.list.length>0) { 
 										var str="";
-											$.each(data.data.list,function(i,item){
+											$.each(data.data.list,function(i,item) { 
 												var img=(item.img==null || item.img=="")  ? imgRoute+"images/placeholder_img_L04.jpg" : golbalIp+item.img,
 													end_time=item.end_time*1000,
 													start_time=item.start_time*1000,
@@ -168,14 +168,14 @@
 									}
 
 
-									if(data.data.list.length<pagenum || data.data.total==pagenum){
+									if(data.data.list.length<pagenum || data.data.total==pagenum) { 
 										skipnum=skipnum;
 										$(".load_more_article").addClass("f_dn")	
 									}else {
 										skipnum+=pagenum;
 										var remain=data.data.total>=skipnum ? data.data.total-skipnum : 0;
 										$(".load_more_article").html("查看更多（"+remain+"）").removeClass("f_dn");
-										if(remain==0){$(".load_more_article").addClass("f_dn");}
+										if(remain==0) { $(".load_more_article").addClass("f_dn");}
 									}											
 				
 									
@@ -186,7 +186,7 @@
 								}
 								
 							},
-							error:function(){
+							error:function() { 
 								alert("网络错误，请稍后再试！");
 								load_data_lock=false;
 							}	

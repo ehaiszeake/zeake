@@ -17,12 +17,12 @@
                             	<dd>
 	                            	<div class="img_intro_date f_cf">
 		                            	<div class="news_flash_img f_fl">
-			                            	<a href="<empty name='item.skip_url'>article_detail.php?id={$item.id}<else/>{$item.skip_url}</empty>" class="f_db" style="height:100%">
+			                            	<a href="<empty name='item.skip_url'>article_detail_{$item.id}.php<else/>{$item.skip_url}</empty>" class="f_db" style="height:100%">
 			                            		<img src="{$item.img|webImg=$website}" class="f_vat placeholderImg2"/>
 			                            	</a>
 		                            	</div> 
 		                            	<div class="intro f_fl">
-			                            	<p><a href="<empty name='item.skip_url'>article_detail.php?id={$item.id}<else/>{$item.skip_url}</empty>">{$item.title}</a></p>
+			                            	<p><a href="<empty name='item.skip_url'>article_detail_{$item.id}.php<else/>{$item.skip_url}</empty>">{$item.title}</a></p>
 			                            	<div class="news_flash_date f_tar">{$item['created']|date='Y/m/d',###}</div>
 		                            	</div> 
 	                            	</div>

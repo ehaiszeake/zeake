@@ -43,7 +43,7 @@
         <script src="js/jquery.min.1.8.4.js?v=1.7"></script>
         <script src="js/pc_common.js?v=1.2"></script>
         <script>		
-			$(function(){
+			$(function() { 
 					
 				//站内消息列表
 				var loadLock=false,
@@ -51,29 +51,29 @@
 					pageIndex=0,
 					pageNum=10,
 					url=golbalIp+"/user/message_list";
-				function loadFunData(index){
+				function loadFunData(index) { 
 					var paramLen=arguments.length;
-					if(!loadLock){
+					if(!loadLock) { 
 						loadLock=true;
 						$.ajax({
 							url:url,
 							type:"get",
 							dataType:"json",
 							data:{"account":JSON.parse($.cookie('bz')).account,"token":JSON.parse($.cookie('bz')).token,"skipnum":pageIndex,"length":pageNum},
-							beforeSend:function(){},
-							success:function(data){
-								if(data.code==1){//数据请求成功
+							beforeSend:function() { },
+							success:function(data) { 
+								if(data.code==1) { //数据请求成功
 									var html="";
-										$.each(data.data.list,function(i,item){
+										$.each(data.data.list,function(i,item) { 
 											var img="",nickName="知客数码",index=2;
 
-											if(item.where_member_info){
+											if(item.where_member_info) { 
 												img=item.where_member_info.img;
 												img=(img) ? ((img.substr(0,7).toLowerCase()=="http://" || img.substr(0,8).toLowerCase()=="https://") ? img : golbalIp+img) : imgRoute+"images/head_sculpture.png";
 											}else {
 												img=imgRoute+"images/head_sculpture.png";
 											}
-											if(item.where_member_id && item.where_member_info){
+											if(item.where_member_id && item.where_member_info) { 
 												nickName=item.where_member_info.nickname;
 												index=1;
 											}
@@ -87,10 +87,10 @@
 											html+='	<div class="pc_delete f_fr" data-id="'+item.id+'">删除</div>';
 											html+='</div>';
 											html+='<div class="pc_author_comment f_wwb"><a href="javascript:;" data-id="'+item.id+'">'+item.message+'</a></div>';
-/*											if(item.reply_comment!==undefined && item.reply_comment!==null){
+/*											if(item.reply_comment!==undefined && item.reply_comment!==null) { 
 												html+='<div class="pc_article_comment_list">';
 												html+='	<dl class="pc_article_des">';
-													$.each(item.reply_comment,function(a,subItem){
+													$.each(item.reply_comment,function(a,subItem) { 
 														html+='		<dd class="f_wwb">'+subItem.message+'</dd>';
 													})
 												html+='	</dl>';
@@ -98,7 +98,7 @@
 											}*/
 											html+='</li>';	
 										});
-										if(paramLen==0){
+										if(paramLen==0) { 
 											$(".pc_message_list").html(html);
 											$(".main_content").removeClass("loading");
 										}else {
@@ -107,18 +107,18 @@
 											
 											
 										//请求页码递增
-										if(data.data.list.length<pageNum || data.data.total==pageNum){
+										if(data.data.list.length<pageNum || data.data.total==pageNum) { 
 											pageIndex=pageIndex;
 											$(".pc_load_more_data").addClass("f_dn")	
 										}else {
 											pageIndex+=pageNum;
 											var remain=data.data.total>=pageIndex ? data.data.total-pageIndex : 0;
 											$(".pc_load_more_data").html("查看更多（"+remain+"）").removeClass("f_dn");
-											if(remain==0){$(".pc_load_more_data").addClass("f_dn");}
+											if(remain==0) { $(".pc_load_more_data").addClass("f_dn");}
 										}
 											
-									}else if(data.code==3){
-										if(paramLen!=1){
+									}else if(data.code==3) { 
+										if(paramLen!=1) { 
 											alert("登录超时，请重新登录！");
 										}
 									}else {
@@ -126,14 +126,14 @@
 									}
 									loadLock=false;
 							},
-							error:function(){alert("网络错误，请刷新重试！");loadLock=false;}
+							error:function() { alert("网络错误，请刷新重试！");loadLock=false;}
 						});
 					}
 				};
 				loadFunData();
 										
 				//加载更多数据
-				$(".pc_load_more_data").on("click",function(){
+				$(".pc_load_more_data").on("click",function() { 
 					//判断是否登录有效
 					variable_obj.logined();
 					loadFunData(1);
@@ -141,31 +141,31 @@
 										
 				//删除消息
 				root.deleteComment=false;
-				$(".pc_message_list").on("click",function(e){
+				$(".pc_message_list").on("click",function(e) { 
 					var target=$(e.target);
-						if(target.hasClass("pc_delete")){
-							if($.cookie('bz')===undefined || $.trim($.cookie('bz'))==="" || ((new Date().getTime()/1000-JSON.parse($.cookie('bz')).updated) > 3600)){
+						if(target.hasClass("pc_delete")) { 
+							if($.cookie('bz')===undefined || $.trim($.cookie('bz'))==="" || ((new Date().getTime()/1000-JSON.parse($.cookie('bz')).updated) > 3600)) { 
 								alert("您未登录或者登录超时，请重新登录后操作！");
 								return false;	
 							}else {
-								if(!root.deleteComment){
+								if(!root.deleteComment) { 
 									root.deleteComment=true;
 									var state=window.confirm("确定删除该消息？");
-										if(state){
+										if(state) { 
 											$.ajax({
 												url:golbalIp+"/user/delete_message",
 												type:"post",
 												dataType:"json",
 												data:{"account":JSON.parse($.cookie('bz')).account,"token":JSON.parse($.cookie('bz')).token,"id":target.attr("data-id")},
-												beforeSend:function(){},
-												success:function(data){
-													if(data.code==1){
+												beforeSend:function() { },
+												success:function(data) { 
+													if(data.code==1) { 
 														target.parents("li").remove();
 													}else {
 														alert(data.message);
 													}
 													root.deleteComment=!1;
-												},error:function(){
+												},error:function() { 
 													alert("网络错误，请稍后再试！");
 													root.deleteComment=!1;
 												}
@@ -179,22 +179,22 @@
 							
 				
 				//打开信息
-				$(".pc_home_page").on("click",".pc_author_comment a ",function(){
+				$(".pc_home_page").on("click",".pc_author_comment a ",function() { 
 					var id=$(this).attr("data-id"),t=this;
-						if(!$(t).parents(".pc_author_comment").hasClass("readed")){
+						if(!$(t).parents(".pc_author_comment").hasClass("readed")) { 
 							$.ajax({
 								url:golbalIp+"/user/message_detail",
 								type:"get",
 								dataType:"json",
 								data:{"account":JSON.parse($.cookie('bz')).account,"token":JSON.parse($.cookie('bz')).token,"id":id},
-								success:function(data){
-									if(data.code==1){
+								success:function(data) { 
+									if(data.code==1) { 
 										$(t).parents(".pc_author_comment").addClass("readed");
 									}else {
 										alert(data.message);	
 									}
 								},
-								error:function(){}
+								error:function() { }
 							});
 						}
 				});

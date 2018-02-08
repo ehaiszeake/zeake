@@ -5,6 +5,8 @@
         <title>个人中心</title>
         <include file="./Home/Tpl/Index/include/head.html" />
 		<!--<script src="js/ckplayer/ckplayer.js"></script>-->
+		<link rel="shortcut icon" href="./images/favicon.ico?v=1.0" type="image/x-icon" />
+        <link rel="stylesheet" href="css/pc.css?v=1.2" />
     </head>
     
     
@@ -110,7 +112,7 @@
 													html+='		<div class="pc_name f_pr" author-id="'+item.author_id+'">'+item.author+'</div>';
 													html+='	</div>';
 													html+='</div>';
-													html+='<div class="pc_title f_wwb"><a href="article_detail.php?id='+item.id+'">'+item.title+'</a></div>';
+													html+='<div class="pc_title f_wwb"><a href="article_detail_'+item.id+'.php">'+item.title+'</a></div>';
 													html+='<div class="pc_intro f_wwb">'+item.abstract+'</div>';
 													html+='<div class="pc_date_view_message f_cf">';
 													html+='	<div class="pc_date f_fl">'+variable_obj.formatDate(item.created*1000)+'</div>';
@@ -123,7 +125,7 @@
 													html+='</li>';
 											}else if(item.type==2){
 												html+='<li data-type="1">';//快讯
-												html+='<div class="pc_title f_wwb"><a href="article_detail.php?id='+item.id+'">'+item.title+'</a></div>';
+												html+='<div class="pc_title f_wwb"><a href="article_detail_'+item.id+'.php">'+item.title+'</a></div>';
 												html+='<div class="pc_date_view_message f_cf">';
 												html+='<div class="pc_date f_fl">'+variable_obj.formatDate(item.created*1000)+'</div>';
 												html+='<div class="pc_view_message f_pr f_tar">';
@@ -168,7 +170,7 @@
 											}
 											html+='<div class="pc_article_title_des">';
 											if(item.article.type!=3){
-												html+='	<a href="article_detail.php?id='+item.article.id+'" class="f_db f_wwb">'+item.article.title+'</a>';
+												html+='	<a href="article_detail_'+item.article.id+'.php" class="f_db f_wwb">'+item.article.title+'</a>';
 											}else {
 												html+='	<a href="video_detail.php?id='+item.article.id+'" class="f_db f_wwb">'+item.article.title+'</a>';
 											}
@@ -196,7 +198,7 @@
 													html+='	</div>';
 													html+='	<div class="pc_praise f_pa"></div>';
 													html+='</div>';
-													html+='<div class="pc_title f_wwb"><a href="article_detail.php?id='+item.id+'">'+item.title+'</a></div>';
+													html+='<div class="pc_title f_wwb"><a href="article_detail_'+item.id+'.php">'+item.title+'</a></div>';
 													html+='<div class="pc_intro f_wwb">'+item.abstract+'</div>';
 													html+='<div class="pc_date_view_message f_cf">';
 													html+='	<div class="pc_date f_fl">'+variable_obj.formatDate(item.created*1000)+'</div>';
@@ -208,7 +210,7 @@
 													html+='</li>';
 											}else if(item.type==2){
 												html+='<li data-type="1">';//快讯
-												html+='<div class="pc_title f_wwb"><a href="article_detail.php?id='+item.id+'">'+item.titlle+'</a></div>';
+												html+='<div class="pc_title f_wwb"><a href="article_detail_'+item.id+'.php">'+item.titlle+'</a></div>';
 												//html+='	<div class="pc_praise f_pa"></div>';
 												html+='<div class="pc_date_view_message f_cf">';
 												html+='<div class="pc_date f_fl">'+variable_obj.formatDate(item.created*1000)+'</div>';
@@ -259,7 +261,7 @@
 													if(item.status==0 || item.status==1 || item.status==2){
 														html+='	<a href="javascript:;" class="f_wwb">'+item.title+'</a>';
 													}else {
-														html+='	<a href="article_detail.php?id='+item.id+'" class="f_wwb">'+item.title+'</a>';
+														html+='	<a href="article_detail_'+item.id+'.php" class="f_wwb">'+item.title+'</a>';
 													}
 											}else {
 													if(item.status==0 || item.status==1 || item.status==2){
@@ -463,7 +465,7 @@
 												if(data.code==1){
 													if(target.attr("data-type")!=3){
 														target.parent(".pc_editor_link").next(".pc_state").attr("data-type",3).html("#已发布")
-														.next(".pc_title").find("a").attr("href","article_detail.php?id="+target.attr("data-id"));
+														.next(".pc_title").find("a").attr("href","article_detail_"+target.attr("data-id")+".php");
 													}else {
 														target.parent(".pc_editor_link").next(".pc_state").attr("data-type",3).html("#已发布")
 														.next(".pc_title").find("a").attr("href","video_detail.php?id="+target.attr("data-id"));

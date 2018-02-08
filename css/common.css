@@ -339,7 +339,7 @@ body.little .header .header_inner .nav_search ul li a.on {color:#00E676;text-dec
 
 .main_content {}
 .main_content.loading {min-height:500px;background:url(../images/loading_ico.gif) no-repeat 50% 50%;}
-.main_content.loading .main_contnet_inner {display:none;}
+.main_content.loading .main_contnet_inner {display:block;}
 
 /* 首页样式 广告1*/
 .ad1_place {margin:40px auto 0;width:100%;overflow:hidden;}

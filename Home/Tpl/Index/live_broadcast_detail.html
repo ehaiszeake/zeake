@@ -43,7 +43,7 @@
         
         <script src="js/jquery.min.1.8.4.js?v=1.7"></script>
         <script>
-        	$(function(){
+        	$(function() { 
 				
 				//图片路径
 				var imgRoute="./",
@@ -55,10 +55,10 @@
 						type:"get",
 						dataType:"json",
 						data:{"skipnum":0,"length":pagenum,"id":units.getUrlParam("id")!=null ? units.getUrlParam("id") : ""},
-						beforeSend:function(){},
-						success:function(data){
+						beforeSend:function() { },
+						success:function(data) { 
 							//请求成功
-							if(data.code==1){
+							if(data.code==1) { 
 								
 								//直播详情
 								var img=(data.data.img==null || data.data.img=="")  ? imgRoute+"images/placeholder_img_L04.jpg" : golbalIp+data.data.img,
@@ -66,9 +66,9 @@
 									start_time=data.data.start_time*1000,
 									now_time=new Date().getTime(),
 									state=["未开始","直播中...","已结束"];
-									if(start_time>now_time){
+									if(start_time>now_time) { 
 										state=state[0]
-									}else if(end_time<now_time){
+									}else if(end_time<now_time) { 
 										state=state[2]	
 									}else {
 										state=state[1]
@@ -85,10 +85,10 @@
 									str+='				</div>';
 									str+='			</div>';
 									str+='			<div class="live_broadcat_info">';
-									str+='				<div class="title f_tac"><div class="title_inner">'+data.data.title+'</div></div>';
+									str+='				<div class="title f_tac"><div class="title_inner">'+(data.data.title == undefined ? "":data.data.title)+'</div></div>';
 									str+='				<div class="state f_tac">'+state+'</div>';
 									str+='				<div class="des f_tac f_cf">';
-									str+='					<div class="des_intro f_pr">'+data.data.mark+'</div>';
+									str+='					<div class="des_intro f_pr">'+(data.data.mark == undefined ? "" : data.data.mark)+'</div>';
 									str+='				</div>';
 									str+='			</div>';
 									str+='		</div>';
@@ -99,16 +99,16 @@
 										
 								
 								//文章列表
-								if(data.data.article.list.length>0){
+								if(data.data.article != null && data.data.article.list.length>0) { 
 									var str1="";//variable_obj.formatDate(item.created*1000)
-										$.each(data.data.article.list,function(i,item){	
+										$.each(data.data.article.list,function(i,item) { 	
 											var end_time=data.data.end_time*1000,
 												start_time=data.data.start_time*1000,
 												now_time=new Date().getTime(),
 												state=["未开始","直播中...","已结束"];
-												if(start_time>now_time){
+												if(start_time>now_time) { 
 													state=state[0]
-												}else if(end_time<now_time){
+												}else if(end_time<now_time) { 
 													state=state[2]	
 												}else {
 													state=state[1]
@@ -126,8 +126,8 @@
 											str1+='		<div class="slideBox">';
 											str1+='			<div class="bd">';
 											str1+='				<dl>';
-											if($.isArray(item.img)){
-												$.each(item.img,function(i,subItem){
+											if($.isArray(item.img)) { 
+												$.each(item.img,function(i,subItem) { 
 													var img=(subItem==null || subItem=="")  ? imgRoute+"images/placeholder_img_L04.jpg" : golbalIp+subItem;
 															str1+='<dd><a href="javascript:;" class="f_full f_db f_pa"><img src="'+img+'" /></a></dd>';
 												});
@@ -137,15 +137,15 @@
 											}
 											str1+='				</dl>';
 											str1+='			</div>';
-											if($.isArray(item.img)){
+											if($.isArray(item.img)) { 
 												str1+='			<a class="prev" href="javascript:void(0)"></a>';
 												str1+='			<a class="next" href="javascript:void(0)"></a>';
 											}
 											str1+='		</div>';
-											if(item.type==3){
+											if(item.type==3) { 
 												str1+='		<div class="intro"><a href="video_detail.php?id='+item.id+'">'+item.abstract+'</a></div>';
 											}else {
-												str1+='		<div class="intro"><a href="article_detail.php?id='+item.id+'">'+item.abstract+'</a></div>';
+												str1+='		<div class="intro"><a href="article_detail_'+item.id+'.php">'+item.abstract+'</a></div>';
 											}
 														
 											str1+='		<div class="comment_module">';
@@ -178,15 +178,18 @@
 
 
 									//请求页码递增
-										if(data.data.article.length<root.dataNum || data.data.article.total==pagenum){
+									if(data.data.article != null){
+										if(data.data.article.length<root.dataNum || data.data.article.total==pagenum) { 
 											pagenum=pagenum;
 											$(".load_more_article").addClass("f_dn")	
 										}else {
 											skipnum+=pagenum;
 											var remain=data.data.article.total>=skipnum ? data.data.article.total-skipnum : 0;
 											$(".load_more_article").html("查看更多（"+remain+"）").removeClass("f_dn");
-											if(remain==0){$(".load_more_article").addClass("f_dn");}
+											if(remain==0) { $(".load_more_article").addClass("f_dn");}
 										}
+									}
+										
 								
 								
 								//移除loading的效果
@@ -197,7 +200,7 @@
 								
 							}
 						},
-						error:function(){
+						error:function() { 
 							alert("网络错误，请稍后再试！");
 							load_data_lock=false;
 						}	
@@ -206,30 +209,30 @@
 				
 				//加载更多文章
 				var moreDataLock=false;
-				$(".load_more_article").on("click",function(){
-					if(!moreDataLock){
+				$(".load_more_article").on("click",function() { 
+					if(!moreDataLock) { 
 						moreDataLock=true;
 						$.ajax({
 							url:golbalIp+"/main/live_detail",
 							type:"get",
 							dataType:"json",
 							data:{"skipnum":skipnum,"length":pagenum,"id":units.getUrlParam("id")!=null ? units.getUrlParam("id") : ""},
-							beforeSend:function(){},
-							success:function(data){
+							beforeSend:function() { },
+							success:function(data) { 
 								//请求成功
-								if(data.code==1){
+								if(data.code==1) { 
 
 	
-									if(data.data.article.list.length>0){
+									if(data.data.article.list != null && data.data.article.list.length>0) { 
 										var str1="";//variable_obj.formatDate(item.created*1000)
-											$.each(data.data.article.list,function(i,item){	
+											$.each(data.data.article.list,function(i,item) { 	
 												var end_time=data.data.end_time*1000,
 													start_time=data.data.start_time*1000,
 													now_time=new Date().getTime(),
 													state=["未开始","直播中...","已结束"];
-													if(start_time>now_time){
+													if(start_time>now_time) { 
 														state=state[0]
-													}else if(end_time<now_time){
+													}else if(end_time<now_time) { 
 														state=state[2]	
 													}else {
 														state=state[1]
@@ -247,8 +250,8 @@
 												str1+='		<div class="slideBox">';
 												str1+='			<div class="bd">';
 												str1+='				<dl>';
-												if($.isArray(item.img)){
-													$.each(item.img,function(i,subItem){
+												if($.isArray(item.img)) { 
+													$.each(item.img,function(i,subItem) { 
 														var img=(subItem==null || subItem=="")  ? imgRoute+"images/placeholder_img_L04.jpg" : golbalIp+subItem;
 																str1+='<dd><a href="javascript:;" class="f_full f_db f_pa"><img src="'+img+'" /></a></dd>';
 													});
@@ -258,15 +261,15 @@
 												}
 												str1+='				</dl>';
 												str1+='			</div>';
-												if($.isArray(item.img)){
+												if($.isArray(item.img)) { 
 													str1+='			<a class="prev" href="javascript:void(0)"></a>';
 													str1+='			<a class="next" href="javascript:void(0)"></a>';
 												}
 												str1+='		</div>';
-												if(item.type==3){
+												if(item.type==3) { 
 													str1+='		<div class="intro"><a href="video_detail.php?id='+item.id+'">'+item.abstract+'</a></div>';
 												}else {
-													str1+='		<div class="intro"><a href="article_detail.php?id='+item.id+'">'+item.abstract+'</a></div>';
+													str1+='		<div class="intro"><a href="article_detail_'+item.id+'.php">'+item.abstract+'</a></div>';
 												}
 															
 												str1+='		<div class="comment_module">';
@@ -299,14 +302,14 @@
 									}
 									
 									//请求页码递增
-										if(data.data.article.length<root.dataNum || data.data.article.total==pagenum){
+										if(data.data.article.length<root.dataNum || data.data.article.total==pagenum) { 
 											pagenum=pagenum;
 											$(".load_more_article").addClass("f_dn");
 										}else {
 											skipnum+=pagenum;
 											var remain=data.data.article.total>=skipnum ? data.data.article.total-skipnum : 0;
 											$(".load_more_article").html("查看更多（"+remain+"）").removeClass("f_dn");
-											if(remain==0){$(".load_more_article").addClass("f_dn");}
+											if(remain==0) { $(".load_more_article").addClass("f_dn");}
 										}
 										
 									
@@ -317,7 +320,7 @@
 								}
 								
 							},
-							error:function(){
+							error:function() { 
 								alert("网络错误，请稍后再试！");
 								load_data_lock=false;
 							}	
@@ -335,16 +338,16 @@
 
 				//发表评论
 				root.public_lock=false;	
-				$(".live_broadcast_detail_list").on("click",function(e){
+				$(".live_broadcast_detail_list").on("click",function(e) { 
 					var target=$(e.target);
-						if(target.hasClass("public_btn")){
-							if($.cookie('bz')===undefined || $.trim($.cookie('bz'))==="" || ((new Date().getTime()/1000-JSON.parse($.cookie('bz')).updated) > 3600)){
+						if(target.hasClass("public_btn")) { 
+							if($.cookie('bz')===undefined || $.trim($.cookie('bz'))==="" || ((new Date().getTime()/1000-JSON.parse($.cookie('bz')).updated) > 3600)) { 
 								alert("您未登录或者登录超时，请重新登录后操作！");
 								return false;	
 							}else {
 								var val=$.trim(target.prev(".comment_des").val()),article_id=target.attr("data-article_id");
 																	
-								if(!root.public_lock){
+								if(!root.public_lock) { 
 									root.public_lock=!0;
 									
 									//获取个人资料
@@ -353,9 +356,9 @@
 										type:"get",
 										dataType:"json",
 										data:{"account":JSON.parse($.cookie('bz')).account,"token":JSON.parse($.cookie('bz')).token},
-										beforeSend:function(){},
-										success:function(info){
-											if(info.code==1){
+										beforeSend:function() { },
+										success:function(info) { 
+											if(info.code==1) { 
 											
 												//请求成功
 												var img=( info.data.img==null ||  info.data.img=="")  ? imgRoute+"images/head_sculpture.png" : golbalIp+ info.data.img;
@@ -364,9 +367,9 @@
 														type:"post",
 														dataType:"json",
 														data:{"content":val,"id":article_id,"account":JSON.parse($.cookie('bz')).account,"token":JSON.parse($.cookie('bz')).token},
-														beforeSend:function(){},
-														success:function(data){
-															if(data.code==1){
+														beforeSend:function() { },
+														success:function(data) { 
+															if(data.code==1) { 
 																var list_box=target.parents(".comment_module").find(".comment_list"),
 																	html='<dd class="f_cf">';
 																	html+='<div class="head f_pr f_fl"><img src="'+img+'" width="100%" class="f_vat"/></div>';
@@ -383,18 +386,18 @@
 																alert(data.message);	
 															}
 															root.public_lock=!1;
-														},error:function(){alert("网络异常，请稍后重试！");root.public_lock=!1;
+														},error:function() { alert("网络异常，请稍后重试！");root.public_lock=!1;
 														}
 													});
 										
-											}else if(info.code==3){//未登录
+											}else if(info.code==3) { //未登录
 												alert("登录超时，请重新登录！");	
 											}else {
 												alert(data.message);
 											}
 											root.public_lock=!1;
 										},
-										error:function(){
+										error:function() { 
 											alert("网络错误，请稍后再试！");
 											root.public_lock=!1;
 										}		

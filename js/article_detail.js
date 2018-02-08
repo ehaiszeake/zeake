@@ -19,13 +19,13 @@
         			$(this).parent().removeClass("p_style");
         		});
 
-        	    var id = units.getUrlParam('id');
+//        	    var id = units.getUrlParam('id');
         	    var buy_count = 0;
         	    var nobuy_count = 0;
                 var share = 0;
                 var praise = 0;
 				var imgRoute="./";
-				var pAry={"id":id};
+				var pAry= { "id" : id } ;
 					if($.cookie('bz')){pAry={"account":JSON.parse($.cookie('bz')).account,"token":JSON.parse($.cookie('bz')).token,"id":id};}
 				$.ajax({
 					url:golbalIp + "/main/article",
@@ -183,7 +183,7 @@
 									str2 +='	</div>';
 									str2 +='	<div class="l_title f_dn">'+item.title+'</div>';
 									if(item.type!=3){
-										str2 +='	<div class="article_intro"><a href="article_detail.php?id='+item.id+'">'+item.abstract+'</a></div>';
+										str2 +='	<div class="article_intro"><a href="article_detail_'+item.id+'.php">'+item.abstract+'</a></div>';
 									}else {
 										str2 +='	<div class="article_intro"><a href="video_detail.php?id='+item.id+'">'+item.abstract+'</a></div>';
 									}

@@ -37,7 +37,7 @@ class IndexAction extends Action {
     
     public function article_detail(){
         self::construct();
-        
+        $this->assign("id",$_GET["id"]);
         $article = MyCurl::quickGet($this->website."/main/article",array(id=>$_GET["id"]));
         $this->assign("data",$article);
         
@@ -52,7 +52,8 @@ class IndexAction extends Action {
         self::construct();
         
         $column = $_GET["column"];
-        $this->assign("column",$column);
+        $this->assign("column",$_GET["id"]);
+        $this->assign("id",$_GET["id"]);
         
         
         $column_detail = MyCurl::quickGet($this->website."/main/column_detail",array(id=>$_GET["id"],skipnum=>0,length=>5));//var_dump($column_detail);die();
@@ -133,9 +134,6 @@ class IndexAction extends Action {
         
         $data = MyCurl::quickGet($this->website."/main/special_list",array(skipnum=>0,length=>10));//var_dump($data);die();
         $this->assign("data",$data);
-        
-        
-        
         
         $this->display("special_theme_page");
     }

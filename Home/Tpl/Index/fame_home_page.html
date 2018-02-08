@@ -113,7 +113,7 @@
 													str1+='</li>';
 											}else if(item.type==2){
 													 str1+='<li class="l_news_flash">';
-													 str1+='	<div class="article_title f_toe"><a href="article_detail.php?id='+item.id+'">'+item.title+'</a></div>';
+													 str1+='	<div class="article_title f_toe"><a href="article_detail_'+item.id+'.php">'+item.title+'</a></div>';
 													 str1+='	<div class="article_date_view_message f_cf">';
 													 str1+='		<div class="date f_fl">'+variable_obj.formatDate(item.created*1000)+'</div>';
 													 str1+='		<div class="view_message f_fr"><div class="article_view f_dib f_vat">'+item.pv+'</div><div class="article_message f_dib f_vat">'+item.reply+'</div></div>';
@@ -124,13 +124,13 @@
 													img=(img) ? ((img.substr(0,7).toLowerCase()=="http://" || img.substr(0,8).toLowerCase()=="https://") ? img : golbalIp+img) : imgRoute+"images/placeholder_img_L04.jpg";
 													str1+='<li>';
 													str1+='	<div class="article_cover f_pr">';
-													str1+='		<div class="article_cover_box"><a href="article_detail.php?id='+item.id+'"><img src="'+img+'" class="f_vat placeholderImg2" width="100%"/></a></div>';
+													str1+='		<div class="article_cover_box"><a href="article_detail_'+item.id+'.php"><img src="'+img+'" class="f_vat placeholderImg2" width="100%"/></a></div>';
 													str1+='	</div>';
 													str1+='	<div class="article_author f_cf f_pr">';
 													str1+='		<div class="author_head f_fl"><img src="images/head_sculpture.png" class="f_vat"/></div>';
 													str1+='		<div class="author_nickname f_fl f_toe jump_personal_info" data-author_id="'+item.author_id+'">'+data.data.nickname+' </div>';
 													str1+='	</div>';
-													str1+='	<div class="article_title f_toe"><a href="article_detail.php?id='+item.id+'">'+item.title+'</a></div>';
+													str1+='	<div class="article_title f_toe"><a href="article_detail_'+item.id+'.php">'+item.title+'</a></div>';
 													str1+='	<div class="article_intro">'+item.abstract+'</div>';
 													str1+='	<div class="article_date_view_message f_cf">';
 													str1+='		<div class="date f_fl">'+variable_obj.formatDate(item.created*1000)+'</div>';
@@ -175,7 +175,7 @@
 										img=item.img;
 										img=(img) ? ((img.substr(0,7).toLowerCase()=="http://" || img.substr(0,8).toLowerCase()=="https://") ? img : golbalIp+img) : imgRoute+"images/placeholder_img_L04.jpg";
 									
-									str2 += ' <dd><div class="img_intro_date f_cf"><div class="news_flash_img f_fl"><a href="article_detail.php?id='+item.id+'" class="f_db" style="height:100%"><img src="'+ img+'" class="f_vat placeholderImg2"/></a></div> <div class="intro f_fl"><p><a href="article_detail.php?id='+item.id+'">'+ item.title +'</a></p><div class="news_flash_date f_tar">'+ updated +'</div></div> </div></dd>'
+									str2 += ' <dd><div class="img_intro_date f_cf"><div class="news_flash_img f_fl"><a href="article_detail_'+item.id+'.php" class="f_db" style="height:100%"><img src="'+ img+'" class="f_vat placeholderImg2"/></a></div> <div class="intro f_fl"><p><a href="article_detail_'+item.id+'.php">'+ item.title +'</a></p><div class="news_flash_date f_tar">'+ updated +'</div></div> </div></dd>'
 								});
 								$(".news_flash").append(str2);
 		
@@ -187,7 +187,7 @@
 										img=item.img;
 										img=(img) ? ((img.substr(0,7).toLowerCase()=="http://" || img.substr(0,8).toLowerCase()=="https://") ? img : golbalIp+img) : imgRoute+"images/placeholder_img_L04.jpg";
 									
-									str3 += '<dd><a href="article_detail.php?id='+item.id+'"><img src="'+img+'" class="f_vat placeholderImg2"/></a></dd>';
+									str3 += '<dd><a href="article_detail_'+item.id+'.php"><img src="'+img+'" class="f_vat placeholderImg2"/></a></dd>';
 								});
 								$(".special_theme").append(str3);*/
 								var str3 = '';
@@ -249,7 +249,7 @@
 															str1+='</li>';
 													}else if(item.type==2){
 															 str1+='<li class="l_news_flash">';
-															 str1+='	<div class="article_title f_toe"><a href="article_detail.php?id='+item.id+'">'+item.title+'</a></div>';
+															 str1+='	<div class="article_title f_toe"><a href="article_detail_'+item.id+'.php">'+item.title+'</a></div>';
 															 str1+='	<div class="article_date_view_message f_cf">';
 															 str1+='		<div class="date f_fl">'+variable_obj.formatDate(item.created*1000)+'</div>';
 															 str1+='		<div class="view_message f_fr"><div class="article_view f_dib f_vat">'+item.pv+'</div><div class="article_message f_dib f_vat">'+item.reply+'</div></div>';
@@ -260,13 +260,13 @@
 															img=(img) ? ((img.substr(0,7).toLowerCase()=="http://" || img.substr(0,8).toLowerCase()=="https://") ? img : golbalIp+img) : imgRoute+"images/placeholder_img_L04.jpg";
 															str1+='<li>';
 															str1+='	<div class="article_cover f_pr">';
-															str1+='		<div class="article_cover_box"><a href="article_detail.php?id='+item.id+'"><img src="'+img+'" class="f_vat placeholderImg2" width="100%"/></a></div>';
+															str1+='		<div class="article_cover_box"><a href="article_detail_'+item.id+'.php"><img src="'+img+'" class="f_vat placeholderImg2" width="100%"/></a></div>';
 															str1+='	</div>';
 															str1+='	<div class="article_author f_cf f_pr">';
 															str1+='		<div class="author_head f_fl"><img src="images/head_sculpture.png" class="f_vat"/></div>';
 															str1+='		<div class="author_nickname f_fl f_toe jump_personal_info" data-author_id="'+item.author_id+'">'+item.author+' </div>';
 															str1+='	</div>';
-															str1+='	<div class="article_title f_toe"><a href="article_detail.php?id='+item.id+'">'+item.title+'</a></div>';
+															str1+='	<div class="article_title f_toe"><a href="article_detail_'+item.id+'.php">'+item.title+'</a></div>';
 															str1+='	<div class="article_intro">'+item.abstract+'</div>';
 															str1+='	<div class="article_date_view_message f_cf">';
 															str1+='		<div class="date f_fl">'+variable_obj.formatDate(item.created*1000)+'</div>';

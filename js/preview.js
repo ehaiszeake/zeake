@@ -164,7 +164,7 @@
 									str2 +='	</div>';
 									str2 +='	<div class="l_title f_dn">'+item.title+'</div>';
 									if(item.type!=3){
-										str2 +='	<div class="article_intro"><a href="article_detail.php?id='+item.id+'">'+item.abstract+'</a></div>';
+										str2 +='	<div class="article_intro"><a href="article_detail_'+item.id+'.php">'+item.abstract+'</a></div>';
 									}else {
 										str2 +='	<div class="article_intro"><a href="video_detail.php?id='+item.id+'">'+item.abstract+'</a></div>';
 									}
