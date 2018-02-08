@@ -1014,7 +1014,7 @@ img.placeholderImg2 {background:url(../images/placeholderImg2.png) no-repeat 50%
 .a_author img{
 	    width: 28px;
     height: 28px;
-    margin-right: 8px;
+    margin-right: 8px;border-radius:50%;
 }
 
 .a_author .pub_time {
