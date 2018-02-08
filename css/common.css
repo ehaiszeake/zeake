@@ -1008,6 +1008,7 @@ img.placeholderImg2 {background:url(../images/placeholderImg2.png) no-repeat 50%
     line-height: 36px;
     color: #464646;
     letter-spacing: 0.8px;
+       font-size: 16px;
 }  
 
 .a_author img{
@@ -1144,6 +1145,11 @@ img.placeholderImg2 {background:url(../images/placeholderImg2.png) no-repeat 50%
 @media (max-width: 768px) {
 	/* 手机端 */
 
+	.wbg {
+	    width: 100%;
+	    margin: 0 auto;
+	    background: #fff;
+	}
 	
 	.header .header_inner {width:100%;max-height:0.6rem;height:auto;background:#263238;overflow:hidden;border-bottom:solid 1px #1d252a;}
 	.header.active .header_inner {max-height:10rem;transition:max-height 1s;-webkit-transition:max-height 1s;}
@@ -1608,6 +1614,13 @@ img.placeholderImg2 {background:url(../images/placeholderImg2.png) no-repeat 50%
 	.detail .shenming i{font-size:0.14rem;line-height: 0.18rem}
 	
 	.share{width:100%;padding:0;display: none;}
+	
+	.a_author{width:90%;max-width:90%;font-size: 0.1rem;}
+	
+	.article_detail_main p.p_style{
+		font-size: 0.14rem;
+		width:90%;
+	}
 }
 
 
