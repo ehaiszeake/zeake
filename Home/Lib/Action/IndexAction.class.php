@@ -110,6 +110,7 @@ class IndexAction extends Action {
     
     public function pc_public(){
         self::construct();
+        $this->assign("pc_public_write",true);
         $this->display("pc_public");
     }
     

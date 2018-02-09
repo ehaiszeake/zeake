@@ -48,6 +48,18 @@ input::-ms-clear,input::-ms-reveal {display:none;}
 :-moz-placeholder {color:#bcbcbc;opacity:1;}
 ::-moz-placeholder {color:#bcbcbc;opacity:1;}
 :-ms-input-placeholder {color:#bcbcbc;}
+        .clearfix::after {
+            content: "";
+            line-height: 0;
+            height: 0;
+            display: block;
+            visibility: hidden;
+            clear: both;
+        }
+
+        .clearfix {
+            *zoom: 1;
+        }
 /*::-webkit-scrollbar {display:none;}*/
 input:focus::-webkit-input-placeholder,textarea:focus::-webkit-input-placeholder {opacity:0;}
 input:focus:-moz-placeholder,textarea:focus:-moz-placeholder {opacity:0;}
@@ -264,7 +276,7 @@ body {padding-top:120px;}
 .logined .man_head .head_mask {left:0;width:100%;height:100%;top:0;background:url(../images/man_head_bg.png) no-repeat;}
 .logined .man_head img {width:100%;height:100%;}
 .logined .man_head .message_info {right:0;top:0;width:12px;height:12px;background:url(../images/dot.png) no-repeat;} 
-
+.logined .man_head img.f_vart{vertical-align:baseline;}
 
 /* 个人中心下拉菜单（相关页面） */
 .name_man_head:hover .pc_dropDown {height:188px;transition:height 1s;-webkit-transition:height 1s;}
