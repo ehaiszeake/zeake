@@ -1062,6 +1062,7 @@ img.placeholderImg2 {background:url(../images/placeholderImg2.png) no-repeat 50%
 }
 .article_detail_main h1,.article_detail_main h2,.article_detail_main h3,.article_detail_main h4,.article_detail_main h5{text-align: center;padding: 10px 0;}
 
+
 @media (max-width:1360px)  {
 	.special_theme_page_list_box {width:96%;}
 	

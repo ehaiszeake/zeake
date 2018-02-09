@@ -74,6 +74,21 @@
                     <div class="add_label_qa_common_buy">
                     	<div class="add_label_qa_comment_budy_inner f_cf">
                             <div class="add_label_qa f_fl">
+                                <div class="add_label_box f_cf nb">
+                                    <div class="add_label_title f_fl">系统标签</div>
+                                    <div class="system_label_content f_pr">
+                                    	<ul class="system_label">
+                                    		
+                                    	</ul>
+                                    	
+                                    </div>
+                                </div>
+                                <div class="add_label_box f_cf">
+                                	
+                                	
+                                    <div class="system_label_content f_pr"><span>仅限选择两个</span></div>
+                                </div>
+                                
                                 <div class="add_label_box f_cf">
                                     <div class="add_label_title f_fl">添加标签</div>
                                     <div class="add_label_content f_pr"><input type="text" class="f_dib f_vat ipt_label" placeholder="请填写标签" title="回车确定标签"/><div class="add_label_new_btn f_dib f_vat">+</div><div class="cut_label_new_btn f_dib f_vat">-</div></div>
@@ -161,6 +176,7 @@
         <script src="js/editormd/lib/flowchart.min.js"></script>
         <script src="js/editormd/lib/jquery.flowchart.min.js"></script>
         <script src="js/editormd/editormd.min.js"></script>
+        <script src="js/users_tags.js"></script>
         <script>
 			
 			$(function(){
@@ -231,7 +247,7 @@
 					success:function(data){
 						if(data.code==1){
 							if(data.data.total!=0){
-								$(".publish_broadcast").removeClass("f_dn").find("input").removeAttr("disabled").parent("label").addClass("active");	
+								//$(".publish_broadcast").removeClass("f_dn").find("input").removeAttr("disabled").parent("label").addClass("active");	
 								var html="";
 								$.each(data.data.list,function(i,item){
 									html+='<option value="'+item.id+'">'+item.name+'</option>';
@@ -307,7 +323,7 @@
 										$(".upload_cover").find("div").html("修改封面图");
 										
 										if(data.data.live!=0){
-											$("#publish_broadcast").removeAttr("disabled").attr("checked","checked");
+											//$("#publish_broadcast").removeAttr("disabled").attr("checked","checked");
 											$("#publish_broadcast").val(data.data.live_id);	
 										}
 								
@@ -348,8 +364,18 @@
 												$(".ques_answer_box:eq("+i+")").find(".answer_ipt").val(item.answer);	
 											});
 										}
+										
 										if(data.data.tags[0]){
+											$(".system_label").attr("tag",JSON.stringify(data.data.tags));
 											$.each(data.data.tags,function(i,item){
+												$(".system_label li").each(index,ele){
+													if(parseInt(item.id) == parseInt($(ele).attr("val"))) $(ele).addClass("selected");
+												}
+											});
+										}
+										
+										if(data.data.user_tags[0]){
+											$.each(data.data.user_tags,function(i,item){
 												if(i!=0){$(".add_label_new_btn").before('<input type="text" class="f_dib f_vat ipt_label" placeholder="请填写标签" title="回车确定标签"/>');}
 												$(".add_label_content").find(".ipt_label:eq("+i+")").val(item.name).addClass("on");
 											});
@@ -400,10 +426,11 @@
 								ques_ipt=[],
 								answer_ipt=[],
 								tags=[],
+								user_tags=[],
 								state0=false,
 								state1=false,
 								state2=false;
-								$(".add_label_content").find(".ipt_label").each(function(){$.trim($(this).val())!=="" ? tags.push($(this).val()) : state0=true;});
+								$(".add_label_content").find(".ipt_label").each(function(){$.trim($(this).val())!=="" ? user_tags.push($(this).val()) : state0=true;});
 								$(".add_qa_content").find(".ques_ipt").each(function(){$.trim($(this).val())!=="" ? ques_ipt.push($(this).val()) : state1=true;});
 								$(".add_qa_content").find(".answer_ipt").each(function(){$.trim($(this).val())!=="" ? answer_ipt.push($(this).val()) : state2=true;});
 								if($.trim(param1)===""){
@@ -416,6 +443,7 @@
 									alert("请填写视频地址");
 									return false;
 								}
+								$(".system_label li.selected").each(function(){tags.push($(this).attr("val"))});
 							if(!units.publicArticleLock){
 								units.publicArticleLock=true;
 								$.ajax({
@@ -441,6 +469,7 @@
 										"buy_onoff":$("#open_buy_or_no").attr("checked")==="checked" ? 1 : 2,
 										"qa_onoff":$("#qa_open_no").attr("checked")==="checked" ? ques_ipt.length!=0 ? 1 : 0 : 0,
 										"tags":tags.length==0 ? "" : tags,
+										"user_tags":user_tags.length==0 ? "" : user_tags,
 										"skip_url":"",
 										"video_url":$("#article_type").val()==3 ? $("#video_addr").val() : null,
 										"question":ques_ipt.length==0 ? "" : ques_ipt,
@@ -621,11 +650,12 @@
 						ques_ipt=[],
 						answer_ipt=[],
 						tags=[],
+						user_tags=[],
 						state0=false,
 						state1=false,
 						state2=false;
 						
-						$(".add_label_content").find(".ipt_label").each(function(){$.trim($(this).val())!=="" ? tags.push($(this).val()) : state0=true;});
+						$(".add_label_content").find(".ipt_label").each(function(){$.trim($(this).val())!=="" ? user_tags.push($(this).val()) : state0=true;});
 						$(".add_qa_content").find(".ques_ipt").each(function(){$.trim($(this).val())!=="" ? ques_ipt.push($(this).val()) : state1=true;});
 						$(".add_qa_content").find(".answer_ipt").each(function(){$.trim($(this).val())!=="" ? answer_ipt.push($(this).val()) : state2=true;});
 						if(!$(".pc_cover_pic_inner").attr("data-src")){
@@ -641,6 +671,7 @@
 							alert("请填写视频地址");
 							return false;
 						}
+						$(".system_label li.selected").each(function(){tags.push($(this).attr("val"))});
 					if(!units.publicArticleLock){
 						units.publicArticleLock=true;
 						$.ajax({
@@ -664,6 +695,7 @@
 								"buy_onoff":$("#open_buy_or_no").attr("checked")==="checked" ? 1 : 2,
 								"qa_onoff":$("#qa_open_no").attr("checked")==="checked" ? ques_ipt.length!=0 ? 1 : 0 : 0,
 								"tags":tags.length==0 ? "" : tags,
+								"user_tags":user_tags.length==0 ? "" : user_tags,
 								"video_url":$("#article_type").val()==3 ? $("#video_addr").val() : null,
 								"skip_url":"",
 								"question":ques_ipt.length==0 ? "" : ques_ipt,
