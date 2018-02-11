@@ -179,20 +179,20 @@
         <script src="js/users_tags.js"></script>
         <script>
 			
-			$(function(){
+			$(function() { 
 
-				if(!variable_obj.sys.ios() && !variable_obj.sys.adr() && !variable_obj.sys.wip()){$(".nav_search").hide();}
+				if(!variable_obj.sys.ios() && !variable_obj.sys.adr() && !variable_obj.sys.wip()) { $(".nav_search").hide();}
 				
 				//栏目选择
 				$.ajax({
 					url:golbalIp+"/main/column_nav",
 					type:"get",
 					dataType:"json",
-					beforeSend:function(){},
-					success:function(data){
-						if(data.code==1){
+					beforeSend:function() { },
+					success:function(data) { 
+						if(data.code==1) { 
 							var html="<option value=''>请选择栏目</option>";
-							$.each(data.data,function(i,item){html+='<option value="'+item.id+'">'+item.name+'</option>';});
+							$.each(data.data,function(i,item) { html+='<option value="'+item.id+'">'+item.name+'</option>';});
 							$("#column_type").html(html);
 						}
 					}	
@@ -200,7 +200,7 @@
 				
 				
 				var testEditor;
-				if(units.getUrlParam("id")==null){
+				if(units.getUrlParam("id")==null) { 
 
 				//代码编辑器初始化
 					testEditor = editormd("myEditor", {
@@ -235,7 +235,7 @@
 				
 				
 				//选择文章类型
-				$("#article_type").on("change",function(){$(this).val()==3 ? $(".video_addr").removeClass("f_dn") : $(".video_addr").addClass("f_dn");});
+				$("#article_type").on("change",function() { $(this).val()==3 ? $(".video_addr").removeClass("f_dn") : $(".video_addr").addClass("f_dn");});
 			
 				//判断是否可以直播
 				$.ajax({
@@ -243,30 +243,30 @@
 					type:"get",
 					dataType:"json",
 					data:{"account":JSON.parse($.cookie('bz')).account,"token":JSON.parse($.cookie('bz')).token},
-					beforeSend:function(){},
-					success:function(data){
-						if(data.code==1){
-							if(data.data.total!=0){
+					beforeSend:function() { },
+					success:function(data) { 
+						if(data.code==1) { 
+							if(data.data.total!=0) { 
 								//$(".publish_broadcast").removeClass("f_dn").find("input").removeAttr("disabled").parent("label").addClass("active");	
 								var html="";
-								$.each(data.data.list,function(i,item){
+								$.each(data.data.list,function(i,item) { 
 									html+='<option value="'+item.id+'">'+item.name+'</option>';
 								});
 								$("#live_list").html(html);
 							}
 						}
-					},error:function(){
+					},error:function() { 
 						alert("网络错误，请稍后再试！");
 					}
 				});
 				
-				$("#publish_broadcast").on("click",function(){
+				$("#publish_broadcast").on("click",function() { 
 					$(this).attr("checked")==undefined ? $(this).attr("checked","checked") : $(this).removeAttr("checked");	
 				});
 				
 
 				//判断地址栏是否带参数
-				if(units.getUrlParam("id")!=null){
+				if(units.getUrlParam("id")!=null) { 
 					var id=units.getUrlParam("id"),
 						b_type=units.getUrlParam("type");
 						$(".js_pc_public_delete,.js_pc_update_article").removeClass("f_dn");
@@ -277,17 +277,17 @@
 							type:"get",
 							dataType:"json",
 							data:{"account":JSON.parse($.cookie('bz')).account,"token":JSON.parse($.cookie('bz')).token,"id":id},
-							beforeSend:function(){},
-							success:function(data){
+							beforeSend:function() { },
+							success:function(data) { 
 								console.log(data);
-								if(data.code==1){
-									if(data.data.title==undefined){
+								if(data.code==1) { 
+									if(data.data.title==undefined) { 
 										alert("/main/article接口无法获取‘草稿、待审核、审核通过的文章’");
 									}else {
 										root.updated2=data.data.updated;
 										$(".for_text").hide();
 										$("#b_title").val(data.data.title);
-										if(data.data.img){
+										if(data.data.img) { 
 											var img=(data.data.img) ? ((data.data.img.substr(0,7).toLowerCase()=="http://" || data.data.img.substr(0,8).toLowerCase()=="https://") ? 
 													data.data.img : golbalIp+data.data.img) : imgRoute+"images/placeholder_img_L04.jpg";
 												$(".pc_cover_pic").find("img").attr("src",img).end().removeClass("no_pic");
@@ -322,23 +322,23 @@
 
 										$(".upload_cover").find("div").html("修改封面图");
 										
-										if(data.data.live!=0){
+										if(data.data.live!=0) { 
 											//$("#publish_broadcast").removeAttr("disabled").attr("checked","checked");
 											$("#publish_broadcast").val(data.data.live_id);	
 										}
 								
 								
-										if(data.data.comment_onoff==1){
+										if(data.data.comment_onoff==1) { 
 											$("#open_comment").attr("checked","checked").parent(".open_comment").addClass("on");
 										}else {
 											$("#open_comment").removeAttr("checked").parent(".open_comment").removeClass("on");
 										}
-										if(data.data.qa_onoff==1){
+										if(data.data.qa_onoff==1) { 
 											$("#qa_open_no").attr("checked","checked").parent(".qa_open_no").addClass("on");
 										}else {
 											$("#qa_open_no").removeAttr("checked").parent(".qa_open_no").removeClass("on");
 										}
-										if(data.data.buy_onoff==1){
+										if(data.data.buy_onoff==1) { 
 											$("#open_buy_or_no").attr("checked","checked").parent(".open_buy_or_no").addClass("on");
 										}else {
 											$("#open_buy_or_no").removeAttr("checked").parent(".open_buy_or_no").removeClass("on");
@@ -346,37 +346,37 @@
 										
 										
 										//栏目对应
-										$.each($("#column_type").find("option"),function(){if($(this).val()==data.data.cid){$(this).attr("selected","selected");}});
+										$.each($("#column_type").find("option"),function() { if($(this).val()==data.data.cid) { $(this).attr("selected","selected");}});
 
 										
-										if(data.data.video_url){
+										if(data.data.video_url) { 
 											$(".video_addr").removeClass("f_dn").find("#video_addr").val(data.data.video_url);
 										}
 										
 										var type=data.data.type-1;
 										$("#article_type").find("option:eq("+type+")").attr("selected","selected").siblings("option").removeAttr("selected");
 										
-										if(data.data.qa_onoff){
+										if(data.data.qa_onoff) { 
 											var len=data.data["q&a"].length;
-											$.each(data.data["q&a"],function(i,item){
-												if(len>1 && i>0){$(".add_qa_btn").find("b").trigger("click");}
+											$.each(data.data["q&a"],function(i,item) { 
+												if(len>1 && i>0) { $(".add_qa_btn").find("b").trigger("click");}
 												$(".ques_answer_box:eq("+i+")").find(".ques_ipt").val(item.question);
 												$(".ques_answer_box:eq("+i+")").find(".answer_ipt").val(item.answer);	
 											});
 										}
 										
-										if(data.data.tags[0]){
+										if(data.data.tags[0]) { 
 											$(".system_label").attr("tag",JSON.stringify(data.data.tags));
-											$.each(data.data.tags,function(i,item){
-												$(".system_label li").each(index,ele){
+											$.each(data.data.tags,function(i,item) { 
+												$(".system_label li").each(function(index,ele) { 
 													if(parseInt(item.id) == parseInt($(ele).attr("val"))) $(ele).addClass("selected");
-												}
+												});
 											});
 										}
 										
-										if(data.data.user_tags[0]){
-											$.each(data.data.user_tags,function(i,item){
-												if(i!=0){$(".add_label_new_btn").before('<input type="text" class="f_dib f_vat ipt_label" placeholder="请填写标签" title="回车确定标签"/>');}
+										if(data.data.user_tags[0]) { 
+											$.each(data.data.user_tags,function(i,item) { 
+												if(i!=0) { $(".add_label_new_btn").before('<input type="text" class="f_dib f_vat ipt_label" placeholder="请填写标签" title="回车确定标签"/>');}
 												$(".add_label_content").find(".ipt_label:eq("+i+")").val(item.name).addClass("on");
 											});
 										}
@@ -384,31 +384,31 @@
 								}else {
 									alert(data.message);
 								}
-							},error:function(){
+							},error:function() { 
 								alert("网络错误，请稍后再试！");
 							}
 						});
 					
 						//删除文章
 						root.deleteArticle=false;
-						$(".js_pc_public_delete").on("click",function(){
-							if(!root.deleteArticle){
+						$(".js_pc_public_delete").on("click",function() { 
+							if(!root.deleteArticle) { 
 								root.deleteArticle=true;
 								$.ajax({
 									url:golbalIp+"/user/delete_article",
 									type:"post",
 									dataType:"json",
 									data:{"account":JSON.parse($.cookie('bz')).account,"token":JSON.parse($.cookie('bz')).token,"id":id},
-									beforeSend:function(){},
-									success:function(data){
-										if(data.code==1){
+									beforeSend:function() { },
+									success:function(data) { 
+										if(data.code==1) { 
 											alert("删除成功");
 											window.history.back();
 										}else {
 											alert(data.message);
 										}
 										root.deleteArticle=!1;
-									},error:function(){
+									},error:function() { 
 										alert("网络错误，请稍后再试！");
 										root.deleteArticle=!1;
 									}
@@ -419,7 +419,7 @@
 						
 						//更新文章
 						units.publicArticleLock=false;
-						$(".js_pc_update_article").on("click",function(e){
+						$(".js_pc_update_article").on("click",function(e) { 
 							var t=this,
 								param1=$("#b_title").val(),
 								param2=testEditor.getValue(),
@@ -430,21 +430,21 @@
 								state0=false,
 								state1=false,
 								state2=false;
-								$(".add_label_content").find(".ipt_label").each(function(){$.trim($(this).val())!=="" ? user_tags.push($(this).val()) : state0=true;});
-								$(".add_qa_content").find(".ques_ipt").each(function(){$.trim($(this).val())!=="" ? ques_ipt.push($(this).val()) : state1=true;});
-								$(".add_qa_content").find(".answer_ipt").each(function(){$.trim($(this).val())!=="" ? answer_ipt.push($(this).val()) : state2=true;});
-								if($.trim(param1)===""){
+								$(".add_label_content").find(".ipt_label").each(function() { $.trim($(this).val())!=="" ? user_tags.push($(this).val()) : state0=true;});
+								$(".add_qa_content").find(".ques_ipt").each(function() { $.trim($(this).val())!=="" ? ques_ipt.push($(this).val()) : state1=true;});
+								$(".add_qa_content").find(".answer_ipt").each(function() { $.trim($(this).val())!=="" ? answer_ipt.push($(this).val()) : state2=true;});
+								if($.trim(param1)==="") { 
 									alert("请填写标题");	
 									return false;
-								}else if(!param2){
+								}else if(!param2) { 
 									alert("请编辑主要内容");	
 									return false;
-								}else if($("#article_type").val()==3 && $.trim($("#video_addr").val())==""){
+								}else if($("#article_type").val()==3 && $.trim($("#video_addr").val())=="") { 
 									alert("请填写视频地址");
 									return false;
 								}
-								$(".system_label li.selected").each(function(){tags.push($(this).attr("val"))});
-							if(!units.publicArticleLock){
+								$(".system_label li.selected").each(function() { tags.push($(this).attr("val"))});
+							if(!units.publicArticleLock) { 
 								units.publicArticleLock=true;
 								$.ajax({
 									url:golbalIp+"/user/update_article",
@@ -476,16 +476,16 @@
 										"answer":answer_ipt.length==0 ? "" : answer_ipt,
 										"status":$(t).hasClass("js_pc_public_save") ? 0 : 1
 									},
-									beforeSend:function(){},
-									success:function(data){
+									beforeSend:function() { },
+									success:function(data) { 
 										console.log(data);
-										if(data.code==1){
-											if(e.originalEvent){alert(data.message);}
+										if(data.code==1) { 
+											if(e.originalEvent) { alert(data.message);}
 										}else {
 											alert(data.message);
 										}
 										units.publicArticleLock=false;
-									},error:function(){
+									},error:function() { 
 										alert("网络错误，请稍后再试！");
 										units.publicArticleLock=false;
 									}
@@ -495,13 +495,13 @@
 						
 						
 						//三分钟自动触发保存
-						function triggerClick(){
-							setTimeout(function(){
+						function triggerClick() { 
+							setTimeout(function() { 
 								triggerClick();
 								$(".js_pc_update_article").trigger("click");
 							},180000);//180000
 						}
-						if(b_type=="cg"){
+						if(b_type=="cg") { 
 							triggerClick();
 						}
 
@@ -514,24 +514,24 @@
 
 
 				//判断标签输入框是否按了回车键
-				$(".add_label_content").keypress(function(event){    
+				$(".add_label_content").keypress(function(event) {     
 					var keynum = (event.keyCode ? event.keyCode : event.which),
 						ipt_len=$(".add_label_content").find(".ipt_label").length,
 						target=$(event.target);
-					if(target.hasClass("ipt_label") && keynum == '13' && $.trim(target.val())!==""){
+					if(target.hasClass("ipt_label") && keynum == '13' && $.trim(target.val())!=="") { 
 						var index=target.index();
 							target.addClass("on").val("#"+target.val()).blur();
 					}
-				}).on("click",function(e){
+				}).on("click",function(e) { 
 					var target=$(event.target);
-						if(target.hasClass("ipt_label")){if(target.val().indexOf("#")===0){target.removeClass("on").val(target.val().substr(1,target.val().length));}}
+						if(target.hasClass("ipt_label")) { if(target.val().indexOf("#")===0) { target.removeClass("on").val(target.val().substr(1,target.val().length));}}
 				});	
 				//添加新标签
-				$(".add_label_new_btn").on("click",function(){
+				$(".add_label_new_btn").on("click",function() { 
 					$(this).before('<input type="text" class="f_dib f_vat ipt_label" placeholder="请填写标签" title="回车确定标签"/>')
 				});
 				//清除标签
-				$(".cut_label_new_btn").on("click",function(){$(".ipt_label").length>1 ? $(this).prev(".add_label_new_btn").prev('.ipt_label').remove() : ""});
+				$(".cut_label_new_btn").on("click",function() { $(".ipt_label").length>1 ? $(this).prev(".add_label_new_btn").prev('.ipt_label').remove() : ""});
 				
 				
 				
@@ -543,23 +543,23 @@
 				
 				//添加Q和A
 				units.index=1;
-				$(".add_qa_btn").find("b").on("click",function(){
+				$(".add_qa_btn").find("b").on("click",function() { 
 					var p=$(this).parent();
 						units.index++;
 						p.before('<div class="ques_answer_box"><div class="ques_box f_cf"><span class="f_fl">Q'+units.index+':</span><div class="ques_inner_box f_pr"><textarea class="f_db ques_ipt" placeholder="请填写Q'+units.index+'" ></textarea></div></div><div class="answer_box f_cf"><span class="f_fl">A'+units.index+':</span><div class="answer_inner_box f_pr"><textarea class="f_db answer_ipt" placeholder="请填写A'+units.index+'" ></textarea></div></div></div>');
-						$(".ques_ipt").each(function(){autosize(this)});
+						$(".ques_ipt").each(function() { autosize(this)});
 				});
 				
 				//复选框选择
-				$(".open_comment").on("click",function(){
+				$(".open_comment").on("click",function() { 
 					var ipt=$(this).find("input");
 					ipt.attr("checked")!="checked" ? ($(".open_comment").addClass("on"),ipt.attr("checked","checked")) : ($(".open_comment").removeClass("on"),ipt.removeAttr("checked"));
 				});
-				$(".open_buy_or_no").on("click",function(){
+				$(".open_buy_or_no").on("click",function() { 
 					var ipt=$(this).find("input");
 					ipt.attr("checked")!="checked" ? ($(".open_buy_or_no").addClass("on"),ipt.attr("checked","checked")) : ($(".open_buy_or_no").removeClass("on"),ipt.removeAttr("checked"));
 				});
-				$(".qa_open_no").on("click",function(){
+				$(".qa_open_no").on("click",function() { 
 					var ipt=$(this).find("input");
 					ipt.attr("checked")!="checked" ? ($(".qa_open_no").addClass("on"),ipt.attr("checked","checked")) : ($(".qa_open_no").removeClass("on"),ipt.removeAttr("checked"));
 				});
@@ -568,12 +568,12 @@
 				//$.cookie("read_course")===undefined ? $(".simple_course_box").removeClass("f_dn") : "";
 				
 				//关闭简单教程，以后都不显示
-				$(".close_view_course").on("click",function(){
+				$(".close_view_course").on("click",function() { 
 					$(".simple_course_box").addClass("f_dn")
 					//$.removeCookie("read_course");
 				});
 				//知道啦
-				$(".to_know_course").on("click",function(){
+				$(".to_know_course").on("click",function() { 
 					$(".view_course_box").addClass("f_dn");
 					//第一步定位
 					pos_judge();
@@ -582,13 +582,13 @@
 				});
 				
 				//第二步
-				$(".next_step1").on("click",function(){$(".view_course_step1").addClass("f_dn").next(".view_course_step2").removeClass("f_dn");});
+				$(".next_step1").on("click",function() { $(".view_course_step1").addClass("f_dn").next(".view_course_step2").removeClass("f_dn");});
 				
 				//第三步
-				$(".next_step2").on("click",function(){$(".view_course_step2").addClass("f_dn").next(".view_course_step3").removeClass("f_dn");});
+				$(".next_step2").on("click",function() { $(".view_course_step2").addClass("f_dn").next(".view_course_step3").removeClass("f_dn");});
 				
 				//完成
-				$(".next_step3").on("click",function(){
+				$(".next_step3").on("click",function() { 
 					//$.cookie("read_course",1);
 					$(".simple_course_box").addClass("f_dn").find(".view_course_box").removeClass("f_dn").end().find(".view_course_step3").addClass("f_dn");
 				});
@@ -596,7 +596,7 @@
 				//简单教程定位指示
 				units.public=$(".js_pc_public_article")[0];
 				units.step1=$(".view_course_step1")[0];				
-				function pos_judge(){
+				function pos_judge() { 
 					var b=units.public.getBoundingClientRect().bottom,
 						l=units.public.getBoundingClientRect().left;
 						units.step1.style="left:"+(l-150)+"px;top:"+(b+60)+"px";
@@ -607,7 +607,7 @@
 				
 				
 				//上传封面图
-				$("#file").on("change",function(){
+				$("#file").on("change",function() { 
 					var format=this.files[0];
 						console.log(format);
 					var formData = new FormData();
@@ -623,7 +623,7 @@
 							processData: false,
 							contentType: false
 						}).done(function(res) {
-							if(res.code==1){
+							if(res.code==1) { 
 								var img=res.data;
 									img=(img.substr(0,7).toLowerCase()=="http://" || img.substr(0,8).toLowerCase()=="https://") ? img : golbalIp+img;
 								
@@ -643,7 +643,7 @@
 				//发布文章
 				units.publicArticleLock=false;
 				var firstTime=true;
-				$(".js_pc_public_article,.js_pc_public_save").on("click",function(){
+				$(".js_pc_public_article,.js_pc_public_save").on("click",function() { 
 					var t=this,
 						param1=$("#b_title").val(),
 						param2=testEditor.getValue(),
@@ -655,24 +655,24 @@
 						state1=false,
 						state2=false;
 						
-						$(".add_label_content").find(".ipt_label").each(function(){$.trim($(this).val())!=="" ? user_tags.push($(this).val()) : state0=true;});
-						$(".add_qa_content").find(".ques_ipt").each(function(){$.trim($(this).val())!=="" ? ques_ipt.push($(this).val()) : state1=true;});
-						$(".add_qa_content").find(".answer_ipt").each(function(){$.trim($(this).val())!=="" ? answer_ipt.push($(this).val()) : state2=true;});
-						if(!$(".pc_cover_pic_inner").attr("data-src")){
+						$(".add_label_content").find(".ipt_label").each(function() { $.trim($(this).val())!=="" ? user_tags.push($(this).val()) : state0=true;});
+						$(".add_qa_content").find(".ques_ipt").each(function() { $.trim($(this).val())!=="" ? ques_ipt.push($(this).val()) : state1=true;});
+						$(".add_qa_content").find(".answer_ipt").each(function() { $.trim($(this).val())!=="" ? answer_ipt.push($(this).val()) : state2=true;});
+						if(!$(".pc_cover_pic_inner").attr("data-src")) { 
 							alert("请先上传封面图");
 							return false;
-						}else if($.trim(param1)===""){
+						}else if($.trim(param1)==="") { 
 							alert("请填写标题");	
 							return false;
-						}else if(!param2){
+						}else if(!param2) { 
 							alert("请编辑主要内容");	
 							return false;
-						}else if($("#article_type").val()==3 && $.trim($("#video_addr").val())==""){
+						}else if($("#article_type").val()==3 && $.trim($("#video_addr").val())=="") { 
 							alert("请填写视频地址");
 							return false;
 						}
-						$(".system_label li.selected").each(function(){tags.push($(this).attr("val"))});
-					if(!units.publicArticleLock){
+						$(".system_label li.selected").each(function() { tags.push($(this).attr("val"))});
+					if(!units.publicArticleLock) { 
 						units.publicArticleLock=true;
 						$.ajax({
 							url:golbalIp+"/user/create_article",
@@ -702,19 +702,19 @@
 								"answer":answer_ipt.length==0 ? "" : answer_ipt,
 								"status":$(t).hasClass("js_pc_public_save") ? 0 : 1
 							},
-							beforeSend:function(){},
-							success:function(data){
+							beforeSend:function() { },
+							success:function(data) { 
 								console.log(data);
-								if(data.code==1){
+								if(data.code==1) { 
 									alert(data.message);
-									if($(t).hasClass("js_pc_public_save") && units.getUrlParam("id")==null){
+									if($(t).hasClass("js_pc_public_save") && units.getUrlParam("id")==null) { 
 										window.location.href="pc_public.php?id="+data.data.id;
 									}
 								}else {
 									alert(data.message);
 								}
 								units.publicArticleLock=false;
-							},error:function(){
+							},error:function() { 
 								alert("网络错误，请稍后再试！");
 								units.publicArticleLock=false;
 							}
@@ -724,12 +724,12 @@
 				
 				
 				//预览编辑内容
-/*				$(".js_pc_public_preview").on("click",function(){
-					if($(".pc_cover_pic_inner").attr("data-src")==undefined){
+/*				$(".js_pc_public_preview").on("click",function() { 
+					if($(".pc_cover_pic_inner").attr("data-src")==undefined) { 
 						alert("请先上传封面图");
-					}else if($.trim($("#b_title").val())==""){
+					}else if($.trim($("#b_title").val())=="") { 
 						alert("请先编辑标题");
-					}else if($.trim(testEditor.getHTML())==""){
+					}else if($.trim(testEditor.getHTML())=="") { 
 						alert("请先编辑主内容");
 					}else {
 					var w = window.open('', '_blank', ''),
@@ -740,8 +740,8 @@
 					}
 				});*/
 				
-				$(".js_pc_public_preview").on("click",function(){
-					if(units.getUrlParam("id")!=null){
+				$(".js_pc_public_preview").on("click",function() { 
+					if(units.getUrlParam("id")!=null) { 
 						window.open("preview.php?id="+units.getUrlParam("id"));
 					}
 				});

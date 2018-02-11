@@ -7,7 +7,9 @@
                     	<form action="search_result.php" class="f_full f_pr"><label class="for_text" for="keyword">想要找点什么</label><input type="text" class="keyword placeholder f_fl" id="keyword"/><input type="button" class="search_btn f_fr" value="搜索"/></form>
                     </div>
                 	<ul class="f_fl">
-                		<include file="./Home/Tpl/Index/include/column_nav.html" />                        
+                		<empty name="pc_public_write">
+                		<include file="./Home/Tpl/Index/include/column_nav.html" />
+                		</empty>                     
                     </ul>
                 </div>
                 
