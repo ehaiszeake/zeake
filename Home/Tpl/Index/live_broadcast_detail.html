@@ -78,7 +78,7 @@
         <script>
         	$(function() { 
         		
-        		if($.cookie('bz')!==undefined || $.trim($.cookie('bz'))!==""){
+        		if($.cookie('bz')!==undefined || $.trim($.cookie('bz'))!=="") { 
         			$(".edit_detail,.e_refresh").removeClass("dn");
         		}
         		
@@ -109,12 +109,12 @@
 								
 								$("#pic_li").append("<li><img src='"+img+"'><div class='close'></div></li>");
 								
-								$("#pic_li .close").unbind().click(function(){
+								$("#pic_li .close").unbind().click(function() { 
 									$(this).parent().remove();
 									$("#file").removeAttr("disabled");
 								});
 								
-								if($("#pic_li li").length >= 5){
+								if($("#pic_li li").length >= 5) { 
 									$("#file").attr("disabled","disabled");
 								}
 								
@@ -127,13 +127,13 @@
 				});
         		
         		
-				$("#write_broadcase").click(function(){
+				$("#write_broadcase").click(function() { 
 					var content = $("#e_content").val();
-					if(content.length == 0){
+					if(content.length == 0) { 
 						alert("请输入直播内容");return ;
 					}
 					var pic = [];
-					$("#pic_li img").each(function(index,ele){
+					$("#pic_li img").each(function(index,ele) { 
 						pic.push($(ele).attr("src"));
 					});
 					
@@ -146,11 +146,11 @@
 								"token": JSON.parse($.cookie('bz')).token,
 								"content": content,
 								"pics":pic.length==0 ? "" : pic
-						},success:function(data){
-							if(data.code != 1){
+						},success:function(data) { 
+							if(data.code != 1) { 
 								alert(data.message);return ;
 							}else{
-								
+								window.location.reload(true);
 							}
 						}
         			});
@@ -236,6 +236,7 @@
 											str1+='		<div class="head_name">';
 											str1+='			<div class="head_box f_pr f_dib f_vat"><img src="images/head_sculpture.png" width="100%" class="f_vat"/></div>';
 											str1+='			<div class="name f_toe f_dib f_vat jump_personal_info" data-author_id="'+item.author_id+'">'+item.author+' </div>';
+											str1+='			<div class="option f_dib fr"><a href="javascript:;" onclick="edit_comment('+item.id+');">编辑</a><a href="javascript:;" onclick="delete_comment('+item.id+');">删除</a></div>';
 											str1+='		</div>';
 											str1+='		<div class="slideBox">';
 											str1+='			<div class="bd">';
@@ -363,6 +364,7 @@
 												str1+='		<div class="head_name">';
 												str1+='			<div class="head_box f_pr f_dib f_vat"><img src="images/head_sculpture.png" width="100%" class="f_vat"/></div>';
 												str1+='			<div class="name f_toe f_dib f_vat jump_personal_info" data-author_id="'+item.author_id+'">'+item.author+' </div>';
+												str1+='			<div class="option f_dib fr"><a href="javascript:;" onclick="edit_comment('+item.id+');">编辑</a><a href="javascript:;" onclick="delete_comment('+item.id+');">删除</a></div>';
 												str1+='		</div>';
 												str1+='		<div class="slideBox">';
 												str1+='			<div class="bd">';
@@ -526,6 +528,35 @@
 			
 			
 			})
+			
+			//编辑评论
+			function edit_comment(id) { 
+        		
+        	}
+        	//删除评论
+        	function delete_comment(id) { 
+        		if ( confirm("确认要删除此评论吗?") == true ) { 
+        			$.ajax({
+        				url : golbalIp+"/user/delete_live_comment",
+        				type:"post",
+						dataType:"json",
+						data:{
+							"account":JSON.parse($.cookie('bz')).account,
+							"token":JSON.parse($.cookie('bz')).token,
+							"id":id,
+							"type":2
+						},
+						beforeSend:function() { },
+						success:function(data) { 
+							if(data.code != 1){
+								alert(data.message);
+							}else{
+								window.location.reload(true);
+							}
+						}
+        			});
+        		}
+        	}
         </script>
         
     </body>
