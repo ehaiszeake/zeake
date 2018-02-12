@@ -103,13 +103,13 @@ $(function() {
 			pic.push($(ele).attr("src"));
 		});
 		
-		return ;
+		
 		
 		$.ajax({
-			url:golbalIp+"/user/create_live",
+			url:golbalIp+"/user/update_live",
 			type:"post",
 			dataType:"json",
-			data:{  "live_id":units.getUrlParam("id")!=null ? units.getUrlParam("id") : "",
+			data:{  "id":live_comment_id,
 					"account": JSON.parse($.cookie('bz')).account,
 					"token": JSON.parse($.cookie('bz')).token,
 					"content": content,

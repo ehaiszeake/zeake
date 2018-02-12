@@ -60,6 +60,7 @@
         <!--底部   end-->
         
         <script src="js/jquery.min.1.8.4.js?v=1.7"></script>
+        <script src="js/live_detail.js"></script>
       	<!-- 编辑评论 start-->
         <include file="./Home/Tpl/Index/include/live_broadcast_edit.html" />
         <!-- 编辑评论  end-->
@@ -67,6 +68,7 @@
         
         
         <script>
+        var live_comment_id ;
         	$(function() { 
         		
         		if($.cookie('bz')!==undefined || $.trim($.cookie('bz'))!=="") { 
@@ -541,6 +543,7 @@
 					$("#edit_file").removeAttr("disabled");
 				});
         		
+        		live_comment_id = id;
         	}
         	//删除评论
         	function delete_comment(id) { 
