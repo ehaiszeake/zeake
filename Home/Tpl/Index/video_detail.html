@@ -70,7 +70,7 @@
         <script src="js/jquery.min.1.8.4.js?v=1.7"></script>
 		<script src="http://player.youku.com/jsapi"></script>
         <script>
-        	$(function(){
+        	$(function() { 
 				
         	    var id = units.getUrlParam('id');
         	    var buy_count = 0;
@@ -84,16 +84,16 @@
 					type:"get",
 					dataType:"json",
 					data:{"id":id},
-					beforeSend:function(){},
-					success:function(data){
+					beforeSend:function() { },
+					success:function(data) { 
 					    console.log(data);
-						if(data.code==1){
+						if(data.code==1) { 
 
 							$(".public_btn").attr("data-article_id",data.data.id);
 							
 /*							$(".video_play_box").html('<div id="youkuplayer" style="width:100%;height:100%"></div>');
 							var ary=data.data.video_url.split("&"),vid_vkey=[];
-								$.each(ary,function(i,item){
+								$.each(ary,function(i,item) { 
 									console.log(item);
 									item.indexOf('vid=') >=0 ? vid_vkey.push(item.substr(4)) : "";
 									item.indexOf('vkey=') >=0 ? vid_vkey.push(item.substr(5)) : "";
@@ -110,7 +110,7 @@
 						}else {
 							
 						}
-					},error:function(){
+					},error:function() { 
 						
 					}
 				});
@@ -118,12 +118,12 @@
 
 				//添加评论
 				root.addCommentLock=false;
-				function add_comment(val,article_id){
-					if($.cookie('bz')===undefined || $.trim($.cookie('bz'))==="" || ((new Date().getTime()/1000-JSON.parse($.cookie('bz')).updated) > 3600)){
+				function add_comment(val,article_id) { 
+					if($.cookie('bz')===undefined || $.trim($.cookie('bz'))==="" || ((new Date().getTime()/1000-JSON.parse($.cookie('bz')).updated) > 3600)) { 
 						alert("您未登录或者登录超时，请重新登录后操作！");
 						return false;	
 					}
-					if(!root.addCommentLock){
+					if(!root.addCommentLock) { 
 						root.addCommentLock=!0;
 						
 						//获取个人资料
@@ -132,9 +132,9 @@
 							type:"get",
 							dataType:"json",
 							data:{"account":JSON.parse($.cookie('bz')).account,"token":JSON.parse($.cookie('bz')).token},
-							beforeSend:function(){},
-							success:function(info){
-								if(info.code==1){
+							beforeSend:function() { },
+							success:function(info) { 
+								if(info.code==1) { 
 									
 									//请求成功
 									var img=( info.data.img==null ||  info.data.img=="")  ? imgRoute+"images/head_sculpture.png" : golbalIp+ info.data.img;
@@ -143,9 +143,9 @@
 											type:"post",
 											dataType:"json",
 											data:{"content":val,"id":article_id,"account":JSON.parse($.cookie('bz')).account,"token":JSON.parse($.cookie('bz')).token},
-											beforeSend:function(){},
-											success:function(data){
-												if(data.code==1){
+											beforeSend:function() { },
+											success:function(data) { 
+												if(data.code==1) { 
 														var html='<dd>';
 															html+='<div class="head_name_time_replay f_cf">';
 															html+='<div class="head_unit f_ofh f_fl"><img src="'+img+'" width="100%" class="f_vat"/></div>';
@@ -160,20 +160,20 @@
 													alert(data.message);	
 												}
 												root.addCommentLock=!1;
-											},error:function(){
+											},error:function() { 
 												alert("网络异常，请稍后重试！");
 												root.addCommentLock=!1;
 											}
 										});
 										
-								}else if(info.code==3){//未登录
+								}else if(info.code==3) { //未登录
 									alert("登录超时，请重新登录！");	
 								}else {
 									alert(data.message);
 								}
 								root.addCommentLock=!1;
 							},
-							error:function(){
+							error:function() { 
 								alert("网络错误，请稍后再试！");
 								root.addCommentLock=!1;
 							}		
@@ -187,12 +187,12 @@
 
 				//回复评论
 				root.replyLock=false;
-				function reply_comment_list(p,ipt,val,reply_id,article_id){
-					if($.cookie('bz')===undefined || $.trim($.cookie('bz'))==="" || ((new Date().getTime()/1000-JSON.parse($.cookie('bz')).updated) > 3600)){
+				function reply_comment_list(p,ipt,val,reply_id,article_id) { 
+					if($.cookie('bz')===undefined || $.trim($.cookie('bz'))==="" || ((new Date().getTime()/1000-JSON.parse($.cookie('bz')).updated) > 3600)) { 
 						alert("您未登录或者登录超时，请重新登录后操作！");
 						return false;	
 					}
-					if(!root.replyLock){
+					if(!root.replyLock) { 
 						root.replyLock=!0;
 						
 						//获取个人资料
@@ -201,9 +201,9 @@
 							type:"get",
 							dataType:"json",
 							data:{"account":JSON.parse($.cookie('bz')).account,"token":JSON.parse($.cookie('bz')).token},
-							beforeSend:function(){},
-							success:function(info){
-								if(info.code==1){
+							beforeSend:function() { },
+							success:function(info) { 
+								if(info.code==1) { 
 									
 									//请求成功
 									var img=( info.data.img==null ||  info.data.img=="")  ? imgRoute+"images/head_sculpture.png" : golbalIp+ info.data.img;
@@ -212,9 +212,9 @@
 											type:"post",
 											dataType:"json",
 											data:{"content":val,"reply_id":reply_id,"article_id":article_id,"account":JSON.parse($.cookie('bz')).account,"token":JSON.parse($.cookie('bz')).token},
-											beforeSend:function(){},
-											success:function(data){
-												if(data.code==1){
+											beforeSend:function() { },
+											success:function(data) { 
+												if(data.code==1) { 
 														var html='<li>';
 															html+='<div class="head_name_time_replay f_cf">';
 															html+='<div class="head_unit f_ofh f_fl"><img src="'+img+'" width="100%" class="f_vat"/></div>';
@@ -228,20 +228,20 @@
 													alert(data.message);	
 												}
 												root.replyLock=!1;
-											},error:function(){
+											},error:function() { 
 												alert("网络异常，请稍后重试！");
 												root.replyLock=!1;
 											}
 										});
 										
-								}else if(info.code==3){//未登录
+								}else if(info.code==3) { //未登录
 									alert("登录超时，请重新登录！");	
 								}else {
 									alert(data.message);
 								}
 								root.replyLock=!1;
 							},
-							error:function(){
+							error:function() { 
 								alert("网络错误，请稍后再试！");
 								root.replyLock=!1;
 							}		
@@ -254,19 +254,19 @@
 				
 				
 				//发送评论
-				$(".comment_unit").on("click",function(e){
+				$(".comment_unit").on("click",function(e) { 
 					var target=$(e.target);
-						if(target.hasClass("public_btn")){
+						if(target.hasClass("public_btn")) { 
 							//发布评论
 							var comment=$("#replyContent").val();
-								if($.trim(comment)!==""){add_comment(comment,target.attr("data-article_id"));}
-						}else if(target.hasClass("reply_btn")){
+								if($.trim(comment)!=="") { add_comment(comment,target.attr("data-article_id"));}
+						}else if(target.hasClass("reply_btn")) { 
 							var ipt_box=target.parents("dd").find(".replay_input");
 								ipt_box.toggleClass("f_dn");
-						}else if(target.hasClass("replay_public_btn")){
+						}else if(target.hasClass("replay_public_btn")) { 
 							var ipt=target.prev(".editInput_box").find("textarea");
 							//回复评论
-							if($.trim(ipt.val())!==""){reply_comment_list(target,ipt,ipt.val(),target.attr("data-reply_id"),target.attr("data-article_id"))}
+							if($.trim(ipt.val())!=="") { reply_comment_list(target,ipt,ipt.val(),target.attr("data-reply_id"),target.attr("data-article_id"))}
 						}
 				});
 				
@@ -276,24 +276,24 @@
 				root.page=0;
 				root.dataNum=10;
 				root.comment_listLock=!1;
-				function comment_list(){
+				function comment_list() { 
 					var paramLen=arguments.length;
-					if(!root.comment_listLock){
+					if(!root.comment_listLock) { 
 						root.comment_listLock=!0;
 						$.ajax({
 							url:golbalIp+"/main/article_comment",
 							type:"get",
 							dataType:"json",
 							data:{"skipnum":root.page,"id":id,"length":root.dataNum/*,"account":JSON.parse($.cookie('bz')).account,"token":JSON.parse($.cookie('bz')).token*/},
-							beforeSend:function(){},
-							success:function(data){
+							beforeSend:function() { },
+							success:function(data) { 
 								console.log(data);
 								//请求成功
-								if(data.code==1){
+								if(data.code==1) { 
 									//有数据
-									if(data.data.list.length>0){
+									if(data.data.list.length>0) { 
 										var str="";
-											$.each(data.data.list,function(i,item){
+											$.each(data.data.list,function(i,item) { 
 												str+='<dd>';
 												str+='	<div class="head_name_time_replay f_cf">';
 												str+='		<div class="head_unit f_ofh f_fl"><img src="images/head_sculpture.png" width="100%" class="f_vat"/></div>';
@@ -306,8 +306,8 @@
 												str+='		<div class="replay_public_btn" data-reply_id="'+item.id+'" data-article_id="'+item.article_id+'">发送</div>';
 												str+='	</div>';
 												str+='	<ul class="reply_list">';
-													if(item.reply_comment!=undefined){
-														$.each(item.reply_comment,function(a,list){
+													if(item.reply_comment!=undefined) { 
+														$.each(item.reply_comment,function(a,list) { 
 															str+='<li>';
 															str+='<div class="head_name_time_replay f_cf">';
 															str+='<div class="head_unit f_ofh f_fl"><img src="images/head_sculpture.png" width="100%" class="f_vat"/></div>';
@@ -323,27 +323,27 @@
 											$(".comment_list").append(str);
 									}
 									//请求页码递增
-										if(data.data.list.length<root.dataNum || data.data.total==root.dataNum){
+										if(data.data.list.length<root.dataNum || data.data.total==root.dataNum) { 
 											root.page=root.page;
 											$(".load_more_comment").addClass("f_dn")	
 										}else {
 											root.page+=root.dataNum;
 											var remain=data.data.total>=root.page ? data.data.total-root.page : 0;
 											$(".load_more_comment").html("查看更多评论（"+remain+"）").removeClass("f_dn");
-											if(remain==0){$(".load_more_comment").addClass("f_dn");}
+											if(remain==0) { $(".load_more_comment").addClass("f_dn");}
 										}
 
 									
 									//判断是否有评论
 									data.data.total==0 ? $(".comment_list").addClass("no_data") : $(".comment_list").removeClass("no_data");
 									
-								}else if(data.code==3){
+								}else if(data.code==3) { 
 									alert("您未登录或者登录超时，请刷新页面后重新登录！");	
 								}else {
 									alert(data.message);	
 								}
 								root.comment_listLock=!1;
-							},error:function(){
+							},error:function() { 
 								alert("网络异常，请稍后重试！");
 								root.comment_listLock=!1;
 							}
@@ -354,7 +354,7 @@
 				comment_list();
 				
 				//加载更多评论
-				$(".load_more_comment").on("click",function(){comment_list();});
+				$(".load_more_comment").on("click",function() { comment_list();});
 				
 				
 				

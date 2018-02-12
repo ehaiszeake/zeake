@@ -86,7 +86,7 @@
         
         <script src="js/jquery.min.1.8.4.js?v=1.7"></script>
         <script>
-        	$(function(){
+        	$(function() { 
 
 				var imgRoute="./";
 				/*
@@ -95,11 +95,11 @@
                     type: "get",
                     dataType: "json",
                     data: {},
-                    beforeSend:function(){},
+                    beforeSend:function() { },
                     success: function (data) {
                         var str = '';
                         console.log(data);
-                         $.each(data.data.list,function(i,item){
+                         $.each(data.data.list,function(i,item) { 
 						   	var img=(item.img==null || item.img=="")  ? imgRoute+"images/head_sculpture.png" : golbalIp+item.img;
 								str+='<li class="f_cf">';
 								str+='	<div class="fame_info_box f_cf">';
@@ -114,7 +114,7 @@
 								str+='		</div>';
 
 								str+='		<div class="fame_recommend_article f_fl '+(item.article===null ? ["noData"][0] : [" "][0])+'">';
-								if(item.article!=null){
+								if(item.article!=null) { 
 									var img2=item.article.img;
 										img2=(img2) ? ((img2.substr(0,7).toLowerCase()=="http://" || img2.substr(0,8).toLowerCase()=="https://") ? img2 : golbalIp+img2) : imgRoute+"images/cover_img.jpg";
 								
@@ -124,7 +124,7 @@
 									str+='			<div class="article_title f_toe"><a href="fame_home_page.php?id='+item.id+'">'+item.article.title+'</a></div>';
 									str+='	        <div class="article_intro">'+item.article.abstract+'</div>';
 									str+='			<div class="article_date_view_message f_cf">';
-									if(item.created){
+									if(item.created) { 
 										str+='				<div class="date f_fl">'+variable_obj.formatDate(item.created*1000)+'</div>';
 									}
 									str+='				<div class="view_message f_fr">';
@@ -136,7 +136,7 @@
 								str+='		</div>';
 							
 								str+='	</div>';
-							if(item.article!=null){
+							if(item.article!=null) { 
 								str+='	<div class="fame_all_article f_tar"><a href="fame_home_page.php?id='+item.id+'">全部文章</a></div>';
 							}
 								str+='</li>';

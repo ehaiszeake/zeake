@@ -54,7 +54,10 @@
 						url:golbalIp+"/main/live_detail",
 						type:"get",
 						dataType:"json",
-						data:{"skipnum":0,"length":pagenum,"id":units.getUrlParam("id")!=null ? units.getUrlParam("id") : ""},
+						data:{"skipnum":0,"length":pagenum,"id":units.getUrlParam("id")!=null ? units.getUrlParam("id") : "",
+								"account": ( ($.cookie('bz')===undefined || $.trim($.cookie('bz'))==="") ? "" : JSON.parse($.cookie('bz')).account ),
+								"token":( ($.cookie('bz')===undefined || $.trim($.cookie('bz'))==="") ? "" : JSON.parse($.cookie('bz')).token)
+								},
 						beforeSend:function() { },
 						success:function(data) { 
 							//请求成功
@@ -99,9 +102,9 @@
 										
 								
 								//文章列表
-								if(data.data.article != null && data.data.article.list.length>0) { 
+								if(data.data.content != null && data.data.content.list.length>0) { 
 									var str1="";//variable_obj.formatDate(item.created*1000)
-										$.each(data.data.article.list,function(i,item) { 	
+										$.each(data.data.content.list,function(i,item) { 	
 											var end_time=data.data.end_time*1000,
 												start_time=data.data.start_time*1000,
 												now_time=new Date().getTime(),
@@ -126,26 +129,26 @@
 											str1+='		<div class="slideBox">';
 											str1+='			<div class="bd">';
 											str1+='				<dl>';
-											if($.isArray(item.img)) { 
-												$.each(item.img,function(i,subItem) { 
-													var img=(subItem==null || subItem=="")  ? imgRoute+"images/placeholder_img_L04.jpg" : golbalIp+subItem;
+											if($.isArray(item.pics)) { 
+												$.each(item.pics,function(i,subItem) { 
+													var img=(subItem==null || subItem=="")  ? imgRoute+"images/placeholder_img_L04.jpg" : (subItem.indexOf("http") >= 0 ? subItem : golbalIp+subItem);
 															str1+='<dd><a href="javascript:;" class="f_full f_db f_pa"><img src="'+img+'" /></a></dd>';
 												});
 											}else {
-												var img=(item.img==null || item.img=="")  ? imgRoute+"images/placeholder_img_L04.jpg" : golbalIp+item.img;
+												var img=(item.pics==null || item.pics=="")  ? imgRoute+"images/placeholder_img_L04.jpg" : (item["pics"].indexOf("http") >= 0 ? item.pics : golbalIp+item.pics);
 												str1+='<dd><a href="javascript:;" class="f_full f_db f_pa"><img src="'+img+'" /></a></dd>';
 											}
 											str1+='				</dl>';
 											str1+='			</div>';
-											if($.isArray(item.img)) { 
+											if($.isArray(item.pics)) { 
 												str1+='			<a class="prev" href="javascript:void(0)"></a>';
 												str1+='			<a class="next" href="javascript:void(0)"></a>';
 											}
 											str1+='		</div>';
 											if(item.type==3) { 
-												str1+='		<div class="intro"><a href="video_detail.php?id='+item.id+'">'+item.abstract+'</a></div>';
+												str1+='		<div class="intro"><a href="video_detail.php?id='+item.id+'">'+item.content+'</a></div>';
 											}else {
-												str1+='		<div class="intro"><a href="article_detail_'+item.id+'.php">'+item.abstract+'</a></div>';
+												str1+='		<div class="intro"><a href="article_detail_'+item.id+'.php">'+item.content+'</a></div>';
 											}
 														
 											str1+='		<div class="comment_module">';
@@ -178,7 +181,7 @@
 
 
 									//请求页码递增
-									if(data.data.article != null){
+									if(data.data.article != null) { 
 										if(data.data.article.length<root.dataNum || data.data.article.total==pagenum) { 
 											pagenum=pagenum;
 											$(".load_more_article").addClass("f_dn")	
@@ -216,7 +219,10 @@
 							url:golbalIp+"/main/live_detail",
 							type:"get",
 							dataType:"json",
-							data:{"skipnum":skipnum,"length":pagenum,"id":units.getUrlParam("id")!=null ? units.getUrlParam("id") : ""},
+							data:{"skipnum":skipnum,"length":pagenum,"id":units.getUrlParam("id")!=null ? units.getUrlParam("id") : "",
+									"account": ( ($.cookie('bz')===undefined || $.trim($.cookie('bz'))==="") ? "" : JSON.parse($.cookie('bz')).account ),
+									"token":( ($.cookie('bz')===undefined || $.trim($.cookie('bz'))==="") ? "" : JSON.parse($.cookie('bz')).token)
+											},
 							beforeSend:function() { },
 							success:function(data) { 
 								//请求成功
@@ -250,18 +256,18 @@
 												str1+='		<div class="slideBox">';
 												str1+='			<div class="bd">';
 												str1+='				<dl>';
-												if($.isArray(item.img)) { 
-													$.each(item.img,function(i,subItem) { 
-														var img=(subItem==null || subItem=="")  ? imgRoute+"images/placeholder_img_L04.jpg" : golbalIp+subItem;
+												if($.isArray(item.pics)) { 
+													$.each(item.pics,function(i,subItem) { 
+														var img=(subItem==null || subItem=="")  ? imgRoute+"images/placeholder_img_L04.jpg" :  (subItem.indexOf("http") >= 0 ? subItem : golbalIp+subItem);
 																str1+='<dd><a href="javascript:;" class="f_full f_db f_pa"><img src="'+img+'" /></a></dd>';
 													});
 												}else {
-													var img=(item.img==null || item.img=="")  ? imgRoute+"images/placeholder_img_L04.jpg" : golbalIp+item.img;
+													var img=(item.pics==null || item.pics=="")  ? imgRoute+"images/placeholder_img_L04.jpg" : (item["pics"].indexOf("http") >= 0 ? item.pics : golbalIp+item.pics);
 													str1+='<dd><a href="javascript:;" class="f_full f_db f_pa"><img src="'+img+'" /></a></dd>';
 												}
 												str1+='				</dl>';
 												str1+='			</div>';
-												if($.isArray(item.img)) { 
+												if($.isArray(item.pics)) { 
 													str1+='			<a class="prev" href="javascript:void(0)"></a>';
 													str1+='			<a class="next" href="javascript:void(0)"></a>';
 												}
@@ -341,7 +347,7 @@
 				$(".live_broadcast_detail_list").on("click",function(e) { 
 					var target=$(e.target);
 						if(target.hasClass("public_btn")) { 
-							if($.cookie('bz')===undefined || $.trim($.cookie('bz'))==="" || ((new Date().getTime()/1000-JSON.parse($.cookie('bz')).updated) > 3600)) { 
+							if($.cookie('bz') === undefined || $.trim($.cookie('bz'))==="" || ((new Date().getTime()/1000-JSON.parse($.cookie('bz')).updated) > 3600)) { 
 								alert("您未登录或者登录超时，请重新登录后操作！");
 								return false;	
 							}else {
@@ -361,9 +367,9 @@
 											if(info.code==1) { 
 											
 												//请求成功
-												var img=( info.data.img==null ||  info.data.img=="")  ? imgRoute+"images/head_sculpture.png" : golbalIp+ info.data.img;
+												var img=( info.data.img==null ||  info.data.img=="")  ? imgRoute+"images/head_sculpture.png" : ( info["data"]["img"].indexOf("http") >= 0 ? info.data.img : golbalIp + info.data.img);
 													$.ajax({
-														url:golbalIp+"/user/create_comment",
+														url:golbalIp+"/user/create_live_comment",
 														type:"post",
 														dataType:"json",
 														data:{"content":val,"id":article_id,"account":JSON.parse($.cookie('bz')).account,"token":JSON.parse($.cookie('bz')).token},

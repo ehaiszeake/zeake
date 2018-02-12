@@ -67,7 +67,7 @@
 		
 			//收藏、评论、点赞、我的文章
 			var page=0,loadLock=false,imgRoute="./",firstLength=10,secondLength=10,thirdLength=10,fourthLength=10;
-			function loadFunData(index){
+			function loadFunData(index) { 
 
 				var url,ary={},paramLen=arguments.length;
 				console.log(paramLen);
@@ -86,21 +86,21 @@
 					ary={"account":JSON.parse($.cookie('bz')).account,"token":JSON.parse($.cookie('bz')).token,"skipnum":page,"length":fourthLength};
 				}
 				
-				if(!loadLock){
+				if(!loadLock) { 
 					loadLock=true;
 					$.ajax({
 						url:url,
 						type:"get",
 						dataType:"json",
 						data:ary,
-						beforeSend:function(){},
-						success:function(data){
+						beforeSend:function() { },
+						success:function(data) { 
 							
 							if(data.code==1) { //数据请求成功
 								var html="";
 									if(index==0) { //收藏列表
-										$.each(data.data.list,function(i,item){
-											if(item.type==1){
+										$.each(data.data.list,function(i,item) { 
+											if(item.type==1) { 
 												var img=(item.img==null || item.img=="")  ? imgRoute+"images/placeholder_img_L04.jpg" : golbalIp+item.img;
 													html+='<li data-type="0">';//普通文章
 													html+='<div class="pc_pic_head_name">';
@@ -123,7 +123,7 @@
 													html+='</div>';
 													html+='</div>';
 													html+='</li>';
-											}else if(item.type==2){
+											}else if(item.type==2) { 
 												html+='<li data-type="1">';//快讯
 												html+='<div class="pc_title f_wwb"><a href="article_detail_'+item.id+'.php">'+item.title+'</a></div>';
 												html+='<div class="pc_date_view_message f_cf">';
@@ -132,7 +132,7 @@
 												html+='<div class="pc_view f_dib f_vat">'+item.pv+'</div>';
 												html+='<div class="pc_message f_dib f_vat">'+item.reply+'</div>';
 												html+='</div></div></li>';
-											}else if(item.type==3){
+											}else if(item.type==3) { 
 												var img=(item.img==null || item.img=="")  ? imgRoute+"images/placeholder_img_L04.jpg" : golbalIp+item.img;
 													html+='<li data-type="2">';//视频
 													html+='<div class="pc_video_cover f_pr">';
@@ -145,13 +145,13 @@
 													html+='</li>';
 											}
 										});
-										if(paramLen==1){
+										if(paramLen==1) { 
 											$(".pc_fun_list").attr("data-type",0).html(html);
 										}else {
 											$(".pc_fun_list").attr("data-type",0).append(html);
 										}
 									}else if(index==1) { //评论列表
-										$.each(data.data.list,function(i,item){
+										$.each(data.data.list,function(i,item) { 
 											html+='<li>';
 											html+='<div class="pc_head_name_time_opera f_cf">';
 											html+='	<div class="pc_head f_fl f_ofh"><img src="images/head_sculpture.png" class="f_vat"/></div>';
@@ -159,17 +159,17 @@
 											html+='	<div class="pc_delete f_fr" data-id="'+item.id+'">删除</div>';
 											html+='</div>';
 											html+='<div class="pc_author_comment f_wwb">'+item.content+'</div>';
-											if(item.reply_comment!==undefined && item.reply_comment!==null){
+											if(item.reply_comment!==undefined && item.reply_comment!==null) { 
 												html+='<div class="pc_article_comment_list">';
 												html+='	<dl class="pc_article_des">';
-													$.each(item.reply_comment,function(a,subItem){
+													$.each(item.reply_comment,function(a,subItem) { 
 														html+='		<dd class="f_wwb">'+subItem.content+'</dd>';
 													})
 												html+='	</dl>';
 												html+='</div>';
 											}
 											html+='<div class="pc_article_title_des">';
-											if(item.article.type!=3){
+											if(item.article.type!=3) { 
 												html+='	<a href="article_detail_'+item.article.id+'.php" class="f_db f_wwb">'+item.article.title+'</a>';
 											}else {
 												html+='	<a href="video_detail.php?id='+item.article.id+'" class="f_db f_wwb">'+item.article.title+'</a>';
@@ -178,14 +178,14 @@
 											html+='</div>';
 											html+='</li>';	
 										});
-										if(paramLen==1){
+										if(paramLen==1) { 
 											$(".pc_fun_list").attr("data-type",1).html(html);
 										}else {
 											$(".pc_fun_list").attr("data-type",1).append(html);
 										}
 									}else if(index==2) { //点赞列表
-										$.each(data.data.list,function(i,item){
-											if(item.type==1){
+										$.each(data.data.list,function(i,item) { 
+											if(item.type==1) { 
 												var img=(item.img==null || item.img=="")  ? imgRoute+"images/placeholder_img_L04.jpg" : golbalIp+item.img;
 													html+='<li data-type="0">';//普通文章
 													html+='<div class="pc_pic_head_name">';
@@ -208,7 +208,7 @@
 													html+='</div>';
 													html+='</div>';
 													html+='</li>';
-											}else if(item.type==2){
+											}else if(item.type==2) { 
 												html+='<li data-type="1">';//快讯
 												html+='<div class="pc_title f_wwb"><a href="article_detail_'+item.id+'.php">'+item.titlle+'</a></div>';
 												//html+='	<div class="pc_praise f_pa"></div>';
@@ -218,7 +218,7 @@
 												html+='<div class="pc_view f_dib f_vat">'+item.pv+'</div>';
 												html+='<div class="pc_message f_dib f_vat">'+item.reply+'</div>';
 												html+='</div></div></li>';
-											}else if(item.type==3){
+											}else if(item.type==3) { 
 												var img=(item.img==null || item.img=="")  ? imgRoute+"images/placeholder_img_L04.jpg" : golbalIp+item.img;
 													html+='<li data-type="2">';//视频
 													html+='<div class="pc_video_cover f_pr">';
@@ -232,24 +232,24 @@
 													html+='</li>';
 											}
 										});
-										if(paramLen==1){
+										if(paramLen==1) { 
 											$(".pc_fun_list").attr("data-type",2).html(html);
 										}else {
 											$(".pc_fun_list").attr("data-type",2).append(html);
 										}
-									}else if(index==3){
+									}else if(index==3) { 
 										var id=$(".pc_author_info").attr("data-id"),
 											state=$(".pc_author_info").attr("data-type");
-										$.each(data.data.list,function(i,item){
+										$.each(data.data.list,function(i,item) { 
 											html+='<li>';
 											html+='	<div class="pc_state_title">';
-											if((state==1 || state==2) && (item.status==0 || item.status==1 || item.status==2)){
+											if((state==1 || state==2) && (item.status==0 || item.status==1 || item.status==2)) { 
 												var type="other";
-												if(item.status_name=="草稿"){type="cg";}
+												if(item.status_name=="草稿") { type="cg";}
 												html+='		<div class="pc_editor_link"><a href="pc_public.php?id='+item.id+'&type='+type+'">编辑</a></div>';
-											}else if(state==3){
+											}else if(state==3) { 
 												var type="other";
-												if(item.status_name=="草稿"){type="cg";}
+												if(item.status_name=="草稿") { type="cg";}
 												html+='		<div class="pc_editor_link">';
 												html+='		<a href="javascript:;" class="pc_new_pass" data-id="'+item.id+'" data-type="'+item.type+'">通过</a>';
 												html+='		<a href="javascript:;" class="pc_new_noPass" data-id="'+item.id+'">不通过</a>';
@@ -257,14 +257,14 @@
 												html+='		<a href="pc_public.php?id='+item.id+'&type='+type+'">编辑</a></div>';
 											}
 											html+='		<div class="pc_state f_dib f_vat" data-type="'+item.status+'">#'+item.status_name+'：</div><div class="pc_title f_dib f_vat">';
-											if(item.type!=3){
-													if(item.status==0 || item.status==1 || item.status==2){
+											if(item.type!=3) { 
+													if(item.status==0 || item.status==1 || item.status==2) { 
 														html+='	<a href="javascript:;" class="f_wwb">'+item.title+'</a>';
 													}else {
 														html+='	<a href="article_detail_'+item.id+'.php" class="f_wwb">'+item.title+'</a>';
 													}
 											}else {
-													if(item.status==0 || item.status==1 || item.status==2){
+													if(item.status==0 || item.status==1 || item.status==2) { 
 														html+='	<a href="javascript:;" class="f_wwb">'+item.title+'</a>';
 													}else {
 														html+='	<a href="video_detail.php?id='+item.id+'" class="f_wwb">'+item.title+'</a>';
@@ -276,7 +276,7 @@
 											html+='	<div class="pc_des">'+item.abstract+'</div>';
 											html+='</li>';	
 										});
-										if(paramLen==1){
+										if(paramLen==1) { 
 											$(".pc_fun_list").attr("data-type",3).html(html);
 										}else {
 											$(".pc_fun_list").attr("data-type",3).append(html);
@@ -286,20 +286,20 @@
 									var difItemNum=index==0 ? firstLength : index==1 ? secondLength : index==2 ? thirdLength : fourthLength;
 									
 									//请求页码递增
-										if(data.data.list.length<difItemNum || data.data.total==difItemNum){
+										if(data.data.list.length<difItemNum || data.data.total==difItemNum) { 
 											page=page;
 											$(".pc_load_more_data").addClass("f_dn")	
 										}else {
 											page+=difItemNum;
 											var remain=data.data.total>=page ? data.data.total-page : 0;
 											$(".pc_load_more_data").html("查看更多（"+remain+"）").removeClass("f_dn");
-											if(remain==0){$(".pc_load_more_data").addClass("f_dn");}
+											if(remain==0) { $(".pc_load_more_data").addClass("f_dn");}
 										}
 									
 									
 									
-								}else if(data.code==3){
-									if(paramLen!=1){
+								}else if(data.code==3) { 
+									if(paramLen!=1) { 
 										alert("登录超时，请重新登录！");
 									}
 								}else {
@@ -307,7 +307,7 @@
 								}
 								loadLock=false	
 						},
-						error:function(){
+						error:function() { 
 							alert("网络错误，请刷新重试！");
 							loadLock=false
 						}	
@@ -316,7 +316,7 @@
 			}
 		
 		
-        	$(function(){
+        	$(function() { 
 				
 				//获取个人资料
 				$.ajax({
@@ -324,25 +324,25 @@
 					type:"get",
 					dataType:"json",
 					data:{"account":JSON.parse($.cookie('bz')).account,"token":JSON.parse($.cookie('bz')).token},
-					beforeSend:function(){},
-					success:function(data){
+					beforeSend:function() { },
+					success:function(data) { 
 						console.log("个人资料信息");
 						console.log(data);
-						if(data.code==1){
+						if(data.code==1) { 
 							//请求成功
 							var img=( data.data.img==null ||  data.data.img=="")  ? imgRoute+"images/head_sculpture.png" : data.data.img;
 								$(".pc_author_info").attr({"data-id":data.data.id,"data-type":data.data.type}).find(".pc_head_unit").find("img").attr("src",img);
 								$(".pc_author_info").find(".nickName").html(data.data.nickname).attr("data-author_id",data.data.id);
 								$(".pc_author_info").find(".sign").html(data.data.mark);
 								$(".main_content[data-type='pc_home']").removeClass("loading");
-						}else if(data.code==3){
+						}else if(data.code==3) { 
 							//未登录
 							//alert("登录超时，请重新登录！");	
 						}else {
 							alert(data.message);
 						}
 					},
-					error:function(){
+					error:function() { 
 						alert("网络错误，请稍后再试！");
 					}		
 				})
@@ -350,7 +350,7 @@
 				
 				
 				//加载更多数据
-				$(".pc_load_more_data").on("click",function(){
+				$(".pc_load_more_data").on("click",function() { 
 					//判断是否登录有效
 					variable_obj.logined();
 					//请求更多相关数据
@@ -361,10 +361,10 @@
 				
 				//查看  收藏、评论、点赞、转发、我的文章
 				root.firstClick=true;
-				$(".pc_fun_tab").click(function(e){
+				$(".pc_fun_tab").click(function(e) { 
 					var target=$(e.target),name=e.target.nodeName;
-						if(name=="LI" && !target.hasClass("on")){
-							if(root.firstClick){
+						if(name=="LI" && !target.hasClass("on")) { 
+							if(root.firstClick) { 
 								root.firstClick=false;
 							}else {
 								//判断是否登录有效
@@ -384,31 +384,31 @@
 				
 				//删除评论
 				root.deleteComment=false;
-				$(".pc_fun_list").on("click",function(e){
+				$(".pc_fun_list").on("click",function(e) { 
 					var target=$(e.target);
-						if(target.hasClass("pc_delete")){
-							if($.cookie('bz')===undefined || $.trim($.cookie('bz'))==="" || ((new Date().getTime()/1000-JSON.parse($.cookie('bz')).updated) > 3600)){
+						if(target.hasClass("pc_delete")) { 
+							if($.cookie('bz')===undefined || $.trim($.cookie('bz'))==="" || ((new Date().getTime()/1000-JSON.parse($.cookie('bz')).updated) > 3600)) { 
 								alert("您未登录或者登录超时，请重新登录后操作！");
 								return false;	
 							}else {
-								if(!root.deleteComment){
+								if(!root.deleteComment) { 
 									root.deleteComment=true;
 									var state=window.confirm("确定删除该评论？");
-										if(state){
+										if(state) { 
 											$.ajax({
 												url:golbalIp+"/user/delete_comment",
 												type:"post",
 												dataType:"json",
 												data:{"account":JSON.parse($.cookie('bz')).account,"token":JSON.parse($.cookie('bz')).token,"id":target.attr("data-id")},
-												beforeSend:function(){},
-												success:function(data){
-													if(data.code==1){
+												beforeSend:function() { },
+												success:function(data) { 
+													if(data.code==1) { 
 														target.parents("li").remove();
 													}else {
 														alert(data.message);
 													}
 													root.deleteComment=!1;
-												},error:function(){
+												},error:function() { 
 													alert("网络错误，请稍后再试！");
 													root.deleteComment=!1;
 												}
@@ -421,49 +421,49 @@
 				
 				
 				root.deleteArticle=false
-				$(".pc_fun_show_list").on("click",function(e){
+				$(".pc_fun_show_list").on("click",function(e) { 
 					var target=$(e.target);
-						if(target.hasClass("pc_new_delete")){
-							if(!root.deleteArticle){
+						if(target.hasClass("pc_new_delete")) { 
+							if(!root.deleteArticle) { 
 								root.deleteArticle=true;
 								var state=window.confirm("确定删除该文章？");
-									if(state){
+									if(state) { 
 										$.ajax({
 											url:golbalIp+"/user/delete_article",
 											type:"post",
 											dataType:"json",
 											data:{"account":JSON.parse($.cookie('bz')).account,"token":JSON.parse($.cookie('bz')).token,"id":target.attr("data-id")},
-											beforeSend:function(){},
-											success:function(data){
-												if(data.code==1){
+											beforeSend:function() { },
+											success:function(data) { 
+												if(data.code==1) { 
 													target.parents("li").remove();
 													alert("删除成功");
 												}else {
 													alert(data.message);
 												}
 												root.deleteArticle=!1;
-											},error:function(){
+											},error:function() { 
 												alert("网络错误，请稍后再试！");
 												root.deleteArticle=!1;
 											}
 										});
 									}
 							}
-						}else if(target.hasClass("pc_new_pass")){
+						}else if(target.hasClass("pc_new_pass")) { 
 							//文章审核通过
-							if(!root.deleteArticle){
+							if(!root.deleteArticle) { 
 								root.deleteArticle=true;
 								var state=window.confirm("确定通过该文章审核？");
-									if(state){
+									if(state) { 
 										$.ajax({
 											url:golbalIp+"/user/agree_article",
 											type:"post",
 											dataType:"json",
 											data:{"account":JSON.parse($.cookie('bz')).account,"token":JSON.parse($.cookie('bz')).token,"id":target.attr("data-id")},
-											beforeSend:function(){},
-											success:function(data){
-												if(data.code==1){
-													if(target.attr("data-type")!=3){
+											beforeSend:function() { },
+											success:function(data) { 
+												if(data.code==1) { 
+													if(target.attr("data-type")!=3) { 
 														target.parent(".pc_editor_link").next(".pc_state").attr("data-type",3).html("#已发布")
 														.next(".pc_title").find("a").attr("href","article_detail_"+target.attr("data-id")+".php");
 													}else {
@@ -475,27 +475,27 @@
 													alert(data.message);
 												}
 												root.deleteArticle=!1;
-											},error:function(){
+											},error:function() { 
 												alert("网络错误，请稍后再试！");
 												root.deleteArticle=!1;
 											}
 										});
 									}
 							}
-						}else if(target.hasClass("pc_new_noPass")){
+						}else if(target.hasClass("pc_new_noPass")) { 
 							//文章审核不通过
-							if(!root.deleteArticle){
+							if(!root.deleteArticle) { 
 								root.deleteArticle=true;
 								var state=window.confirm("确定不通过文章审核？");
-									if(state){
+									if(state) { 
 										$.ajax({
 											url:golbalIp+"/user/disagree_article",
 											type:"post",
 											dataType:"json",
 											data:{"account":JSON.parse($.cookie('bz')).account,"token":JSON.parse($.cookie('bz')).token,"id":target.attr("data-id")},
-											beforeSend:function(){},
-											success:function(data){
-												if(data.code==1){
+											beforeSend:function() { },
+											success:function(data) { 
+												if(data.code==1) { 
 													target.parent(".pc_editor_link").next(".pc_state").attr("data-type",2).html("#未通过")
 													.next(".pc_title").find("a").attr("href","javascript:;");
 													alert("文章审核不通过！");
@@ -503,7 +503,7 @@
 													alert(data.message);
 												}
 												root.deleteArticle=!1;
-											},error:function(){
+											},error:function() { 
 												alert("网络错误，请稍后再试！");
 												root.deleteArticle=!1;
 											}

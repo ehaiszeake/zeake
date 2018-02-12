@@ -44,7 +44,7 @@
         
         <script src="js/jquery.min.1.8.4.js?v=1.7"></script>
         <script>
-        	$(function(){
+        	$(function() { 
 
 				
 				var imgRoute="./",
@@ -54,34 +54,34 @@
 				root.page=0;
 				root.dataNum=10;
 				root.themeLock=!1;
-				function theme_list(){
-					if(!root.themeLock){
+				function theme_list() { 
+					if(!root.themeLock) { 
 						root.themeLock=!0;
 						$.ajax({
 							url:golbalIp+"/main/special_detail",
 							type:"get",
 							dataType:"json",
 							data:{"id":id},
-							beforeSend:function(){},
-							success:function(data){
+							beforeSend:function() { },
+							success:function(data) { 
 								console.log(data);
 								
 								//请求成功
-								if(data.code==1){
+								if(data.code==1) { 
 									//有数据
-									if(data.data.article_list.length>0){
+									if(data.data.article_list.length>0) { 
 										$(".b_title").html(data.data.title);
 										var str="",placeholder=imgRoute+"images/placeholder_img_L04.jpg",
 											bg=data.data.background_img;
 											bg=(bg) ? ((bg.substr(0,7).toLowerCase()=="http://" || bg.substr(0,8).toLowerCase()=="https://") ? bg : golbalIp+bg) : imgRoute+"images/placeholder_img_L04.jpg";
 											$(".b_title").css({"background":"url("+bg+") no-repeat 50% 50%","background-size":"cover"});
 										
-											$.each(data.data.article_list,function(i,item){
+											$.each(data.data.article_list,function(i,item) { 
 												var img=item.img;
 													img=(img) ? ((img.substr(0,7).toLowerCase()=="http://" || img.substr(0,8).toLowerCase()=="https://") ? img : golbalIp+img) : imgRoute+"images/placeholder_img_L04.jpg";
 												
 													str+='<li class="f_fl">';
-													if(item.skip_url){
+													if(item.skip_url) { 
 													str+='	<div class="special_theme_cover_img f_pr"><a href="'+item.skip_url+'" class="f_dib f_full f_pa"><img src="'+img+'" width="100%" height="100%"/></a></div>';
 													str+='	<div class="special_theme_item_title"><a href="'+item.skip_url+'">'+item.title+'</a></div>';
 													}else {
@@ -90,17 +90,17 @@
 													}
 													str+='</li>';
 											});
-											$(".special_theme_page_list").append(str).find("img").on("error",function(){
+											$(".special_theme_page_list").append(str).find("img").on("error",function() { 
 												this.src=placeholder;	
 											});
 									}
 									
-								}else if(data.code==3){
+								}else if(data.code==3) { 
 									alert("您未登录或者登录超时，请刷新页面后重新登录！");	
 								}else {
 									alert(data.message);	
 								}
-							},error:function(){
+							},error:function() { 
 								alert("网络异常，请稍后重试！");
 							}
 						});
@@ -110,7 +110,7 @@
 				theme_list();
 				
 				//加载更多评论
-				$(".load_more_article").on("click",function(){theme_list();});
+				$(".load_more_article").on("click",function() { theme_list();});
 
 
 			})

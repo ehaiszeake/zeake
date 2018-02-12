@@ -46,7 +46,7 @@
         <script src="js/jquery.min.1.8.4.js?v=1.7"></script>
         <script src="js/pc_common.js?v=1.2"></script>
         <script>		
-			$(function(){
+			$(function() { 
 				
 				var imgRoute="./";
 
@@ -56,10 +56,10 @@
 					type:"get",
 					dataType:"json",
 					data:{"account":JSON.parse($.cookie('bz')).account,"token":JSON.parse($.cookie('bz')).token},
-					beforeSend:function(){},
-					success:function(data){
+					beforeSend:function() { },
+					success:function(data) { 
 						console.log();
-						if(data.code==1){
+						if(data.code==1) { 
 							var img=(data.data.img==null || data.data.img=="")  ? imgRoute+"images/head_sculpture.png" : golbalIp+data.data.img,
 								html="";
 								html+='<div clas="pc_head_name f_fl">';
@@ -76,7 +76,7 @@
 						}else {
 							alert(data.message);
 						}
-					},error:function(){
+					},error:function() { 
 						
 					}
 				});
