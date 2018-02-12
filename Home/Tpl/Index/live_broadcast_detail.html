@@ -9,7 +9,7 @@
     </head>
     
     
-    <body>
+    <body class="broadcast">
  		
         <!--头部 start-->
     	<include file="./Home/Tpl/Index/include/header.html" />
@@ -17,12 +17,39 @@
         
         
         <!--主内容  start-->
-        <div class="main_content f_pr loading" data-type="live_broadcast_list_detail">
-			<div class="main_contnet_inner f_pr ">
+        <div class="main_content f_pr loading broadcast" data-type="live_broadcast_list_detail">
+			<div class="main_contnet_inner broadcast f_pr ">
                 
                 <!--直播详情  start-->
                 <div class="live_broadcast_list_detail_box"></div>
                 <!--直播详情    end-->
+                
+                <!-- 编辑文档框 -->
+                <div class="edit_detail dn">
+                		<div class="row">
+	                		<div class="e_face f_vat fl">
+	                			<img class="f_vat" src="images/head_sculpture.png">
+	                		</div>
+	                		<div class="e_edit fl">
+	                			<textarea rows="" cols="" placeholder="编辑文本发送"></textarea>
+	                		</div>
+	                		<div class="e_pic fr">
+	                			<img src="images/e_pic.png">
+	                		</div>
+                		</div>
+                		<div class="row">
+                			<button class="e_send fr" id="write_broadcase">发送</button>
+                		</div>
+                </div>                
+                <!-- 编辑文档框 -->
+            <!-- refresh start -->
+            <div class="e_refresh dn">
+            	<a class="refresh_now">立即刷新页面</a>
+            	<div class="refresh_setting fr">
+            		<input type="checkbox" >开启自动刷新
+            	</div>
+            </div>
+            <!-- refresh end -->
                 
 				<!--文章列表  start-->
                 <div class="live_broadcast_detail_list">
@@ -44,6 +71,10 @@
         <script src="js/jquery.min.1.8.4.js?v=1.7"></script>
         <script>
         	$(function() { 
+        		
+        		if($.cookie('bz')!==undefined || $.trim($.cookie('bz'))!==""){
+        			$(".edit_detail,.e_refresh").removeClass("dn");
+        		}
 				
 				//图片路径
 				var imgRoute="./",
