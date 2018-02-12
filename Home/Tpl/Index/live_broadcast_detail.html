@@ -4,7 +4,7 @@
         <meta charset="utf-8"/>
         <title>直播列表</title>
         <include file="./Home/Tpl/Index/include/head.html" />
-
+			<link rel="stylesheet" href="css/edit_broadcast.css" />
 		<!--<script src="js/ckplayer/ckplayer.js"></script>-->
     </head>
     
@@ -27,20 +27,7 @@
             <!-- 编辑文档框 -->
             <div class="edit_detail_bg">
                 <div class="edit_detail dn">
-                		<div class="row">
-	                		<div class="e_face f_vat fl">
-	                			<img class="f_vat" src="images/head_sculpture.png">
-	                		</div>
-	                		<div class="e_edit fl">
-	                			<textarea id="e_content" name="e_content" rows="" cols="" placeholder="编辑文本发送"></textarea>
-	                		</div>
-	                		<div class="e_pic fr">
-	                			<input type="file" class="full_size f_pa" accept="image/gif,image/png,image/jpg,image/jpeg" name="file" id="file" />
-	                		</div>
-                		</div>
-                		<div class="row">
-                			<ul id="pic_li"></ul>
-                		</div>
+                		<include file="./Home/Tpl/Index/include/edit_detail.html" />
                 		<div class="row">
                 			<button class="e_send fr" id="write_broadcase">发送</button>
                 		</div>
@@ -72,9 +59,13 @@
         <include file="./Home/Tpl/Index/include/footer.html" />
         <!--底部   end-->
         
-        
-        
         <script src="js/jquery.min.1.8.4.js?v=1.7"></script>
+      	<!-- 编辑评论 start-->
+        <include file="./Home/Tpl/Index/include/live_broadcast_edit.html" />
+        <!-- 编辑评论  end-->
+        
+        
+        
         <script>
         	$(function() { 
         		
@@ -227,7 +218,7 @@
 												}else {
 													state=state[1]
 												}										
-											str1+='<li class="f_cf">';
+											str1+='<li class="f_cf live_comment_'+item.id+'">';
 											str1+='	<div class="f_fl time_state f_tac">';
 											str1+='		<div class="time f_pr">'+variable_obj.formatDate(item.created*1000)+'</div>';
 											str1+='		<div class="state_text">'+state+'</div>';
@@ -355,7 +346,7 @@
 													}else {
 														state=state[1]
 													}	
-												str1+='<li class="f_cf">';
+												str1+='<li class="f_cf live_comment_'+item.id+'">';
 												str1+='	<div class="f_fl time_state f_tac">';
 												str1+='		<div class="time f_pr">'+variable_obj.formatDate(item.created*1000)+'</div>';
 												str1+='		<div class="state_text">'+state+'</div>';
@@ -531,6 +522,24 @@
 			
 			//编辑评论
 			function edit_comment(id) { 
+        		$("#edit_broadcast_live").addClass("show");
+        		
+        		$("#edit_content").val($(".live_comment_"+id+" .intro").text());
+        		
+        		$("#edit_pic_li li").unbind().remove();
+        		$(".live_comment_"+id+" .slideBox img").each(function(index,ele){
+        			$("#edit_pic_li").append("<li><img src='"+$(ele).attr("src")+"'><div class='close'></div></li>");
+        		});
+        		
+        		
+        		if($("#edit_pic_li li").length >= 5) { 
+					$("#edit_file").attr("disabled","disabled");
+				}
+        		
+        		$("#edit_pic_li .close").unbind().click(function() { 
+					$(this).parent().remove();
+					$("#edit_file").removeAttr("disabled");
+				});
         		
         	}
         	//删除评论

@@ -1,0 +1,129 @@
+<div id="edit_broadcast_live" class="modal ">
+	<div class="modal-backdrop show"></div>
+	
+	
+	
+	
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLiveLabel">编辑消息</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body edit_detail">
+        
+        
+        
+ <div class="row">
+	<div class="e_face f_vat fl">
+		<img class="f_vat" src="images/head_sculpture.png">
+	</div>
+	<div class="e_edit fl">
+		<textarea id="edit_content" name="edit_content" rows="" cols="" placeholder="编辑文本发送"></textarea>
+	</div>
+	<div class="e_pic fr">
+		<input type="file" class="full_size f_pa" accept="image/gif,image/png,image/jpg,image/jpeg" name="edit_file" id="edit_file" />
+	</div>
+</div>
+<div class="row">
+	<ul id="edit_pic_li" class="pic_li"></ul>
+</div>
+        
+        
+        
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" id="edit_cancel">取消</button>
+        <button type="button" class="btn btn-primary" id="edit_write_broadcase">发送</button>
+      </div>
+    </div>
+  </div>
+	
+	
+	
+	
+</div>
+
+<script type="text/javascript">
+$(function() { 
+	
+	$("#edit_cancel,button.close").click(function(){ $("#edit_broadcast_live").removeClass("show");});
+	
+	//上传封面图
+	$("#edit_file").on("change",function() { 
+		var format=this.files[0];
+			console.log(format);
+		var formData = new FormData();
+			formData.append('file',$('#file')[0].files[0]);
+			formData.append("account",JSON.parse($.cookie('bz')).account);
+			formData.append("token",JSON.parse($.cookie('bz')).token);
+			$.ajax({
+				url: golbalIp+"/user/uploadImg",
+				type: 'post',
+				dataType:"json",
+				cache: false,
+				data: formData,
+				processData: false,
+				contentType: false
+			}).done(function(res) {
+				if(res.code==1) { 
+					var img=res.data;
+						img=(img.substr(0,7).toLowerCase()=="http://" || img.substr(0,8).toLowerCase()=="https://") ? img : golbalIp+img;
+					
+					$("#edit_pic_li").append("<li><img src='"+img+"'><div class='close'></div></li>");
+					
+					$("#edit_pic_li .close").unbind().click(function() { 
+						$(this).parent().remove();
+						$("#file").removeAttr("disabled");
+					});
+					
+					if($("#edit_pic_li li").length >= 5) { 
+						$("#edit_file").attr("disabled","disabled");
+					}
+					
+				}else {
+					alert(res.message);	
+				}
+			}).fail(function(res) {
+				alert(res.message);
+			}); 	
+	});
+	
+	
+	$("#edit_write_broadcase").click(function() { 
+		var content = $("#edit_content").val();
+		if(content.length == 0) { 
+			alert("请输入直播内容");return ;
+		}
+		var pic = [];
+		$("#edit_pic_li img").each(function(index,ele) { 
+			pic.push($(ele).attr("src"));
+		});
+		
+		return ;
+		
+		$.ajax({
+			url:golbalIp+"/user/create_live",
+			type:"post",
+			dataType:"json",
+			data:{  "live_id":units.getUrlParam("id")!=null ? units.getUrlParam("id") : "",
+					"account": JSON.parse($.cookie('bz')).account,
+					"token": JSON.parse($.cookie('bz')).token,
+					"content": content,
+					"pics":pic.length==0 ? "" : pic
+			},success:function(data) { 
+				if(data.code != 1) { 
+					alert(data.message);return ;
+				}else{
+					window.location.reload(true);
+				}
+			}
+		});
+	});
+	
+});
+</script>
+
