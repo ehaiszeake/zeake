@@ -34,7 +34,7 @@
 	                			<textarea rows="" cols="" placeholder="编辑文本发送"></textarea>
 	                		</div>
 	                		<div class="e_pic fr">
-	                			<img src="images/e_pic.png">
+	                			<input type="file" class="full_size f_pa" accept="image/gif,image/png,image/jpg,image/jpeg" name="file" id="file"/>
 	                		</div>
                 		</div>
                 		<div class="row">
@@ -75,6 +75,43 @@
         		if($.cookie('bz')!==undefined || $.trim($.cookie('bz'))!==""){
         			$(".edit_detail,.e_refresh").removeClass("dn");
         		}
+        		
+        		
+        		
+        		//上传封面图
+				$("#file").on("change",function() { 
+					var format=this.files[0];
+						console.log(format);
+					var formData = new FormData();
+						formData.append('file',$('#file')[0].files[0]);
+						formData.append("account",JSON.parse($.cookie('bz')).account);
+						formData.append("token",JSON.parse($.cookie('bz')).token);
+						$.ajax({
+							url: golbalIp+"/user/uploadImg",
+							type: 'post',
+							dataType:"json",
+							cache: false,
+							data: formData,
+							processData: false,
+							contentType: false
+						}).done(function(res) {
+							if(res.code==1) { 
+								var img=res.data;
+									img=(img.substr(0,7).toLowerCase()=="http://" || img.substr(0,8).toLowerCase()=="https://") ? img : golbalIp+img;
+								
+								$(".pc_cover_pic_inner").find("img").attr("src",img);
+								$(".pc_cover_pic").removeClass("no_pic").attr("data-src",img);
+								$(".pc_cover_pic_inner").attr("data-src",img);
+								$(".upload_cover").find("div").html("修改封面图");
+							}else {
+								alert(res.message);	
+							}
+						}).fail(function(res) {
+							alert(res.message);
+						}); 	
+				});
+        		
+        		
 				
 				//图片路径
 				var imgRoute="./",

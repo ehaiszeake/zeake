@@ -1195,6 +1195,10 @@ img.placeholderImg2 {background:url(../images/placeholderImg2.png) no-repeat 50%
 .edit_detail .e_face,.edit_detail .e_pic{
 	margin: 18px;
 }
+.edit_detail .e_pic {background: url("../images/e_pic.png");width:32px;height: 32px;}
+.edit_detail .e_pic input[type='file']{
+	border: 0;width:32px;height: 32px;opacity:0;filter:alpha(opacity=0);
+}
 .edit_detail .e_edit{
 	width:450px;height: 100px;padding-top: 18px;
 }
