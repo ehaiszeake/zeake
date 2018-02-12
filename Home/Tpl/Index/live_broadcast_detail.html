@@ -24,24 +24,30 @@
                 <div class="live_broadcast_list_detail_box"></div>
                 <!--直播详情    end-->
                 
-                <!-- 编辑文档框 -->
+            <!-- 编辑文档框 -->
+            <div class="edit_detail_bg">
                 <div class="edit_detail dn">
                 		<div class="row">
 	                		<div class="e_face f_vat fl">
 	                			<img class="f_vat" src="images/head_sculpture.png">
 	                		</div>
 	                		<div class="e_edit fl">
-	                			<textarea rows="" cols="" placeholder="编辑文本发送"></textarea>
+	                			<textarea id="e_content" name="e_content" rows="" cols="" placeholder="编辑文本发送"></textarea>
 	                		</div>
 	                		<div class="e_pic fr">
-	                			<input type="file" class="full_size f_pa" accept="image/gif,image/png,image/jpg,image/jpeg" name="file" id="file"/>
+	                			<input type="file" class="full_size f_pa" accept="image/gif,image/png,image/jpg,image/jpeg" name="file" id="file" />
 	                		</div>
+                		</div>
+                		<div class="row">
+                			<ul id="pic_li"></ul>
                 		</div>
                 		<div class="row">
                 			<button class="e_send fr" id="write_broadcase">发送</button>
                 		</div>
-                </div>                
-                <!-- 编辑文档框 -->
+                </div>
+            </div>           
+            <!-- 编辑文档框 -->
+            <div class="clearfix"></div>
             <!-- refresh start -->
             <div class="e_refresh dn">
             	<a class="refresh_now">立即刷新页面</a>
@@ -50,7 +56,7 @@
             	</div>
             </div>
             <!-- refresh end -->
-                
+                <div class="clearfix"></div>
 				<!--文章列表  start-->
                 <div class="live_broadcast_detail_list">
                 	<ul></ul>
@@ -78,6 +84,8 @@
         		
         		
         		
+        		
+        		
         		//上传封面图
 				$("#file").on("change",function() { 
 					var format=this.files[0];
@@ -99,10 +107,17 @@
 								var img=res.data;
 									img=(img.substr(0,7).toLowerCase()=="http://" || img.substr(0,8).toLowerCase()=="https://") ? img : golbalIp+img;
 								
-								$(".pc_cover_pic_inner").find("img").attr("src",img);
-								$(".pc_cover_pic").removeClass("no_pic").attr("data-src",img);
-								$(".pc_cover_pic_inner").attr("data-src",img);
-								$(".upload_cover").find("div").html("修改封面图");
+								$("#pic_li").append("<li><img src='"+img+"'><div class='close'></div></li>");
+								
+								$("#pic_li .close").unbind().click(function(){
+									$(this).parent().remove();
+									$("#file").removeAttr("disabled");
+								});
+								
+								if($("#pic_li li").length >= 5){
+									$("#file").attr("disabled","disabled");
+								}
+								
 							}else {
 								alert(res.message);	
 							}
@@ -112,6 +127,34 @@
 				});
         		
         		
+				$("#write_broadcase").click(function(){
+					var content = $("#e_content").val();
+					if(content.length == 0){
+						alert("请输入直播内容");return ;
+					}
+					var pic = [];
+					$("#pic_li img").each(function(index,ele){
+						pic.push($(ele).attr("src"));
+					});
+					
+        			$.ajax({
+        				url:golbalIp+"/user/create_live",
+        				type:"post",
+						dataType:"json",
+						data:{  "live_id":units.getUrlParam("id")!=null ? units.getUrlParam("id") : "",
+								"account": JSON.parse($.cookie('bz')).account,
+								"token": JSON.parse($.cookie('bz')).token,
+								"content": content,
+								"pics":pic.length==0 ? "" : pic
+						},success:function(data){
+							if(data.code != 1){
+								alert(data.message);return ;
+							}else{
+								
+							}
+						}
+        			});
+        		});
 				
 				//图片路径
 				var imgRoute="./",
