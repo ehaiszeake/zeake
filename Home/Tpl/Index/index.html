@@ -101,7 +101,17 @@
         <script>
 			//图片路径
 			var imgRoute="./";
-					
+			$(function(){
+				$("div.state_live").each(function(index,ele){
+					if($(ele).text() == "进行中"){
+						$(ele).addClass("state1");
+					}else if($(ele).text() == "已结束"){
+						$(ele).addClass("state2");
+					}else if($(ele).text() == "未开始"){
+						$(ele).addClass("state3");
+					}
+				});
+			});
         	$(function() { 
 				var total = 0,
 					skipnum = 0,

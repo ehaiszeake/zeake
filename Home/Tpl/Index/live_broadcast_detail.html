@@ -69,6 +69,8 @@
         
         <script>
         var live_comment_id ;
+        var start_time;
+        var end_time;
         	$(function() { 
         		
         		if($.cookie('bz')!==undefined || $.trim($.cookie('bz'))!=="") { 
@@ -166,7 +168,7 @@
 						success:function(data) { 
 							//请求成功
 							if(data.code==1) { 
-								
+								if(data.data == null)return ;
 								//直播详情
 								var img=(data.data.img==null || data.data.img=="")  ? imgRoute+"images/placeholder_img_L04.jpg" : golbalIp+data.data.img,
 									end_time=data.data.end_time*1000,
@@ -205,14 +207,17 @@
 								
 								var live_comment_ids = [];
 								
+								start_time = data.data.start_time;
+						      end_time = data.data.end_time;
+						        
 								//文章列表
 								if(data.data.content != null && data.data.content.list.length>0) { 
 									var str1="";//variable_obj.formatDate(item.created*1000)
 										$.each(data.data.content.list,function(i,item) { 	
 											live_comment_ids.push(item.id);//把评论ID对接上数组
-											var end_time=data.data.end_time*1000,
-												start_time=data.data.start_time*1000,
-												now_time=new Date().getTime(),
+											var end_time=parseFloat(data.data.end_time),
+												start_time=parseFloat(data.data.start_time),
+												now_time=parseFloat(item.created),//new Date().getTime()||item.created
 												state=["未开始","直播中...","已结束"];
 												if(start_time>now_time) { 
 													state=state[0]
@@ -224,7 +229,7 @@
 											str1+='<li class="f_cf live_comment_'+item.id+'">';
 											str1+='	<div class="f_fl time_state f_tac">';
 											str1+='		<div class="time f_pr">'+variable_obj.formatDate(item.created*1000)+'</div>';
-											str1+='		<div class="state_text">'+state+'</div>';
+											str1+='		<div class="state_text" start_time="'+data.data.start_time+'" end_time="'+data.data.end_time+'" created="'+item.created+'">'+state+'</div>';
 											str1+='	</div>';
 											str1+='	<div class="f_pr comment_name_intro">';
 											str1+='		<div class="head_name">';

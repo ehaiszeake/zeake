@@ -446,6 +446,7 @@ img.placeholderImg2 {background:url(../images/placeholderImg2.png) no-repeat 50%
 .activities_newest dd .state_intro .state{width:44px;margin-right:18px;font-size:14px;line-height:20px;}
 .activities_newest dd .state_intro .state1{color:#00E676;}
 .activities_newest dd .state_intro .state2{color:#FF5722;}
+.activities_newest dd .state_intro .state3{color:#FAC588;}
 .activities_newest dd .state_intro .intro{width:258px;max-height:48px;line-height:20px;overflow:hidden;font-size:14px;}
 .activities_newest dd .state_intro .intro a {color:#263238;}
 .activities_newest dd .state_intro .intro a:hover {text-decoration:underline;color:#5ab86e}

@@ -1,8 +1,8 @@
 <dl class="activities_newest">
                             <dt class="f_cf"><span class="f_fl">知客最新活动</span></dt>
 							<volist name="index['data']['right_info']['new_live']" id="live">
-								<dd>
-									<div class="state_intro f_cf"><div class="state state1 f_fl">{$live.status}</div>
+								<dd class="live_index">
+									<div class="state_intro f_cf"><div class="state state_live f_fl" start_time="{$live.start_time}" end_time="{$live.end_time}">{$live.status}</div>
 									<div class="intro f_fl">
 									<a href="<empty name='live.skip_url'>live_broadcast_detail.php?id={$item.id}<else/>{$live.skip_url}</empty>">{$live.title}</a>
 									</div>
@@ -35,3 +35,4 @@
 								<dd><a href="special_theme_page.php?id={$special.id}"><img src="{$special.img|webImg=$website}" class="f_vat placeholderImg2"/></a></dd>
 							</volist>
                         </dl>
+                       
