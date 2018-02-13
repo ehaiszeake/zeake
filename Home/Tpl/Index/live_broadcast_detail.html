@@ -202,13 +202,14 @@
 									str+='	</li>';
 									str+='</ul>';				
 									$(".live_broadcast_list_detail_box").html(str);
-									
-										
+								
+								var live_comment_ids = [];
 								
 								//文章列表
 								if(data.data.content != null && data.data.content.list.length>0) { 
 									var str1="";//variable_obj.formatDate(item.created*1000)
 										$.each(data.data.content.list,function(i,item) { 	
+											live_comment_ids.push(item.id);//把评论ID对接上数组
 											var end_time=data.data.end_time*1000,
 												start_time=data.data.start_time*1000,
 												now_time=new Date().getTime(),
@@ -257,7 +258,7 @@
 											}
 														
 											str1+='		<div class="comment_module">';
-											str1+='			<dl class="comment_list">';
+											str1+='			<dl class="comment_list comment_list_'+item.id+'">';
 //											str1+='				<dd class="f_cf">';
 //											str1+='					<div class="head f_pr f_fl"><img src="images/head_sculpture.png" width="100%" class="f_vat"/></div>';
 //											str1+='					<div class="f_pr name_time_content">';
@@ -284,15 +285,19 @@
 									$(".live_broadcast_detail_list").find("ul").addClass("no_data");
 								}
 
+								//加载评论
+								$.each(live_comment_ids,function(k,v){
+									live_comment(v);
+								});
 
 									//请求页码递增
-									if(data.data.article != null) { 
-										if(data.data.article.length<root.dataNum || data.data.article.total==pagenum) { 
+									if(data.data.content != null) { 
+										if(data.data.content.length<root.dataNum || data.data.content.total==pagenum) { 
 											pagenum=pagenum;
 											$(".load_more_article").addClass("f_dn")	
 										}else {
 											skipnum+=pagenum;
-											var remain=data.data.article.total>=skipnum ? data.data.article.total-skipnum : 0;
+											var remain=data.data.content.total>=skipnum ? data.data.content.total-skipnum : 0;
 											$(".load_more_article").html("查看更多（"+remain+"）").removeClass("f_dn");
 											if(remain==0) { $(".load_more_article").addClass("f_dn");}
 										}
@@ -332,11 +337,12 @@
 							success:function(data) { 
 								//请求成功
 								if(data.code==1) { 
-
+									
+									var live_comment_ids = [];
 	
-									if(data.data.article.list != null && data.data.article.list.length>0) { 
+									if(data.data.content.list != null && data.data.content.list.length>0) { 
 										var str1="";//variable_obj.formatDate(item.created*1000)
-											$.each(data.data.article.list,function(i,item) { 	
+											$.each(data.data.content.list,function(i,item) { 	
 												var end_time=data.data.end_time*1000,
 													start_time=data.data.start_time*1000,
 													now_time=new Date().getTime(),
@@ -379,9 +385,9 @@
 												}
 												str1+='		</div>';
 												if(item.type==3) { 
-													str1+='		<div class="intro"><a href="video_detail.php?id='+item.id+'">'+item.abstract+'</a></div>';
+													str1+='		<div class="intro"><a href="video_detail.php?id='+item.id+'">'+item.content+'</a></div>';
 												}else {
-													str1+='		<div class="intro"><a href="article_detail_'+item.id+'.php">'+item.abstract+'</a></div>';
+													str1+='		<div class="intro"><a href="article_detail_'+item.id+'.php">'+item.content+'</a></div>';
 												}
 															
 												str1+='		<div class="comment_module">';
@@ -413,13 +419,18 @@
 										$(".load_more_article").addClass("f_dn");
 									}
 									
+									//加载评论
+									$.each(live_comment_ids,function(k,v){
+										live_comment(v);
+									});
+									
 									//请求页码递增
-										if(data.data.article.length<root.dataNum || data.data.article.total==pagenum) { 
+										if(data.data.content.length<root.dataNum || data.data.content.total==pagenum) { 
 											pagenum=pagenum;
 											$(".load_more_article").addClass("f_dn");
 										}else {
 											skipnum+=pagenum;
-											var remain=data.data.article.total>=skipnum ? data.data.article.total-skipnum : 0;
+											var remain=data.data.content.total>=skipnum ? data.data.content.total-skipnum : 0;
 											$(".load_more_article").html("查看更多（"+remain+"）").removeClass("f_dn");
 											if(remain==0) { $(".load_more_article").addClass("f_dn");}
 										}
