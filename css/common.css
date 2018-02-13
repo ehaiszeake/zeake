@@ -1234,10 +1234,10 @@ img.placeholderImg2 {background:url(../images/placeholderImg2.png) no-repeat 50%
 .e_refresh .refresh_setting{margin-right: 18px;}
 .e_refresh .refresh_setting input{margin-right: 10px;}
 
-.option.f_dib{
+.user_type .option{
 	display: none;
 }
-.option.f_dib.show{
+.admin_type .option{
 	display: show;
 }
 

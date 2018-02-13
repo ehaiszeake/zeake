@@ -1,5 +1,29 @@
+var user_type = null;
+var autoRefreshTimes ;
 $(function(){
 	
+	if($.cookie('bz')!==undefined || $.trim($.cookie('bz'))!=="") { 
+		userinfo();
+	}
+	
+	if($.cookie('autoRefresh')==="true") { 
+		autoRefreshTimes = setTimeout(function(){window.location.reload(true);},60000);//一分钟刷一次
+		$("#auto_refresh").attr('checked',true); 
+	}
+	
+	$(".refresh_now").click(function(){
+		window.location.reload(true);
+	});
+	
+	$("#auto_refresh").change(function(){
+		if($(this).is(":checked")){
+			$.cookie('autoRefresh',"true",{ expires:365 });
+			autoRefreshTimes = setTimeout(function(){window.location.reload(true);},60000);//一分钟刷一次
+		}else{
+			$.cookie('autoRefresh',"false",{ expires:365 });
+			window.clearTimeout(autoRefreshTimes); 
+		}
+	});
 });
 
 function live_comment(id){
@@ -25,10 +49,28 @@ function live_comment(id){
 				html+='</dd>';
 				$(".comment_list_"+id).append(html);
 			});
+					
+		}
+	});
+}
+
+function userinfo(){
+	$.ajax({
+		url:golbalIp+"/user/info",
+		type:"get",
+		dataType:"json",
+		data:{"account":JSON.parse($.cookie('bz')).account,"token":JSON.parse($.cookie('bz')).token},
+		beforeSend:function() { },
+		success:function(data) { 
+			if(data.code!=1){
+				alert(data.message);return ;
+			}
+			user_type = data.data.type;
 			
-			
-			
-			
+			if(user_type == 3){
+				$(".edit_detail,.e_refresh").removeClass("dn");
+				$("body").removeClass("user_type").addClass("admin_type");
+			}
 		}
 	});
 }

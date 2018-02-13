@@ -9,7 +9,7 @@
     </head>
     
     
-    <body class="broadcast">
+    <body class="broadcast user_type">
  		
         <!--头部 start-->
     	<include file="./Home/Tpl/Index/include/header.html" />
@@ -37,9 +37,9 @@
             <div class="clearfix"></div>
             <!-- refresh start -->
             <div class="e_refresh dn">
-            	<a class="refresh_now">立即刷新页面</a>
+            	<a class="refresh_now" href="javascript:;">立即刷新页面</a>
             	<div class="refresh_setting fr">
-            		<input type="checkbox" >开启自动刷新
+            		<input id="auto_refresh" type="checkbox" >开启自动刷新
             	</div>
             </div>
             <!-- refresh end -->
@@ -72,7 +72,7 @@
         	$(function() { 
         		
         		if($.cookie('bz')!==undefined || $.trim($.cookie('bz'))!=="") { 
-        			$(".edit_detail,.e_refresh").removeClass("dn");
+        			
         		}
         		
         		
@@ -567,7 +567,7 @@
 							"account":JSON.parse($.cookie('bz')).account,
 							"token":JSON.parse($.cookie('bz')).token,
 							"id":id,
-							"type":2
+							"type":user_type
 						},
 						beforeSend:function() { },
 						success:function(data) { 
