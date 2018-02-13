@@ -4,7 +4,7 @@
 								<dd class="live_index">
 									<div class="state_intro f_cf"><div class="state state_live f_fl" start_time="{$live.start_time}" end_time="{$live.end_time}">{$live.status}</div>
 									<div class="intro f_fl">
-									<a href="<empty name='live.skip_url'>live_broadcast_detail.php?id={$item.id}<else/>{$live.skip_url}</empty>">{$live.title}</a>
+									<a href="<empty name='live.skip_url'>live_broadcast_detail.php?id={$live.id}<else/>{$live.skip_url}</empty>">{$live.title}</a>
 									</div>
 									</div>
 									<div class="activities_date f_tar">{$live['created']|date='Y/m/d',###}</div>
