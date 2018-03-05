@@ -1,0 +1,102 @@
+.footer {
+  background-color: #263238;
+  padding: 32px 0px 0 0px;
+  width: 100%; }
+  .footer .top {
+    width: 1060px;
+    margin: 0 auto;
+    padding-bottom: 32px; }
+    .footer .top .left .rowul {
+      margin-right: 48px; }
+      .footer .top .left .rowul:nth-last-child(1) {
+        margin-right: 0px; }
+      .footer .top .left .rowul .head {
+        font-size: 14px;
+        color: #FFFFFF;
+        letter-spacing: 0;
+        margin-bottom: 16px; }
+      .footer .top .left .rowul .operation {
+        margin-bottom: 12px; }
+        .footer .top .left .rowul .operation:nth-last-child(1) {
+          margin-bottom: 0px; }
+        .footer .top .left .rowul .operation a {
+          font-size: 14px;
+          letter-spacing: 0;
+          color: #666666;
+          text-decoration: none; }
+          .footer .top .left .rowul .operation a:hover {
+            color: #00E676; }
+    .footer .top .right {
+      position: relative; }
+      .footer .top .right .spread {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%; }
+        .footer .top .right .spread:nth-child(3) {
+          background-image: url("../images/weixin_b.png"); }
+          .footer .top .right .spread:nth-child(3):hover {
+            background-image: url("../images/weixin_w.png"); }
+        .footer .top .right .spread:nth-child(2) {
+          background-image: url("../images/weibo_b.png");
+          margin: 0 12px; }
+          .footer .top .right .spread:nth-child(2):hover {
+            background-image: url("../images/weibo_w.png"); }
+        .footer .top .right .spread:nth-child(1) {
+          background-image: url("../images/rss_b.png"); }
+          .footer .top .right .spread:nth-child(1):hover {
+            background-image: url("../images/rss_w.png"); }
+      .footer .top .right .weixin:hover + .erweima {
+        display: block; }
+      .footer .top .right .erweima {
+        display: none;
+        position: absolute;
+        padding: 20px 20px 20px 20px;
+        background-color: #fff;
+        top: -260px;
+        left: -12px; }
+        .footer .top .right .erweima .code {
+          width: 160px;
+          height: 160px; }
+        .footer .top .right .erweima p {
+          font-family: PingFangSC-Regular;
+          font-size: 14px;
+          color: #464646; }
+        .footer .top .right .erweima .sjx {
+          position: absolute;
+          width: 0;
+          height: 0;
+          border: 10px solid transparent;
+          border-top-color: #fff;
+          bottom: -20px;
+          left: calc(50% - 5px); }
+      .footer .top .right .conection {
+        margin: 16px 0 38px 0; }
+        .footer .top .right .conection .mailaddress {
+          font-size: 14px;
+          color: #00E676;
+          letter-spacing: 0;
+          text-decoration: none; }
+        .footer .top .right .conection .mailicon {
+          width: 20px;
+          height: 20px;
+          background-image: url("../images/mail.jpg");
+          background-repeat: no-repeat;
+          background-position-y: 3px;
+          margin-right: 10px; }
+      .footer .top .right .slogan {
+        font-size: 12px;
+        color: #666666;
+        letter-spacing: 0;
+        line-height: 18px;
+        text-align: right; }
+        .footer .top .right .slogan:nth-child(1) {
+          margin-bottom: 2px; }
+  .footer .bottom {
+    width: 1060px;
+    margin: 0 auto;
+    height: 68px;
+    line-height: 68px;
+    font-size: 14px;
+    color: #666666;
+    letter-spacing: 0;
+    border-top: 2px solid #666666; }

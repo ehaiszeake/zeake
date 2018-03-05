@@ -6,6 +6,8 @@
         <include file="./Home/Tpl/Index/include/head.html" />
 			<link rel="stylesheet" href="css/edit_broadcast.css" />
 		<!--<script src="js/ckplayer/ckplayer.js"></script>-->
+		
+		
     </head>
     
     
@@ -36,10 +38,11 @@
             <!-- 编辑文档框 -->
             <div class="clearfix"></div>
             <!-- refresh start -->
-            <div class="e_refresh dn">
+            <div class="e_refresh">
             	<a class="refresh_now" href="javascript:;">立即刷新页面</a>
             	<div class="refresh_setting fr">
-            		<input id="auto_refresh" type="checkbox" >开启自动刷新
+            		<input id="auto_refresh" type="checkbox" class="refresh_checkbox">
+            		开启自动刷新
             	</div>
             </div>
             <!-- refresh end -->
@@ -61,6 +64,7 @@
         
         <script src="js/jquery.min.1.8.4.js?v=1.7"></script>
         <script src="js/live_detail.js"></script>
+        <script type="text/javascript" src="js/jquery.dragsort.js"></script>
       	<!-- 编辑评论 start-->
         <include file="./Home/Tpl/Index/include/live_broadcast_edit.html" />
         <!-- 编辑评论  end-->
@@ -77,7 +81,13 @@
         			
         		}
         		
-        		
+        		$("#pic_li").dragsort({  
+					dragSelector: "li",   
+					dragBetween: true,   
+					dragEnd: function(){},   
+					placeHolderTemplate: "<li class='placeHolder'><div>放在这里</div></li>",  
+					scrollSpeed: 5  
+				}); 
         		
         		
         		
@@ -121,7 +131,9 @@
 						}); 	
 				});
         		
-        		
+				
+				
+				
 				$("#write_broadcase").click(function() { 
 					var content = $("#e_content").val();
 					if(content.length == 0) { 
@@ -169,18 +181,25 @@
 							//请求成功
 							if(data.code==1) { 
 								if(data.data == null)return ;
+								
+								var face = data.data.member_info.img;
+								
 								//直播详情
-								var img=(data.data.img==null || data.data.img=="")  ? imgRoute+"images/placeholder_img_L04.jpg" : golbalIp+data.data.img,
+								var img=(data.data.img==null || data.data.img=="")  ? imgRoute+"images/placeholder_img_L04.jpg" : (data['data']['img'].indexOf("http")>=0 ? data.data.img : golbalIp+data.data.img),
 									end_time=data.data.end_time*1000,
 									start_time=data.data.start_time*1000,
 									now_time=new Date().getTime(),
-									state=["未开始","直播中...","已结束"];
+									state=["未开始","直播中","直播结束"];
+								var state_no = 0;
 									if(start_time>now_time) { 
-										state=state[0]
+										state=state[0];
+										state_no = 0;
 									}else if(end_time<now_time) { 
-										state=state[2]	
+										state=state[2];
+										state_no = 2;
 									}else {
-										state=state[1]
+										state=state[1];
+										state_no = 1;
 									}
 									
 									
@@ -195,7 +214,7 @@
 									str+='			</div>';
 									str+='			<div class="live_broadcat_info">';
 									str+='				<div class="title f_tac"><div class="title_inner">'+(data.data.title == undefined ? "":data.data.title)+'</div></div>';
-									str+='				<div class="state f_tac">'+state+'</div>';
+									str+='				<div class="state f_tac state_no_'+state_no+'">'+state+'</div>';
 									str+='				<div class="des f_tac f_cf">';
 									str+='					<div class="des_intro f_pr">'+(data.data.mark == undefined ? "" : data.data.mark)+'</div>';
 									str+='				</div>';
@@ -218,22 +237,26 @@
 											var end_time=parseFloat(data.data.end_time),
 												start_time=parseFloat(data.data.start_time),
 												now_time=parseFloat(item.created),//new Date().getTime()||item.created
-												state=["未开始","直播中...","已结束"];
+												state=["未开始","直播中","直播结束"];
+											var state_no = 0;
 												if(start_time>now_time) { 
-													state=state[0]
+													state=state[0];
+													state_no = 0;
 												}else if(end_time<now_time) { 
-													state=state[2]	
+													state=state[2];
+													state_no = 2;
 												}else {
 													state=state[1]
+													state_no = 1;
 												}										
 											str1+='<li class="f_cf live_comment_'+item.id+'">';
 											str1+='	<div class="f_fl time_state f_tac">';
-											str1+='		<div class="time f_pr">'+variable_obj.formatDate(item.created*1000)+'</div>';
-											str1+='		<div class="state_text" start_time="'+data.data.start_time+'" end_time="'+data.data.end_time+'" created="'+item.created+'">'+state+'</div>';
+											str1+='		<div class="time f_pr">'+variable_obj.formatTime(item.created*1000)+'</div>';
+											str1+='		<div class="state_text state_no_'+state_no+'" start_time="'+data.data.start_time+'" end_time="'+data.data.end_time+'" created="'+item.created+'">'+state+'</div>';
 											str1+='	</div>';
 											str1+='	<div class="f_pr comment_name_intro">';
 											str1+='		<div class="head_name">';
-											str1+='			<div class="head_box f_pr f_dib f_vat"><img src="images/head_sculpture.png" width="100%" class="f_vat"/></div>';
+											str1+='			<div class="head_box f_pr f_dib f_vat"><img src="'+face+'" class="f_vat face"/></div>';
 											str1+='			<div class="name f_toe f_dib f_vat jump_personal_info" data-author_id="'+item.author_id+'">'+item.author+' </div>';
 											str1+='			<div class="option f_dib fr"><a href="javascript:;" onclick="edit_comment('+item.id+');">编辑</a><a href="javascript:;" onclick="delete_comment('+item.id+');">删除</a></div>';
 											str1+='		</div>';
@@ -242,12 +265,18 @@
 											str1+='				<dl>';
 											if($.isArray(item.pics)) { 
 												$.each(item.pics,function(i,subItem) { 
-													var img=(subItem==null || subItem=="")  ? imgRoute+"images/placeholder_img_L04.jpg" : (subItem.indexOf("http") >= 0 ? subItem : golbalIp+subItem);
-															str1+='<dd><a href="javascript:;" class="f_full f_db f_pa"><img src="'+img+'" /></a></dd>';
+													if(subItem!=null && subItem!=""){
+														var img=(subItem==null || subItem=="")  ? imgRoute+"images/placeholder_img_L04.jpg" : (subItem.indexOf("http") >= 0 ? subItem : golbalIp+subItem);
+														str1+='<dd><a href="javascript:;" class="f_full f_db f_pa"><img src="'+img+'" /></a></dd>';
+													}
+													
 												});
 											}else {
-												var img=(item.pics==null || item.pics=="")  ? imgRoute+"images/placeholder_img_L04.jpg" : (item["pics"].indexOf("http") >= 0 ? item.pics : golbalIp+item.pics);
-												str1+='<dd><a href="javascript:;" class="f_full f_db f_pa"><img src="'+img+'" /></a></dd>';
+												if(item.pics!=null && item.pics!=""){
+													var img=(item.pics==null || item.pics=="")  ? imgRoute+"images/placeholder_img_L04.jpg" : (item["pics"].indexOf("http") >= 0 ? item.pics : golbalIp+item.pics);
+													str1+='<dd><a href="javascript:;" class="f_full f_db f_pa"><img src="'+img+'" /></a></dd>';
+												}
+												
 											}
 											str1+='				</dl>';
 											str1+='			</div>';
@@ -257,9 +286,9 @@
 											}
 											str1+='		</div>';
 											if(item.type==3) { 
-												str1+='		<div class="intro"><a href="video_detail.php?id='+item.id+'">'+item.content+'</a></div>';
+												str1+='		<div class="intro">'+item.content+'</div>';
 											}else {
-												str1+='		<div class="intro"><a href="article_detail_'+item.id+'.php">'+item.content+'</a></div>';
+												str1+='		<div class="intro">'+item.content+'</div>';
 											}
 														
 											str1+='		<div class="comment_module">';
@@ -275,9 +304,9 @@
 //											str1+='			<div class="view_more_comment"><div class="more_comment f_vat f_dib">查看更多 （12）</div></div>';
 											str1+='			<div class="public_comment">';
 											str1+='				<form action="" class="f_full f_pr f_cf">';
-											str1+='					<label class="for_text" for="comment_des'+item.id+'">| 我有话要说</label>';
-											str1+='					<input type="text" class="comment_des placeholder f_fl" id="comment_des'+item.id+'" data-id="'+item.id+'"/>';
-											str1+='					<input type="button" class="public_btn f_fr" data-article_id="'+item.id+'" value="发表"/>';
+											str1+='					<label class="for_text" for="comment_des'+item.id+'">| </label>';
+											str1+='					<textarea type="text" class="comment_des placeholder f_fl" id="comment_des'+item.id+'" data-id="'+item.id+'"></textarea>';
+											str1+='					<input type="button" class="public_btn f_fr" data-article_id="'+item.id+'" value="发送"/>';
 											str1+='				</form>';
 											str1+='			</div>';
 											str1+='		</div>';
@@ -344,6 +373,8 @@
 								if(data.code==1) { 
 									
 									var live_comment_ids = [];
+									
+									var face = data.data.member_info.img;
 	
 									if(data.data.content.list != null && data.data.content.list.length>0) { 
 										var str1="";//variable_obj.formatDate(item.created*1000)
@@ -361,12 +392,12 @@
 													}	
 												str1+='<li class="f_cf live_comment_'+item.id+'">';
 												str1+='	<div class="f_fl time_state f_tac">';
-												str1+='		<div class="time f_pr">'+variable_obj.formatDate(item.created*1000)+'</div>';
+												str1+='		<div class="time f_pr">'+variable_obj.formatTime(item.created*1000)+'</div>';
 												str1+='		<div class="state_text">'+state+'</div>';
 												str1+='	</div>';
 												str1+='	<div class="f_pr comment_name_intro">';
 												str1+='		<div class="head_name">';
-												str1+='			<div class="head_box f_pr f_dib f_vat"><img src="images/head_sculpture.png" width="100%" class="f_vat"/></div>';
+												str1+='			<div class="head_box f_pr f_dib f_vat"><img src="'+face+'" width="100%" class="f_vat face"/></div>';
 												str1+='			<div class="name f_toe f_dib f_vat jump_personal_info" data-author_id="'+item.author_id+'">'+item.author+' </div>';
 												str1+='			<div class="option f_dib fr"><a href="javascript:;" onclick="edit_comment('+item.id+');">编辑</a><a href="javascript:;" onclick="delete_comment('+item.id+');">删除</a></div>';
 												str1+='		</div>';
@@ -390,9 +421,9 @@
 												}
 												str1+='		</div>';
 												if(item.type==3) { 
-													str1+='		<div class="intro"><a href="video_detail.php?id='+item.id+'">'+item.content+'</a></div>';
+													str1+='		<div class="intro">'+item.content+'</div>';
 												}else {
-													str1+='		<div class="intro"><a href="article_detail_'+item.id+'.php">'+item.content+'</a></div>';
+													str1+='		<div class="intro">'+item.content+'></div>';
 												}
 															
 												str1+='		<div class="comment_module">';
@@ -408,9 +439,9 @@
 	//											str1+='			<div class="view_more_comment"><div class="more_comment f_vat f_dib">查看更多 （12）</div></div>';
 												str1+='			<div class="public_comment">';
 												str1+='				<form action="" class="f_full f_pr f_cf">';
-												str1+='					<label class="for_text" for="comment_des">| 我有话要说</label>';
-												str1+='					<input type="text" class="comment_des placeholder f_fl" id="comment_des" data-id="'+item.id+'"/>';
-												str1+='					<input type="button" class="public_btn f_fr" data-article_id="'+item.id+'" value="发表"/>';
+												str1+='					<label class="for_text" for="comment_des">| </label>';
+												str1+='					<textarea type="text" class="comment_des placeholder f_fl" id="comment_des" data-id="'+item.id+'"></textarea>';
+												str1+='					<input type="button" class="public_btn f_fr" data-article_id="'+item.id+'" value="发送"/>';
 												str1+='				</form>';
 												str1+='			</div>';
 												str1+='		</div>';
@@ -500,13 +531,13 @@
 															if(data.code==1) { 
 																var list_box=target.parents(".comment_module").find(".comment_list"),
 																	html='<dd class="f_cf">';
-																	html+='<div class="head f_pr f_fl"><img src="'+img+'" width="100%" class="f_vat"/></div>';
+																	html+='<div class="head f_pr f_fl"><img src="'+img+'" width="100%" class="f_vat face"/></div>';
 																	html+='<div class="f_pr name_time_content">';
 																	html+='<div class="name_time">';
 																	html+='<div class="f_dib name f_toe f_vat  jump_personal_info" data-author_id="'+info.data.id+'">'+info.data.nickname+'</div>';
 																	html+='<div class="f_dib time">刚刚</div></div>';
-																	html+='<div class="content">'+val+'</div>';
 																	html+='</div>';
+																	html+='<div class="content">'+val+'</div>';
 																	html+='</dd>';
 																	list_box.prepend(html);
 																	target.removeClass("active").prev(".comment_des").val("").prev(".for_text").show();
@@ -538,7 +569,7 @@
 			
 			})
 			
-			//编辑评论
+			//编辑直播
 			function edit_comment(id) { 
         		$("#edit_broadcast_live").addClass("show");
         		
@@ -561,11 +592,11 @@
         		
         		live_comment_id = id;
         	}
-        	//删除评论
+        	//删除直播
         	function delete_comment(id) { 
-        		if ( confirm("确认要删除此评论吗?") == true ) { 
+        		if ( confirm("确认要删除此直播吗?") == true ) { 
         			$.ajax({
-        				url : golbalIp+"/user/delete_live_comment",
+        				url : golbalIp+"/user/delete_live",
         				type:"post",
 						dataType:"json",
 						data:{

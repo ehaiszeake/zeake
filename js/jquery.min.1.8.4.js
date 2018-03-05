@@ -136,8 +136,10 @@ var units={
 	}
 	
 
-var golbalIp="http://testback.zaeke.com",//全局链接     118.190.207.80
-	root={"account":"","token":"","updated":0};//获取登录的账号和token值
+//var golbalIp="http://118.190.207.80";//全局链接     118.190.207.80|testback.zaeke.com
+var golbalIp="http://testback.zaeke.com";
+var root={"account":"","token":"","updated":0};//获取登录的账号和token值
+
 	if($.cookie('bz')!=undefined){var obj=JSON.parse($.cookie('bz'));root={"account":obj.account,"token":obj.token,"updated":obj.updated};}
 
 
@@ -171,6 +173,38 @@ var variable_obj={
 				month = (time.getMonth() + 1)>9 ?  (time.getMonth() + 1) : "0"+ (time.getMonth() + 1),
 				date = time.getDate()>9 ?  time.getDate() : "0"+ time.getDate();
 		　　return year + "/" + month + "/" + date;
+		},
+		formatTime:function(timestamp){
+			var time=new Date(timestamp),
+				hours = time.getHours(),
+				min = time.getMinutes();
+			return hours+":"+min;
+		},
+		formatTimeBefore:function(timestamp){
+			var timespan = new Date(timestamp);
+			var now_new = new Date();
+			
+			var milliseconds = now_new - timespan;
+			var timeSpanStr;
+			
+			if (milliseconds <= 1000 * 60 * 1) {
+			    timeSpanStr = '刚刚';
+			  }
+			  else if (1000 * 60 * 1 < milliseconds && milliseconds <= 1000 * 60 * 60) {
+			    timeSpanStr = Math.round((milliseconds / (1000 * 60))) + '分钟前';
+			  }
+			  else if (1000 * 60 * 60 * 1 < milliseconds && milliseconds <= 1000 * 60 * 60 * 24) {
+			    timeSpanStr = Math.round(milliseconds / (1000 * 60 * 60)) + '小时前';
+			  }
+			  else if (1000 * 60 * 60 * 24 < milliseconds && milliseconds <= 1000 * 60 * 60 * 24 * 15) {
+			    timeSpanStr = Math.round(milliseconds / (1000 * 60 * 60 * 24)) + '天前';
+			  }
+			  else if (milliseconds > 1000 * 60 * 60 * 24 * 15 && year == now.getFullYear()) {
+			    timeSpanStr = month + '-' + day + ' ' + hour + ':' + minute;
+			  } else {
+			    timeSpanStr = year + '-' + month + '-' + day + ' ' + hour + ':' + minute;
+			  }
+			  return timeSpanStr;
 		},
 		logined:function(){
 			if($.cookie('bz')===undefined || $.trim($.cookie('bz'))==="" || ((new Date().getTime()/1000-JSON.parse($.cookie('bz')).updated) > 3600)){

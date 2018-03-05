@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>直播列表</title>
+        <include file="./Home/Tpl/Index/include/head.html" />
+			<link rel="stylesheet" href="css/edit_broadcast.css" />
+			<!--<link rel="stylesheet" href="css/zaeke_live.css" />-->
+		<!--<script src="js/ckplayer/ckplayer.js"></script>-->
+    </head>
+    
+    
+    <body class="broadcast user_type">
+ 		
+        <!--头部 start-->
+    	<include file="./Home/Tpl/Index/include/header.html" />
+        <!--头部   end-->
+        
+        
+        <!--主内容  start-->
+        <div class="main_content f_pr loading broadcast" data-type="live_broadcast_list_detail">
+			<div class="main_contnet_inner broadcast f_pr ">
+                
+                <!--直播详情  start-->
+                <div class="live_broadcast_list_detail_box"></div>
+                <!--直播详情    end-->
+                
+            <!-- 编辑文档框 -->
+            <div class="edit_detail_bg">
+                <div class="edit_detail dn">
+                		<include file="./Home/Tpl/Index/include/edit_detail.html" />
+                		<div class="row">
+                			<button class="fr send tc pointer" id="write_broadcase">发送</button>
+                		</div>
+                </div>
+            </div>           
+            <!-- 编辑文档框 -->
+            <div class="clearfix"></div>
+            <!-- refresh start -->
+
+            <!--<div class="e_refresh dn">
+            	<a class="refresh_now" href="javascript:;">立即刷新页面</a>
+            	<div class="refresh_setting fr">
+            		<input id="auto_refresh" type="checkbox" >开启自动刷新
+            	</div>
+            </div>
+            <!-- refresh end -->
+                <div class="clearfix"></div>
+				<!--文章列表  start-->
+  <div class="banner">
+        <div class="banxin clearfix">
+            <span class="refresh pointer fl">立即刷新页面</span>
+            <span class="interval fr">30s后刷新页面</span>
+            <p class="out fr pointer clearfix">
+                <span class="in fr"></span>
+            </p>
+        </div>
+</div>
+                <div class="live_broadcast_detail_list">
+                	<ul></ul>
+                    <div class="load_more_article f_tac ">加载更多...</div>
+                </div>
+                <!--文章列表    end-->
+                
+            </div>
+        </div>
+        <!--主内容    end-->
+        
+        <!--底部 start-->
+        <include file="./Home/Tpl/Index/include/footer.html" />
+        <!--底部   end-->
+        
+        <script src="js/jquery.min.1.8.4.js?v=1.7"></script>
+        <script src="js/live_detail.js"></script>
+      	<!-- 编辑评论 start-->
+        <include file="./Home/Tpl/Index/include/live_broadcast_edit.html" />
+        <!-- 编辑评论  end-->
+        
+        
+        
+        <script>
+        var live_comment_id ;
+        var start_time;
+        var end_time;
+        	$(function() { 
+        		
+        		if($.cookie('bz')!==undefined || $.trim($.cookie('bz'))!=="") { 
+        			
+        		}
+        		
+        		
+        		
+        		
+        		
+        		//上传封面图
+				$("#file").on("change",function() { 
+					var format=this.files[0];
+						console.log(format);
+					var formData = new FormData();
+						formData.append('file',$('#file')[0].files[0]);
+						formData.append("account",JSON.parse($.cookie('bz')).account);
+						formData.append("token",JSON.parse($.cookie('bz')).token);
+						$.ajax({
+							url: golbalIp+"/user/uploadImg",
+							type: 'post',
+							dataType:"json",
+							cache: false,
+							data: formData,
+							processData: false,
+							contentType: false
+						}).done(function(res) {
+							if(res.code==1) { 
+								var img=res.data;
+									img=(img.substr(0,7).toLowerCase()=="http://" || img.substr(0,8).toLowerCase()=="https://") ? img : golbalIp+img;
+								
+								$("#pic_li").append("<li><img src='"+img+"'><div class='close'></div></li>");
+								
+								$("#pic_li .close").unbind().click(function() { 
+									$(this).parent().remove();
+									$("#file").removeAttr("disabled");
+								});
+								
+								if($("#pic_li li").length >= 5) { 
+									$("#file").attr("disabled","disabled");
+								}
+								
+							}else {
+								alert(res.message);	
+							}
+						}).fail(function(res) {
+							alert(res.message);
+						}); 	
+				});
+        		
+        		
+				$("#write_broadcase").click(function() { 
+					var content = $("#e_content").val();
+					if(content.length == 0) { 
+						alert("请输入直播内容");return ;
+					}
+					var pic = [];
+					$("#pic_li img").each(function(index,ele) { 
+						pic.push($(ele).attr("src"));
+					});
+					
+        			$.ajax({
+        				url:golbalIp+"/user/create_live",
+        				type:"post",
+						dataType:"json",
+						data:{  "live_id":units.getUrlParam("id")!=null ? units.getUrlParam("id") : "",
+								"account": JSON.parse($.cookie('bz')).account,
+								"token": JSON.parse($.cookie('bz')).token,
+								"content": content,
+								"pics":pic.length==0 ? "" : pic
+						},success:function(data) { 
+							if(data.code != 1) { 
+								alert(data.message);return ;
+							}else{
+								window.location.reload(true);
+							}
+						}
+        			});
+        		});
+				
+				//图片路径
+				var imgRoute="./",
+					pagenum=5,
+					skipnum=0;
+					//不同专栏数据请求
+					$.ajax({
+						url:golbalIp+"/main/live_detail",
+						type:"get",
+						dataType:"json",
+						data:{"skipnum":0,"length":pagenum,"id":units.getUrlParam("id")!=null ? units.getUrlParam("id") : "",
+								"account": ( ($.cookie('bz')===undefined || $.trim($.cookie('bz'))==="") ? "" : JSON.parse($.cookie('bz')).account ),
+								"token":( ($.cookie('bz')===undefined || $.trim($.cookie('bz'))==="") ? "" : JSON.parse($.cookie('bz')).token)
+								},
+						beforeSend:function() { },
+						success:function(data) { 
+							//请求成功
+							if(data.code==1) { 
+								if(data.data == null)return ;
+								//直播详情
+								var img=(data.data.img==null || data.data.img=="")  ? imgRoute+"images/placeholder_img_L04.jpg" : golbalIp+data.data.img,
+									end_time=data.data.end_time*1000,
+									start_time=data.data.start_time*1000,
+									now_time=new Date().getTime(),
+									state=["未开始","直播中...","已结束"];
+									if(start_time>now_time) { 
+										state=state[0]
+									}else if(end_time<now_time) { 
+										state=state[2]	
+									}else {
+										state=state[1]
+									}
+									
+									
+								var str="";
+									str+='<ul class="live_broadcast_list_detail">';
+									str+='	<li class="f_pr f_cf">';
+									str+='		<div class="f_full f_pr">';
+									str+='			<div class="live_broadcat_img f_pr">';
+									str+='				<div class="live_inner_img f_full f_pa">';
+									str+='					<img src="'+img+'" width="100%" height="100%" class="f_vat"/>';
+									str+='				</div>';
+									str+='			</div>';
+									str+='			<div class="live_broadcat_info">';
+									str+='				<div class="title f_tac"><div class="title_inner">'+(data.data.title == undefined ? "":data.data.title)+'</div></div>';
+									str+='				<div class="state f_tac">'+state+'</div>';
+									str+='				<div class="des f_tac f_cf">';
+									str+='					<div class="des_intro f_pr">'+(data.data.mark == undefined ? "" : data.data.mark)+'</div>';
+									str+='				</div>';
+									str+='			</div>';
+									str+='		</div>';
+									str+='	</li>';
+									str+='</ul>';				
+									$(".live_broadcast_list_detail_box").html(str);
+								
+								var live_comment_ids = [];
+								
+								start_time = data.data.start_time;
+						      end_time = data.data.end_time;
+						        
+								//文章列表
+								if(data.data.content != null && data.data.content.list.length>0) { 
+									var str1="";//variable_obj.formatDate(item.created*1000)
+										$.each(data.data.content.list,function(i,item) { 	
+											live_comment_ids.push(item.id);//把评论ID对接上数组
+											var end_time=parseFloat(data.data.end_time),
+												start_time=parseFloat(data.data.start_time),
+												now_time=parseFloat(item.created),//new Date().getTime()||item.created
+												state=["未开始","直播中...","已结束"];
+												if(start_time>now_time) { 
+													state=state[0]
+												}else if(end_time<now_time) { 
+													state=state[2]	
+												}else {
+													state=state[1]
+												}										
+											str1+='<li class="f_cf live_comment_'+item.id+'">';
+											str1+='	<div class="f_fl time_state f_tac">';
+											str1+='		<div class="time f_pr">'+variable_obj.formatDate(item.created*1000)+'</div>';
+											str1+='		<div class="state_text" start_time="'+data.data.start_time+'" end_time="'+data.data.end_time+'" created="'+item.created+'">'+state+'</div>';
+											str1+='	</div>';
+											str1+='	<div class="f_pr comment_name_intro">';
+											str1+='		<div class="head_name">';
+											str1+='			<div class="head_box f_pr f_dib f_vat"><img src="images/head_sculpture.png" width="100%" class="f_vat"/></div>';
+											str1+='			<div class="name f_toe f_dib f_vat jump_personal_info" data-author_id="'+item.author_id+'">'+item.author+' </div>';
+											str1+='			<div class="option f_dib fr"><a href="javascript:;" onclick="edit_comment('+item.id+');">编辑</a><a href="javascript:;" onclick="delete_comment('+item.id+');">删除</a></div>';
+											str1+='		</div>';
+											str1+='		<div class="slideBox">';
+											str1+='			<div class="bd">';
+											str1+='				<dl>';
+											if($.isArray(item.pics)) { 
+												$.each(item.pics,function(i,subItem) { 
+													var img=(subItem==null || subItem=="")  ? imgRoute+"images/placeholder_img_L04.jpg" : (subItem.indexOf("http") >= 0 ? subItem : golbalIp+subItem);
+															str1+='<dd><a href="javascript:;" class="f_full f_db f_pa"><img src="'+img+'" class="fengmian" /></a></dd>';
+												});
+											}else {
+												var img=(item.pics==null || item.pics=="")  ? imgRoute+"images/placeholder_img_L04.jpg" : (item["pics"].indexOf("http") >= 0 ? item.pics : golbalIp+item.pics);
+												str1+='<dd><a href="javascript:;" class="f_full f_db f_pa"><img src="'+img+'" class="fengmian" /></a></dd>';
+											}
+											str1+='				</dl>';
+											str1+='			</div>';
+											if($.isArray(item.pics)) { 
+												str1+='			<a class="prev" href="javascript:void(0)"></a>';
+												str1+='			<a class="next" href="javascript:void(0)"></a>';
+											}
+											str1+='		</div>';
+											if(item.type==3) { 
+												str1+='		<div class="intro"><a href="video_detail.php?id='+item.id+'">'+item.content+'</a></div>';
+											}else {
+												str1+='		<div class="intro"><a href="article_detail_'+item.id+'.php">'+item.content+'</a></div>';
+											}
+														
+											str1+='		<div class="comment_module">';
+											str1+='			<dl class="comment_list comment_list_'+item.id+'">';
+//											str1+='				<dd class="f_cf">';
+//											str1+='					<div class="head f_pr f_fl"><img src="images/head_sculpture.png" width="100%" class="f_vat"/></div>';
+//											str1+='					<div class="f_pr name_time_content">';
+//											str1+='						<div class="name_time"><div class="f_dib name f_toe f_vat">Jade-Fun</div><div class="f_dib time">8 分钟前</div></div>';
+//											str1+='						<div class="content">vivo当然是没闲着。继早前高调推出vivo Xplay6库里定制版之后，vivo也为旗下的热销智能手机vivo X9加推了和NBA独家合作</div>';
+//											str1+='					</div>';
+//											str1+='				</dd>';
+											str1+='			</dl>';
+//											str1+='			<div class="view_more_comment"><div class="more_comment f_vat f_dib">查看更多 （12）</div></div>';
+											str1+='			<div class="public_comment">';
+											str1+='				<form action="" class="f_full f_pr f_cf">';
+											str1+='					<label class="for_text" for="comment_des'+item.id+'">|</label>';
+											str1+='					<input type="text" class="comment_des placeholder f_fl" id="comment_des'+item.id+'" data-id="'+item.id+'"/>';
+											str1+='					<input type="button" class="fr send tc pointer" data-article_id="'+item.id+'" value="发送"/>';
+											str1+='				</form>';
+											str1+='			</div>';
+											str1+='		</div>';
+														
+											str1+='	</div>';            
+											str1+='</li>';	
+										});
+										$(".live_broadcast_detail_list").find("ul").append(str1);
+								}else {
+									$(".live_broadcast_detail_list").find("ul").addClass("no_data");
+								}
+
+								//加载评论
+								$.each(live_comment_ids,function(k,v){
+									live_comment(v);
+								});
+
+									//请求页码递增
+									if(data.data.content != null) { 
+										if(data.data.content.length<root.dataNum || data.data.content.total==pagenum) { 
+											pagenum=pagenum;
+											$(".load_more_article").addClass("f_dn")	
+										}else {
+											skipnum+=pagenum;
+											var remain=data.data.content.total>=skipnum ? data.data.content.total-skipnum : 0;
+											$(".load_more_article").html("查看更多（"+remain+"）").removeClass("f_dn");
+											if(remain==0) { $(".load_more_article").addClass("f_dn");}
+										}
+									}
+										
+								
+								
+								//移除loading的效果
+								$(".main_content[data-type='live_broadcast_list_detail']").removeClass("loading");
+								
+								
+							}else {
+								
+							}
+						},
+						error:function() { 
+							alert("网络错误，请稍后再试！");
+							load_data_lock=false;
+						}	
+					});
+				
+				
+				//加载更多文章
+				var moreDataLock=false;
+				$(".load_more_article").on("click",function() { 
+					if(!moreDataLock) { 
+						moreDataLock=true;
+						$.ajax({
+							url:golbalIp+"/main/live_detail",
+							type:"get",
+							dataType:"json",
+							data:{"skipnum":skipnum,"length":pagenum,"id":units.getUrlParam("id")!=null ? units.getUrlParam("id") : "",
+									"account": ( ($.cookie('bz')===undefined || $.trim($.cookie('bz'))==="") ? "" : JSON.parse($.cookie('bz')).account ),
+									"token":( ($.cookie('bz')===undefined || $.trim($.cookie('bz'))==="") ? "" : JSON.parse($.cookie('bz')).token)
+											},
+							beforeSend:function() { },
+							success:function(data) { 
+								//请求成功
+								if(data.code==1) { 
+									
+									var live_comment_ids = [];
+	
+									if(data.data.content.list != null && data.data.content.list.length>0) { 
+										var str1="";//variable_obj.formatDate(item.created*1000)
+											$.each(data.data.content.list,function(i,item) { 	
+												var end_time=data.data.end_time*1000,
+													start_time=data.data.start_time*1000,
+													now_time=new Date().getTime(),
+													state=["未开始","直播中...","已结束"];
+													if(start_time>now_time) { 
+														state=state[0]
+													}else if(end_time<now_time) { 
+														state=state[2]	
+													}else {
+														state=state[1]
+													}	
+												str1+='<li class="f_cf live_comment_'+item.id+'">';
+												str1+='	<div class="f_fl time_state f_tac">';
+												str1+='		<div class="time f_pr">'+variable_obj.formatDate(item.created*1000)+'</div>';
+												str1+='		<div class="state_text">'+state+'</div>';
+												str1+='	</div>';
+												str1+='	<div class="f_pr comment_name_intro">';
+												str1+='		<div class="head_name">';
+												str1+='			<div class="head_box f_pr f_dib f_vat"><img src="images/head_sculpture.png" width="100%" class="f_vat"/></div>';
+												str1+='			<div class="name f_toe f_dib f_vat jump_personal_info" data-author_id="'+item.author_id+'">'+item.author+' </div>';
+												str1+='			<div class="option f_dib fr"><a href="javascript:;" onclick="edit_comment('+item.id+');">编辑</a><a href="javascript:;" onclick="delete_comment('+item.id+');">删除</a></div>';
+												str1+='		</div>';
+												str1+='		<div class="slideBox">';
+												str1+='			<div class="bd">';
+												str1+='				<dl>';
+												if($.isArray(item.pics)) { 
+													$.each(item.pics,function(i,subItem) { 
+														var img=(subItem==null || subItem=="")  ? imgRoute+"images/placeholder_img_L04.jpg" :  (subItem.indexOf("http") >= 0 ? subItem : golbalIp+subItem);
+																str1+='<dd><a href="javascript:;" class="f_full f_db f_pa"><img src="'+img+'" class="fengmian" /></a></dd>';
+													});
+												}else {
+													var img=(item.pics==null || item.pics=="")  ? imgRoute+"images/placeholder_img_L04.jpg" : (item["pics"].indexOf("http") >= 0 ? item.pics : golbalIp+item.pics);
+													str1+='<dd><a href="javascript:;" class="f_full f_db f_pa"><img src="'+img+'" class="fengmian" /></a></dd>';
+												}
+												str1+='				</dl>';
+												str1+='			</div>';
+												if($.isArray(item.pics)) { 
+													str1+='			<a class="prev" href="javascript:void(0)"></a>';
+													str1+='			<a class="next" href="javascript:void(0)"></a>';
+												}
+												str1+='		</div>';
+												if(item.type==3) { 
+													str1+='		<div class="intro"><a href="video_detail.php?id='+item.id+'">'+item.content+'</a></div>';
+												}else {
+													str1+='		<div class="intro"><a href="article_detail_'+item.id+'.php">'+item.content+'</a></div>';
+												}
+															
+												str1+='		<div class="comment_module">';
+												str1+='			<dl class="comment_list">';
+	//											str1+='				<dd class="f_cf">';
+	//											str1+='					<div class="head f_pr f_fl"><img src="images/head_sculpture.png" width="100%" class="f_vat"/></div>';
+	//											str1+='					<div class="f_pr name_time_content">';
+	//											str1+='						<div class="name_time"><div class="f_dib name f_toe f_vat">Jade-Fun</div><div class="f_dib time">8 分钟前</div></div>';
+	//											str1+='						<div class="content">vivo当然是没闲着。继早前高调推出vivo Xplay6库里定制版之后，vivo也为旗下的热销智能手机vivo X9加推了和NBA独家合作</div>';
+	//											str1+='					</div>';
+	//											str1+='				</dd>';
+												str1+='			</dl>';
+	//											str1+='			<div class="view_more_comment"><div class="more_comment f_vat f_dib">查看更多 （12）</div></div>';
+												str1+='			<div class="public_comment">';
+												str1+='				<form action="" class="f_full f_pr f_cf">';
+												str1+='					<label class="for_text" for="comment_des">|</label>';
+												str1+='					<input type="text" class="comment_des placeholder f_fl" id="comment_des" data-id="'+item.id+'"/>';
+												str1+='					<input type="button" class="fr send tc pointer" data-article_id="'+item.id+'" value="发送"/>';
+												str1+='				</form>';
+												str1+='			</div>';
+												str1+='		</div>';
+															
+												str1+='	</div>';            
+												str1+='</li>';	
+											});
+											$(".live_broadcast_detail_list").find("ul").append(str1);
+									}else {
+										//没有更多数据
+										$(".load_more_article").addClass("f_dn");
+									}
+									
+									//加载评论
+									$.each(live_comment_ids,function(k,v){
+										live_comment(v);
+									});
+									
+									//请求页码递增
+										if(data.data.content.length<root.dataNum || data.data.content.total==pagenum) { 
+											pagenum=pagenum;
+											$(".load_more_article").addClass("f_dn");
+										}else {
+											skipnum+=pagenum;
+											var remain=data.data.content.total>=skipnum ? data.data.content.total-skipnum : 0;
+											$(".load_more_article").html("查看更多（"+remain+"）").removeClass("f_dn");
+											if(remain==0) { $(".load_more_article").addClass("f_dn");}
+										}
+										
+									
+									moreDataLock=false;
+									
+								}else {
+									
+								}
+								
+							},
+							error:function() { 
+								alert("网络错误，请稍后再试！");
+								load_data_lock=false;
+							}	
+						});
+					}
+				});
+				
+
+				
+				//轮播图插件初始化
+				$(".slideBox").slide({ mainCell:".bd dl", effect:"fade",autoPlay:true/*,trigger:"",easing:ary[4],delayTime:ary[5],mouseOverStop:ary[6],*/,pnLoop:false });
+			
+			
+			
+
+				//发表评论
+				root.public_lock=false;	
+				$(".live_broadcast_detail_list").on("click",function(e) { 
+					var target=$(e.target);
+						if(target.hasClass("public_btn")) { 
+							if($.cookie('bz') === undefined || $.trim($.cookie('bz'))==="" || ((new Date().getTime()/1000-JSON.parse($.cookie('bz')).updated) > 3600)) { 
+								alert("您未登录或者登录超时，请重新登录后操作！");
+								return false;	
+							}else {
+								var val=$.trim(target.prev(".comment_des").val()),article_id=target.attr("data-article_id");
+																	
+								if(!root.public_lock) { 
+									root.public_lock=!0;
+									
+									//获取个人资料
+									$.ajax({
+										url:golbalIp+"/user/info",
+										type:"get",
+										dataType:"json",
+										data:{"account":JSON.parse($.cookie('bz')).account,"token":JSON.parse($.cookie('bz')).token},
+										beforeSend:function() { },
+										success:function(info) { 
+											if(info.code==1) { 
+											
+												//请求成功
+												var img=( info.data.img==null ||  info.data.img=="")  ? imgRoute+"images/head_sculpture.png" : ( info["data"]["img"].indexOf("http") >= 0 ? info.data.img : golbalIp + info.data.img);
+													$.ajax({
+														url:golbalIp+"/user/create_live_comment",
+														type:"post",
+														dataType:"json",
+														data:{"content":val,"id":article_id,"account":JSON.parse($.cookie('bz')).account,"token":JSON.parse($.cookie('bz')).token},
+														beforeSend:function() { },
+														success:function(data) { 
+															if(data.code==1) { 
+																var list_box=target.parents(".comment_module").find(".comment_list"),
+																	html='<dd class="f_cf">';
+																	html+='<div class="head f_pr f_fl"><img src="'+img+'" width="100%" class="f_vat"/></div>';
+																	html+='<div class="f_pr name_time_content">';
+																	html+='<div class="name_time">';
+																	html+='<div class="f_dib name f_toe f_vat  jump_personal_info" data-author_id="'+info.data.id+'">'+info.data.nickname+'</div>';
+																	html+='<div class="f_dib time">刚刚</div></div>';
+																	html+='<div class="content">'+val+'</div>';
+																	html+='</div>';
+																	html+='</dd>';
+																	list_box.prepend(html);
+																	target.removeClass("active").prev(".comment_des").val("").prev(".for_text").show();
+															}else {
+																alert(data.message);	
+															}
+															root.public_lock=!1;
+														},error:function() { alert("网络异常，请稍后重试！");root.public_lock=!1;
+														}
+													});
+										
+											}else if(info.code==3) { //未登录
+												alert("登录超时，请重新登录！");	
+											}else {
+												alert(data.message);
+											}
+											root.public_lock=!1;
+										},
+										error:function() { 
+											alert("网络错误，请稍后再试！");
+											root.public_lock=!1;
+										}		
+									})	
+								}
+							}
+						}
+				});
+			
+			
+			})
+			
+			//编辑评论
+			function edit_comment(id) { 
+        		$("#edit_broadcast_live").addClass("show");
+        		
+        		$("#edit_content").val($(".live_comment_"+id+" .intro").text());
+        		
+        		$("#edit_pic_li li").unbind().remove();
+        		$(".live_comment_"+id+" .slideBox img").each(function(index,ele){
+        			$("#edit_pic_li").append("<li><img src='"+$(ele).attr("src")+"'><div class='close'></div></li>");
+        		});
+        		
+        		
+        		if($("#edit_pic_li li").length >= 5) { 
+					$("#edit_file").attr("disabled","disabled");
+				}
+        		
+        		$("#edit_pic_li .close").unbind().click(function() { 
+					$(this).parent().remove();
+					$("#edit_file").removeAttr("disabled");
+				});
+        		
+        		live_comment_id = id;
+        	}
+        	//删除评论
+        	function delete_comment(id) { 
+        		if ( confirm("确认要删除此评论吗?") == true ) { 
+        			$.ajax({
+        				url : golbalIp+"/user/delete_live_comment",
+        				type:"post",
+						dataType:"json",
+						data:{
+							"account":JSON.parse($.cookie('bz')).account,
+							"token":JSON.parse($.cookie('bz')).token,
+							"id":id,
+							"type":user_type
+						},
+						beforeSend:function() { },
+						success:function(data) { 
+							if(data.code != 1){
+								alert(data.message);
+							}else{
+								window.location.reload(true);
+							}
+						}
+        			});
+        		}
+        	}
+        </script>
+    <script>
+	
+    var del = document.querySelector(".del")
+    var dele = document.querySelector(".delete")
+    var mask1 = document.querySelector(".mask1")
+    var mask2 = document.querySelector(".mask2")
+    var op = document.querySelectorAll(".op")
+    var edit = document.querySelector(".edit")
+    var out = document.querySelector(".out")
+    dele.onclick = function () {
+        mask1.style.display = 'block'
+    }
+    del.onclick = function () {
+        mask1.style.display = 'none'
+    }
+    for (i = 0; i < op.length; i++) {
+        op[i].onclick = function () {
+            mask1.style.display = 'none'
+        }
+    }
+    edit.onclick = function () {
+        mask2.style.display = 'block'
+    }
+
+    function showmask(){
+        mask2.style.display = 'none'
+    }
+    out.onclick = function(){
+        if(this.children[0].className.indexOf("fr")!=-1){
+            this.children[0].className = "inleft fl"
+            this.style.backgroundColor = "#f6f6f6"
+            this.style.border = "1px solid rgba(0,0,0,0.10)"
+        }else {
+            this.children[0].className = "in fr"
+            this.style.backgroundColor = "#00E676"
+            this.style.border = "none"
+        }
+    }
+		</script>  
+    </body>
+    
+</html>

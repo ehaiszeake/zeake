@@ -1,0 +1,283 @@
+/* 公共样式 */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f6f6f6;
+}
+
+input:focus {
+    outline: none;
+}
+
+textarea:focus {
+    outline: none;
+}
+
+.banxin {
+    width: 1060px;
+    margin: 0 auto;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.clearfix::after {
+    content: "";
+    line-height: 0;
+    height: 0;
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+li {
+    list-style: none;
+}
+
+.tc {
+    text-align: center;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.banxin {
+    width: 700px;
+    margin: 0 auto;
+}
+
+
+/* banner开始 */
+
+.banner {
+    width: 1060px;
+    margin: 0 auto 25px auto;
+}
+
+.top {
+    height: 424px;
+    background-color: #000000;
+    padding-top: 172px;
+}
+
+.top .restTime {
+    font-family: PingFangSC-Regular;
+    font-size: 40px;
+    color: #00E676;
+    letter-spacing: 0;
+}
+
+.top .small {
+    font-size: 18px;
+}
+
+.top .title {
+    width: 280px;
+    height: 40px;
+    line-height: 40px;
+    padding: 0px 38px;
+    background: #263238;
+    border-radius: 100px;
+    margin-top: 30px;
+    margin-left: calc(50%);
+    transform: translateX(-50%);
+    font-family: PingFangSC-Regular;
+    font-size: 16px;
+    color: #10CC70;
+    letter-spacing: 0;
+}
+
+.top .endtitle {
+    color: #FF5722;
+}
+
+.bottom {
+    padding: 16px 170px;
+    font-family: PingFangSC-Regular;
+    font-size: 16px;
+    color: #464646;
+    letter-spacing: 0.23px;
+    line-height: 28px;
+    background-color: #fff;
+    margin-bottom: 48px;
+}
+
+.banner .refresh {
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    color: #464646;
+    letter-spacing: 0.8px;
+    line-height: 24px;
+    text-decoration: underline;
+}
+
+.banner .interval {
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    color: #A6A6A6;
+    letter-spacing: 0.8px;
+    line-height: 24px;
+}
+
+.banner .out {
+    background: #00E676;
+    border-radius: 100px;
+    width: 40px;
+    height: 24px;
+    margin-right: 4px;
+}
+
+.banner .in {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #fff;
+    margin: 1.5px 1px;
+}
+
+.banner .inleft {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: 1.5px 0px;
+    background: #FFFFFF;
+    border: 0 solid rgba(0, 0, 0, 0.10);
+    box-shadow: 0 3px 1px 0 rgba(0, 0, 0, 0.05), 0 2px 2px 0 rgba(0, 0, 0, 0.10), 0 3px 3px 0 rgba(0, 0, 0, 0.05);
+}
+
+
+
+
+
+/* mask2 */
+
+.editbox {
+    height: 400px;
+    width: 800px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+}
+
+.editbox1 {
+    width: 788px;
+    margin: 0 auto;
+    margin-bottom: 48px;
+    transform: translateX(-44px);
+    background-color: #fff;
+}
+
+.editbox {
+    overflow: auto;
+}
+
+.editbox1 .gridly {
+    width: 736px;
+    position: relative;
+}
+
+.editbox1 .brick.small {
+    width: 128px;
+    height: 128px;
+  }
+.editbox1  .brick.large {
+    width: 300px;
+    height: 300px;
+  }
+
+
+.editbox1 .editcontent {
+    padding: 17px 25px 0 16px;
+    height: 117px;
+    border-bottom: 1px solid #F6F6F6;
+}
+
+.editcontent .adavatar {
+    width: 48px;
+    height: 48px;
+    background-image: url("../images/userpic.png");
+    background-size: cover;
+}
+
+.editcontent .textarea {
+    width: 620px;
+    height: 90px;
+    border: none;
+    resize: none;
+    padding-top: 8px;
+    padding-left: 12px;
+    font-family: PingFangSC-Regular;
+    font-size: 16px;
+    color: #464646;
+    margin-right: 37px;
+}
+
+.editcontent .choose {
+    width: 30px;
+    height: 30px;
+    background-image: url("../images/img.jpg");
+    background-size: cover;
+}
+
+.imgs {
+    padding: 0 46px 0 42px;
+}
+
+.imgs li {
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+.imgs .img {
+    width: 128px;
+    height: 128px;
+}
+
+.imgs .del {
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    color: #FFFFFF;
+    border-radius: 50%;
+    background-color: #464646;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+}
+
+.imgs .send {
+    width: 109px;
+    height: 40px;
+    line-height: 40px;
+    background: #10CC70;
+    font-family: PingFangSC-Regular;
+    font-size: 16px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+}
+
+.imgs .cancle {
+    font-family: PingFangSC-Regular;
+    font-size: 18px;
+    color: #464646;
+    letter-spacing: 0.8px;
+    line-height: 36px;
+    margin-right: 32px;
+}

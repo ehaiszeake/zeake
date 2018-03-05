@@ -601,8 +601,8 @@ body.pc_public_article_body {padding-top:80px;}
 .add_label_box .add_label_title {font-size: 16px;color: #263238;line-height:22px;width:104px;margin-right:-104px;margin-top:20px;}
 .add_label_box .add_label_content {margin-left:104px;font-size:0;}
 .add_label_box .system_label_content {margin-left:104px;}
-.add_label_box .add_label_content .add_label_new_btn {margin-left:10px;line-height:22px;width:40px;font-size:30px;text-align:center;border-radius:50%;border-radius:50%;margin-top:20px;}
-.add_label_box .add_label_content .cut_label_new_btn {margin-left:10px;line-height:22px;width:40px;font-size:30px;text-align:center;border-radius:50%;border-radius:50%;margin-top:20px;}
+.add_label_box .add_label_content .add_label_new_btn {margin-left:10px;line-height:22px;width:40px;font-size:30px;text-align:center;border-radius:50%;margin-top:20px;cursor: pointer;}
+.add_label_box .add_label_content .cut_label_new_btn {margin-left:10px;line-height:22px;width:40px;font-size:30px;text-align:center;border-radius:50%;margin-top:20px;cursor: pointer;}
 .add_label_box .add_label_content .ipt_label {text-align:center;margin-right:20px;width:60px;height:22px;line-height:22px;padding:0 7px;background:none;border:solid 1px #aeaeae;font-size:12px;color:#000;margin-top:20px;}
 .add_label_box .add_label_content .ipt_label.on {color:#fff;border-radius:5px;background:#00E676;border:none;}
 
@@ -1018,6 +1018,24 @@ body.pc_public_article_body {padding-top:80px;}
     line-height: 22px;
     font-size: 16px;
 }
-.system_label li{float:left;margin-right: 10px;cursor: pointer;border: 1px solid #dcdcdc;padding: 5px 8px;margin-bottom: 5px;}
-.system_label li.selected{color:#fff;background: #ca1818;}
+.system_label li{float:left;margin-right: 10px;border: 1px solid #dcdcdc;padding: 5px 8px;margin-bottom: 5px;position: relative;display: none;}
+.system_label li.selected{color:#333;display: block;}
+.system_label li span{position: absolute;display: none;top: -10px;right: -10px;background: #ca1818;width: 20px;
+    height: 20px;
+    line-height: 18px;
+    text-align: center;
+    color: #fff;
+    border-radius: 50%;
+	cursor: pointer;
+}
+.system_label li.selected span{display: inline-block;}
 .add_label_box.nb{border-bottom: 0;}
+.system_pr_div{position: relative;width: 200px;float: left;}
+.system_pr_div .system_input_text{padding: 8px 5px;border: 1px solid #ccc;border-radius: 3px;width: 200px;box-sizing: border-box;}
+.system_pr_div ul{width: 200px;position: absolute;height: 150px;border: 1px #ddd solid;    z-index: 100;
+    background: #fff;display: none;
+    }
+.system_pr_div ul li{width:100%;padding: 5px 0;padding: 5px 8px;box-sizing: border-box;}
+.system_pr_div ul li:HOVER {
+	background: #ddd;cursor: pointer;
+}

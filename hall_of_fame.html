@@ -2,14 +2,14 @@
 <html>
     <head>
         <meta charset="utf-8"/>
-        <title>专栏-名人堂-列表</title>
+        <title>专栏-名人堂-列表aaa</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
         <meta name="msapplication-tap-highlight" content="no" />
         <meta name="format-detection" content="telephone=no, email=no" />
         <meta http-equiv="Cache-Control" content="no-transform" />
-        <meta http-equiv="Cache-Control" content="no-siteapp" /> 
+        <meta http-equiv="Cache-Control" content="no-siteapp" />
         <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
         <meta http-equiv="Pragma" content="no-cache" />
         <meta http-equiv="Expires" content="0" />
@@ -19,10 +19,10 @@
 
 		<!--<script src="js/ckplayer/ckplayer.js"></script>-->
     </head>
-    
-    
+
+
     <body>
- 		
+
         <!--头部 start-->
     	<div class="header f_pr">
         	<div class="header_inner f_cf f_pr">
@@ -68,31 +68,31 @@
             </div>
         </div>
         <!--头部   end-->
-        
-        
+
+
         <!--主内容  start-->
         <div class="main_content f_pr " data-type="hall_of_fame_page">
 			<div class="main_contnet_inner f_pr ">
-            
-                
+
+
                 <!--名人堂列表  start-->
                 <div class="fame_list_box">
                     <div class="fame_list_box_inner">
-                    
+
                         <ul class="fame_list">
 
                         </ul>
                         <div class="load_more_article f_tac f_dn">加载更多...</div>
-                            
+
                     </div>
                 </div>
-                
+
                 <!--名人堂列表  end-->
-            
+
             </div>
         </div>
         <!--主内容    end-->
-        
+
         <!--底部 start-->
         <div class="footer f_pr">
         	<div class="footer_inner f_pr f_cf">
@@ -148,7 +148,7 @@
             </div>
         </div>
         <!--底部   end-->
-        
+
         <script src="js/jquery.min.1.8.3.js?v=1.7"></script>
         <script>
         	$(function(){
@@ -165,7 +165,7 @@
                         var str = '';
                         console.log(data);
                         $.each(data.data.list,function(i,item){
-						   	var img=(item.img==null || item.img=="")  ? imgRoute+"images/head_sculpture.png" : golbalIp+item.img;
+						   	var img=(item.img==null || item.img=="")  ? imgRoute+"images/head_sculpture.png" : item.img;
 								str+='<li class="f_cf">';
 								str+='	<div class="fame_info_box f_cf">';
 								str+='		<div class="fame_info f_fl f_tac">';
@@ -182,7 +182,8 @@
 								if(item.article!=null){
 									var img2=item.article.img;
 										img2=(img2) ? ((img2.substr(0,7).toLowerCase()=="http://" || img2.substr(0,8).toLowerCase()=="https://") ? img2 : golbalIp+img2) : imgRoute+"images/cover_img.jpg";
-								
+                                        console.log(img2);
+
 									str+='			<div class="article_cover f_pr">';
 									str+='				<div class="article_cover_box"><a href="fame_home_page.html?id='+item.id+'"><img src="'+img2+'" class="f_vat placeholderImg2" width="100%"/></a></div>';
 									str+='			</div>';
@@ -199,7 +200,7 @@
 									str+='			</div>';
 								}
 								str+='		</div>';
-							
+
 								str+='	</div>';
 							if(item.article!=null){
 								str+='	<div class="fame_all_article f_tar"><a href="fame_home_page.html?id='+item.id+'">全部文章</a></div>';
@@ -210,11 +211,11 @@
 					}
 				});
 
-				
+
 			})
-        </script>        
-        
-        
+        </script>
+
+
     </body>
-    
+
 </html>

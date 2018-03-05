@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    font-family: PingFangSC-Regular;
+    font-size: 16px;
+    color: #A6A6A6;
+    letter-spacing: 0.23px;
+}
+
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+    font-family: PingFangSC-Regular;
+    font-size: 16px;
+    color: #A6A6A6;
+    letter-spacing: 0.23px;
+}
+
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+    font-family: PingFangSC-Regular;
+    font-size: 16px;
+    color: #A6A6A6;
+    letter-spacing: 0.23px;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    font-family: PingFangSC-Regular;
+    font-size: 16px;
+    color: #A6A6A6;
+    letter-spacing: 0.23px;
+}
+body {
+    background-color: #f6f6f6;
+    min-width: 796px;
+}
+
+.banxin {
+    width: 1060px;
+    margin: 0 auto;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.clearfix::after {
+    content: "";
+    line-height: 0;
+    height: 0;
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+li {
+    list-style: none;
+}
+
+.tc {
+    text-align: center;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+h2 {
+    font-weight: 500;
+}
+
+.etc {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+
+}

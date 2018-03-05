@@ -5,6 +5,7 @@
         <title>主页</title>
         <include file="./Home/Tpl/Index/include/head.html" />
 		<!--<script src="js/ckplayer/ckplayer.js"></script>-->
+		<link rel="stylesheet" href="js/swiper/css/swiper.min.css" />
     </head>
 
 
@@ -21,22 +22,31 @@
                 <div class="ad_box">
                     <div class="ad1_place f_cf">
                         <div class="ad1_place1 f_fl">
-                        	<a href="{$index['data']['ad'][0]['url']}"><img src="{$index['data']['ad'][0]['img']|webImg=$website}" class="placeholderImg f_vat" title="{$index['data']['ad'][0]['name']}"/></a>
+                        	<a href="{$index['data']['ad'][0]['url']}">
+                        	<img src="{$index['data']['ad'][0]['img']|webImg=$website}" class="placeholderImg f_vat" title="{$index['data']['ad'][0]['name']}"/>
+                        	<div class="texiao"></div>
+                        	</a>
                         </div>
                         <div class="ad1_place2 f_fl">
                             <div class="ad1_place2_1">
-                            	<a href="{$index['data']['ad'][1]['url']}"><img src="{$index['data']['ad'][1]['img']|webImg=$website}" class="placeholderImg2 f_vat" title="{$index['data']['ad'][1]['name']}"/></a>
+                            	<a href="{$index['data']['ad'][1]['url']}">
+                            	<img src="{$index['data']['ad'][1]['img']|webImg=$website}" class="placeholderImg2 f_vat" title="{$index['data']['ad'][1]['name']}"/>
+                            	<div class="texiao"></div>
+                            	</a>
                             </div>
                             <div class="ad1_place2_2">
-                            	<a href="{$index['data']['ad'][2]['url']}"><img src="{$index['data']['ad'][2]['img']|webImg=$website}" class="placeholderImg2 f_vat" title="{$index['data']['ad'][2]['name']}"/></a>
+                            	<a href="{$index['data']['ad'][2]['url']}">
+                            	<img src="{$index['data']['ad'][2]['img']|webImg=$website}" class="placeholderImg2 f_vat" title="{$index['data']['ad'][2]['name']}"/>
+                            	<div class="texiao"></div>
+                            	</a>
                             </div>
                         </div>
                     </div>
                     
                     <div id="index_slideBox" class="index_slideBox ad2_place_list">
-                        <div class="bd">
+                        <div class="bd swiper-container" id="index_slideBox_bd">
                         
-                        <ul class="f_cf" id="top_article">
+                        <ul class="f_cf swiper-wrapper" id="top_article">
 							<volist name="index[data][top_article]" id="item">
 								
 								<if condition="item.type eq 2">
@@ -49,19 +59,23 @@
 									</defined>
 								</if>
 								
-								<li class="f_fl" style="'+sy+'">
+								<li class="f_fl swiper-slide" style="'+sy+'">
 								<div class="ad2_place_img">
-								<a href="${link}">
+								<a href="article_detail_{$item.id}.php">
 								<img src="{$item.img|webImg=$website}" class="placeholderImg2 f_vat"/>
 								</a>
 								</div>
-								<p><a href="${link}">{$item.title}</a></p> <div class="view_num">{$item.pv}</div> </li>
+								<p><a href="article_detail_{$item.id}.php">{$item.title}</a></p> 
+								<span class="lbl_green">{$item.author}</span>
+								<span class="view_num">{$item.pv}</span> 
+								</li>
 							</volist>        
                         </ul>
-                        
+                        <div class="swiper-pagination"></div>
+                        <div class="swiper-button-next zike"></div>
+        				<div class="swiper-button-prev zike"></div>
+        
                         </div>
-                        <a class="index_prev_btn" href="javascript:void(0)"></a>
-                        <a class="index_next_btn" href="javascript:void(0)"></a>
                     </div>
                     
                     
@@ -97,6 +111,8 @@
         
         
         <script src="js/jquery.min.1.8.4.js"></script>
+        <script type="text/javascript" src="js/swiper/js/swiper.min.js"></script>
+        <script type="text/javascript" src="js/index_swiper.js"></script>
         
         <script>
 			//图片路径

@@ -1,0 +1,55 @@
+    <link rel="stylesheet" href="css/footer.css?v=1.1" />
+       <div class="footer">
+        <div class="top clearfix">
+            <div class="left fl clearfix">
+                <ul class="fl rowul">
+                    <p class="head">ZAEKE</p>
+                    <li class="operation">
+                        <a href="">加入我们</a>
+                    </li>
+                    <li class="operation">
+                        <a href="">商务合作</a>
+                    </li>
+                    <li class="operation">
+                        <a href="">用户协议</a>
+                    </li>
+                </ul>
+                <ul class="fl rowul">
+                    <p class="head">合作伙伴</p>
+                    <li class="operation">
+                        <a href="">速致</a>
+                    </li>
+                    <li class="operation">
+                        <a href="">知客数码</a>
+                    </li>
+                </ul>
+                <ul class="fl rowul">
+                    <p class="head">友情链接</p>
+                <volist name="link" id="link">
+                	<dd class="operation"><a href="{$link.url}" target="_blank">{$link.title}</a></dd>
+                </volist>
+                </ul>
+            </div>
+            <div class="right fr">
+                <div class="clearfix">
+                    <span class="fr spread pointer"></span>
+                    <span class="fr spread pointer"></span>
+                    <span class="fr spread weixin pointer"></span>
+                    <!-- 二维码 -->
+                    <div class="erweima">
+                        <img src="./images/qrcode.png" alt="" class="code">
+                        <p class="tc">微信“扫一扫”</p>
+                        <p class="tc">关注知客微信公众号</p>
+                        <span class="sjx"></span>
+                    </div>
+                </div>
+                <div class="conection clearfix">
+                    <span class="mailaddress fr" href="#">contact@zaeke.com</span>
+                    <span class="mailicon fr"></span>
+                </div>
+                <p class="slogan">ZAEKE | 知客、让数码更懂你</p>
+                <p class="slogan">致力于构建一站式数码玩家完美解决方案</p>
+            </div>
+        </div>
+        <div class="bottom tc">粤ICP备14017158 © ZAEKE 知客</div>
+    </div>

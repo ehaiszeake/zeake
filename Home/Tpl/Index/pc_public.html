@@ -44,7 +44,7 @@
                         <div class="f_pr"><select id="article_type"><option value="1" selected="selected">文章</option><option value="2">快讯</option><option value="3">视频</option></select></div>
                     </div>
                     
-                    <div class="column_type_sel f_cf">
+                    <div class="column_type_sel f_cf dn">
                     	<label class="f_fl">请选择所属栏目：</label>
                         <div class="f_pr"><select id="column_type"><option value="">请选择栏目</option></select></div>
                     </div>
@@ -77,10 +77,11 @@
                                 <div class="add_label_box f_cf nb">
                                     <div class="add_label_title f_fl">系统标签</div>
                                     <div class="system_label_content f_pr">
-                                    	<ul class="system_label">
-                                    		
-                                    	</ul>
-                                    	
+                                    	<ul class="system_label"></ul>
+                                    	<div class="system_pr_div">
+                                    		<input type="text" id="system_input_text" class="system_input_text">
+                                    		<ul id="txt_system_lbl"></ul>
+                                    	</div>
                                     </div>
                                 </div>
                                 <div class="add_label_box f_cf">
@@ -743,6 +744,8 @@
 				$(".js_pc_public_preview").on("click",function() { 
 					if(units.getUrlParam("id")!=null) { 
 						window.open("preview.php?id="+units.getUrlParam("id"));
+					}else{
+						alert("请保存再预览");
 					}
 				});
 			
