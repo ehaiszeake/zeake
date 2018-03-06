@@ -219,7 +219,11 @@
         <script src="js/editormd/lib/jquery.flowchart.min.js"></script>
         <script src="js/editormd/editormd.min.js"></script>        
         <script src="js/article_detail.js?v=1.1"></script>
- 
+ 		<script type="text/javascript">
+ 		$(function(){
+ 			if({$data.data.cid}==8)$(".cover_unit img").addClass("dn");
+ 		});
+ 		</script>
     </body>
     
 </html>
