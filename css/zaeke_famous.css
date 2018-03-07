@@ -91,6 +91,7 @@ li {
     width: 60px;
     height: 60px;
     display: block;
+    border-radius: 50%;
     background-image: url("../images/userpic.png");
     background-size: cover;
     margin: 60px auto 0 auto;
