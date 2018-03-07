@@ -1,0 +1,506 @@
+/* 公共样式 */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f6f6f6;
+}
+
+input:focus {
+    outline: none;
+}
+
+textarea:focus {
+    outline: none;
+}
+
+.banxin {
+    width: 1060px;
+    margin: 0 auto;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.clearfix::after {
+    content: "";
+    line-height: 0;
+    height: 0;
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+li {
+    list-style: none;
+}
+
+.tc {
+    text-align: center;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.banxin {
+    width: 700px;
+    margin: 0 auto;
+}
+
+
+/* banner开始 */
+
+.banner {
+    width: 1060px;
+    margin: 0 auto 25px auto;
+}
+
+.top {
+    height: 424px;
+    background-color: #000000;
+    padding-top: 172px;
+}
+
+.top .restTime {
+    font-family: PingFangSC-Regular;
+    font-size: 40px;
+    color: #00E676;
+    letter-spacing: 0;
+}
+
+.top .small {
+    font-size: 18px;
+}
+
+.top .title {
+    width: 280px;
+    height: 40px;
+    line-height: 40px;
+    padding: 0px 38px;
+    background: #263238;
+    border-radius: 100px;
+    margin-top: 30px;
+    margin-left: calc(50%);
+    transform: translateX(-50%);
+    font-family: PingFangSC-Regular;
+    font-size: 16px;
+    color: #10CC70;
+    letter-spacing: 0;
+}
+.top .endtitle {
+    color: #FF5722;
+}
+
+.bottom {
+    padding: 16px 170px;
+    font-family: PingFangSC-Regular;
+    font-size: 16px;
+    color: #464646;
+    letter-spacing: 0.23px;
+    line-height: 28px;
+    background-color: #fff;
+    margin-bottom: 48px;
+}
+
+.banner .refresh {
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    color: #464646;
+    letter-spacing: 0.8px;
+    line-height: 24px;
+    text-decoration: underline;
+}
+
+.banner .interval {
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    color: #A6A6A6;
+    letter-spacing: 0.8px;
+    line-height: 24px;
+}
+
+.banner .out {
+    background: #00E676;
+    border-radius: 100px;
+    width: 40px;
+    height: 24px;
+    margin-right: 4px;
+}
+
+.banner .in {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #fff;
+    margin: 1.5px 1px;
+}
+
+.banner .inleft {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: 1.5px 0px;    
+    background: #FFFFFF;
+    border: 0 solid rgba(0, 0, 0, 0.10);
+    box-shadow: 0 3px 1px 0 rgba(0, 0, 0, 0.05), 0 2px 2px 0 rgba(0, 0, 0, 0.10), 0 3px 3px 0 rgba(0, 0, 0, 0.05);
+}
+
+
+/* 直播详情页面 */
+
+.live .item {
+    background-color: #fff;
+    position: relative;
+    margin-bottom: 12px;
+}
+
+.content .topdetail {
+    padding: 16px 20px 16px 20px;
+}
+
+.topdetail .avatar {
+    width: 48px;
+    height: 48px;
+    background-image: url("../images/userpic.png");
+    background-size: cover;
+    margin-right: 8px;
+}
+
+.topdetail .author {
+    line-height: 48px;
+    font-family: PingFangSC-Regular;
+    font-size: 16px;
+    color: #464646;
+}
+
+.topdetail .shanchu,
+.edit {
+    font-family: PingFangSC-Regular;
+    font-size: 16px;
+    color: #464646;
+    height: 48px;
+    line-height: 48px;
+    margin-left: 20px;
+}
+
+.content .fengmian {
+    display: block;
+    height: 280px;
+    margin-bottom: 16px;
+}
+
+.content .jieshao {
+    padding: 16px 40px 24px 40px;
+    font-family: PingFangSC-Regular;
+    font-size: 16px;
+    color: #464646;
+    letter-spacing: 0.2px;
+    line-height: 26px;
+    border-bottom: 1px solid #F6F6F6;
+}
+
+.reply li {
+    padding: 17px 40px 16px 40px;
+    border-bottom: 1px solid #f6f6f6;
+}
+
+.user .touxiang {
+    width: 36px;
+    height: 36px;
+    background-image: url("../images/userpic.png");
+    background-size: cover;
+    margin-right: 7px;
+}
+
+.user .name {
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    color: #464646;
+    line-height: 20px;
+}
+
+.user .time {
+    font-family: PingFangSC-Regular;
+    font-size: 12px;
+    color: #A6A6A6;
+    line-height: 18px;
+}
+
+.user .delete {
+    font-family: PingFangSC-Regular;
+    font-size: 12px;
+    color: #A6A6A6;
+    line-height: 18px;
+}
+
+.reply .pinglun {
+    font-family: PingFangSC-Regular;
+    font-size: 16px;
+    color: #767676;
+    letter-spacing: 0.2px;
+    line-height: 26px;
+    margin-top: 8px;
+}
+
+.reply .more {
+    padding: 32px 0px;
+    font-family: PingFangSC-Regular;
+    font-size: 16px;
+    color: #464646;
+}
+
+.fabiao {
+    padding: 24px 20px;
+}
+
+.fabiao .send {
+    width: 120px;
+    height: 40px;
+    border: 1px solid #263238;
+    background-color: #fff;
+}
+
+.fabiao .inputbox {
+    padding-left: 10px;
+    font-family: PingFangSC-Regular;
+    font-size: 16px;
+    color: #464646;
+    margin-top: 9px;
+    width: 500px;
+    border: none;
+    border-left: 1px solid #b6b6b6;
+}
+
+.live .publish {
+    position: absolute;
+    padding: 8px 10px;
+    top: 0px;
+    left: -88px;
+    background-color: #fff;
+}
+
+.publish .time {
+    font-family: PingFangSC-Regular;
+    font-size: 18px;
+    color: #464646;
+    line-height: 24px;
+    height: 28px;
+    border-bottom: 1px solid #f6f6f6;
+    margin-bottom: 4px;
+}
+
+.publish .prehot {
+    font-family: PingFangSC-Medium;
+    font-size: 14px;
+    color: #00E676;
+    line-height: 20px;
+}
+
+.publish .endprehot {
+    color: #FF5722;
+}
+
+.nomore {
+    font-family: PingFangSC-Regular;
+    font-size: 18px;
+    color: #A6A6A6;
+    letter-spacing: 0.8px;
+    padding: 36px 0 24px 0;
+}
+
+.mask1,
+.mask2 {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .3);
+    display: none;
+}
+
+.deletebox {
+    width: 420px;
+    height: 144px;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.deletebox .del {
+    color: #ccc;
+    margin: 12px 16px 0 0;
+}
+
+.deletebox .tipwords {
+    font-family: PingFangSC-Medium;
+    font-size: 20px;
+    color: #464646;
+    letter-spacing: 0.4px;
+    line-height: 36px;
+    padding-bottom: 14px;
+}
+
+.deletebox .op {
+    width: 50%;
+    height: 60px;
+    font-family: PingFangSC-Regular;
+    font-size: 20px;
+    color: #464646;
+    letter-spacing: 0.4px;
+    line-height: 36px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(0, 0, 0, 0.04)
+}
+
+.deletebox .conform {
+    border-left: 1px solid rgba(0, 0, 0, 0.04);
+    color: #00E676;
+}
+
+
+/* mask2 */
+
+.editbox {
+    height: 400px;
+    width: 800px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+}
+.editbox1 {
+    /* height: 400px; */
+    width: 788px;
+    margin: 0 auto;
+    margin-bottom: 48px;
+    /* margin-left: -20px; */
+    /* position: absolute; */
+    /* left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); */
+    transform: translateX(-44px);
+    background-color: #fff;
+}
+
+.editbox {
+    overflow: auto;
+}
+
+.editbox .tip {
+    height: 60px;
+    line-height: 60px;
+    font-family: PingFangSC-Medium;
+    font-size: 20px;
+    color: #464646;
+    letter-spacing: 0.4px;
+    border-bottom: 1px solid #C4C4C4;
+}
+
+.editbox .editcontent {
+    padding: 17px 25px 0 16px;
+    height: 117px;
+    border-bottom: 1px solid #F6F6F6;
+}
+.editbox1 .editcontent {
+    padding: 17px 25px 0 16px;
+    height: 117px;
+    border-bottom: 1px solid #F6F6F6;
+}
+
+.editcontent .adavatar {
+    width: 48px;
+    height: 48px;
+    background-image: url("../images/userpic.png");
+    background-size: cover;
+}
+
+.editcontent .textarea {
+    width: 620px;
+    height: 90px;
+    border: none;
+    resize: none;
+    padding-top: 8px;
+    padding-left: 12px;
+    font-family: PingFangSC-Regular;
+    font-size: 16px;
+    color: #464646;
+    margin-right: 37px;
+}
+
+.editcontent .choose {
+    width: 30px;
+    height: 30px;
+    background-image: url("../images/img.jpg");
+    background-size: cover;
+}
+
+.imgs {
+    /* overflow: auto; */
+    padding: 0 28px 0 24px;
+}
+
+.imgs li {
+    position: relative;
+    margin-right: 24px;
+    margin-top: 24px;
+    margin-bottom: 16px;
+}
+
+.imgs li:nth-child(5n) {
+    margin-right: 0px;
+}
+
+.imgs .img {
+    width: 128px;
+    height: 128px;
+}
+
+.imgs .del {
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    color: #FFFFFF;
+    border-radius: 50%;
+    background-color: #464646;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+}
+
+.imgs .send {
+    width: 109px;
+    height: 40px;
+    line-height: 40px;
+    background: #10CC70;
+    font-family: PingFangSC-Regular;
+    font-size: 16px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+}
+
+.imgs .cancle {
+    font-family: PingFangSC-Regular;
+    font-size: 18px;
+    color: #464646;
+    letter-spacing: 0.8px;
+    line-height: 36px;
+    margin-right: 32px;
+}

@@ -1,0 +1,344 @@
+/* 公共样式 */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f6f6f6;
+}
+
+.banxin {
+    width: 1060px;
+    margin: 0 auto;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.clearfix::after {
+    content: "";
+    line-height: 0;
+    height: 0;
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+li {
+    list-style: none;
+}
+
+.tc {
+    text-align: center;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.banxin {
+    width: 700px;
+    margin: 0 auto;
+}
+
+
+/* 顶部个人栏目 */
+
+.top {
+    height: 320px;
+    position: relative;
+}
+
+.top .blur {
+    width: 100%;
+    height: 320px;
+    background-image: url("../images/banner图.png");
+    background-size: cover;
+    filter: blur(4px);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.top .infodetail {
+    position: relative;
+    z-index: 20;
+}
+
+.top .edit {
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
+    background-color: rgba(0, 0, 0, .1);
+    border: 1px solid #FFFFFF;
+    color: #FFFFFF;
+    margin: 24px 20px 0 0;
+}
+
+.top .avatar {
+    width: 60px;
+    height: 60px;
+    display: block;
+    background-image: url("../images/userpic.png");
+    background-size: cover;
+    margin: 60px auto 0 auto;
+}
+
+.top .name {
+    font-family: PingFangSC-Regular;
+    font-size: 18px;
+    color: #ffffff;
+    letter-spacing: 0.23px;
+    line-height: 25px;
+    margin: 10px 0 4px 0;
+}
+
+.top .type {
+    font-family: PingFangSC-Regular;
+    font-size: 16px;
+    color: #FFFFFF;
+    letter-spacing: 0.71px;
+}
+
+.top .nums {
+    font-family: PingFangSC-Regular;
+    font-size: 12px;
+    color: #FFFFFF;
+    letter-spacing: 0.53px;
+    margin: 32px 0 8px 0;
+}
+
+.top .jianjie {
+    font-family: PingFangSC-Regular;
+    font-size: 12px;
+    color: #FFFFFF;
+    letter-spacing: 0.2px;
+    line-height: 20px;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.50);
+}
+
+
+/* 内容主体 */
+
+.tab {
+    margin-bottom: 24px;
+    position: relative;
+    z-index: 30;
+}
+
+.tab ul li {
+    width: 25%;
+    height: 40px;
+    line-height: 40px;
+    background-color: #fff;
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    color: #464646;
+    letter-spacing: 0;
+}
+
+.tab ul li:hover {
+    color: #00E676
+}
+
+.tab .check {
+    color: #00E676;
+    padding-bottom: 7px;
+    border-bottom: 4px solid #00E676;
+}
+
+.article li {
+    background-color: #fff;
+    position: relative;
+    margin-bottom: 12px;
+}
+
+.article .pic {
+    width: 100%;
+    height: 280px;
+}
+
+.article .title {
+    font-family: PingFangSC-Medium;
+    font-size: 20px;
+    color: #464646;
+    letter-spacing: 0.4px;
+    line-height: 36px;
+    padding: 0 30px;
+    margin: 12px 0 4px 0;
+}
+
+.article .title:hover {
+    color: #00E676;
+}
+
+.article .desc {
+    font-family: PingFangSC-Regular;
+    font-size: 16px;
+    color: #464646;
+    letter-spacing: 0.23px;
+    line-height: 28px;
+    padding: 0 30px;
+    height: 56px;
+}
+
+.article .data {
+    padding: 16px 30px;
+}
+
+.data .tip {
+    font-family: SourceHanSansCN-Regular;
+    font-size: 12px;
+    color: #A6A6A6;
+    letter-spacing: 0;
+}
+
+.data .time {
+    background-image: url("../images/time.png");
+    background-repeat: no-repeat;
+    padding-left: 24px;
+}
+
+.data .pingjia {
+    background-image: url("../images/pinglun2.png");
+    background-repeat: no-repeat;
+    background-position-y: 2px;
+    padding-left: 24px;
+}
+
+.data .views {
+    background-image: url("../images/look.png");
+    background-repeat: no-repeat;
+    background-position-y: 2px;
+    padding-left: 24px;
+    margin-right: 16px;
+}
+
+.article .author {
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    color: #A6A6A6;
+    padding-left: 100px;
+    padding-top: 10px;
+}
+
+.article .touxiang {
+    width: 58px;
+    height: 58px;
+    background-image: url("../images/userpic copy.png");
+    background-size: cover;
+    position: absolute;
+    top: 252px;
+    left: 30px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+}
+
+.article .zan {
+    width: 60px;
+    height: 60px;
+    background-image: url("../images/userpic.png");
+    background-size: cover;
+    position: absolute;
+    top: 252px;
+    right: 30px;
+}
+
+.article .nomore {
+    height: 118px;
+    line-height: 118px;
+    font-family: PingFangSC-Regular;
+    font-size: 16px;
+    color: #A6A6A6;
+    letter-spacing: 0.71px;
+}
+
+.main .none {
+    font-family: PingFangSC-Regular;
+    font-size: 16px;
+    color: #A6A6A6;
+    letter-spacing: 0.71px;
+    line-height: 26px;
+    height: 240px;
+    line-height: 240px;
+    background-color: #fff;
+    margin: 24px auto 42px auto;
+}
+
+
+/* 评论部分 */
+
+.comment li {
+    background-color: #fff;
+    margin-bottom: 24px;
+}
+
+.comment .tops {
+    padding: 32px 40px;
+}
+
+.comment .tops .avatar {
+    width: 40px;
+    height: 40px;
+    margin-right: 12px;
+    background-image: url("../images/userpic copy.png");
+}
+
+.comment .tops .author {
+    font-family: PingFangSC-Regular;
+    font-size: 16px;
+    color: #464646;
+}
+
+.comment .tops .time {
+    font-family: PingFangSC-Regular;
+    font-size: 12px;
+    color: #A6A6A6;
+}
+
+.comment .tops .reply {
+    font-family: PingFangSC-Regular;
+    font-size: 18px;
+    color: #464646;
+    letter-spacing: 0.4px;
+    line-height: 36px;
+    margin: 16px 0;
+}
+
+.comment .tops .origin {
+    margin-left: 20px;
+    padding-left: 12px;
+    border-left: 4px solid #d8d8d8;
+}
+
+.comment .bottom .yuan {
+    font-family: PingFangSC-Medium;
+    font-size: 14px;
+    color: #00E676;
+    line-height: 26px;
+}
+
+.comment .bottom {
+    border-top: 1px solid #f6f6f6;
+    padding: 17px 40px;
+}
+
+.comment .bottom .laiyuan {
+    font-family: PingFangSC-Medium;
+    font-size: 20px;
+    color: #464646;
+    letter-spacing: 0.4px;
+    line-height: 36px;
+}
