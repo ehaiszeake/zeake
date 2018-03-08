@@ -10,6 +10,10 @@ body {
     background-color: #f6f6f6;
 }
 
+.pc_editor_link {font-size: 14px;text-align:right;}
+.pc_editor_link a {line-height:20px;color: #767676;margin-left:20px}
+
+
 .banxin {
     width: 1060px;
     margin: 0 auto;
