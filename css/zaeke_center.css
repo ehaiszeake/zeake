@@ -13,6 +13,8 @@ body {
 .pc_editor_link {font-size: 14px;text-align:right;}
 .pc_editor_link a {line-height:20px;color: #767676;margin-left:20px}
 
+.pc_load_more_data {max-width:700px;margin:30px auto;background:#fff;border-radius:5px;font-size: 14px;text-align:center;line-height:60px;color: #263238;cursor:pointer;}
+
 
 .banxin {
     width: 1060px;
