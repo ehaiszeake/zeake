@@ -92,6 +92,7 @@ class IndexAction extends Action {
     public function pc_home(){
         self::construct();
         $this->display("zaeke_center");
+        #$this->display("pc_home");
     }
 
     public function pc_message(){
