@@ -389,8 +389,9 @@
 							url:golbalIp+"/user/article",
 							type:"get",
 							dataType:"json",
-							data:{"account":JSON.parse($.cookie('bz')).account,"token":JSON.parse($.cookie('bz')).token,"id":id},
-							beforeSend:function() { },
+							data:{id":id},
+							//data:{"account":JSON.parse($.cookie('bz')).account,"token":JSON.parse($.cookie('bz')).token,"id":id},
+							beforeSend:function() { }, 
 							success:function(data) { 
 								console.log(data);
 								if(data.code==1) { 

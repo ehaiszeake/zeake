@@ -331,4 +331,103 @@
 
 <script src="./center_dataloader.min.js"></script>
 
+<script type="text/javascript">
+            var root={};
+                root.deleteArticle=false
+                $(".pc_editor_link").on("click",function(e) {
+                    var target=$(e.target);
+                        if(target.hasClass("pc_new_delete")) {
+                            if(!root.deleteArticle) {
+                                root.deleteArticle=true;
+                                var state=window.confirm("确定删除该文章？");
+                                    if(state) {
+                                        $.ajax({
+                                            url:golbalIp+"/user/delete_article",
+                                            type:"post",
+                                            dataType:"json",
+                                            data:{"account":JSON.parse($.cookie('bz')).account,"token":JSON.parse($.cookie('bz')).token,"id":target.attr("data-id")},
+                                            beforeSend:function() { },
+                                            success:function(data) {
+                                                if(data.code==1) {
+                                                    target.parents("li").remove();
+                                                    alert("删除成功");
+                                                }else {
+                                                    alert(data.message);
+                                                }
+                                                root.deleteArticle=!1;
+                                            },error:function() {
+                                                alert("网络错误，请稍后再试！");
+                                                root.deleteArticle=!1;
+                                            }
+                                        });
+                                    }
+                            }
+                        }else if(target.hasClass("pc_new_pass")) {
+                            //文章审核通过
+                            if(!root.deleteArticle) {
+                                root.deleteArticle=true;
+                                var state=window.confirm("确定通过该文章审核？");
+                                    if(state) {
+                                        $.ajax({
+                                            url:golbalIp+"/user/agree_article",
+                                            type:"post",
+                                            dataType:"json",
+                                            data:{"account":JSON.parse($.cookie('bz')).account,"token":JSON.parse($.cookie('bz')).token,"id":target.attr("data-id")},
+                                            beforeSend:function() { },
+                                            success:function(data) {
+                                                if(data.code==1) {
+                                                    // if(target.attr("data-type")!=3) {
+                                                    //     target.parent(".pc_editor_link").next(".pc_state").attr("data-type",3).html("#已发布")
+                                                    //     .next(".pc_title").find("a").attr("href","article_detail_"+target.attr("data-id")+".php");
+                                                    // }else {
+                                                    //     target.parent(".pc_editor_link").next(".pc_state").attr("data-type",3).html("#已发布")
+                                                    //     .next(".pc_title").find("a").attr("href","video_detail.php?id="+target.attr("data-id"));
+                                                    // }
+                                                    location.reload();
+                                                    alert("文章审核通过");
+                                                }else {
+                                                    alert(data.message);
+                                                }
+                                                root.deleteArticle=!1;
+                                            },error:function() {
+                                                alert("网络错误，请稍后再试！");
+                                                root.deleteArticle=!1;
+                                            }
+                                        });
+                                    }
+                            }
+                        }else if(target.hasClass("pc_new_noPass")) {
+                            //文章审核不通过
+                            if(!root.deleteArticle) {
+                                root.deleteArticle=true;
+                                var state=window.confirm("确定不通过文章审核？");
+                                    if(state) {
+                                        $.ajax({
+                                            url:golbalIp+"/user/disagree_article",
+                                            type:"post",
+                                            dataType:"json",
+                                            data:{"account":JSON.parse($.cookie('bz')).account,"token":JSON.parse($.cookie('bz')).token,"id":target.attr("data-id")},
+                                            beforeSend:function() { },
+                                            success:function(data) {
+                                                // if(data.code==1) {
+                                                //     target.parent(".pc_editor_link").next(".pc_state").attr("data-type",2).html("#未通过")
+                                                //     .next(".pc_title").find("a").attr("href","javascript:;");
+                                                //     alert("文章审核不通过！");
+                                                // }else {
+                                                //     alert(data.message);
+                                                // }
+                                                location.reload();
+                                                root.deleteArticle=!1;
+                                            },error:function() {
+                                                alert("网络错误，请稍后再试！");
+                                                root.deleteArticle=!1;
+                                            }
+                                        });
+                                    }
+                            }
+                        }
+                });
+</script>
+
+
 </html>
