@@ -1,0 +1,30 @@
+<!--{template common/header}-->
+<!--{template legend/legend_top}-->
+<!--{template legend/legend_article}-->
+<script src="template/zaekev2/static/js/event/AuthorsInfoView.js"></script>
+<script>(function () {
+    window.addEventListener('load', function () {
+        render()
+    }, false)
+
+    function render() {
+        new LegendTopContent().render({
+            img: 'http://img.zaeke.com/portal/201701/06/170657yalelt9x97nuwzl6.jpg',
+            name: 'Zack',
+            description: '索大好',
+            toutiao: '',
+            weibo: 'http://weibo.com/1748136774/',
+            blur: 'http://img.zaeke.com/portal/201701/06/170654s81iy9z251y31l55.jpg'
+        })
+
+        if (typeof jQuery !== 'undefined') {
+            jQuery.ajax({
+                url: 'http://www.zaeke.com/template/zaekev2/static/js/datasource/zack.json',
+                success: function (data) {
+                    new LegendContentMaker().render(data.articles, false)
+                }
+            })
+        }
+    }
+}())</script>
+<!--{template common/footer}-->

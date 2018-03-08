@@ -1,0 +1,35 @@
+<!--{template common/header}-->
+<!--[name]{lang authors}[/name]-->
+<!--{eval $list = array();}-->
+<!--{eval $wheresql = category_get_wheresql($cat);}-->
+<!--{eval $list = category_get_list($cat, $wheresql, $page);}-->
+
+<!--{ad/text/wp a_t}-->
+<style id="diy_style" type="text/css"></style>
+<div class="cl">
+    <!--[diy=diy2]--><div id="diy2" class="area"></div><!--[/diy]-->
+</div>
+<div class="wp">
+    <!--[diy=diy1]--><div id="diy1" class="area"></div><!--[/diy]-->
+</div>
+
+<div id="ct" class="ct2 wp zmt cl">
+    <!--名人堂集合页面顶部区域，固定内容-->
+    <section id="legendHub" class="legendHub">
+        <h1 class="legendHubName">知客·名人堂</h1>
+        <div class="line"></div>
+        <p class="legendHubList">手机 | 音频 | 键盘 | 可穿戴设备 | 摄影 | 生活 | 游戏 | 旅行</p>
+        <div class="legendHubStart">开始探索</div>
+    </section>
+    <style>html { font-size: 14px; } #wp, #nv_portal #wp, #nv { margin-top: 0; } #hdbn { display: none; } #nv_portal #wp .wp { width: 100%; margin-top: 0; } .bm.vw.bgw { display: none; } .ct2 .mn, .ct2 .sd { display: none; }</style>
+    <section id="legendArticle" class="legendArticle">
+        <h2>最新文章</h2>
+        <div class="legendArticleWrapper">
+        </div>
+        <footer id="legendArticleFooter" class="legendArticleFooter"></footer>
+    </section>
+    <script src="template/zaekev2/static/js/event/AuthorsInfoView.js"></script>
+    <script src="template/zaekev2/static/js/event/LegendHubArticles.js"></script>
+</div>
+
+<!--{template common/footer}-->

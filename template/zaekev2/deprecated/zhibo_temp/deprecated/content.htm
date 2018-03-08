@@ -1,0 +1,27 @@
+<!--直播（内容）区域开始-->
+<div class="content">
+</div>
+<script>
+    Z(function () {
+        Z('.content > div').last().css({
+            'border': 'none',
+            'left': '-18px'
+        })
+    })
+</script>
+<!--直播（内容）区域结束-->
+<script src="http://www.zaeke.com/template/zaekev2/static/js/develope/loadContent.js"></script>
+<script src="http://www.zaeke.com/template/zaekev2/static/js/develope/imgScale.js"></script>
+<script data-data="data">
+    /*
+     * 抹除所有数据来源，虽然说可能没有什么人能看到，不过清掉还是好的
+     * 说不定会有人对这些东西感兴趣呢（手动斜眼）
+     * 而且保留着数据在调试的时候看起来会显得多余的东西很多
+     * 数据都是js代码，标识符是data-data="data"
+     * 这些都是目前的妥协
+     */
+    Z(function () {
+        Z('script[data-data="data"]').remove();
+    });
+</script>
+<script src="http://www.zaeke.com/template/zaekev2/static/js/event/scrollEventPage.js"></script>

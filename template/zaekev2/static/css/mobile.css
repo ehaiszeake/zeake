@@ -1,0 +1,794 @@
+/*
+ * 手机页面样式
+ */
+* {
+    box-sizing: border-box;
+}
+
+/* 调整弹出框的位置以便在手机屏幕上可以被使用 */
+#e_image_menu {
+    left: 0px !important;
+    width: 100% !important;
+}
+
+/* 高级模式下隐藏掉不必要的按钮 */
+#e_button > .b2r,
+#e_adv_s1 a {
+    display: none;
+}
+#e_button #e_adv_s1,
+#e_adv_s1 #e_image {
+    display: block;
+}
+
+#e_adv_s1 #e_image {
+    width: 40px;
+    height: 40px;
+    background-position: -40px -80px;
+}
+
+/* 百度分享插件 */
+.bdshare-slide-button-box {
+    display: none !important;
+}
+
+/* back to top按钮 */
+#scrolltop {
+    display: none;
+}
+
+/* 汉堡菜单开始*/
+[data-type="burgerPage"] {
+    width: 100%;
+    height: 150%;
+    position: fixed;
+    /* top: .. */
+    left: -100%;
+    box-sizing: border-box;
+    transition: left 0.3s;
+    z-index: 12;
+}
+
+[data-type="burgerPage"].show {
+    left: 0;
+}
+
+[data-type="burgerContent"] {
+    width: 80%;
+    height: 100%;
+    position: relative;
+    z-index: 12;
+    background-color: white;
+}
+
+[data-type="burgerContent"] li span {
+    display: none;
+}
+
+[data-type="burgerContent"] li {
+    list-style-type: none;
+    font-size: 16px;
+}
+
+[data-type="burgerContent"] li a {
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    padding: 5%;
+}
+
+[data-type="burgerCover"] {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 11;
+}
+
+[data-type="burgerButton"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* width: ..
+    height: .. */
+    box-sizing: border-box;
+    padding: 2%;
+}
+
+[data-type="burgerButton"] img {
+    top: 0 !important;
+    width: 100% !important;
+}
+
+[data-type="burgerUser"] {
+    padding: 5%;
+    position: relative;
+}
+
+[data-type="burgerUserStatus"] {
+    display: inline-block;
+    width: 100%;
+}
+
+[data-type="burgerUserStatus"] img {
+    background: none;
+    border: none;
+    width: 30%;
+    height: auto;
+    margin: 0 35%;
+    border-radius: 50%;
+}
+
+[data-type="burgerUserName"] {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+
+[data-type="burgerUserLogin"] {
+    display: inline-block;
+    width: 30%;
+    padding: 5%;
+    text-align: center;
+    background-color: skyblue;
+    border-radius: 5px;
+}
+
+[data-type="burgerUserRegister"] {
+    display: inline-block;
+    width: 40%;
+    padding: 5%;
+    margin-left: 10%;
+    background-color: pink;
+    text-align: center;
+    border-radius: 5px;
+}
+
+[data-type="burgerUserExit"] {
+    display: inline-block;
+    width: 20%;
+    text-align: center;
+    padding: 2%;
+    background-color: plum;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+/* 汉堡菜单结束 */
+#hd {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 11;
+}
+
+#hd h2.z a {
+    display: inline-block;
+    width: 40%;
+}
+
+#hd h2.z img {
+    width: 100%;
+}
+
+#hd .wp,
+#nv_portal #wp .wp {
+    width: 100%;
+}
+
+#hd .wp .z {
+    width: 100%;
+    text-align: center;
+    padding-right: 0;
+}
+
+#hd .wp .y,
+#hdbn .wp .y {
+    display: none;
+}
+
+#hdbn {
+    width: 100%;
+    text-align: center;
+    display: none;
+}
+
+#hdbn .wp,
+#hdbn .wp .z {
+    width: 100%;
+}
+
+#wp,
+#nv_portal #wp,
+#nv {
+    width: 100%;
+    margin-top: 20%;
+}
+
+.zmt {
+    margin-top: 10px;
+}
+
+#nv li {
+    width: 25% !important;
+}
+
+#nv li a {
+    width: 100%;
+}
+
+#slides img {
+    width: 100% !important;
+    height: auto !important;
+}
+
+#slides .slidesjs-pagination-item a {
+    position: relative;
+    margin-top: -25px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.fourleaf {
+    display: none;
+}
+
+.ct2 .sd {
+    display: none;
+}
+
+.ct2 .mn {
+    width: 100%;
+}
+
+.ct2 .mn .bgw {
+    border-radius: 0;
+    box-shadow: 0 0 0 transparent;
+    background-color: transparent;
+}
+
+.vw .h {
+    width: 90% !important;
+    margin: 0 5% !important;
+}
+
+.vw .d {
+    width: 90% !important;
+    margin: 5% !important;
+}
+
+.vw .d img {
+    max-width: 100% !important;
+    height: auto;
+}
+
+.vw .o {
+    border: none;
+}
+
+.artlist li {
+    padding: 0;
+    border-radius: 0;
+    box-shadow: 0 0 0 transparent;
+}
+
+.artlist .artitem dt {
+    font-size: 1.3em;
+    padding: 3%;
+    line-height: normal;
+    text-indent: inherit;
+    background: none;
+}
+
+.artlist .artpic img {
+    width: 100%;
+    height: auto;
+}
+
+.artlist .artsummary {
+    margin: 0;
+    padding: 3%;
+}
+
+.pg a,
+.pg strong,
+.pg label {
+    display: none;
+}
+
+.pg a.nxt {
+    display: block;
+    font-size: 1.2em;
+    color: #17bcb8;
+}
+
+#nv_forum .pg a.nxt,
+#nv_forum .pgb,
+.pgs #newspecialtmp {
+    display: none;
+}
+
+#zixun figure,
+#zixun section {
+    width: 100%;
+    height: auto;
+    display: inline-block;
+    position: initial;
+}
+
+#zixun figcaption {
+    width: 100%;
+    padding: 3%;
+    position: static;
+    font-size: 16px;
+}
+
+#zixun figure > a {
+    display: initial;
+}
+
+#zixun figure img {
+    border-radius: 0;
+}
+
+#zixun section > p {
+    width: 100%;
+    padding: 0;
+}
+
+#photo {
+    width: 100%;
+}
+
+#photo li {
+    width: 100%;
+    height: auto;
+    margin: 0 0 3% 0;
+    background-color: transparent;
+}
+
+#photo li > a {
+    width: 100%;
+    height: auto;
+    padding: 0 10%;
+}
+
+#photo li > a img {
+    width: 100%;
+    height: auto;
+}
+
+#photo li .picinfo {
+    display: none;
+}
+
+#photo .info {
+    text-align: center;
+}
+
+#sd_bdl {
+    display: none;
+}
+
+#nv_forum #ct .mn,
+#thread_types {
+    width: 100%;
+    height: auto;
+    overflow: scroll;
+}
+
+#thread_types div.content {
+    width: 200%;
+    height: auto;
+    overflow: hidden;
+}
+
+#thread_types li {
+    width: 15%;
+    padding: 1%;
+}
+
+#thread_types li div {
+    margin: auto;
+}
+
+.tl .th {
+    display: none;
+}
+
+#threadlist {
+    border: none;
+    background-color: transparent;
+    margin-top: 5%;
+}
+
+#threadlist .bm_c tr {
+    height: auto;
+}
+
+#threadlisttableid {
+    margin: 0 2.5%;
+    width: 95%;
+    box-shadow: 0 0 3px #ccc;
+    border-radius: 5px;
+    background-color: white;
+    padding: 2%;
+}
+
+#separatorline {
+    display: none;
+}
+
+#threadlist td.icn {
+    width: 20%;
+    padding: 1%;
+}
+
+#threadlist td.icn img {
+    width: 100%;
+    height: inherit;
+    border-radius: initial;
+    border-radius: 50%;
+}
+
+#threadlist th.common {
+    width: 80%;
+    padding: 3%;
+}
+
+.tl #forumnewshow {
+    display: none;
+}
+
+.pls,
+#postlist .vwthd div.y,
+.xg1,
+#pt .z a:last-child,
+.po.hin {
+    display: none;
+}
+
+.pct embed,
+.pct object {
+    width: 460px;
+    height: 334px;
+}
+
+.pct img {
+    max-width: 100%;
+    height: auto;
+}
+
+.pct blockquote {
+    width: 100%;
+    margin: 0;
+}
+
+.plc {
+    padding: 0 5%;
+}
+
+.plc .pi {
+    display: initial;
+}
+
+.plc .pi .pti {
+    visibility: hidden;
+}
+
+.plc .pi strong a {
+    border: none;
+}
+
+.plc .pi .pti em {
+    visibility: initial;
+}
+
+.plc .pi .pti img {
+    display: none;
+}
+
+#p_btn,
+.bm.bw0.pgs.cl,
+.pgs.mtm.mbm.cl {
+    display: none;
+}
+
+/* 回帖框 */
+#f_pst {
+    display: initial;
+}
+
+#f_pst p.pnpost {
+    visibility: hidden;
+}
+
+#f_pst p.pnpost button {
+    visibility: initial;
+}
+
+#fastposteditor {
+    width: 100%;
+}
+
+#fastsmiliesdiv,
+#fastposteditor .fpd a.fbld,
+#fastposteditor .fpd a.fclr,
+#fastposteditor .fpd a.fmg,
+#fastposteditor .fpd a.flnk,
+#fastposteditor .fpd a.fqt,
+#fastposteditor .fpd a.fcd,
+#spanButtonPlaceholder,
+#fastposteditor .fpd span.pipe {
+    display: none;
+}
+
+#postlist {
+    background-color: transparent;
+    border: none;
+}
+
+
+#zhuanti {
+    width: 100% !important;
+    padding: 5% 0;
+}
+
+#zhuanti > div a {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 5%;
+}
+
+#zhuanti > div a img {
+    width: 100%;
+}
+
+#zhuanti-banner {
+    width: 100% !important;
+}
+
+#zhuanti-banner-content {
+    width: 100%;
+    height: auto;
+    padding-bottom: 0;
+}
+
+#zhuanti-banner-content img {
+    width: 100%;
+}
+
+#zhuanti-banner .mark {
+    width: 100%;
+    height: auto;
+}
+
+#event {
+    width: 100%;
+    margin-top: 0;
+}
+
+#event .sidebar,
+#event #photoSlide {
+    display: none;
+}
+
+#event .content,
+#event .content.news {
+    width: 100%;
+    padding: 0 3%;
+}
+
+#event .time,
+#event .point {
+    display: none;
+}
+
+.post,
+.single {
+    width: 100%;
+    left: 0 !important;
+    border: none;
+    padding: 8% 0;
+    border-bottom: 1px solid #cdcdcd;
+}
+
+.post.news {
+    width: 100%;
+    margin: 5% 0;
+}
+
+.post a {
+    width: 100%;
+    box-shadow: 0 0 10px #cdcdcd;
+    border-radius: 5px;
+    padding: 2%;
+}
+
+.post.news a {
+    padding: 0;
+}
+
+.post img {
+    width: 100%;
+    height: auto;
+    margin: 0 0 3% 0;
+}
+
+.post [data-type="videoContent"] {
+    width: 100%;
+    height: 250px;
+}
+
+[data-type="collapse"] {
+    background-color: transparent;
+    font-size: 1.2em;
+    margin-top: 0;
+    color: #17bcb8;
+    width: 100%;
+}
+
+.postinfo,
+.single .notes {
+    width: 100%;
+    padding: 3% 0;
+    font-size: 1.3em;
+}
+
+#ft {
+    display: none;
+}
+
+.rfm {
+    width: 100%;
+}
+
+.rfm th,
+.rfm td.tipcol {
+    width: 30%;
+}
+
+.rfm td {
+    width: 40%;
+}
+
+.rfm .px {
+    height: 30px;
+}
+
+/* 登陆后的各种消息提醒 */
+#evil_notice {
+    display: none;
+}
+
+/* 名人堂集合页面 */
+.legendHub {
+    height: initial;
+}
+
+.legendHubName {
+    font-size: 3rem;
+    padding-top: 0;
+}
+
+.legendHub .line {
+    margin: 30px auto;
+}
+
+.legendHubList {
+    font-size: 1.4rem;
+    width: 90%;
+    margin: auto;
+}
+
+.legendHubArticle {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 20%;
+}
+
+.legendArticle > h2 {
+    margin-bottom: 0;
+    padding: 20% 0 10% 0;
+}
+
+.legendHubArticleFigure {
+    position: static;
+    width: 100%;
+    height: auto;
+}
+
+.legendHubArticleFigure img {
+    width: 100%;
+    height: auto;
+}
+
+.legendHubArticleHeader {
+    width: 90%;
+    margin: 0 5%;
+    padding: 0;
+    padding-bottom: 10px;
+    -webkit-display: flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+}
+
+.legendHubArticleImg {
+    width: 50px;
+    height: 50px;
+}
+
+.legendHubArticleName {
+    font-size: 1.3rem;
+}
+
+.legendHubArticleTime {
+    position: static;
+}
+
+.legendHubArticleTitle {
+    font-size: 1.6rem;
+}
+/* 名人堂集合页面结束 */
+
+/* 名人堂作者页面开始 */
+.legend {
+    height: auto;
+}
+
+.legendBanner {
+    height: 150px;
+}
+
+.legendInfo {
+    height: auto;
+}
+
+.legendArticleImg {
+    position: static;
+}
+
+.legendInfoContent .legendImg {
+    width: 80px;
+    height: 80px;
+    top: -40px;
+}
+
+/* iPhone5 & iPhone5s & iPhone5c 横屏 */
+@media (max-width: 500px) and (orientation: landscape) {
+    #zixun figcaption {
+        font-size: 16px;
+        position: absolute;
+    }
+
+    #zixun section > p {
+        font-size: 13px;
+    }
+
+    #threadlist td.icn {
+        padding: 1%;
+    }
+
+    #threadlist th.common {
+        font-size: 0.9em;
+    }
+}
+
+/* iPhone5 & iPhone5s & iPhone5c 竖屏 */
+@media (max-width: 320px) and (orientation: portrait) {
+    #threadlist th.common {
+        font-size: 0.9em;
+    }
+    
+    [data-type="loginStatus"] {
+        font-size: 12px;
+    }
+}

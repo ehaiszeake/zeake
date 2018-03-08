@@ -4,7 +4,7 @@ RewriteEngine on
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 #RewriteRule ^(.*)$ index.php/$1 [QSA,PT,L]
-
+RewriteRule article-(.*)-1.html ./oldarticle/article-$1-1.html [QSA,PT,L]
 
 # RewriteRule ^(.*).php?(.*)$ ehais.php?m=Index&a=$1&$2 [QSA,PT,L]
 RewriteRule index.php$ ehais.php?m=Index&a=index [QSA,PT,L]

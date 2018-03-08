@@ -1,0 +1,50 @@
+<!--{template common/header}-->
+<style id="diy_style" type="text/css"></style>
+<div class="cl">
+<!--[diy=diy2]--><div id="diy2" class="area"></div><!--[/diy]-->
+</div>
+<div class="wp">
+    <!--[diy=diy1]--><div id="diy1" class="area"></div><!--[/diy]-->
+</div>
+
+<div id="ct" class="ct2 wp zmt cl">
+    <div class="mn">
+        <div class="artlist cl">
+            <ul>
+            <!--{loop $list $value}-->
+                <!--{eval $highlight = article_title_style($value);}-->
+                <!--{eval $article_url = fetch_article_url($value);}-->
+                <li class="artitem-{$value[aid]}">
+                    <dl class="artitem">
+                        <dt><a href="{$article_url}" target="_blank" $highlight>{$value[title]}</a></dt>
+                        <dd class="artpic"><a href="{$article_url}" target="_blank"><img src="{$value[pic]}" width="660" height="218" /></a></dd>
+                        <dd class="artsummary">
+                            <p>{$value[summary]}</p>
+                            <p class="artauthor">
+                                <a href="home.php?mod=space&uid={$value[uid]}" target="_blank" c="1" class="cl">{avatar($value[uid], 'small')}<em>{$value[username]}</em></a>
+                            </p>
+                            <div class="artstat">
+                                <span class="artviewnum">{$counts[$value['aid']][viewnum]}</span>
+                                <span class="artcommentnum">{$counts[$value['aid']][commentnum]}</span>
+                                <span class="dateline" style="display: none !important;">{$value[dateline]}</span>
+                            </div>
+                        </dd>
+                    </dl>
+                </li>
+            <!--{/loop}-->
+            </ul>
+        </div>
+        <!--{if $multi}--><div class="pgs cl">{$multi}</div><!--{/if}-->
+    </div>
+    
+    <div class="sd pph">
+        <div class="drag">
+            <!--[diy=diy3]--><div id="diy3" class="area"></div><!--[/diy]-->
+        </div>
+        <script src="template/zaekev2/static/js/portal/scrollPortalPage.js"></script>
+    </div>
+    <script src="template/zaekev2/static/js/portal/getPhotoSlideForPortalPage.js"></script>
+</div>
+
+<script src="misc.php?mod=diyhelp&action=get&type=index&diy=yes&r={echo random(4)}" type="text/javascript"></script>
+<!--{template common/footer}-->

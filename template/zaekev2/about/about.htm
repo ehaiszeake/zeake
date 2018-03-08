@@ -1,0 +1,131 @@
+<!--{template common/header}-->
+</div>
+<style>
+#help{width:1000px;margin:auto;margin-bottom:50px;position:relative}#help > #img{width:1000px;height:350px;margin:auto;margin-top:30px}#img > img{width:100%}aside,main{display:inline-block;box-sizing:border-box;box-shadow:0px 0px 5px gray;border-radius:5px;margin-top:50px;padding:10px 20px}#help > aside{width:200px;position:absolute;top:400px;margin-top:0}#help > aside > dl{margin:10px 0}#help > aside dl dd{margin-left:16px}#help > aside dl dd > a{text-decoration:none;color:black}#help > main{width:700px;margin-left:300px}#help > main > .ct > dl{margin:10px 0}#help > main dl dd{margin-left:0}.title{border-bottom:1px solid gray;padding:0}.title > span{font-size:20px;display:inline-block}.title.last{margin-top:20px}#help .ct{border-bottom:1px solid gray;padding:20px 0}#help .ct > p{font-size:18px}#help > main > dl{margin:10px 0}#help > main > dl dt{font-size:18px}#help > main > .ct > dl > dt{background:url(http://www.zaeke.com/template/zaekev2/static/img/arrow1.png) no-repeat 0px 6px;padding-left:10px}#help > main dl dt a{text-decoration:none}#help > main > .ct > dl > dd{font-size:14px}#help ol{padding-left:20px;margin:10px 0}#help > main > dl dd a{text-decoration:none;color:white;background-color:#17bcb8;display:inline-block;padding:5px 10px;margin-top:10px;border-radius:15px;-webkit-transition:background-color 0.3s;-o-transition:background-color 0.3s;transition:background-color 0.3s}#help > main > dl dd a:hover{background-color:#17acb8}
+  </style>
+  <div id="help">
+    <div id="img">
+      <img src="template/zaekev2/static/img/banner.jpeg" alt="banner">
+    </div>
+    <aside id="aside">
+      <div class="title">
+        <span>帮助中心</span>
+      </div>
+      <dl>
+        <dt>试用介绍</dt>
+        <dd><a href="#method">试用方式</a></dd>
+        <dd><a href="#process">试用流程</a></dd>
+        <dd><a href="#notice">试用须知</a></dd>
+      </dl>
+      <dl>
+        <dt>知客介绍</dt>
+        <dd><a href="#about">关于我们</a></dd>
+        <dd><a href="#contact">联系我们</a></dd>
+      </dl>
+      <dl>
+        <dt>厂商合作</dt>
+        <dd><a href="#together">合作申请</a></dd> 
+      </dl>
+    </aside>
+    <script>
+      (function () {
+        var base = document.querySelector('base');
+        base.parentNode.removeChild(base);
+
+        var aside = document.querySelector('#aside');
+        var top = aside.offsetTop + aside.offsetParent.offsetTop;
+        var topEnd = aside.offsetTop;
+        
+        window.onscroll = function () {
+          var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+          if (scrollTop > top) {
+            aside.style.position = 'fixed';
+            aside.style.top = '16px';
+          } else {
+            aside.style.position = 'absolute';
+            aside.style.top = topEnd + 'px';
+          }
+        }
+      }());
+    </script>
+    <main>
+      <div class="title">
+        <span>试用介绍</span>
+      </div>
+      <div class="ct">
+        <p><a name="method">试用方式：</a></p>
+        <dl>
+          <dt>招募试用</dt>
+          <dd>试用招募－－名单筛选－－玩家试用－－提交报告</dd>
+        </dl>
+        <dl>
+          <dt>巡玩试用</dt>
+          <dd>巡玩招募－－名单筛选－－轮流试用－－提交报告</dd>
+        </dl>
+        <dl>
+          <dt>全民试玩</dt>
+          <dd>提交申请－－名单筛选－－交纳押金－－玩家试玩－－产品验收－－返还押金</dd>
+        </dl>
+      </div>
+      <div class="ct">
+        <p><a name="process">试用流程：</a></p>
+        <dl>
+          <dt>了解产品</dt>
+          <dd>您可以通过产品试用申请页面的产品介绍，来获取您可能需要的信息。</dd>
+        </dl>
+        <dl>
+          <dt>申请试用</dt>
+          <dd>当试用招募开始时，您可以在活动页面进行申请。一般而言，需要您填写：知客 ID、往期作品、联系方式、回答表单等。</dd>
+        </dl>
+        <dl>
+          <dt>审核遴选</dt>
+          <dd>我们会根据您的论坛活跃纪录、往期作品质量一级您在表单中回答的问题答案进行选择。同时，我们也会通过微博和微信端的互动活动选择试用玩家。</dd>
+        </dl>
+        <dl>
+          <dt>公布名单</dt>
+          <dd>每一期产品试用名单，都会在试用招募结束后的 24 小时内对外进行公布，知客工作室会在第一时间通过私信通知名单上的用户。</dd>
+        </dl>
+        <dl>
+          <dt>等待收货</dt>
+          <dd>知客工作室会在名单公布后的 48 小时内为试用产品安排快递发货，具体收货时间因各地快递配送速度不同。</dd>
+        </dl>
+        <dl>
+          <dt>试用分享</dt>
+          <dd>您需要在收到货品后的 1-2 周内向我们分享您的试用体验。认真优秀的分享将有助于您成功申请到下一次试用。</dd>
+        </dl>
+      </div>
+      <div class="ct">
+        <p><a name="notice">试用须知：</a></p>
+        <ol>
+          <li>有优秀作品玩家将获得试用优先资格。</li>
+          <li>若24小时内未提交相关信息，则被视为放弃试用资格。</li>
+          <li>收货后立即确认产品完好性，如有损坏请在当天联系工作人员。</li>
+          <li>试用产品人为损坏须合理赔偿。</li>
+          <li>试用产品必须在厂家提醒的环境下使用。</li>
+          <li>ZAEKE知客活动，最终解释权归ZAEKE知客所有。</li>
+        </ol>
+      </div>
+      <div class="title last">
+        <span>知客介绍</span>
+      </div>
+      <dl>
+        <dt><a name="about">关于我们</a></dt>
+        <dd>ZAEKE知客致力于打造数码玩家一站式完美体验的平台。我们希望能给每一位热爱数码的玩家，提供一个展示自己的平台。</dd>
+      </dl>
+      <dl>
+        <dt><a name="contact">联系我们</a></dt>
+        <dd>联系电话：13049894061</dd>
+        <dd>商务合作：chenwei@zaeke.com</dd>
+      </dl>
+      <div class="title last">
+        <span>厂商合作</span>
+      </div>
+      <dl>
+        <dt><a name="together">合作申请</a></dt>
+        <dd>您的产品如果已经准备好让公众试用了</dd>
+        <dd><a href="http://www.mikecrm.com/f.php?t=oXX8oa" target="_blank">厂商产品提交</a></dd>
+      </dl>
+    </main>
+  </div>
+<div>
+<!--{template common/footer}-->

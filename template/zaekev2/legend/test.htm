@@ -1,0 +1,38 @@
+<!--{template common/header}-->
+<!--{template legend/legend_top}-->
+<!--{template legend/legend_article}-->
+<script src="template/zaekev2/static/js/event/AuthorsInfoView.js"></script>
+<script>(function () {
+    window.addEventListener('load', function () {
+        bind()
+        render()
+    }, false)
+
+    function bind() {
+        var start = document.querySelector('.legendHubStart')
+        if (start) {
+            var target = document.querySelector('#legendArticle')
+            if (target && typeof jQuery !== 'undefined') {
+                var top = jQuery(target).offset().top
+                start.addEventListener('click', function () {
+                    jQuery('html, body').animate({
+                        scrollTop: top
+                    }, 400)
+                }, false)
+            }
+        }
+
+    }
+
+    function render() {
+        new LegendTopContent().render({
+            img: "",
+            name: "",
+            description: "",
+            toutiao: "",
+            weibo: "",
+            blur: ""
+        })
+    }
+}())</script>
+<!--{template common/footer}-->

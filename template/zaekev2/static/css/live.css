@@ -1,0 +1,54 @@
+/*
+ * 直播页面样式
+ */
+
+#scrolltop .replyfast,
+#postlist,
+#modmenu,
+.xi2.mbm.pbm.bbs {
+    display: none;
+}
+
+.pgbtn a {
+    background: transparent;
+    letter-spacing: 0;
+    height: auto;
+    width: 100px;
+    margin: auto;
+    border-radius: 50px;
+}
+
+[data-type="administratorEditButton"] {
+    border: 1px solid #ccc;
+    padding: 5px;
+    cursor: pointer;
+    background-color: white;
+    position: fixed;
+    left: 0;
+    bottom: 100px;
+    z-index: 11;
+}
+
+[data-type="administratorTipsLabel"] {
+    background-color: red;
+    color: black;
+    font-weight: bold;
+    font-size: 1.5em;
+    text-align: center;
+    padding: 5px;
+}
+
+/* 侧边相关文章 */
+.mtw.mbw {
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #ccc;
+    width: 320px;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+.xl2 li {
+    width: 100%;
+}
+/* 侧边相关文章结束 */

@@ -1,0 +1,121 @@
+<!--{template common/header}-->
+<!--[name]{lang authors}[/name]-->
+<!--{eval loadcache('usergroups')}-->
+<!--{eval $author = getuserbyuid($article[uid], 1)}-->
+
+<script type="text/javascript" src="{$_G['setting']['jspath']}forum_viewthread.js?{VERHASH}"></script>
+<script type="text/javascript">zoomstatus = parseInt($_G['setting']['zoomstatus']), imagemaxwidth = '{$_G['setting']['imagemaxwidth']}', aimgcount = new Array();</script>
+
+<!--{hook/view_article_top}-->
+<!--{ad/text/wp a_t}-->
+<style id="diy_style" type="text/css"></style>
+<div class="cl">
+    <!--[diy=diy2]--><div id="diy2" class="area"></div><!--[/diy]-->
+</div>
+<div class="wp">
+    <!--[diy=diy1]--><div id="diy1" class="area"></div><!--[/diy]-->
+</div>
+<div id="ct" class="ct2 wp zmt cl" data-type="zaekeLegends">
+    <style>html { font-size: 14px; } #hd { display: none; } #hdbn { display: none; } #nv_portal #wp .wp { width: 100%; margin-top: 0; } .bm.vw.bgw { display: none; } #ft { display: none; }</style>
+    <!--名人堂顶部区域内容，需要根据不同的要求进行数据填充-->
+    <section id="legend" class="legend">
+        <div class="legendBanner"></div>
+        <section class="legendInfo">
+            <div class="legendInfoContent">
+                <div class="legendImg"><img src="http://img.zaeke.com/portal/201609/28/160653iccwwm99fvken0yp.png"></div>
+                <p class="legendName">Pro9ice</p>
+                <p class="legendDescription">我是谁？牛逼到不需要简介的，你来猜一猜如何？</p>
+                <div class="legendLinks">
+                    <a href="#" target="_blank" class="toutiao"><img src="http://img.zaeke.com/portal/201611/17/112456diizoh0xiaptexrw.png" alt="今日头条"></a>
+                    <a href="#" target="_blank" class="weibo"><img src="http://img.zaeke.com/portal/201611/17/112456h11ygokie8yk2lnh.png" alt="新浪微博"></a>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <!--名人堂文章内容区域，需要根据不同的要求进行数据填充-->
+    <section id="legendArticle" class="legendArticle">
+        <h2>精华文章</h2>
+        <div class="legendArticleWrapper"></div>
+        <footer id="legendArticleFooter" class="legendArticleFooter"></footer>
+    </section>
+    <script src="template/zaekev2/static/js/event/AuthorsInfoView.js"></script>
+    <div class="bm vw bgw">
+        <div class="d">
+            <!--[diy=diycontenttop]--><div id="diycontenttop" class="area"></div><!--[/diy]-->
+
+            <table cellpadding="0" cellspacing="0" class="vwtb"><tr><td id="article_content">
+                <!--{ad/article/a_af/1}-->
+                <!--{if $content[title]}-->
+                <div class="vm_pagetitle xw1">$content[title]</div>
+                <!--{/if}-->
+                $content[content]
+            </td></tr></table>
+            <!--{hook/view_article_content}-->
+            <!--{if $multi}--><div class="ptw pbw cl">$multi</div><!--{/if}-->
+
+            <!--[diy=diycontentbottom]--><div id="diycontentbottom" class="area"></div><!--[/diy]-->
+
+            <script type="text/javascript" src="{$_G[setting][jspath]}home.js?{VERHASH}"></script>
+            <div id="click_div">
+                <!--{template home/space_click}-->
+            </div>
+
+            <!--{if !empty($contents)}-->
+            <div id="inner_nav" class="ptn xs1">
+                <h3>{lang article_inner_navigation}</h3>
+                <ul class="xl xl2 cl">
+                    <!--{loop $contents $key $value}-->
+                    <!--{eval $curpage = $key+1;}-->
+                    <!--{eval $inner_view_url = helper_page::mpurl($viewurl, '&page=', $curpage);}-->
+                    <li>&bull; <a href="$inner_view_url"{if $key === $start} class="xi1"{/if}>{lang article_inner_page_pre} {$curpage} {lang article_inner_page} $value[title]</a></li>
+                    <!--{/loop}-->
+                </ul>
+            </div>
+            <!--{/if}-->
+
+            <!--[diy=diycontentclickbottom]--><div id="diycontentclickbottom" class="area"></div><!--[/diy]-->
+
+        </div>
+        <!--{if !empty($aimgs[$content[pid]])}-->
+            <script type="text/javascript" reload="1">aimgcount[{$content[pid]}] = [<!--{echo implode(',', $aimgs[$content[pid]]);}-->];attachimgshow($content[pid]);</script>
+        <!--{/if}-->
+
+        <!--{if !empty($_G['setting']['pluginhooks']['view_share_method'])}-->
+            <div class="tshare cl">
+                <strong>{lang viewthread_share_to}:</strong>
+                <!--{hook/view_share_method}-->
+            </div>
+        <!--{/if}-->
+
+        <div class="o cl ptm pbm">
+            <!--{hook/view_article_op_extra}-->
+            <!--{if $_G['group']['allowmanagearticle'] || ($_G['group']['allowpostarticle'] && $article['uid'] == $_G['uid'] && (empty($_G['group']['allowpostarticlemod']) || $_G['group']['allowpostarticlemod'] && $article['status'] == 1)) || $categoryperm[$value['catid']]['allowmanage']}-->
+                <a href="portal.php?mod=portalcp&ac=article&op=edit&aid=$article[aid]">{lang edit}</a><span class="pipe">|</span>
+                <a  id="related_article" href="portal.php?mod=portalcp&ac=related&aid=$article[aid]&catid=$article[catid]&update=1" onclick="showWindow(this.id, this.href, 'get', 0);return false;">{lang article_related}</a><span class="pipe">|</span>
+                <!--{if $article[status]>0 && ($_G['group']['allowmanagearticle'] || $categoryperm[$value['catid']]['allowmanage'])}-->
+                    <a href="portal.php?mod=portalcp&ac=article&op=verify&aid=$article[aid]" id="article_verify_$article[aid]" onclick="showWindow(this.id, this.href, 'get', 0);">{lang moderate}</a>
+                <!--{else}-->
+                    <a href="portal.php?mod=portalcp&ac=article&op=delete&aid=$article[aid]" id="article_delete_$article[aid]" onclick="showWindow(this.id, this.href, 'get', 0);">{lang delete}</a>
+                <!--{/if}-->
+                <span class="pipe">|</span>
+            <!--{/if}-->
+            <!--{if $article[status]==0 && ($_G['group']['allowdiy']  || getstatus($_G['member']['allowadmincp'], 4) || getstatus($_G['member']['allowadmincp'], 5) || getstatus($_G['member']['allowadmincp'], 6))}-->
+            <a href="portal.php?mod=portalcp&ac=portalblock&op=recommend&idtype=aid&id=$article[aid]" onclick="showWindow('recommend', this.href, 'get', 0)">{lang blockdata_recommend}</a><span class="pipe">|</span>
+            <!--{/if}-->
+        </div>
+    </div>
+
+    <!--[diy=diycontentrelatetop]--><div id="diycontentrelatetop" class="area"></div><!--[/diy]-->
+
+    <!--{ad/article/mbm hm/2}--><!--{ad/article/mbm hm/3}-->
+
+    <!--[diy=diycontentrelate]--><div id="diycontentrelate" class="area"></div><!--[/diy]-->
+</div>
+
+<div class="wp mtn">
+    <!--[diy=diy3]--><div id="diy3" class="area"></div><!--[/diy]-->
+</div>
+<input type="hidden" id="portalview" value="1">
+
+<!--{template common/footer}-->
