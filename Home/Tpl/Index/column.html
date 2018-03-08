@@ -77,6 +77,17 @@
 								$(".main_content[data-type='column_page']").removeClass("loading");
 								
 								
+								if(data.data.article_list.length<pagenum || data.data.article_total==pagenum){
+									skipnum=skipnum;
+									$(".load_more_article").addClass("f_dn")	
+								}else {
+									skipnum+=pagenum;
+									var remain=data.data.article_total>=skipnum ? data.data.article_total-skipnum : 0;
+									$(".load_more_article").html("查看更多（"+remain+"）").removeClass("f_dn");
+									if(remain==0){$(".load_more_article").addClass("f_dn");}
+								}
+								
+								
 							}else {
 								
 							}
