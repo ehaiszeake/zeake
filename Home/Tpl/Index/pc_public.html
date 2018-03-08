@@ -33,7 +33,7 @@
                         </div>
                         <div class="upload_cover f_pa f_dn"><div>上传封面</div><input type="file" class="full_size f_pa" accept="image/gif,image/png,image/jpg,image/jpeg" name="file" id="file"/></div> 
                     </div>
-                    <div class="upload_cover_pic_tip f_tac">请加入封面图，支持2MB以内的JPG，GIF，PNG图片。尺寸为1600x428</div>
+                    <div class="upload_cover_pic_tip f_tac">请加入封面图，支持2MB以内的JPG，GIF，PNG图片。尺寸为1400x574</div>
 					<div class="b_title f_pr">
                     	<label class="for_text f_tac" for="b_title"><b>输入标题</b></label>
                         <textarea id="b_title" class="placeholder" name="b_title"></textarea>
@@ -277,8 +277,8 @@
 							url:golbalIp+"/user/article",
 							type:"get",
 							dataType:"json",
-							data:{id":id},
-							//data:{"account":JSON.parse($.cookie('bz')).account,"token":JSON.parse($.cookie('bz')).token,"id":id},
+							//data:{"id":id,"account":JSON.parse($.cookie('bz')).account,"token":JSON.parse($.cookie('bz')).token},
+							data:{"account":JSON.parse($.cookie('bz')).account,"token":JSON.parse($.cookie('bz')).token,"id":id},
 							beforeSend:function() { }, 
 							success:function(data) { 
 								console.log(data);
