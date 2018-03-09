@@ -1,2 +1,3 @@
 http://cs.app.h5work.com/zike
 hello fuky
+v1.0
