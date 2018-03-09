@@ -55,13 +55,13 @@
 		<li class="video_view">
 				
 				<empty name="item['skip_url']">
-					<div class="video_cover_box f_pr"><a href="video_detail.php?id={$item.id}" class="f_db"><img src="${item.img|webImg=$website}" width="100%"/></a><div class="play_ico f_pa"></div></div>
+					<div class="video_cover_box f_pr"><a href="video_detail.php?id={$item.id}" class="f_db"><img src="{$item.img|webImg=$website}" width="100%"/></a><div class="play_ico f_pa"></div></div>
 					<div class="video_title f_toe"><a href="video_detail.php?id={$item.id}">{$item.title}</a></div>
 				<else />
-					<div class="video_cover_box f_pr"><a href="${item.skip_url}" class="f_db"><img src="${item.img|webImg=$website}" width="100%"/></a><div class="play_ico f_pa"></div></div>
-					<div class="video_title f_toe"><a href="${item.skip_url}">{$item.title}</a></div>
+					<div class="video_cover_box f_pr"><a href="{$item.skip_url}" class="f_db"><img src="{$item.img|webImg=$website}" width="100%"/></a><div class="play_ico f_pa"></div></div>
+					<div class="video_title f_toe"><a href="{$item.skip_url}">{$item.title}</a></div>
 				</empty>
-					<div class="author_date"><span>${item.author}</span><i>/</i><em>{$item['created']|date='Y.m.d',###}</em></div>
+					<div class="author_date"><span>{$item.author}</span><i>/</i><em>{$item['created']|date='Y.m.d',###}</em></div>
 				</li>
 				
 	</if>
