@@ -1,0 +1,52 @@
+<!--{template common/header}-->
+<!--[name]{lang news}[/name]-->
+<!--{eval $list = array();}-->
+<!--{eval $wheresql = category_get_wheresql($cat);}-->
+<!--{eval $list = category_get_list($cat, $wheresql, $page);}-->
+
+<!--{ad/text/wp a_t}-->
+<style id="diy_style" type="text/css"></style>
+<div class="cl">
+    <!--[diy=diy2]--><div id="diy2" class="area"></div><!--[/diy]-->
+</div>
+<div class="wp">
+    <!--[diy=diy1]--><div id="diy1" class="area"></div><!--[/diy]-->
+</div>
+
+<div id="ct" class="ct2 wp zmt cl">
+    <div class="mn">
+        <!--{ad/articlelist/mbm hm/1}--><!--{ad/articlelist/mbm hm/2}-->
+        <!--[diy=listcontenttop]--><div id="listcontenttop" class="area"></div><!--[/diy]-->
+        <div class="artlist cl">
+            <ul id="zixun">
+            <!--{loop $list['list'] $value}-->
+                <!--{eval $highlight = article_title_style($value);}-->
+                <!--{eval $article_url = fetch_article_url($value);}-->
+                <li class="artitem-{$value[aid]}">
+                    <figure>
+                        <figcaption><a href="{$article_url}" $highlight>{$value[title]}</a></figcaption>
+                        <a href="{$article_url}" class="artpic"><img src="{$value[pic]}" width="280" height="280"></a><p>hello world</p>
+                    </figure>
+                    <section>
+                        <p class="artsummary">{$value[summary]}</p>
+                        <span class="artauthor"><a href="home.php?mod=space&uid={$value[uid]}" c="1" class="cl">{avatar($value[uid], 'small')}<em>{$value[username]}</em></a></span>
+                        <span class="dateline">{$value[dateline]}</span>
+                    </section>
+                </li>
+            <!--{/loop}-->
+            </ul>
+            <!--[diy=listloopbottom]--><div id="listloopbottom" class="area"></div><!--[/diy]-->
+        </div>
+        <!--{ad/articlelist/mbm hm/3}--><!--{ad/articlelist/mbm hm/4}-->
+        <!--{if $list['multi']}--><div class="pgs cl">{$list['multi']}</div><!--{/if}-->
+    </div>
+    <div class="sd pph">
+
+        <div class="drag">
+            <!--[diy=diy3]--><div id="diy3" class="area"></div><!--[/diy]-->
+        </div>
+        <script src="template/zaekev2/static/js/portal/scrollPortalPage.js"></script>
+    </div>
+</div>
+
+<!--{template common/footer}-->

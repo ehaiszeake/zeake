@@ -1,0 +1,24 @@
+<!--{template common/header}-->
+<style id="diy_style" type="text/css"></style>
+<div class="cl">
+<!--[diy=diy2]--><div id="diy2" class="area"></div><!--[/diy]-->
+</div>
+<div class="wp">
+    <!--[diy=diy1]--><div id="diy1" class="area"></div><!--[/diy]-->
+</div>
+
+<div id="slides">
+    <a href=""><img src=""></a>
+    <a href=""><img src=""></a>
+    <a href=""><img src=""></a>
+    <a href=""><img src=""></a>
+    <a href=""><img src=""></a>
+</div>
+<script>try{jQuery("#slides").slidesjs({width:1000,height:330,navigation:false,play:{effect:"fade",auto:true,pauseOnHover:true,restartDelay:2500,interval:5000},pagination:{active:true,effect:"fade"},effect:{fade:{speed:500}}})}catch(e){};</script>
+<div id="zhuanti">
+    <script src="template/zaekev2/zhuanti/data.js" data-data="data"></script>
+</div>
+<script src="template/zaekev2/static/js/event/zhuanti.js"></script>
+
+<script src="misc.php?mod=diyhelp&action=get&type=index&diy=yes&r={echo random(4)}" type="text/javascript"></script>
+<!--{template common/footer}-->

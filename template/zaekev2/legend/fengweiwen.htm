@@ -1,0 +1,30 @@
+<!--{template common/header}-->
+<!--{template legend/legend_top}-->
+<!--{template legend/legend_article}-->
+<script src="template/zaekev2/static/js/event/AuthorsInfoView.js"></script>
+<script>(function () {
+    window.addEventListener('load', function () {
+        render()
+    }, false)
+
+    function render() {
+        new LegendTopContent().render({
+            img: 'http://tva2.sinaimg.cn/crop.0.0.180.180.180/62482243jw1e8qgp5bmzyj2050050aa8.jpg',
+            name: '冯伟文',
+            description: '我是谁？牛逼到不需要简介的，你来猜一猜如何？',
+            toutiao: '',
+            weibo: 'http://weibo.com/u/1648894531?topnav=1&wvr=6&topsug=1&is_hot=1',
+            blur: 'http://img.zaeke.com/portal/201612/21/172117dmvbm6c6p4mvivq4.jpg'
+        })
+
+        if (typeof jQuery !== 'undefined') {
+            jQuery.ajax({
+                url: 'http://www.zaeke.com/template/zaekev2/static/js/datasource/fengweiwen.json',
+                success: function (data) {
+                    new LegendContentMaker().render(data.articles, false)
+                }
+            })
+        }
+    }
+}())</script>
+<!--{template common/footer}-->

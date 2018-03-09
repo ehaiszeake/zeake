@@ -1,0 +1,2277 @@
+::selection {
+    background-color: #17bcb8;
+    color: #fff
+}
+
+::moz-selection {
+    background-color: #17bcb8;
+    color: #fff
+}
+
+::webkit-selection {
+    background-color: #17bcb8;
+    color: #fff
+}
+
+.zmt {
+    margin-top: 30px
+}
+
+.sdm {
+    padding: 20px
+}
+
+/*.vw {
+    padding: 20px;
+}*/
+
+.bgw {
+    background-color: #fff;
+    box-shadow: 0 0 10px #ccc;
+    border-radius: 5px;
+    border: 0
+}
+
+.zftt {
+    background-color: rgb(200, 200, 200);
+    height: 220px;
+}
+
+.zft {
+    padding: 15px 0;
+    font-size: 14px
+}
+
+#hdbn {
+    background-color: #15181d
+}
+
+#hdbn .wp {
+    padding: 20px 0
+}
+
+#hdbn #scbar {
+    height: 32px;
+    line-height: 32px;
+    margin-top: 7px
+}
+
+#hdbn #scbar .scbar_txt {
+    height: 24px;
+    padding: 4px;
+    width: 250px;
+    background-color: #fff
+}
+
+#hdbn #scbar #scbar_txt {
+    float: left;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 24px
+}
+
+#hdbn #scbar .scbar_type {
+    width: 60px;
+    border-left: 1px solid #eee;
+    background: #fff url({STYLEIMGDIR}/arrwd1.png) no-repeat 88% 50%
+}
+
+#hdbn #scbar .scbar_btn {
+    width: 32px;
+    height: 32px;
+    margin-left: 5px
+}
+
+#hdbn #scbar #scbar_btn {
+    float: left;
+    width: 32px;
+    height: 32px;
+    overflow: hidden;
+    text-indent: -99px;
+    background: url({STYLEIMGDIR}/search.png) no-repeat 50% 50%;
+    outline: none;
+    cursor: pointer
+}
+
+#um .showmenu {
+    background: url({STYLEIMGDIR}/arrwd.png) no-repeat 100% 58%
+}
+
+#nv_portal #wp {
+    width: auto
+}
+
+#nv_portal #wp .wp {
+    width: 1000px
+}
+
+.fourleaf {
+    height: 340px;
+    width: 1000px;
+    margin-top: 20px;
+}
+
+.fourleaf li {
+    width: 320px;
+    overflow: hidden;
+    float: left;
+    font-size: 0
+}
+
+.fourleaf li a {
+    display: block;
+    width: 320px;
+    height: 160px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.fourleaf li a img {
+    border-radius: 12px;
+}
+
+.fourleaf li a .picinfo {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 320px;
+    height: 40px;
+    line-height: 40px;
+    box-sizing: border-box;
+    font-size: 14px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+}
+
+.fourleaf-2,
+.fourleaf-3 {
+    margin: 0 0 0 20px;
+}
+
+.fourleaf-4 {
+    margin: 20px 0 0 0;
+}
+
+.fourleaf-5,
+.fourleaf-6 {
+    margin: 20px 0 0 20px;
+}
+
+.index-sidebar {
+    height: 340px;
+    box-shadow: 0 0 5px #cecece;
+    background-color: #fff;
+    border-radius: 5px
+}
+
+.artlist li {
+    display: block;
+    margin-bottom: 20px;
+    padding: 15px 0 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 0 10px #cdcdcd
+}
+
+.artitem dt {
+    line-height: 43px;
+    font-size: 20px;
+    text-indent: 30px;
+    background: url({STYLEIMGDIR}/arrow1.png) no-repeat 16px 16px
+}
+
+.artitem dt,
+.artitem dt a {
+    color: #636363
+}
+
+.artitem .artsummary {
+    margin: 20px 20px 0
+}
+
+.artitem .artsummary p {
+    line-height: 22px;
+    font-size: 16px;
+    color: #8a8a8a
+}
+
+.artitem .artsummary p.artauthor {
+    margin-top: 20px;
+    line-height: 32px;
+    height: 32px
+}
+
+.artitem .artsummary p.artauthor a,
+.artitem .artsummary p.artauthor img,
+.artitem .artsummary p.artauthor em {
+    float: left;
+    color: #8a8a8a;
+    font-size: 20px
+}
+
+.artitem .artsummary p.artauthor img {
+    width: 32px;
+    height: 32px;
+    border-radius: 16px
+}
+
+.artitem .artsummary p.artauthor em {
+    margin-left: 8px;
+    font-size: 14px
+}
+
+.artitem .artstat {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 14px;
+    color: #999;
+    line-height: 16px
+}
+
+.artitem .artstat span {
+    margin-left: 15px;
+    padding-left: 30px;
+    background: url({STYLEIMGDIR}/num.png) no-repeat
+}
+
+.artitem .artstat span.artcommentnum {
+    display: none
+}
+
+.sidebar-module {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 0 10px #ccc
+}
+
+.sidebar-module .title {
+    padding: 0;
+    margin-top: -5px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    background: url({STYLEIMGDIR}/line.png) no-repeat left bottom
+}
+
+.piclist li {
+    margin-top: 10px
+}
+
+.piclist li a {
+    display: block;
+    position: relative
+}
+
+.piclist li a .pictitle {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    line-height: 93px;
+    text-align: center;
+    background-color: #000;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    -webkit-transition: opacity .7s;
+    -moz-transition: opacity .7s;
+    -ms-transition: opacity .7s;
+    -o-transition: opacity .7s;
+    transition: opacity .7s
+}
+
+.piclist li a:hover .pictitle {
+    opacity: 1
+}
+
+.newslist li {
+    /*margin-top: 10px;
+    padding-bottom: 10px;*/
+    margin-top: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px dotted #ccc;
+    line-height: 24px;
+
+    /* new */
+    position: relative;
+}
+
+.newslist li a {
+    font-size: 14px;
+    color: #666;
+
+    /* new */
+    position: absolute;
+    margin-left: 8px;
+}
+
+.newslist li img {
+/*    float: right;
+    margin-left: 8px
+*/}
+
+.pvi {
+    margin: 0 5px 20px;
+    color: #999;
+    line-height: 16px
+}
+
+.pvi span {
+    padding-left: 30px;
+    background: url({STYLEIMGDIR}/num.png) no-repeat
+}
+
+.pvi span.commentnum {
+    background-position: 0 -20px
+}
+
+#comment {
+    margin-bottom: 20px;
+}
+
+#comment_ul .mbm img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    float: left;
+    margin-right: 10px;
+}
+
+#comment_ul img {
+    max-width: 100%;
+}
+
+#comment_ul .mbm + dd {
+    margin-left: 60px;
+}
+
+.sdu {
+    height: 130px;
+    overflow: hidden
+}
+
+.sdu .sdua {
+    width: 100px;
+    border-radius: 4px
+}
+
+.sdu .sdua a,
+.sdu .sdua img,
+.sdu .sdua strong {
+    float: left
+}
+
+.sdu .sdua a,
+.sdu .sdua img {
+    width: 100px;
+    height: 100px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px
+}
+
+.sdu .sdua strong {
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background-color: #52a0ea;
+    color: #fff;
+    font-weight: normal;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px
+}
+
+.sdu .sdub {
+    width: 180px
+}
+
+.sdu .sdub .sdauthor {
+    color: #333;
+    line-height: 40px;
+    font-size: 16px;
+    text-align: center;
+    border-bottom: 3px solid #f2f2f2
+}
+
+.sdu .sdub .sdstat {
+    color: #8c8c8c
+}
+
+.sdu .sdub .sdstat li {
+    float: left;
+    width: 58px;
+    text-align: center;
+    padding: 10px 0;
+    border-right: 3px solid #f2f2f2
+}
+
+.sdu .sdub .sdstat li.lastnode {
+    border-right: 0
+}
+
+.sdu .sdub .sdstat li a,
+.sdu .sdub .sdstat li span {
+    float: left;
+    width: 58px
+}
+
+.sdu .sdub .sdstat li a {
+    color: #8c8c8c;
+    font-size: 13px
+}
+
+.sdu .sdub .sdstat li span {
+    font-size: 16px
+}
+
+.sduc {
+    margin: 30px 0 0
+}
+
+.sduc a {
+    width: 80px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 4px;
+    font-size: 12px;
+    padding-left: 20px
+}
+
+.sduc a.follow-link {
+    background: #88df8c url({STYLEIMGDIR}/plus.png) no-repeat 16px 8px;
+    color: #fff
+}
+
+.sduc a.sendpm-link {
+    background: #dedfde url({STYLEIMGDIR}/mail.png) no-repeat 15px 6px;
+    color: #686868
+}
+
+.sdud {
+    margin-top: 50px
+}
+
+.sdud h3 {
+    line-height: 36px;
+    font-size: 16px;
+    color: #888;
+    border-bottom: 1px dotted #e6e6e6;
+    margin-bottom: 10px
+}
+
+.sdud li {
+    line-height: 30px;
+    font-size: 14px
+}
+
+.sdud .more {
+    margin-top: 15px;
+    color: #ccc;
+    font-size: 16px
+}
+
+.zc {
+    padding: 20px
+}
+
+.zc .zch {
+    font-size: 18px;
+    margin-top: -5px;
+    padding-bottom: 10px;
+    background: url({STYLEIMGDIR}/line.png) no-repeat left bottom
+}
+
+.module_forum {
+    padding: 20px;
+    width: 280px;
+    height: 300px;
+    overflow: hidden
+}
+
+.module_forum ul,
+.module_forum li,
+.module_forum a {
+    float: left
+}
+
+.module_forum ul {
+    width: 100%
+}
+
+.module_forum ul li {
+    width: 120px;
+    height: 80px;
+    padding: 10px
+}
+
+.module_forum ul li a {
+    width: 100%;
+    color: #999;
+    text-decoration: none
+}
+
+.module_forum ul li a i {
+    display: block;
+    width: 56px;
+    height: 56px;
+    margin: auto;
+    background-position: center top
+}
+
+.module_forum ul li a span {
+    display: block;
+    text-align: center;
+    line-height: 24px
+}
+
+.module_forum ul li a:hover {
+    color: #17bcb8
+}
+
+.module_forum ul li a:hover i {
+    background-position: center bottom
+}
+
+/* 网站首页换页标签样式 */
+.pg a,
+.pg strong,
+.pg label {
+    float: left;
+    display: inline;
+    margin-left: 4px;
+    padding: 0 10px;
+    height: 26px;
+    border: 0;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 5px;
+    color: #333;
+    overflow: hidden;
+    text-decoration: none;
+    -webkit-transition: background-color 0.3s, color 0.3s;
+    -o-transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.pgb a {
+    color: #333;
+    border: 0;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 0 10px;
+    padding-left: 25px;
+    border-radius: 5px;
+    -webkit-transition: background-color 0.3s, color 0.3s;
+    -o-transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* 当前页面标签样式 */
+.pg strong {
+    background-color: #17bcb8;
+    color: white;
+}
+
+/* 网站首页换页标签切换样式 */
+.pg a:hover,
+.pgb a:hover {
+    background-color: #17bcb8;
+    color: white;
+}
+
+/* 文章表态间距 */
+#click_div table td {
+    padding: 10px 30px;
+}
+
+/* 隐藏最底部一栏内容 */
+#ft .zft.wp.cl {
+    display: none;
+}
+
+/* 更改资讯页文章列表样式 */
+#zixun li {
+    padding: 0;
+    font-size: 0;
+}
+
+#zixun li:after {
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+    clear: both;
+}
+
+#zixun figure {
+    margin: 0;
+    width: 280px;
+    height: 280px;
+    float: left;
+}
+
+#zixun figure > a {
+    display: flex;
+    display: -webkit-flex;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content: center;
+    -webkit-justify-content: center;
+}
+
+#zixun figure img {
+    width: 100%;
+}
+
+#zixun figcaption {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 20px;
+    box-sizing: border-box;
+    width: 380px;
+    padding: 10px;
+}
+
+#zixun section {
+    display: inline-block;
+    width: 380px;
+    height: 190px;
+    box-sizing: border-box;
+    font-size: 15px;
+    position: absolute;
+    bottom: 0;
+    padding: 10px;
+}
+
+#zixun section > p {
+    margin-bottom: 20px;
+}
+
+#zixun section > span.dateline {
+    font-size: 13px;
+    position: relative;
+    float: right;
+    bottom: 25px;
+}
+
+#zixun section > span.artauthor img {
+    border-radius: 50%;
+    width: 32px;
+}
+
+#zixun section > span.artauthor em {
+    position: relative;
+    bottom: 8px;
+    left: 8px;
+}
+
+/* 既然不能删除首页的 js 文件，那就在 css 里将「返回顶部」去掉 */
+#hm_t_undefined > .hm-t-go-top {
+    display: none !important;
+}
+
+/* 摄影页文章样式 */
+#photo {
+    width: 1044px; /* hack */
+    list-style-type: none;
+    padding: 0;
+    margin: auto;
+    font-size: 0;
+}
+
+#photo li {
+    display: inline-block;
+    margin: 0 48px 0 0;
+    padding: 0;
+    width: 300px;
+    border-radius: 0;
+    box-shadow: 0 0 0px;
+    position: relative;
+}
+
+#photo li > a {
+    display: inline-block;
+    width: 300px;
+    height: 300px;
+    position: relative;
+}
+
+#photo li .picinfo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 300px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    opacity: 0;
+    text-align: center;
+    font-size: 14px;
+    -webkit-transition: opacity 0.7s;
+    -o-transition: opacity 0.7s;
+    transition: opacity 0.7s;
+}
+
+#photo li .picinfo p:first-child {
+    padding: 40px 20px 20px;
+}
+
+#photo li .picinfo p:last-child {
+    padding: 20px;
+}
+
+#photo li a:hover .picinfo {
+    opacity: 1;
+}
+
+#photo .info {
+    font-size: 14px;
+    background-color: #f3f3f3;
+    padding: 5px 0 0 5px;
+    position: relative;
+    cursor: default;
+}
+
+#photo .info img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+#photo .info em {
+    position: relative;
+    left: 10px;
+    top: -13px;
+}
+
+#photo .info .artviewnum {
+    position: absolute;
+    display: inline-block;
+    right: 5px;
+    bottom: 15px;
+    padding-left: 30px;
+    line-height: 15px;
+    background: url(http://www.zaeke.com/template/zaekev2/static/img/num.png) no-repeat;
+}
+
+/*
+ * 全局轮播图测试样式
+ */
+.slidesjs-pagination {
+    text-align: center;
+    margin-top: 8px;
+}
+
+.slidesjs-pagination-item {
+    display: inline-block;
+}
+
+.slidesjs-pagination-item a {
+    display: block;
+    font-size: 0;
+    width: 30px;
+    height: 5px;
+    background-color: gray;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.slidesjs-pagination-item a.active {
+    /* 不知道为什么要加上这一句 */
+    color: #17bcb8;
+    background-color: #17bcb8;
+}
+
+
+/*
+ * 摄影页面测试样式
+ * 现在将全局的顶部改为一下的样式
+ */
+
+#hd .y {
+    padding-top: 16px;
+}
+
+#hdbn {
+    background-color: #f3f3f3;
+}
+
+#hdbn .wp {
+    padding: 0;
+    margin: 10px auto;
+}
+
+#nv {
+    height: auto;
+}
+
+#nv li {
+    width: 80px;
+    height: 40px;
+    line-height: 40px;
+    margin-right: 0;
+}
+
+#nv li.a,
+#nv li a {
+    background: none;
+    color: black;
+    padding: 0;
+    width: 80px;
+    height: 40px;
+    font-size: 16px;
+}
+
+/*
+ * 不知道为什么要加入的东西
+ */
+.vw .h,
+.vw .s,
+.vw .d,
+.vw .o,
+.vw .pren {
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.vw .h {
+    padding-bottom: 0;
+    border-bottom: 1px solid #cdcdcd;
+}
+
+.vw .ph {
+    padding: 25px 0;
+    color: #444;
+}
+
+.vw .d {
+    margin: 15px 0;
+    min-height: 100px;
+    font-size: 14px;
+    line-height: 1.8;
+    color: #000;
+}
+
+.vwtb {
+    table-layout: fixed;
+    width: 100%;
+    height: 300px;
+}
+
+.vw .d img {
+    max-width: 620px;
+}
+
+#article_content {
+    vertical-align: top;
+}
+
+/*
+ * 修正未知的布局错误
+ */
+td#article_content > table {
+    width: 100% !important;
+}
+
+
+
+/*
+ * 当前页面顶部字体颜色变更
+ */
+#nv li.a a {
+    color: #17bcb8;
+}
+
+#nv li a:hover {
+    background: none;
+    color: #17bcb8;
+}
+
+#hdbn #scbar {
+    margin-top: 4px;
+}
+
+#hdbn #scbar .scbar_type {
+    display: none;
+}
+
+#hdbn #scbar .scbar_txt {
+    padding-left: 10px;
+    width: 200px;
+    border-radius: 15px;
+
+}
+
+/*
+ * 搜索框字体大小更改
+ */
+input#scbar_txt {
+    font-size: 12px;
+    height: 25px;
+}
+
+/*
+ * 搜索框搜索图标位置变更
+ */
+#hdbn #scbar .scbar_btn {
+    margin-left: -40px;
+}
+
+/*
+ * 搜索图标变更
+ */
+#hdbn #scbar #scbar_btn {
+    background: url("http://www.zaeke.com/template/zaekev2/static/img/search_test.png") no-repeat 50% 50%;
+}
+
+/*
+ * 论坛改版
+ */
+.hide {
+    display: none;
+}
+
+#thread_types li a span {
+    display: none;
+}
+
+#thread_types {
+    height: 30px;
+    border: none;
+}
+
+#threadlist .bm_c {
+    padding: 0;
+}
+
+#threadlist .bm_c tr {
+    height: 80px;
+}
+
+#threadlist .bm_c tr.ts {
+    height: 20px;
+}
+
+#threadlist .bm_c tr.ts th {
+    display: none;
+}
+
+#threadlist td.icn {
+    width: 15%;
+    padding-left: 20px;
+}
+
+#threadlist th.common {
+    width: 85%;
+    padding: 0;
+    line-height: 1.8;
+}
+
+#threadlist td.icn img {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+}
+
+#threadlist th.common em:first,
+#threadlist th.common a.s.sxt {
+    font-size: 18px;
+}
+
+/* hack, why? */
+#separatorline.emptb,
+#forumnewshow {
+    display: none;
+}
+
+#sd_bdl {
+    margin-left: 0;
+    float: right;
+    width: 270px !important;
+    margin-top: 160px;
+}
+
+#sd_bdl .tbn {
+    display: none;
+}
+
+.mls li {
+    margin: 5px;
+}
+
+#nv_forum #ct {
+    margin-left: 0 !important;
+}
+
+#nv_forum #ct .mn {
+    width: 708px;
+}
+
+/* ajax 出来的新的一列 */
+#threadlist #forumnewshow tr {
+    height: 20px;
+}
+
+#threadlist .newthread .o,
+#threadlist .newthread .by,
+#threadlist .newthread .num {
+    display: none;
+}
+
+#portal_block_57 {
+    margin-top: 20px;
+}
+
+#nv_forum .bdl {
+    border: none;
+    background-color: #f3f3f3;
+}
+
+#thread_types {
+    zoom: 1;
+    width: 1000px;
+    height: 160px;
+}
+
+#thread_types div.content {
+    width: 762px;
+    height: 160px;
+    margin: auto;
+}
+
+#thread_types li {
+    float: left;
+    text-align: center;
+    padding: 30px;
+}
+
+#thread_types .content::after {
+    content: '.';
+    display: block;
+    height: 0;
+    visibility: hidden;
+    clear: both;
+}
+
+#thread_types li a span {
+    margin-top: 10px;
+    display: inline-block;
+}
+
+#thread_types li div {
+    width: 66px;
+    height: 66px;
+    overflow: hidden;
+}
+
+#thread_types #fenxiang {
+    background: url(http://www.zaeke.com/template/zaekev2/static/img/fenxiang.png);
+}
+
+#thread_types #sheying {
+    background: url(http://www.zaeke.com/template/zaekev2/static/img/sheying.png);
+}
+
+#thread_types #huodong {
+    background: url(http://www.zaeke.com/template/zaekev2/static/img/huodong.png);
+}
+
+#thread_types #yinpin {
+    background: url(http://www.zaeke.com/template/zaekev2/static/img/yinpin.png);
+}
+
+#thread_types #shuiqu {
+    background: url(http://www.zaeke.com/template/zaekev2/static/img/shuiqu.png);
+}
+
+#thread_types #zixun {
+    background: url(http://www.zaeke.com/template/zaekev2/static/img/zixun.png);
+}
+
+#thread_types #fenxiang:hover,
+#thread_types #sheying:hover,
+#thread_types #huodong:hover,
+#thread_types #yinpin:hover,
+#thread_types #shuiqu:hover,
+#thread_types #zixun:hover {
+    background-position: 0 -66px;
+}
+
+.hightlight {
+    background-position: 0 -66px;
+}
+/* 论坛页结束 */
+
+/* 搜索页 bug fix*/
+.buddy li.bbda {
+    margin: 10px 3px 0;
+    width: 180px;
+    height: 70px;
+}
+
+/* 首页样式微调 */
+#hd h2.z img {
+    position: relative;
+    top: 3px;
+    width: 200px;
+}
+
+#hd .wp {
+    padding: 2px 0;
+}
+/* 首页微调结束 */
+
+/* 快速发帖按钮 */
+#postbutton {
+    display: block;
+    margin-bottom: 20px;
+}
+
+#postbutton img {
+    width: 100%;
+}
+
+
+/* 解决某些页面的字体错位问题 */
+.xg1, .xg1 a {
+    font-size: 13px;
+}
+
+#thread_types.ttp {
+    width: auto;
+    height: auto;
+}
+
+#thread_types.ttp li {
+    padding: 0;
+}
+
+/* 莫名奇妙的论坛元素错位，应该是我之前的CSS的BUG，现在尝试修复 */
+#nv_forum #threadlisttableid th.lock {
+    width: 90%;
+}
+
+/* 专题Hub页样式 */
+#zhuanti {
+    width: 1020px;
+    margin: auto;
+    padding-top: 50px;
+    box-sizing: border-box;
+    font-size: 0;
+}
+
+#zhuanti::after {
+    content: '.';
+    height: 0;
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+
+#zhuanti > div::after {
+    content: '.';
+    height: 0;
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+
+#zhuanti > a,
+#zhuanti > div a {
+    display: block;
+    width: 320px;
+    height: 160px;
+    float: left;
+    margin: 0 20px 50px 0;
+}
+
+#zhuanti > a img,
+#zhuanti > div a img {
+    width: 100%;
+}
+
+#zhuanti div[data-type="zhuantiNavigator"] {
+    font-size: 14px;
+    text-align: center;
+}
+
+#zhuanti div[data-type="zhuantiNavItem"] {
+    display: inline-block;
+    margin: 0 5px;
+    width: 29px;
+    height: 29px;
+    line-height: 29px;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid #17bcb8;
+    cursor: pointer;
+}
+
+#zhuanti div[data-type="zhuantiNavItem"].show {
+    background-color: #17bcb8;
+    color: white;
+}
+
+#zhuanti-banner {
+    position: relative;
+    margin: auto;
+    margin-top: 20px;
+}
+
+#zhuanti-banner-content {
+    width: 1000px;
+    height: 0;
+    padding-bottom: 330px;
+    box-sizing: border-box;
+}
+
+#zhuanti-banner-content img {
+    width: 100%;
+}
+
+#zhuanti-banner .mark {
+    width: 1000px;
+    height: 330px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* 专题内容页样式 */
+#event {
+    width: 1000px;
+    margin: auto;
+    margin-top: 30px;
+    position: relative;
+}
+
+#event::after {
+    content: '.';
+    display: block;
+    height: 0;
+    visibility: hidden;
+    clear: both;
+}
+
+#event .content {
+    width: 660px;
+    position: relative;
+    float: left;
+}
+
+#event .content.news {
+    width: 1044px;
+    float: none;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+#event .content > .post:last-child {
+    border: none;
+    left: -18px;
+}
+
+#event .content > .post.news:last-child {
+    left: 0;
+}
+
+/*
+ * 侧边栏基础样式
+ */
+.sidebar {
+    width: 320px;
+    position: relative;
+    float: right;
+}
+
+.sidebar .share {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    box-shadow: 0 0 10px #cdcdcd;
+    background-color: white;
+}
+
+.sidebar .share::after {
+    content: '.';
+    display: block;
+    height: 0;
+    visibility: hidden;
+    clear: both;
+}
+
+.sidebar .share a {
+    width: 50%;
+    height: 100px;
+    display: block;
+    float: left;
+    text-align: center;
+    text-decoration: none;
+    transform: translate(0, -10%);
+}
+
+.sidebar .share a p {
+    transform: translate(0, -20%);
+}
+/*
+ * 侧边栏基础样式结束
+ */
+
+/*
+ * 侧边栏直播人员样式
+ */
+.peoplelist li::after {
+    content: '.';
+    display: block;
+    height: 0;
+    visibility: hidden;
+    clear: both;
+}
+
+.peoplelist li img {
+    float: left;
+    transform: translate(0, -10%);
+}
+
+.peoplelist li p {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.peoplelist .introName {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.peoplelist .introInfo {
+    margin-bottom: 5px;
+}
+
+.peoplelist li a {
+    display: inline-block;
+    background-color: #17bcb8;
+    padding: 2px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+}
+/*
+ * 侧边栏直播人员样式结束
+ */
+
+.post {
+    position: relative;
+    padding: 0 0 50px 20px;
+    left: -20px;
+    border-left: 2px solid #17bcb8;
+}
+
+.post::after {
+    content: '.';
+    display: block;
+    height: 0;
+    visibility: hidden;
+    clear: both;
+}
+
+.post.news {
+    width: 300px;
+    margin: 0 48px 30px 0;
+    padding: 0;
+    border: none;
+    left: 0;
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.post.news:hover {
+    transform: translate(0, -2px);
+    box-shadow: 0 5px 10px rgba(102, 102, 102, 0.5);
+}
+
+#event .time {
+    position: absolute;
+    top: 0;
+    left: -90px;
+    font-size: 16px;
+    text-align: center;
+    width: 100px;
+    transform: translate(0, -50%);
+}
+
+.timeContent {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-60%, -50%);
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.point {
+    position: absolute;
+    top: 0;
+    left: -1px;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    background-color: #17bcb8;
+    border-radius: 50%;
+}
+
+.point.begin,
+.point.end {
+    width: 16px;
+    height: 16px;
+}
+
+.post a {
+    display: block;
+    position: relative;
+    width: 660px;
+    box-shadow: 0 0 10px #cdcdcd;
+    text-decoration: none;
+    cursor: default;
+    border-radius: 0;
+    background-color: white;
+    float: left;
+}
+
+.post.news a {
+    width: 100%;
+    height: 300px;
+    background-color: transparent;
+    box-shadow: none;
+    float: inherit;
+    background-color: white;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.post img {
+    width: 300px;
+    height: 225px;
+    border-radius: 0;
+    margin: 20px 0 0 20px;
+    cursor: zoom-in;
+}
+
+.post.news img {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    cursor: pointer;
+}
+
+.post.news .postinfo {
+    text-align: center;
+    background-color: #17bcb8;
+    color: white;
+    font-size: 16px;
+    padding: 5px;
+}
+
+.postinfo {
+    background-color: transparent;
+    border-radius: 0;
+    box-shadow: 0 0 0 transparent;
+    color: black;
+    box-sizing: border-box;
+    padding: 20px;
+    font-size: 14px;
+}
+
+.post [data-type="videoContent"] {
+    width: 660px;
+    height: 371px;
+}
+
+.post [data-type="videoContent"] > * {
+    width: 100%;
+    height: 100%;
+}
+
+.single {
+    position: relative;
+    padding: 0 0 50px 20px;
+    left: -20px;
+    border-left: 2px solid #17bcb8;
+}
+
+.single::after {
+    content: '.';
+    display: block;
+    height: 0;
+    visibility: hidden;
+    clear: both;
+}
+
+.single .notes {
+    width: 660px;
+    float: left;
+    font-size: 16px;
+}
+
+/*
+ * 直播页面图片放大
+ */
+#img_scale {
+    width: 1000px;
+    height: 600px;
+    position: fixed;
+    background-color: white;
+    z-index: 11;
+}
+
+#img_scale .imgs_file {
+    width: 800px;
+    height: 600px;
+    position: relative;
+}
+
+#img_scale .imgs_file .slidesjs-navigation {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    z-index: 10;
+    font-size: 0;
+    cursor: url(http://www.zaeke.com/template/zaekev2/static/img/left.cur), auto;
+}
+
+#img_scale .imgs_file .slidesjs-navigation:last-child {
+    right: 0;
+    cursor: url(http://www.zaeke.com/template/zaekev2/static/img/right.cur), auto;
+}
+
+#img_scale .img_scale_info {
+    width: 20%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+#img_scale .close_button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    transform: translate(50%, -50%);
+    border-radius: 50%;
+    background: url('template/zaekev2/static/img/close.png');
+    background-size: 100% 100%;
+    cursor: pointer;
+}
+
+[data-type="imageScaleCover"] {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+/*
+ * 直播页面倒计时
+ */
+[data-type="autoRefresh"] {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+[data-type="switcher"] {
+    box-sizing: border-box;
+    display: inline-block;
+    background-color: white;
+    width: 60px;
+    height: 30px;
+    border-radius: 20px;
+    position: absolute;
+    box-shadow: 0 0 3px gray;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+[data-type="switch"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    box-shadow: 0 0 3px gray;
+    border-radius: 50%;
+    box-sizing: border-box;
+    cursor: pointer;
+    background-color: white;
+}
+
+[data-type="switcherContent"] {
+    display: inline-block;
+    margin-left: 70px;
+}
+
+/*
+ * 直播内容中“更多”按钮
+ */
+[data-type="collapse"] {
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 6px;
+    margin: auto;
+    background-color: #ddd;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+/*
+ * 直播页上方图片轮播
+ */
+#photoSlide {
+    position: relative;
+    width: 1000px;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+#photoSlide [data-type="photoSlideCover"] {
+    position: relative;
+    overflow: hidden;
+}
+
+#photoSlide ul {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+#photoSlide ul li {
+    display: inline-block;
+    padding-right: 20px;
+}
+
+#photoSlide ul li img {
+    width: 320px;
+}
+/*
+ * 文章内容页——作者其他文章样式
+ */
+.related-articles ul {
+    box-sizing: border-box;
+    padding-top: 10px;
+}
+
+.related-articles ul li {
+    padding: 5px 0;
+}
+
+.related-articles .all {
+    text-align: right;
+    box-sizing: border-box;
+    margin-top: 10px;
+    padding: 5px 0;
+    border-top: 1px dotted #17bcb8;
+}
+
+/*
+ * 文章内容页——相关阅读样式
+ */
+#related_article ul {
+    box-sizing: border-box;
+    padding-top: 10px;
+}
+
+#related_article ul li {
+    padding: 5px 0;
+}
+
+/*
+ * 文章内容页——评论分页按钮
+ */
+[data-type="viewCommentsPageListItem"] {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    line-height: 24px;
+    border: 1px solid #17bcb8;
+    text-align: center;
+    border-radius: 50%;
+    background-color: transparent;
+    margin: 5px;
+    cursor: pointer;
+}
+
+[data-type="viewCommentsPageListItem"].show {
+    background-color: #17bcb8;
+    color: white;
+}
+
+.pct .pcb a,
+#article_content a {
+    color: #17bcb8;
+    text-decoration: none;
+}
+
+.pct .pcb a::selection,
+#article_content a::selection {
+    background-color: black;
+    color: white;
+}
+
+/* 名人堂内容 */
+[data-type="zaekeAuthors"] .bgw {
+    background-color: transparent;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+#nv_portal [data-type="zaekeAuthors"] .vw .d,
+#nv_portal [data-type="zaekeAuthors"] .vw .o {
+    margin: 0;
+}
+
+#nv_portal [data-type="zaekeAuthors"] .vw .d {
+    width: 1044px;
+}
+
+[data-type="zaekeAuthors"] .vw .d img {
+    max-width: 100%;
+}
+
+/* 名人堂作者页面区域 */
+.legend {
+    width: 100%;
+    height: 600px;
+    font-size: 14px;
+    font-family: 微软雅黑, Microsoft-Yahei, PingFangSC, sans-serif;
+}
+
+.legend * {
+    box-sizing: border-box;
+}
+
+.legendBanner {
+    height: 300px;
+    background-image: url();
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: blur(5px);
+    overflow: hidden;
+}
+
+.legendInfoContent {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.legendInfo {
+    height: 300px;
+    text-align: center;
+    background-color: #f7f8f9;
+}
+
+.legendInfoContent .legendImg {
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    border-radius: 50%;
+    position: relative;
+    top: -50px;
+    border: 4px solid rgba(255, 255, 255, 0.5);
+    box-sizing: content-box;
+    box-shadow: 0 10px 30px 2px rgba(102, 102, 102, 0.5);
+}
+
+.legendInfoContent .legendImg img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.legendInfoContent .legendName {
+    font-size: 2.14rem;
+    font-weight: bold;
+    color: #404040;
+    position: relative;
+    top: -20px;
+}
+
+.legendInfoContent .legendDescription {
+    font-size: 1.14rem;
+    color: #888888;
+    margin-top: 20px;
+    position: relative;
+    top: -20px;
+}
+
+.legendInfoContent .legendLinks {
+    margin-top: 30px;
+    position: relative;
+    top: -20px;
+}
+
+.legendInfoContent .legendLinks a {
+    display: inline-block;
+    width: 120px;
+    height: 40px;
+    border: 1px solid #ed3633;
+    border-radius: 20px;
+    padding: 11px 21px;
+}
+
+.legendInfoContent .legendLinks a img {
+    width: 100%;
+    height: auto;
+}
+
+.legendInfoContent .legendLinks .toutiao {
+    margin-right: 39px;
+    position: relative;
+}
+
+.legendInfoContent .legendLinks .toutiao:after {
+    content: "";
+    display: block;
+    position: absolute;
+    right: -42px; /* plus 2 as border length */
+    top: 0;
+    width: 1px;
+    height: 40px;
+    background-color: #bdbdbd;
+}
+
+.legendInfoContent .legendLinks .weibo {
+    margin-left: 40px;
+    padding: 9px 26px;
+}
+
+.legendArticle {
+    width: 100%;
+    background-color: #f4f5f6;
+}
+
+.legendArticle * {
+    box-sizing: border-box;
+}
+
+.legendArticle > * {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.legendArticle > h2 {
+    font-size: 1.857rem;
+    font-weight: bold;
+    color: #404040;
+    text-align: center;
+    padding: 50px 0 20px 0;
+    border-bottom: 1px solid #bdbdbd;
+    margin-bottom: 80px;
+}
+
+.legendArticleInfo {
+    width: 100%;
+    position: relative;
+}
+
+.legendArticleInfo:after {
+    content: ".";
+    display: block;
+    visibility: hidden;
+    height: 0;
+    clear: both;
+}
+
+.legendArticleInfoContent {
+    width: 400px;
+    height: 300px;
+    padding: 30px 70px 30px 30px;
+    background-color: #ffffff;
+}
+
+.legendArticleInfoTitle {
+    font-size: 1.867rem;
+    color: #404040;
+    font-weight: bold;
+}
+
+.legendArticleInfoTime {
+    font-size: 1rem;
+    color: #404040;
+    margin-top: 5px;
+}
+
+.legendArticleInfo .line div {
+    width: 50px;
+    height: 2px;
+    background-color: #404040;
+    margin: 20px 0;
+}
+
+.legendArticleInfoDescription {
+    font-size: 1.14rem;
+    color: #404040;
+    height: 46px;
+    overflow: hidden;
+}
+
+.legendArticleInfoDetail {
+    display: inline-block;
+    border: 1px solid #404040;
+    text-decoration: none;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 1.14rem;
+    color: #404040;
+    background-color: #ffffff;
+    margin-top: 20px;
+    position: relative;
+    z-index: 10;
+    -webkit-transition: color 0.6s, background-color 0.6s;
+    transition: color 0.6s, background-color 0.6s;
+}
+
+.legendArticleInfoDetail:hover {
+    color: #ffffff;
+    background-color: #404040;
+}
+
+.legendArticleInfoDetail:hover {
+    text-decoration: none;
+}
+
+.legendArticleImg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    -webkit-display: flex;
+    align-items: center;
+    -webkit-align-items: center;
+    flex-direction: row-reverse;
+    -webkit-flex-direction: row-reverse;
+}
+
+.legendArticleImgFile {
+    width: 660px;
+    height: 218px;
+    box-shadow: 0 0 10px 1px rgba(102, 102, 102, 0.5);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url();
+}
+
+.articleStyleRight {
+    text-align: right;
+}
+
+.articleStyleRight .line div,
+.articleStyleRight .legendArticleInfoContent {
+    float: right;
+}
+
+.articleStyleRight .legendArticleInfoContent {
+    padding: 30px 30px 30px 70px;
+}
+
+.articleStyleRight .line:after {
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+    clear: both;
+}
+
+.articleStyleRight .legendArticleImg {
+    flex-direction: row;
+    -webkit-flex-direction: row;
+}
+
+.seperatorLine {
+    width: 800px;
+    height: 1px;
+    background-color: #bdbdbd;
+    margin: 50px auto;
+}
+
+.legendSlideNavigator {
+    border-top: 1px solid #bdbdbd;
+    margin-top: 80px;
+    text-align: center;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.legendSlideNavigatorItem,
+.legendSlideNavigatorItemPrev,
+.legendSlideNavigatorItemNext,
+.legendSlideNavigatorShadow {
+    display: inline-block;
+    font-size: 1.429rem;
+    color: #bdbdbd;
+    width: 30px;
+    padding: 8px 10px 0 10px;
+    cursor: pointer;
+    position: relative;
+}
+
+.legendSlideNavigatorShadow {
+    cursor: default;
+}
+
+.legendSlideNavigatorShadow div {
+    display: none;
+}
+
+.legendSlideNavigatorItem.show {
+    color: #404040;
+    border-top: 1px solid #404040;
+}
+
+.legendArticleFooter {
+    height: 30px;
+}
+/* 名人堂作者页面区域结束 */
+
+/* 名人堂集合页名人列表（备用） */
+#zaekeLegends {
+    font-family: Microsoft-Yahei, PingFangSC, Arial, Helvetica, sans-serif;
+}
+
+#zaekeLegends .legendIntro {
+    width: 300px;
+    height: 300px;
+    text-align: center;
+    background-color: white;
+    box-shadow: none;
+    -webkit-transition: box-shadow 0.32s;
+    transition: box-shadow 0.32s;
+    position: relative;
+}
+
+#zaekeLegends .legendIntro:hover {
+    box-shadow: 0 10px 30px 2px rgba(102, 102, 102, 0.5);
+}
+
+#zaekeLegends .legendImg {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-top: 30px;
+    box-shadow: 0 10px 30px 2px rgba(102, 102, 102, 0.5);
+}
+
+#zaekeLegends .legendName {
+    margin-top: 20px;
+    font-size: 20px;
+    color: #3b3b3b;
+}
+
+#zaekeLegends .legendDescription {
+    font-size: 14px;
+    color: #afafaf;
+    width: 196px;
+    margin: 11px 52px 0 52px;
+}
+
+#zaekeLegends .legendLink {
+    position: absolute;
+    bottom: 0;
+    width: 300px;
+    height: 60px;
+    background-color: #e8eeee;
+    text-align: initial;
+    font-size: 0;
+}
+
+#zaekeLegends .legendToutiao img,
+#zaekeLegends .legendWeibo img {
+    width: 100%;
+    height: 100%;
+}
+
+#zaekeLegends .legendToutiao {
+    display: inline-block;
+    width: 80px;
+    height: 20px;
+    padding: 10px 35px 10px 0;
+    margin: 10px 0 10px 35px;
+    border-right: 1px solid white;
+}
+
+#zaekeLegends .legendWeibo {
+    display: inline-block;
+    width: 70px;
+    height: 24px;
+    margin: 18px 0 18px 35px;
+}
+/* 名人堂内容结束（备用结束） */
+
+/* 名人堂Hub页面样式 */
+.legendHub {
+    height: 675px;
+    text-align: center;
+    background-image: url('http://img.zaeke.com/portal/201612/14/144614nvs01a0nviyv9dqq.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+}
+
+.legendHub * {
+    box-sizing: border-box;
+}
+
+.legendHubName {
+    font-size: 4.714rem;
+    color: #404040;
+    letter-spacing: 4px;
+    line-height: 103px;
+    padding-top: 220px;
+    font-weight: 400;
+}
+
+.legendHub .line {
+    width: 100px;
+    height: 2px;
+    background-color: #404040;
+    margin: 50px auto 20px auto;
+}
+
+.legendHubList {
+    font-size: 1.714rem;
+    color: #404040;
+    letter-spacing: 1.45px;
+}
+
+.legendHubStart {
+    width: 130px;
+    padding: 12px 18px;
+    font-size: 1.429rem;
+    color: #ffffff;
+    letter-spacing: 1.21px;
+    background-color: #404040;
+    border-radius: 30px;
+    margin: 77px auto 0 auto;
+    cursor: pointer;
+}
+
+.legendHubArticle {
+    max-width: 800px;
+    padding: 70px 70px 30px 70px;
+    margin: auto;
+    background-color: #ffffff;
+    text-align: center;
+    position: relative;
+    box-sizing: border-box;
+    margin-top: 200px;
+}
+
+.legendHubArticle * {
+    box-sizing: border-box;
+}
+
+.legendHubArticleHeader {
+    padding: 0 30px 20px 30px;
+    border-bottom: 1px solid #bdbdbd;
+    position: relative;
+    text-align: left;
+}
+
+
+.legendHubArticleImg {
+    width: 80px;
+    height: 80px;
+    box-sizing: content-box;
+    border-radius: 50%;
+    border: 4px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 5px 10px 0 rgba(102,102,102,0.5);
+}
+
+.legendHubArticleImg img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.legendHubArticleTime {
+    position: absolute;
+    right: 30px;
+    bottom: 20px;
+}
+
+.legendHubArticleName {
+    font-size: 2.143rem;
+    font-weight: 600;
+    color: #404040;
+    margin-left: 20px;
+}
+
+.legendHubArticleHeader > * {
+    display: inline-block;
+}
+
+.legendHubArticleHeader a {
+    text-decoration: none;
+}
+
+.legendHubArticleTitle {
+    font-size: 1.857rem;
+    font-weight: 600;
+    color: #404040;
+    margin-top: 20px;
+}
+
+.legendHubArticleDescription {
+    font-size: 1.143rem;
+    color: #404040;
+    margin-top: 20px;
+}
+
+.legendHubArticleFigure {
+    width: 660px;
+    height: 218px;
+    position: absolute;
+    top: -109px;
+    box-shadow: 0 0 10px 1px rgba(102, 102, 102, 0.5);
+}
+
+.legendHubArticleFigure img {
+    width: 100%;
+}

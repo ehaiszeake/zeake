@@ -1,0 +1,30 @@
+<!--{template common/header}-->
+<!--{template legend/legend_top}-->
+<!--{template legend/legend_article}-->
+<script src="template/zaekev2/static/js/event/AuthorsInfoView.js"></script>
+<script>(function () {
+    window.addEventListener('load', function () {
+        render()
+    }, false)
+
+    function render() {
+        new LegendTopContent().render({
+            img: 'http://img.zaeke.com/portal/201609/28/160653iccwwm99fvken0yp.png',
+            name: '三耳工作室',
+            description: '开启内心深处的“第三只耳”，品评声音，品鉴音乐。',
+            toutiao: 'http://www.toutiao.com/user/6102121483/updates/',
+            weibo: 'https://passport.weibo.com/visitor/visitor?entry=miniblog&a=enter&url=http%3A%2F%2Fweibo.com%2Fthe3rdear%3Fwinzoom%3D1&domain=.weibo.com&ua=php-sso_sdk_client-0.6.23&_rand=1482230005.3044',
+            blur: 'http://img.zaeke.com/portal/201612/21/171345rv4luvesrur9usee.jpg'
+        })
+
+        if (typeof jQuery !== 'undefined') {
+            jQuery.ajax({
+                url: 'http://www.zaeke.com/template/zaekev2/static/js/datasource/the3rdear.json',
+                success: function (data) {
+                    new LegendContentMaker().render(data.articles, false)
+                }
+            })
+        }
+    }
+}())</script>
+<!--{template common/footer}-->

@@ -1,0 +1,16 @@
+<div id="photoSlide">
+    <div data-type="photoSlideCover">
+        <ul></ul>
+    </div>
+</div>
+<script src="template/zaekev2/static/js/event/photoSlide.js"></script>
+<script>
+    (function () {
+        if (typeof SLIDE === 'undefined' || zaeke.js.isAnEmptyObject(SLIDE)) {
+            var slide = document.querySelector('#photoSlide')
+            slide.parentNode.removeChild(slide)
+        } else {
+            var slide = new PhotoSlide()
+        }
+    }())
+</script>

@@ -1,0 +1,77 @@
+<!--{template common/header}-->
+<!--[name]知客数码文章列表[/name]-->
+<!--{eval $list = array();}-->
+<!--{eval $wheresql = category_get_wheresql($cat);}-->
+<!--{eval $list = category_get_list($cat, $wheresql, $page);}-->
+<div id="pt" class="bm cl">
+    <div class="z">
+        <a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a> <em>&rsaquo;</em>
+        <a href="$_G[setting][navs][1][filename]">{lang portal}</a> <em>&rsaquo;</em>
+        <!--{loop $cat[ups] $value}--> <a href="{$portalcategory[$value['catid']]['caturl']}">$value[catname]</a><em>&rsaquo;</em><!--{/loop}-->
+        $cat[catname]
+    </div>
+</div>
+
+<!--{ad/text/wp a_t}-->
+<style id="diy_style" type="text/css"></style>
+<div class="wp">
+    <!--[diy=diy1]--><div id="diy1" class="area"></div><!--[/diy]-->
+</div>
+
+<div id="indexpage" class="cl mbm white">
+    <div class="z indexmb">
+        <!--{ad/articlelist/mbm hm/1}--><!--{ad/articlelist/mbm hm/2}-->
+        <!--[diy=listcontenttop]--><div id="listcontenttop" class="area"></div><!--[/diy]-->
+
+        <div class="picnewslist">
+            <!--{loop $list['list'] $value}-->
+            <!--{eval $highlight = article_title_style($value);}-->
+            <!--{eval $article_url = fetch_article_url($value);}-->
+            <div class="picnews">
+                <h3><a href="{$article_url}" title="{$value[title]}">{$value[title]}</a></h3>
+                <div class="npic"><img src="{$value[pic]}" width="610" height="250" /></div>
+                <div class="nsummary">{$value[summary]}</div>
+                <div class="ninfo">
+                    发布于 {$value[dateline]} | {$value[username]} 
+                    <!--{if $_G['group']['allowmanagearticle'] || ($_G['group']['allowpostarticle'] && $value['uid'] == $_G['uid'] && (empty($_G['group']['allowpostarticlemod']) || $_G['group']['allowpostarticlemod'] && $value['status'] == 1)) || $categoryperm[$value['catid']]['allowmanage']}-->
+                        | <a href="portal.php?mod=portalcp&ac=article&op=edit&aid=$value[aid]">{lang edit}</a> | <a href="portal.php?mod=portalcp&ac=article&op=delete&aid=$value[aid]" id="article_delete_$value[aid]" onclick="showWindow(this.id, this.href, 'get', 0);">{lang delete}</a>
+                    <!--{/if}-->
+                    <a class="nmore y" href="{$article_url}">READ MORE</a>
+                </div>
+            </div>
+            <!--{/loop}-->
+        </div>
+
+        <!--{if $list['multi']}--><div class="pgs cl mbw" style="margin-left:20px;margin-right:20px;">{$list['multi']}</div><!--{/if}-->
+    </div>
+    <div class="y indexsb">
+        <div class="sidebar">
+            <div class="widget">
+                <h3 class="widget-title">热门活动</h3>
+                <div class="widget-content">
+                    <!--{block/5}-->
+                </div>
+            </div>
+
+            <div id="indexpc" class="widget">
+                <h3 class="widget-title">图文评测</h3>
+                <div class="widget-content">
+                    <!--{block/6}-->
+                </div>
+            </div>
+
+            <div id="indextj" class="widget">
+                <h3 class="widget-title">推荐文章</h3>
+                <div class="widget-content">
+                    <!--{block/7}-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="wp mtn">
+    <!--[diy=diy3]--><div id="diy3" class="area"></div><!--[/diy]-->
+</div>
+
+<!--{template common/footer}-->

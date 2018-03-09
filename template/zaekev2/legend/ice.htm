@@ -1,0 +1,30 @@
+<!--{template common/header}-->
+<!--{template legend/legend_top}-->
+<!--{template legend/legend_article}-->
+<script src="template/zaekev2/static/js/event/AuthorsInfoView.js"></script>
+<script>(function () {
+    window.addEventListener('load', function () {
+        render()
+    }, false)
+
+    function render() {
+        new LegendTopContent().render({
+            img: 'http://img.zaeke.com/portal/201701/06/160818ucolnfso2nlttlge.png',
+            name: '冰冰Orz',
+            description: 'IcePay',
+            toutiao: 'http://www.toutiao.com/m6102460722/',
+            weibo: 'http://weibo.com/206234434',
+            blur: 'http://img.zaeke.com/portal/201701/06/161424h7tt7yy8w0ftmwys.jpg'
+        })
+
+        if (typeof jQuery !== 'undefined') {
+            jQuery.ajax({
+                url: 'http://www.zaeke.com/template/zaekev2/static/js/datasource/ice.json',
+                success: function (data) {
+                    new LegendContentMaker().render(data.articles, false)
+                }
+            })
+        }
+    }
+}())</script>
+<!--{template common/footer}-->
