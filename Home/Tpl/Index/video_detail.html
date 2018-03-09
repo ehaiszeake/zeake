@@ -104,7 +104,7 @@
 							$(".video_play_box").html('<video width="100%" controls webkit-playsinline playsinline id="video" preload="auto" class="f_vhc f_noEvent"></video><div class="playVideo f_vhc f_two f_dn">播放</div>');
 							var video=$("#video").attr("src",data.data.video_url)[0];
 							
-							var img=( data.data.img==null ||  data.data.img=="")  ? imgRoute+"images/head_sculpture.png" : golbalIp+ data.data.img;
+							var img=( data.data.img==null ||  data.data.img=="")  ? imgRoute+"images/head_sculpture.png" : ( data["data"]["img"].indexOf("http")>=0 ? data.data.img :  golbalIp + data.data.img);
 								$(".video_info").html('<div class="head_name f_fl"><div class="head_unit f_ofh"><img src="'+img+'" width="100%" class="f_vat"/></div><div class="name f_toe jump_personal_info" data-author_id="'+data.data.author_id+'">'+data.data.author+'</div></div><div class="f_pr title_des"><div class="title f_wwb">'+data.data.title+'</div><div class="des f_wwb">'+data.data.abstract+'</div></div>');
 							
 						}else {
@@ -137,7 +137,7 @@
 								if(info.code==1) { 
 									
 									//请求成功
-									var img=( info.data.img==null ||  info.data.img=="")  ? imgRoute+"images/head_sculpture.png" : golbalIp+ info.data.img;
+									var img=( info.data.img==null ||  info.data.img=="")  ? imgRoute+"images/head_sculpture.png" : ( info["data"]["img"].indexOf("http")>=0 ? info.data.img :  golbalIp + info.data.img);
 										$.ajax({
 											url:golbalIp+"/user/create_comment",
 											type:"post",

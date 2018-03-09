@@ -108,7 +108,7 @@
 										var str1="";
 											$.each(data.data.article_list,function(i,item) { 
 												if(item.type==3) { 
-													var img=(item.img==null || item.img=="")  ? imgRoute+"images/placeholder_img_L04.jpg" : golbalIp+item.img;
+													var img=(item.img==null || item.img=="")  ? imgRoute+"images/placeholder_img_L04.jpg" :  ( item["img"].indexOf("http")>=0 ? item.img :  golbalIp + item.img) ;
 														str1+='<li class="video_view">';
 														str1+='	<div class="video_cover_box f_pr"><img src="'+img+'" width="100%"/><div class="play_ico f_pa"></div></div>';
 														str1+='	<div class="video_title f_toe"><a href="video_detail.php?id='+item.id+'">'+item.title+'</a></div>';
@@ -123,7 +123,7 @@
 														 str1+='	</div>';
 														 str1+='</li>';
 												}else if(item.type==1) { 
-													var img=(item.img==null || item.img=="")  ? imgRoute+"images/placeholder_img_L04.jpg" : golbalIp+item.img;
+													var img=(item.img==null || item.img=="")  ? imgRoute+"images/placeholder_img_L04.jpg" :  ( item["img"].indexOf("http")>=0 ? item.img :  golbalIp + item.img);
 														str1+='<li>';
 														str1+='	<div class="article_cover f_pr">';
 														str1+='		<div class="article_cover_box"><img src="'+img+'" class="f_vat placeholderImg2" width="100%"/></div>';
@@ -185,7 +185,7 @@
 										if(data.data.right_info.new_news.length>0) { 
 											var str3='<dl class="news_flash"><dt class="f_cf"><span class="f_fl">知客快讯</span></dt>';
 												$.each(data.data.right_info.new_news,function(i,item) { 
-													var img=(item.img==null || item.img=="")  ? imgRoute+"images/placeholder_img_L04.jpg" : golbalIp+item.img;
+													var img=(item.img==null || item.img=="")  ? imgRoute+"images/placeholder_img_L04.jpg" :  ( item["img"].indexOf("http")>=0 ? item.img :  golbalIp + item.img);
 													str3+='<dd>';
 													str3+='	<div class="img_intro_date f_cf">';
 													str3+='		<div class="news_flash_img f_fl"><img src="'+img+'" class="f_vat placeholderImg2"/></div>';
@@ -210,7 +210,7 @@
 										if(data.data.right_info.new_special.length>0) { 
 											var str4='<dl class="special_theme"><dt class="f_cf"><span class="f_fl">知客专题</span></dt>';
 												$.each(data.data.right_info.new_special,function(i,item) { 
-													var img=(item.img==null || item.img=="")  ? imgRoute+"images/placeholder_img_L04.jpg" : golbalIp+item.img;
+													var img=(item.img==null || item.img=="")  ? imgRoute+"images/placeholder_img_L04.jpg" :  ( item["img"].indexOf("http")>=0 ? item.img :  golbalIp + item.img);
 													str4+='<dd>';
 													str4+='	<a href="article_detail_'+item.id+'.php">';
 													str4+='	<img src="'+img+'" title="'+item.title+'" class="f_vat placeholderImg2"/>';
@@ -259,7 +259,7 @@
 											var str1="";
 												$.each(data.data.article_list,function(i,item) { 
 													if(item.type==3) { 
-														var img=(item.img==null || item.img=="")  ? imgRoute+"images/placeholder_img_L04.jpg" : golbalIp+item.img;
+														var img=(item.img==null || item.img=="")  ? imgRoute+"images/placeholder_img_L04.jpg" :  ( item["img"].indexOf("http")>=0 ? item.img :  golbalIp + item.img);
 															str1+='<li class="video_view">';
 															str1+='	<div class="video_cover_box f_pr"><img src="'+img+'" width="100%"/><div class="play_ico f_pa"></div></div>';
 															str1+='	<div class="video_title f_toe"><a href="video_detail.php?id='+item.id+'">'+item.title+'</a></div>';
@@ -274,7 +274,7 @@
 															 str1+='	</div>';
 															 str1+='</li>';
 													}else if(item.type==1) { 
-														var img=(item.img==null || item.img=="")  ? imgRoute+"images/placeholder_img_L04.jpg" : golbalIp+item.img;
+														var img=(item.img==null || item.img=="")  ? imgRoute+"images/placeholder_img_L04.jpg" :  ( item["img"].indexOf("http")>=0 ? item.img :  golbalIp + item.img);
 															str1+='<li>';
 															str1+='	<div class="article_cover f_pr">';
 															str1+='		<div class="article_cover_box"><img src="'+img+'" class="f_vat placeholderImg2" width="100%"/></div>';
