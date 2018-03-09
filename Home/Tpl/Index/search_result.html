@@ -80,18 +80,24 @@
 
         <script src="js/jquery.min.1.8.4.js?v=1.7"></script>
         <script>
+        
+        
+        
+        
         	$(function() { 
-				
+				//alert(units.getQueryString("keyword"));
 				//图片路径
 				var imgRoute="./",pagenum=5,skipnum=0;
 					//搜索文章------------------------------------------------------------------------------------------------------------------------------------------
 					function searchArticle() { 
 						var param=arguments.length;
+						var keyword = units.getQueryString("keyword")!=null ? decodeURI(units.getQueryString("keyword")) : "";
+						
 						$.ajax({
 							url:golbalIp+"/main/search",
 							type:"get",
 							dataType:"json",
-							data:{"skipnum":0,"length":pagenum,"keyword":units.getUrlParam("keyword")!=null ? units.getUrlParam("keyword") : ""},
+							data:{"skipnum":0,"length":pagenum,"keyword": keyword },
 							beforeSend:function() { },
 							success:function(data) { 
 								//请求成功
