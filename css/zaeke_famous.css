@@ -250,7 +250,7 @@ li {
 .article .zan {
     width: 60px;
     height: 60px;
-    background-image: url("../images/userpic.png");
+    background-image: url("../images/like.png");
     background-size: cover;
     position: absolute;
     top: 252px;

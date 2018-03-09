@@ -271,7 +271,7 @@ a {
 .article .zan {
     width: 60px;
     height: 60px;
-    background-image: url("../images/点赞.png");
+    background-image: url("../images/like.png");
     background-size: cover;
     position: absolute;
     top: 252px;
