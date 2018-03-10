@@ -287,7 +287,7 @@ body {padding-top:120px;}
 .pc_dropDown .message_num {vertical-align:top;border-radius:50%;color:#fff;font-size:12px;height:16px;margin-left:12px;background: #FF2B2B;min-width:16px;text-align:center;}
 
 
-.header .header_inner .nav_search {width:100%;margin-top: 20px;}
+.header .header_inner .nav_search {width:100%;margin-top: 0px;}
 
 /* 导航栏 */
 .header .header_inner .nav_search ul {height:40px;line-height:40px;}
