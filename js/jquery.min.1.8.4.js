@@ -229,10 +229,29 @@ function loadImg(){
 	});
 }
 
+function texiaoImg(){
+	$("img").each(function(){
+		var t = false;
+		$(this).parent().addClass("texiaoA");
+		$(this).parent().children("div").each(function(){
+			if($(this).hasClass("texiao")){
+				t = true;
+				return ;
+			}
+		});
+		if(!t){
+			$(this).after("<div class='texiao'></div>");
+		}
+		
+		
+	});
+	
+}
+
 $(function(){
 	
 //	loadImg();
-
+	texiaoImg();
 	//登录显示判断
 	if($.cookie('bz')===undefined || $.trim($.cookie('bz'))==="" || ((new Date().getTime()/1000-JSON.parse($.cookie('bz')).updated) > 3600)){
 		$(".no_login").removeClass("f_dn").next(".logined").addClass("f_dn").find(".name:eq(0)").html("");

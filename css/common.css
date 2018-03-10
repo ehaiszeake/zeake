@@ -1383,7 +1383,9 @@ img.placeholderImg2 {background:url(../images/placeholderImg2.png) no-repeat 50%
     -webkit-transition: opacity .4s ease-in-out;
     transition: opacity .4s ease-in-out;
 }
-.ad1_place .ad1_place1:hover .texiao,.ad1_place .ad1_place2_1:hover .texiao,.ad1_place .ad1_place2_2:hover .texiao{
+
+.texiaoA{position: relative;}
+.ad1_place .ad1_place1:hover .texiao,.ad1_place .ad1_place2_1:hover .texiao,.ad1_place .ad1_place2_2:hover .texiao,.texiaoA:hover .texiao{
 	opacity: .3;
 }
 
