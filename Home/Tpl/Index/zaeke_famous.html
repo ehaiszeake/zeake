@@ -12,6 +12,16 @@
 </head>
 
 <body>
+    <script type="text/javascript">
+        var getUrlParam=function(name){
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"),r = window.location.search.substr(1).match(reg);if (r != null) return unescape(r[2]); return null;
+        var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+        //console.log(width);
+        var id=units.getUrlParam("id")!=null ? units.getUrlParam("id") : ""
+        if(width < 768){
+            window.location.href="mobile_page.php?id="+id;
+        }
+    </script>
     <include file="./Home/Tpl/Index/include/header.html" />
     <div class="top">
         <div class="blur"></div>
@@ -309,5 +319,9 @@
 </script>
 
 <script src="./famous_dataloader.min.js"></script>
+
+<!-- <script src="js/jquery.min.1.8.3.js?v=1.7"></script> -->
+
+
 
 </html>

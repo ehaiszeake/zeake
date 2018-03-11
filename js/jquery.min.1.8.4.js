@@ -574,8 +574,10 @@ $(function(){
 		variable_obj.scrollT=$(this).scrollTop();
 		if(variable_obj.scrollT==0){
 			if($("body").hasClass("little")){$("body").removeClass("little");}
+			$("#needfix").css("marginTop",20+"px");
 		}else {
 			if(!$("body").hasClass("little")){$("body").addClass("little");}
+			$("#needfix").css("marginTop",0+"px");
 		}
 	},100,600));
 

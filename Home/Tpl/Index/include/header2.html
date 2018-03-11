@@ -1,0 +1,53 @@
+<div class="header f_pr" style="z-index: 200;">
+        	<div class="header_inner f_cf f_pr">
+            	<h1 class="logo f_fl"><a href="index.php" class="f_full f_db f_two">知客网</a></h1>
+                <div class="center_title f_tac f_fl"></div>
+                <div class="nav_search f_fl" id="needfix">
+                    <div class="search_box f_fr" >
+                    	<form action="search_result.php" class="f_full f_pr"><label class="for_text" for="keyword">想要找点什么</label><input type="text" class="keyword placeholder f_fl" id="keyword"/><input type="button" class="search_btn f_fr" value="搜索"/></form>
+                    </div>
+                	<ul class="f_fl">
+                		<empty name="pc_public_write">
+                		<include file="./Home/Tpl/Index/include/column_nav.html" />
+                		</empty>                     
+                    </ul>
+                </div>
+                
+                <notempty name="pc_public_write">
+                <div class="pc_public_page f_pa">
+                	<div class="pc_public_title f_tac">撰写文章</div>
+                    <div class="fun_opera_btn f_pa f_cf">
+                    	<a href="javascript:;" class="js_pc_update_article f_dn">更新</a>
+                    	<a href="javascript:;" class="js_pc_public_article">发布</a>
+                    	<a href="javascript:;" class="js_pc_public_preview">预览</a>
+                        <a href="javascript:;" class="js_pc_public_save">保存</a>
+                        <a href="javascript:;" class="js_pc_public_delete f_dn">删除</a>
+                    </div>
+                </div>
+                </notempty>
+                
+                
+                <div class="l_r f_pa">
+                	<div class="no_login "><a href="javascript:;" class="js_login_pop f_dib">登录</a><i class="f_dib"></i><a href="javascript:;" class="js_register_pop  f_dib">注册</a></div>
+                    <div class="logined f_dn">
+                    	<div class="f_dib f_vat name_man_head f_pr">
+                    		<div class="man_head f_pr f_dib"><img src="images/weixin.png" class="f_vart"/><div class="head_mask f_pa"></div><div class="message_info f_pa"></div></div>
+                        	<span class="f_dib f_toe name f_vat">xxxxxxxx</span>
+                            <span class="f_dn f_toe name f_vat my_home_page_a" data-type="pc_home.php">我的主页</span>
+                            <div class="pc_dropDown f_pa f_dn">
+                            	<div class="pc_dropDown_inner">
+                                    <a href="pc_home.php">个人中心</a>
+                                    <a href="pc_message.php">消息通知<i class="f_dib message_num">76</i></a>
+                                    <a href="pc_public.php">发表文章</a>
+                                    <a href="pc_my_hall.php">我的名人堂</a>
+                                    <a href="pc_personal_info.php">账户设置</a>
+                                    <a href="javascript:;" class="js_logout">退出</a>
+                                </div>
+                            </div>
+                        </div>
+                    	<a href="javascript:;" class="js_logout f_dib logout">退出</a>
+                    </div>
+                </div>
+                <div class="mobile_nav f_pa f_dn"><div class="mobile_ico f_pa"></div><div class="mobile_mask f_pa"></div></div>
+            </div>
+        </div>

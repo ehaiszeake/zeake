@@ -9,11 +9,29 @@
     <link rel="stylesheet" href="./css/zaeke_center.css">
     <include file="./Home/Tpl/Index/include/head.html" />
     <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+
     <script src="./js/jquery.cookie.js"></script>
+
+    <style>
+        .nav_search{
+            margin-top: 20px;
+        }
+    </style>
 </head>
 
 <body>
-    <include file="./Home/Tpl/Index/include/header.html" />
+    <script type="text/javascript">
+        
+        var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+        //console.log(width);
+        //var id=units.getUrlParam("id")!=null ? units.getUrlParam("id") : ""
+        //console.log(width);
+        if(width < 768){
+            //alert(11);
+            window.location.href="mobile_home.php";
+        }
+    </script>
+    <include file="./Home/Tpl/Index/include/header2.html" />
 
     <div class="top">
         <div class="banxin clearfix infodetail">
@@ -452,5 +470,6 @@
     
 </script>
 
+<script src="js/jquery.min.1.8.4.js?v=1.7"></script>
 
 </html>

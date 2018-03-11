@@ -1,0 +1,484 @@
+/* 样式初始化 */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.clearfix::after {
+    content: "";
+    line-height: 0;
+    height: 0;
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+li {
+    list-style: none;
+}
+
+.tc {
+    text-align: center;
+}
+
+body {
+    background-color: #f6f6f6;
+}
+
+.p_style {
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    color: #464646;
+    line-height: 26px;
+    padding: 16px;
+}
+
+
+/* 头部 */
+
+header {
+    height: 52px;
+    background: #263238;
+    color: #ffffff;
+}
+
+
+/* 大banner */
+
+.banner {
+    background-color: #fff;
+}
+
+.banner img {
+    display: block;
+    width: 100%;
+    height: 156px;
+}
+
+.banner .title {
+    font-family: "PingFangSC-Regular";
+    font-size: 24px;
+    color: #464646;
+    letter-spacing: 0;
+    line-height: 36px;
+    padding: 16px 20px;
+}
+
+
+/* 作者事件阅读量 */
+
+.info {
+    padding-bottom: 16px;
+    border-bottom: 2px solid #D0D0D0;
+}
+
+.info .avatar {
+    width: 28px;
+    height: 28px;
+    background-image: url('../images/Rectangle 4.png');
+    margin: 0 8px 0 16px;
+}
+
+.info .name {
+    font-family: SourceHanSansCN-Regular;
+    font-size: 16px;
+    color: #363636;
+    letter-spacing: 0;
+}
+
+.info .num {
+    font-family: SourceHanSansCN-Regular;
+    font-size: 12px;
+    color: #A6A6A6;
+    letter-spacing: 0;
+    position: relative;
+    margin: 0 16px 0 40px;
+}
+
+.info .num::before {
+    width: 16px;
+    height: 12px;
+    position: absolute;
+    content: '';
+    top: 2px;
+    left: -22px;
+    background-image: url("../images/look.png");
+}
+
+.info .time {
+    font-family: SourceHanSansCN-Regular;
+    font-size: 12px;
+    color: #A6A6A6;
+    letter-spacing: 0;
+    position: relative;
+    /* margin: 0 16px 0 40px; */
+}
+
+.info .time::before {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    content: '';
+    top: 1px;
+    left: -22px;
+    background-image: url("../images/time.png");
+}
+
+
+/* 文章主题内容 */
+
+.main {
+    background-color: #fff;
+    padding: 16px 0 24px 0;
+}
+
+.main .banner1 {
+    width: 100%;
+    height: 244px;
+}
+
+.main .h2 {
+    font-family: PingFangSC-Medium;
+    font-size: 16px;
+    color: #263238;
+    letter-spacing: 0;
+    margin-top: 16px;
+}
+
+.main .banner2 {
+    width: 50%;
+    height: 188px;
+}
+
+.main .banner3 {
+    width: 33.333%;
+    height: 80px;
+}
+
+.main .banner4 {
+    width: 50%;
+    height: 121px;
+}
+
+.main .total {
+    height: 114px;
+    background-color: #f9f9f9;
+    padding: 16px 16px 16px 57px;
+    position: relative;
+    margin-bottom: 16px;
+}
+
+.main .total .t_p {
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    color: #263238;
+    line-height: 28px;
+}
+
+.main .total .green {
+    width: 25px;
+    height: 20px;
+    position: absolute;
+    left: 16px;
+    top: 16px;
+    background-image: url("../images/green.png");
+}
+
+.main .default {
+    padding: 2px 8px;
+    background-color: #a6a6a6;
+    margin-right: 8px;
+    color: #fff;
+}
+
+.main .default:nth-child(1) {
+    margin-left: 16px;
+}
+
+.main .check {
+    background-color: #00E676;
+}
+
+.main .lc {
+    text-decoration: underline;
+    font-family: STSongti-SC-Regular;
+    font-size: 12px;
+    color: #A6A6A6;
+    letter-spacing: 0;
+    line-height: 36px;
+    margin: 24px 0px;
+}
+
+.main .zan {
+    border: 1px solid #FF2B2B;
+    font-family: PingFangSC-Regular;
+    font-size: 16px;
+    color: #FF2B2B;
+    letter-spacing: 0;
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
+    margin-right: 32px;
+    margin-left: 52px;
+}
+
+.main .collect {
+    border: 1px solid #263238;
+    font-family: PingFangSC-Regular;
+    font-size: 16px;
+    color: #263238;
+    letter-spacing: 0;
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
+}
+
+
+/* 问答环节 */
+
+.question {
+    background-color: #fff;
+    margin: 8px 0px;
+    padding: 16px 16px 12px 16px;
+}
+
+.question .qa {
+    font-family: PingFangSC-Medium;
+    font-size: 20px;
+    color: #263238;
+}
+
+.question .qes {
+    font-family: PingFangSC-Medium;
+    font-size: 16px;
+    color: #263238;
+    margin: 16px 0 12px 0;
+}
+
+.question .ans {
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    color: #464646;
+    line-height: 26px;
+    padding-bottom: 12px;
+}
+
+.question .center {
+    border-top: 2px solid #d4d4d4;
+    border-bottom: 2px solid #d4d4d4;
+}
+
+
+/* 评论模块 */
+
+.content {
+    background-color: #fff;
+    padding: 0 16px;
+}
+
+.content .reply .p_num {
+    font-family: PingFangSC-Medium;
+    font-size: 16px;
+    color: #464646;
+    padding: 16px 0 12px 0;
+}
+
+.content .reply .avatar {
+    width: 40px;
+    height: 40px;
+    background-image: url("../images/Rectangle 4.png");
+    background-size: cover;
+}
+
+.content .reply .textarea {
+    width: 283px;
+    height: 104px;
+    resize: none;
+    border: 1px solid #263238;
+    padding: 4px;
+}
+
+.content .reply .btn {
+    width: 109px;
+    height: 40px;
+    background-color: #263238;
+    font-family: PingFangSC-Regular;
+    font-size: 16px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    border: none;
+    margin: 12px 0 8px 0;
+}
+
+.reply_list {
+    padding-bottom: 24px;
+}
+
+.reply_list .avatar {
+    width: 40px;
+    height: 40px;
+    background-image: url('../images/userpic.png');
+    background-size: cover;
+    margin-right: 8px;
+}
+
+.reply_list .name {
+    font-family: PingFangSC-Regular;
+    font-size: 16px;
+    color: #263238;
+}
+
+.reply_list .time {
+    font-family: PingFangSC-Regular;
+    font-size: 12px;
+    color: #A6A6A6;
+}
+
+.reply_list .neirong {
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    color: #464646;
+    line-height: 26px;
+    margin-top: 12px;
+}
+
+.reply_list .origin {
+    padding-left: 8px;
+    border-left: 4px solid #d8d8d8;
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    color: #A6A6A6;
+    line-height: 26px;
+    margin-top: 8px;
+}
+
+.reply_list li {
+    padding: 16px 0 12px 0;
+    border-bottom: 2px solid #d4d4d4;
+}
+
+
+/* 相关阅读 */
+
+.relative_read {
+    font-family: PingFangSC-Medium;
+    font-size: 16px;
+    color: #263238;
+    line-height: 50px;
+    padding-left: 10px;
+}
+
+.relative_item .avatar {
+    width: 36px;
+    height: 36px;
+    background-image: url("../images/userpic copy.png");
+    background-size: cover;
+    margin: 8px 8px 8px 16px;
+}
+
+.relative_item .author {
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    color: #A6A6A6;
+    line-height: 52px;
+}
+
+.relative_item .toppic {
+    height: 150px;
+    width: 100%;
+}
+
+.relative_item .title {
+    font-family: PingFangSC-Medium;
+    font-size: 18px;
+    color: #464646;
+    letter-spacing: 0.13px;
+    line-height: 26px;
+    margin-top: 12px;
+    padding-left: 16px;
+}
+
+.relative_item .desc {
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    color: #464646;
+    letter-spacing: 0.2px;
+    padding: 8px 16px 12px 16px;
+}
+
+.relative_item .time {
+    font-family: SourceHanSansCN-Regular;
+    font-size: 12px;
+    color: #A6A6A6;
+    letter-spacing: 0;
+    padding-left: 40px;
+    position: relative;
+}
+
+.relative_item .time::before {
+    width: 16px;
+    height: 16px;
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 16px;
+    background-image: url("../images/time.png");
+}
+
+.relative_item .pj {
+    font-family: SourceHanSansCN-Regular;
+    font-size: 12px;
+    color: #A6A6A6;
+    letter-spacing: 0;
+    position: relative;
+    margin-left: 40px;
+    margin-right: 16px;
+}
+
+.relative_item .pj::before {
+    width: 16px;
+    height: 14px;
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: -20px;
+    background-image: url("../images/pinglun2.png");
+}
+
+.relative_item .views {
+    font-family: SourceHanSansCN-Regular;
+    font-size: 12px;
+    color: #A6A6A6;
+    letter-spacing: 0;
+    position: relative;
+}
+
+.relative_item .views::before {
+    width: 16px;
+    height: 12px;
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: -20px;
+    background-image: url("../images/look.png");
+}
+
+.relative_item li {
+    padding-bottom: 16px;
+    margin-bottom: 8px;
+    background-color: #fff;
+}

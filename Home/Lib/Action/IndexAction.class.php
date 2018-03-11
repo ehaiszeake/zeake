@@ -68,6 +68,13 @@ class IndexAction extends Action {
         $this->display("zaeke_famous");
     }
 
+    public function mobile_fame_home_page(){
+        self::construct();
+        //echo "lllll";
+        $this->display("zaeke_personal");
+    }
+
+
     public function hall_of_fame(){
         $this->assign("column_1","on");
         self::construct();
@@ -93,6 +100,12 @@ class IndexAction extends Action {
         self::construct();
         $this->display("zaeke_center");
         #$this->display("pc_home");
+    }
+
+    public function mobile_home(){
+        self::construct();
+        $this->display("mobile_center");
+        //echo "qwerqwer";
     }
 
     public function pc_message(){
