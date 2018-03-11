@@ -14,10 +14,10 @@
 <body>
     <script type="text/javascript">
         var getUrlParam=function(name){
-            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"),r = window.location.search.substr(1).match(reg);if (r != null) return unescape(r[2]); return null;
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"),r = window.location.search.substr(1).match(reg);if (r != null) return unescape(r[2]); return null;}
         var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
         //console.log(width);
-        var id=units.getUrlParam("id")!=null ? units.getUrlParam("id") : ""
+        var id=getUrlParam("id")!=null ? getUrlParam("id") : ""
         if(width < 768){
             window.location.href="mobile_page.php?id="+id;
         }
