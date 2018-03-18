@@ -1,0 +1,284 @@
+.container {
+    background-color: #fffeeb;
+    .tabletitle {
+        background-color: #fff;
+        padding: 21px 27px;
+        color: rgba(16, 16, 16, 1);
+        font-size: 20px;
+        font-family: Roboto;
+    }
+    .box {
+        width: 1800px;
+        background-color: #fff;
+        margin: 28px 26px 23px 24px;
+        padding: 26px 14px 0 40px;
+        .screen1 {
+            button {
+                width: 111px;
+                height: 32px;
+                outline: none;
+                cursor: pointer;
+                line-height: 30px;
+                color: rgba(16, 16, 16, 1);
+                background-color: #fff;
+                font-size: 14px;
+                text-align: center;
+                font-family: Roboto;
+                border: 1px solid rgba(187, 187, 187, 1);
+                border-left: none;
+            }
+            .all {
+                width: 84px;
+                border-left: 1px solid rgba(187, 187, 187, 1);
+            }
+            .all,
+            .pushIndex,
+            .nopass {
+                border-left: 1px solid rgba(187, 187, 187, 1);
+            }
+            .examine {
+                width: 94px;
+            }
+            .pushIndex {
+                margin-left: 24px;
+            }
+            .pushJingxuan {
+                margin-right: 31px;
+                border-right: 1px solid rgba(187, 187, 187, 1);
+            }
+            .checked {
+                background-color: #009688;
+                color: #fff;
+                border: none;
+            }
+        }
+        .screen2 {
+            padding: 29px 0 20px 0;
+            border-bottom: 1px solid #DEDEDE;
+            .sort {
+                width: 101px;
+                height: 30px;
+                line-height: 20px;
+                color: rgba(16, 16, 16, 1);
+                font-size: 14px;
+                font-family: Microsoft Yahei;
+                border: 1px solid rgba(187, 187, 187, 1);
+                border-radius: 4px;
+                outline: none;
+            }
+            .keyword {
+                width: 200px;
+                height: 31px;
+                border-radius: 4px;
+                color: rgba(136, 136, 136, 1);
+                font-size: 14px;
+                font-family: Microsoft Yahei;
+                border: 1px solid rgba(187, 187, 187, 1);
+                outline: none;
+                padding-left: 10px;
+                margin: 0 18px 0 8px;
+            }
+            .search {
+                width: 60px;
+                outline: none;
+                height: 32px;
+                line-height: 20px;
+                border-radius: 4px;
+                color: rgba(16, 16, 16, 1);
+                font-size: 14px;
+                text-align: center;
+                font-family: Roboto;
+                background-color: #fff;
+                border: 1px solid rgba(187, 187, 187, 1);
+            }
+            .time {
+                height: 23px;
+                line-height: 32px;
+                color: rgba(16, 16, 16, 1);
+                font-size: 14px;
+                text-align: center;
+                font-family: Roboto;
+                margin: 0 3px 0 112px;
+            }
+            .picker {
+                width: 142px;
+                height: 30px;
+                border-radius: 4px;
+                color: rgba(136, 136, 136, 1);
+                font-size: 14px;
+                text-align: left;
+                font-family: Microsoft Yahei;
+                padding-left: 10px;
+                border: 1px solid rgba(187, 187, 187, 1);
+            }
+            .line {
+                width: 37px;
+                height: 1px;
+                background-color: #bbb;
+                margin: 15px 4px;
+            }
+        }
+        .table {
+            span {
+                line-height: 20px;
+                color: rgba(16, 16, 16, 1);
+                font-size: 14px;
+                line-height: 65px;
+                font-family: Roboto;
+            }
+            .belong,
+            .type {
+                width: 7.5%;
+                select {
+                    width: 98px;
+                    height: 30px;
+                    line-height: 17px;
+                    color: rgba(16, 16, 16, 1);
+                    font-size: 12px;
+                    font-family: Microsoft Yahei;
+                    border: 1px solid rgba(187, 187, 187, 1);
+                    outline: none;
+                    border-radius: 4px;
+                    margin-top: 20px;
+                }
+            }
+            .checkbox {
+                height: 65px;
+                line-height: 65px;
+            }
+            .title {
+                width: 12%;
+            }
+            .subtime,
+            .pushtime {
+                width: 10%;
+            }
+            .pushtime {
+                display: none;
+            }
+            .operaton {
+                width: 8%;
+                line-height: 65px;
+                .read,
+                .delete {
+                    width: 58px;
+                    height: 30px;
+                    line-height: 20px;
+                    outline: none;
+                    border-radius: 3px;
+                    color: rgba(16, 16, 16, 1);
+                    font-size: 14px;
+                    text-align: center;
+                    font-family: Roboto;
+                    background-color: #fff;
+                    cursor: pointer;
+                    border: 1px solid rgba(187, 187, 187, 1);
+                }
+                .delete {
+                    margin-left: 10px;
+                    color: #E51C23;
+                    border-color: #E51C23;
+                }
+            }
+            .readnum,
+            .comments,
+            .star,
+            .pushindex,
+            .pushjingxuan,
+            .tab,
+            .status,
+            .author,
+            .articleid,
+            .sortrank,
+            .checkbox {
+                width: 5%;
+                .circle {
+                    width: 16px;
+                    height: 16px;
+                    background-color: #BDBDBD;
+                    border-radius: 50%;
+                    outline: none;
+                    border: none;
+                    cursor: pointer;
+                }
+                .haspush {
+                    background-color: #009688;
+                }
+            }
+            .sortrank {
+                display: none;
+                input[type="text"] {
+                    padding-left: 6px;
+                    width: 62px;
+                    height: 25px;
+                    margin-top: 18px;
+                    color: rgba(0, 0, 0, 1);
+                    font-size: 14px;
+                    font-family: Roboto;
+                    border: 1px solid rgba(187, 187, 187, 1);
+                }
+            }
+            .pushindex,
+            .pushjingxuan {
+                text-align: center;
+            }
+            ul {
+                border-top: 1px solid #dedede;
+                border-bottom: 1px solid #dedede;
+                li:hover {
+                    background-color: #f2f2f2;
+                }
+            }
+            .deleteall {
+                padding: 16px 0 49px 0px;
+                .checkall {
+                    width: 5%;
+                    margin-top: 6px;
+                }
+                .delete {
+                    width: 60px;
+                    height: 32px;
+                    line-height: 20px;
+                    border-radius: 4px;
+                    color: rgba(229, 28, 35, 1);
+                    font-size: 14px;
+                    font-family: Roboto;
+                    outline: none;
+                    background-color: #fff;
+                    border: 1px solid rgba(229, 28, 35, 1);
+                }
+            }
+        }
+        .pageswitch {
+            text-align: center;
+            padding-bottom: 74px;
+            button {
+                background-color: #fff;
+                outline: none;
+                width: 36px;
+                cursor: pointer;
+                height: 36px;
+                border-radius: 2px;
+                border: 1px solid #dedede;
+            }
+            .homepage {
+                width: 56px;
+            }
+            .lastpage,
+            .nextpage {
+                width: 70px;
+            }
+            .finalpage {
+                width: 82px;
+            }
+            .current {
+                border: none;
+                color: #fff;
+                background-color: #1CAF9A;
+            }
+        }
+        .nodata {
+            padding: 150px 0px;
+        }
+    }
+}

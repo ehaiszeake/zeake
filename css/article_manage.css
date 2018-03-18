@@ -1,0 +1,256 @@
+.container {
+  background-color: #fffeeb; }
+  .container .tabletitle {
+    background-color: #fff;
+    padding: 21px 27px;
+    color: #101010;
+    font-size: 20px;
+    font-family: Roboto; }
+  .container .box {
+    width: 1800px;
+    background-color: #fff;
+    margin: 28px 26px 23px 24px;
+    padding: 26px 14px 0 40px; }
+    .container .box .screen1 button {
+      width: 111px;
+      height: 32px;
+      outline: none;
+      cursor: pointer;
+      line-height: 30px;
+      color: #101010;
+      background-color: #fff;
+      font-size: 14px;
+      text-align: center;
+      font-family: Roboto;
+      border: 1px solid #bbbbbb;
+      border-left: none; }
+    .container .box .screen1 .all {
+      width: 84px;
+      border-left: 1px solid #bbbbbb; }
+    .container .box .screen1 .all,
+    .container .box .screen1 .pushIndex,
+    .container .box .screen1 .nopass {
+      border-left: 1px solid #bbbbbb; }
+    .container .box .screen1 .examine {
+      width: 94px; }
+    .container .box .screen1 .pushIndex {
+      margin-left: 24px; }
+    .container .box .screen1 .pushJingxuan {
+      margin-right: 31px;
+      border-right: 1px solid #bbbbbb; }
+    .container .box .screen1 .checked {
+      background-color: #009688;
+      color: #fff;
+      border: none; }
+    .container .box .screen2 {
+      padding: 29px 0 20px 0;
+      border-bottom: 1px solid #DEDEDE; }
+      .container .box .screen2 .sort {
+        width: 101px;
+        height: 30px;
+        line-height: 20px;
+        color: #101010;
+        font-size: 14px;
+        font-family: Microsoft Yahei;
+        border: 1px solid #bbbbbb;
+        border-radius: 4px;
+        outline: none; }
+      .container .box .screen2 .keyword {
+        width: 200px;
+        height: 31px;
+        border-radius: 4px;
+        color: #888888;
+        font-size: 14px;
+        font-family: Microsoft Yahei;
+        border: 1px solid #bbbbbb;
+        outline: none;
+        padding-left: 10px;
+        margin: 0 18px 0 8px; }
+      .container .box .screen2 .search {
+        width: 60px;
+        outline: none;
+        height: 32px;
+        line-height: 20px;
+        border-radius: 4px;
+        color: #101010;
+        font-size: 14px;
+        text-align: center;
+        font-family: Roboto;
+        background-color: #fff;
+        border: 1px solid #bbbbbb; }
+      .container .box .screen2 .time {
+        height: 23px;
+        line-height: 32px;
+        color: #101010;
+        font-size: 14px;
+        text-align: center;
+        font-family: Roboto;
+        margin: 0 3px 0 112px; }
+      .container .box .screen2 .picker {
+        width: 142px;
+        height: 30px;
+        border-radius: 4px;
+        color: #888888;
+        font-size: 14px;
+        text-align: left;
+        font-family: Microsoft Yahei;
+        padding-left: 10px;
+        border: 1px solid #bbbbbb; }
+      .container .box .screen2 .line {
+        width: 37px;
+        height: 1px;
+        background-color: #bbb;
+        margin: 15px 4px; }
+    .container .box .table span {
+      line-height: 20px;
+      color: #101010;
+      font-size: 14px;
+      line-height: 65px;
+      font-family: Roboto; }
+    .container .box .table .belong,
+    .container .box .table .type {
+      width: 7.5%; }
+      .container .box .table .belong select,
+      .container .box .table .type select {
+        width: 98px;
+        height: 30px;
+        line-height: 17px;
+        color: #101010;
+        font-size: 12px;
+        font-family: Microsoft Yahei;
+        border: 1px solid #bbbbbb;
+        outline: none;
+        border-radius: 4px;
+        margin-top: 20px; }
+    .container .box .table .checkbox {
+      height: 65px;
+      line-height: 65px; }
+    .container .box .table .title {
+      width: 12%; }
+    .container .box .table .subtime,
+    .container .box .table .pushtime {
+      width: 10%; }
+    .container .box .table .pushtime {
+      display: none; }
+    .container .box .table .operaton {
+      width: 8%;
+      line-height: 65px; }
+      .container .box .table .operaton .read,
+      .container .box .table .operaton .delete {
+        width: 58px;
+        height: 30px;
+        line-height: 20px;
+        outline: none;
+        border-radius: 3px;
+        color: #101010;
+        font-size: 14px;
+        text-align: center;
+        font-family: Roboto;
+        background-color: #fff;
+        cursor: pointer;
+        border: 1px solid #bbbbbb; }
+      .container .box .table .operaton .delete {
+        margin-left: 10px;
+        color: #E51C23;
+        border-color: #E51C23; }
+    .container .box .table .readnum,
+    .container .box .table .comments,
+    .container .box .table .star,
+    .container .box .table .pushindex,
+    .container .box .table .pushjingxuan,
+    .container .box .table .tab,
+    .container .box .table .status,
+    .container .box .table .author,
+    .container .box .table .articleid,
+    .container .box .table .sortrank,
+    .container .box .table .checkbox {
+      width: 5%; }
+      .container .box .table .readnum .circle,
+      .container .box .table .comments .circle,
+      .container .box .table .star .circle,
+      .container .box .table .pushindex .circle,
+      .container .box .table .pushjingxuan .circle,
+      .container .box .table .tab .circle,
+      .container .box .table .status .circle,
+      .container .box .table .author .circle,
+      .container .box .table .articleid .circle,
+      .container .box .table .sortrank .circle,
+      .container .box .table .checkbox .circle {
+        width: 16px;
+        height: 16px;
+        background-color: #BDBDBD;
+        border-radius: 50%;
+        outline: none;
+        border: none;
+        cursor: pointer; }
+      .container .box .table .readnum .haspush,
+      .container .box .table .comments .haspush,
+      .container .box .table .star .haspush,
+      .container .box .table .pushindex .haspush,
+      .container .box .table .pushjingxuan .haspush,
+      .container .box .table .tab .haspush,
+      .container .box .table .status .haspush,
+      .container .box .table .author .haspush,
+      .container .box .table .articleid .haspush,
+      .container .box .table .sortrank .haspush,
+      .container .box .table .checkbox .haspush {
+        background-color: #009688; }
+    .container .box .table .sortrank {
+      display: none; }
+      .container .box .table .sortrank input[type="text"] {
+        padding-left: 6px;
+        width: 62px;
+        height: 25px;
+        margin-top: 18px;
+        color: black;
+        font-size: 14px;
+        font-family: Roboto;
+        border: 1px solid #bbbbbb; }
+    .container .box .table .pushindex,
+    .container .box .table .pushjingxuan {
+      text-align: center; }
+    .container .box .table ul {
+      border-top: 1px solid #dedede;
+      border-bottom: 1px solid #dedede; }
+      .container .box .table ul li:hover {
+        background-color: #f2f2f2; }
+    .container .box .table .deleteall {
+      padding: 16px 0 49px 0px; }
+      .container .box .table .deleteall .checkall {
+        width: 5%;
+        margin-top: 6px; }
+      .container .box .table .deleteall .delete {
+        width: 60px;
+        height: 32px;
+        line-height: 20px;
+        border-radius: 4px;
+        color: #e51c23;
+        font-size: 14px;
+        font-family: Roboto;
+        outline: none;
+        background-color: #fff;
+        border: 1px solid #e51c23; }
+    .container .box .pageswitch {
+      text-align: center;
+      padding-bottom: 74px; }
+      .container .box .pageswitch button {
+        background-color: #fff;
+        outline: none;
+        width: 36px;
+        cursor: pointer;
+        height: 36px;
+        border-radius: 2px;
+        border: 1px solid #dedede; }
+      .container .box .pageswitch .homepage {
+        width: 56px; }
+      .container .box .pageswitch .lastpage,
+      .container .box .pageswitch .nextpage {
+        width: 70px; }
+      .container .box .pageswitch .finalpage {
+        width: 82px; }
+      .container .box .pageswitch .current {
+        border: none;
+        color: #fff;
+        background-color: #1CAF9A; }
+    .container .box .nodata {
+      padding: 150px 0px; }

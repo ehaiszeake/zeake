@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/article_manage.css">
+    <title>知客后台</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="tabletitle">文章管理</div>
+        <div class="box">
+            <div class="screen1">
+                <ul class="clearfix">
+                    <li class="fl">
+                        <button class="all checked">全部</button>
+                    </li>
+                    <li class="fl">
+                        <button class="examine">待审核</button>
+                    </li>
+                    <li class="fl">
+                        <button class="publish">已发布</button>
+                    </li>
+                    <li class="fl">
+                        <button class="pushIndex">已推送首页</button>
+                    </li>
+                    <li class="fl">
+                        <button class="pushJingxuan">已推送精选</button>
+                    </li>
+                    <li class="fl">
+                        <button class="nopass">审核不通过</button>
+                    </li>
+                    <li class="fl">
+                        <button class="recyclebin">回收站</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="screen2 clearfix">
+                <select class="sort fl">
+                    <option value="1" selected>文章标题</option>
+                    <option value="2">文章内容</option>
+                    <option value="3">文章作者</option>
+                    <option value="4">文章ID</option>
+
+                </select>
+                <input type="text" placeholder="请输入文章标题名称" class="fl keyword">
+                <button class="search fl pointer">搜索</button>
+                <span class="time fl">发布时间：</span>
+                <input type="text" class="picker fl pointer" readonly placeholder="请选择日期范围">
+                <span class="line fl"></span>
+                <input type="text" class="picker fl pointer" readonly placeholder="请选择日期范围">
+            </div>
+            <div class="table">
+                <div class="clearfix">
+                    <div class="checkbox fl"></div>
+                    <span class="fl articleid">文章ID</span>
+                    <span class="fl title">标题</span>
+                    <span class="fl author">作者</span>
+                    <div class="fl belong">
+                        <select>
+                            <option selected disabled="disabled">所属栏目</option>
+                            <option value="1">行业看点</option>
+                            <option value="2">深度评测</option>
+                            <option value="3">人与生活</option>
+                        </select>
+                    </div>
+                    <span class="fl tab">收录标签</span>
+                    <div class="fl type">
+                        <select>
+                            <option selected disabled="disabled">文章类型</option>
+                            <option value="1">视频文章</option>
+                            <option value="2">快讯</option>
+                            <option value="3">文章</option>
+                        </select>
+                    </div>
+                    <span class="fl readnum">阅读量</span>
+                    <span class="fl comments">评论</span>
+                    <span class="fl star">点赞</span>
+                    <span class="fl subtime t_subtime">发布时间</span>
+                    <span class="fl pushtime t_pushtime">推送时间</span>
+                    <span class="fl sortrank">排序</span>
+                    <span class="fl status t_status">当前状态</span>
+                    <span class="fl pushindex">推首页</span>
+                    <span class="fl pushjingxuan">推精选</span>
+                    <span class="fl operaton">操作</span>
+                </div>
+                <ul>
+                    <li class="clearfix">
+                        <div class="checkbox fl tc">
+                            <input type="checkbox" name="" id="">
+                        </div>
+                        <span class="fl articleid">5432</span>
+                        <span class="fl title">三星手机S9发布</span>
+                        <span class="fl author">bingbang</span>
+                        <span class="fl belong">人与生活</span>
+                        <span class="fl tab">手机</span>
+                        <span class="fl type">文章</span>
+                        <span class="fl readnum">-</span>
+                        <span class="fl comments">-</span>
+                        <span class="fl star">-</span>
+                        <span class="fl subtime">2017-12-25 18:13:41</span>
+                        <span class="fl pushtime">2017-12-25 18:13:41</span>
+                        <div class="fl sortrank">
+                            <input type="text" value="1">
+                        </div>
+                        <span class="fl status">
+                            <select name="" id="">
+                                <option value="" selected disabled>请选择</option>
+                                <option value="1">已发布</option>
+                                <option value="2">已审核</option>
+                                <option value="3">审核中</option>
+                                <option value="3">待审核</option>
+                            </select>
+                        </span>
+                        <span class="fl pushindex">
+                            <button class="circle haspush"></button>
+                        </span>
+                        <span class="fl pushjingxuan">
+                            <button class="circle"></button>
+                        </span>
+                        <div class="operaton fl">
+                            <button class="read">查看</button>
+                            <button class="delete">删除</button>
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="checkbox fl tc">
+                            <input type="checkbox" name="" id="">
+                        </div>
+                        <span class="fl articleid">5432</span>
+                        <span class="fl title">iPhoneX深陷电池门</span>
+                        <span class="fl author">buer</span>
+                        <span class="fl belong">行业看点</span>
+                        <span class="fl tab">音频</span>
+                        <span class="fl type">视频文章</span>
+                        <span class="fl readnum">30200</span>
+                        <span class="fl comments">67</span>
+                        <span class="fl star">67</span>
+                        <span class="fl subtime">2017-11-30 16:23:52</span>
+                        <span class="fl pushtime">2017-12-25 18:13:41</span>
+                        <div class="fl sortrank">
+                            <input type="text" value="1">
+                        </div>
+                        <span class="fl status">
+                            <select name="" id="">
+                                <option value="" selected disabled>请选择</option>
+                                <option value="1">已发布</option>
+                                <option value="2">已审核</option>
+                                <option value="3">审核中</option>
+                                <option value="3">待审核</option>
+                            </select>
+                        </span>
+                        <span class="fl pushindex">
+                            <button class="circle haspush"></button>
+                        </span>
+                        <span class="fl pushjingxuan">
+                            <button class="circle"></button>
+                        </span>
+                        <div class="operaton fl">
+                            <button class="read">查看</button>
+                            <button class="delete">删除</button>
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="checkbox fl tc">
+                            <input type="checkbox" name="" id="">
+                        </div>
+                        <span class="fl articleid">5432</span>
+                        <span class="fl title">联发科进军东南亚</span>
+                        <span class="fl author">遥远明天</span>
+                        <span class="fl belong">行业看点</span>
+                        <span class="fl tab">电脑</span>
+                        <span class="fl type">快讯</span>
+                        <span class="fl readnum">500</span>
+                        <span class="fl comments">1</span>
+                        <span class="fl star">1</span>
+                        <span class="fl subtime">2017-10-05 02:13:41</span>
+                        <span class="fl pushtime">2017-12-25 18:13:41</span>
+                        <div class="fl sortrank">
+                            <input type="text" value="1">
+                        </div>
+                        <span class="fl status">
+                            <select name="" id="">
+                                <option value="" selected disabled>请选择</option>
+                                <option value="1">已发布</option>
+                                <option value="2">已审核</option>
+                                <option value="3">审核中</option>
+                                <option value="3">待审核</option>
+                            </select>
+                        </span>
+                        <span class="fl pushindex">
+                            <button class="circle haspush"></button>
+                        </span>
+                        <span class="fl pushjingxuan">
+                            <button class="circle"></button>
+                        </span>
+                        <div class="operaton fl">
+                            <button class="read">查看</button>
+                            <button class="delete">删除</button>
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="checkbox fl tc">
+                            <input type="checkbox" name="" id="">
+                        </div>
+                        <span class="fl articleid">5432</span>
+                        <span class="fl title">三星手机S9发布</span>
+                        <span class="fl author">bingbang</span>
+                        <span class="fl belong">人与生活</span>
+                        <span class="fl tab">手机</span>
+                        <span class="fl type">文章</span>
+                        <span class="fl readnum">-</span>
+                        <span class="fl comments">-</span>
+                        <span class="fl star">-</span>
+                        <span class="fl subtime">2017-12-25 18:13:41</span>
+                        <span class="fl pushtime">2017-12-25 18:13:41</span>
+                        <div class="sortrank fl">
+                            <input type="text" value="1">
+                        </div>
+                        <span class="fl status">
+                            <select name="" id="">
+                                <option value="" selected disabled>请选择</option>
+                                <option value="1">已发布</option>
+                                <option value="2">已审核</option>
+                                <option value="3">审核中</option>
+                                <option value="3">待审核</option>
+                            </select>
+                        </span>
+                        <span class="fl pushindex">
+                            <button class="circle haspush"></button>
+                        </span>
+                        <span class="fl pushjingxuan">
+                            <button class="circle"></button>
+                        </span>
+                        <div class="operaton fl">
+                            <button class="read">查看</button>
+                            <button class="delete">删除</button>
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="checkbox fl tc">
+                            <input type="checkbox" name="" id="">
+                        </div>
+                        <span class="fl articleid">5432</span>
+                        <span class="fl title">iPhoneX深陷电池门</span>
+                        <span class="fl author">buer</span>
+                        <span class="fl belong">行业看点</span>
+                        <span class="fl tab">音频</span>
+                        <span class="fl type">视频文章</span>
+                        <span class="fl readnum">30200</span>
+                        <span class="fl comments">67</span>
+                        <span class="fl star">67</span>
+                        <span class="fl subtime">2017-11-30 16:23:52</span>
+                        <span class="fl pushtime">2017-12-25 18:13:41</span>
+                        <div class="sortrank fl">
+                            <input type="text" value="1">
+                        </div>
+                        <span class="fl status">已发布</span>
+                        <span class="fl pushindex">
+                            <button class="circle haspush"></button>
+                        </span>
+                        <span class="fl pushjingxuan">
+                            <button class="circle"></button>
+                        </span>
+                        <div class="operaton fl">
+                            <button class="read">查看</button>
+                            <button class="delete">删除</button>
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="checkbox fl tc">
+                            <input type="checkbox" name="" id="">
+                        </div>
+                        <span class="fl articleid">5432</span>
+                        <span class="fl title">联发科进军东南亚</span>
+                        <span class="fl author">遥远明天</span>
+                        <span class="fl belong">行业看点</span>
+                        <span class="fl tab">电脑</span>
+                        <span class="fl type">快讯</span>
+                        <span class="fl readnum">500</span>
+                        <span class="fl comments">1</span>
+                        <span class="fl star">1</span>
+                        <span class="fl subtime">2017-10-05 02:13:41</span>
+                        <span class="fl pushtime">2017-12-25 18:13:41</span>
+                        <div class="sortrank fl">
+                            <input type="text" value="1">
+                        </div>
+                        <span class="fl status">已发布</span>
+                        <span class="fl pushindex">
+                            <button class="circle haspush"></button>
+                        </span>
+                        <span class="fl pushjingxuan">
+                            <button class="circle"></button>
+                        </span>
+                        <div class="operaton fl">
+                            <button class="read">查看</button>
+                            <button class="delete">删除</button>
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="checkbox fl tc">
+                            <input type="checkbox" name="" id="">
+                        </div>
+                        <span class="fl articleid">5432</span>
+                        <span class="fl title">三星手机S9发布</span>
+                        <span class="fl author">bingbang</span>
+                        <span class="fl belong">人与生活</span>
+                        <span class="fl tab">手机</span>
+                        <span class="fl type">文章</span>
+                        <span class="fl readnum">-</span>
+                        <span class="fl comments">-</span>
+                        <span class="fl star">-</span>
+                        <span class="fl subtime">2017-12-25 18:13:41</span>
+                        <span class="fl pushtime">2017-12-25 18:13:41</span>
+                        <div class="sortrank fl">
+                            <input type="text" value="1">
+                        </div>
+                        <span class="fl status">待审核</span>
+                        <span class="fl pushindex">
+                            <button class="circle haspush"></button>
+                        </span>
+                        <span class="fl pushjingxuan">
+                            <button class="circle"></button>
+                        </span>
+                        <div class="operaton fl">
+                            <button class="read">查看</button>
+                            <button class="delete">删除</button>
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="checkbox fl tc">
+                            <input type="checkbox" name="" id="">
+                        </div>
+                        <span class="fl articleid">5432</span>
+                        <span class="fl title">iPhoneX深陷电池门</span>
+                        <span class="fl author">buer</span>
+                        <span class="fl belong">行业看点</span>
+                        <span class="fl tab">音频</span>
+                        <span class="fl type">视频文章</span>
+                        <span class="fl readnum">30200</span>
+                        <span class="fl comments">67</span>
+                        <span class="fl star">67</span>
+                        <span class="fl subtime">2017-11-30 16:23:52</span>
+                        <span class="fl pushtime">2017-12-25 18:13:41</span>
+                        <div class="sortrank fl">
+                            <input type="text" value="1">
+                        </div>
+                        <span class="fl status">已发布</span>
+                        <span class="fl pushindex">
+                            <button class="circle haspush"></button>
+                        </span>
+                        <span class="fl pushjingxuan">
+                            <button class="circle"></button>
+                        </span>
+                        <div class="operaton fl">
+                            <button class="read">查看</button>
+                            <button class="delete">删除</button>
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="checkbox fl tc">
+                            <input type="checkbox" name="" id="">
+                        </div>
+                        <span class="fl articleid">5432</span>
+                        <span class="fl title">联发科进军东南亚</span>
+                        <span class="fl author">遥远明天</span>
+                        <span class="fl belong">行业看点</span>
+                        <span class="fl tab">电脑</span>
+                        <span class="fl type">快讯</span>
+                        <span class="fl readnum">500</span>
+                        <span class="fl comments">1</span>
+                        <span class="fl star">1</span>
+                        <span class="fl subtime">2017-10-05 02:13:41</span>
+                        <span class="fl pushtime">2017-12-25 18:13:41</span>
+                        <div class="sortrank fl">
+                            <input type="text" value="1">
+                        </div>
+                        <span class="fl status">已发布</span>
+                        <span class="fl pushindex">
+                            <button class="circle haspush"></button>
+                        </span>
+                        <span class="fl pushjingxuan">
+                            <button class="circle"></button>
+                        </span>
+                        <div class="operaton fl">
+                            <button class="read">查看</button>
+                            <button class="delete">删除</button>
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="checkbox fl tc">
+                            <input type="checkbox" name="" id="">
+                        </div>
+                        <span class="fl articleid">5432</span>
+                        <span class="fl title">三星手机S9发布</span>
+                        <span class="fl author">bingbang</span>
+                        <span class="fl belong">人与生活</span>
+                        <span class="fl tab">手机</span>
+                        <span class="fl type">文章</span>
+                        <span class="fl readnum">-</span>
+                        <span class="fl comments">-</span>
+                        <span class="fl star">-</span>
+                        <span class="fl subtime">2017-12-25 18:13:41</span>
+                        <span class="fl pushtime">2017-12-25 18:13:41</span>
+                        <div class="sortrank fl">
+                            <input type="text" value="1">
+                        </div>
+                        <span class="fl status">待审核</span>
+                        <span class="fl pushindex">
+                            <button class="circle haspush"></button>
+                        </span>
+                        <span class="fl pushjingxuan">
+                            <button class="circle"></button>
+                        </span>
+                        <div class="operaton fl">
+                            <button class="read">查看</button>
+                            <button class="delete">删除</button>
+                        </div>
+                    </li>
+                </ul>
+                <div class="clearfix deleteall">
+                    <div class="checkall fl tc">
+                        <input type="checkbox">
+                    </div>
+                    <button class="fl delete pointer">删除</button>
+                </div>
+            </div>
+            <div class="pageswitch">
+                <button class="homepage">首页</button>
+                <button class="lastpage">上一页</button>
+                <button class="current">1</button>
+                <button>2</button>
+                <button>3</button>
+                <button>4</button>
+                <button>5</button>
+                <button class="nextpage">下一页</button>
+                <button class="finalpage">最后一页</button>
+            </div>
+            <div class="nodata tc">暂时没有相关数据</div>
+
+        </div>
+    </div>
+</body>
+<script src="./js/jquery.min.js"></script>
+<script src="./js/article_manage.js"></script>
+
+</html>
