@@ -315,6 +315,7 @@ body.little .header .header_inner .nav_search ul li a:hover,
 body.little .header .header_inner .nav_search ul li a.on {color:#00E676;text-decoration:none;line-height:40px;border-bottom:none;}
 
 
+
 /* 底部样式 */
 
 .footer {
@@ -521,11 +522,11 @@ img.placeholderImg2 {background:url(../images/placeholderImg2.png) no-repeat 50%
 .article_list_box .article_list li .article_title a:hover {color:#333;}
 .article_list_box .article_list li .article_intro {font-size: 16px;line-height:28px;overflow:hidden;color: #767676;padding-left:30px;width:640px;margin-top:10px;}
 .article_list_box .article_list li .article_date_view_message {padding-left:30px;margin-top:20px;width:92%;}
-.article_list_box .article_list li .article_date_view_message .date {color:#AEAEAE;font-size:14px;line-height:17px;padding-left: 24px;background-image:url("../images/time.png");background-repeat:no-repeat;}
+.article_list_box .article_list li .article_date_view_message .date,.mytime {color:#AEAEAE;font-size:14px;line-height:17px;padding-left: 24px;background-image:url("../images/time.png");background-repeat:no-repeat;}
 .article_list_box .article_list li .article_date_view_message .view_message .article_view {line-height:20px;font-size:14px;color:#767676;padding-left:24px;background:url(../images/look.png) no-repeat 0 50%;margin-right:20px;white-space:nowrap;}
 .article_list_box .article_list li .article_date_view_message .view_message .article_message {line-height:20px;font-size:14px;color:#767676;padding-left:24px;background:url(../images/pinglun2.png) no-repeat 0 50%;;white-space:nowrap;}
 .load_more_article {margin:20px auto 0;background:#fff;cursor:pointer;width:700px;height:60px;line-height:60px;font-size: 14px;color: #263238;}
-
+.mytime{margin-top: 10px;}
 
 .article_list_box .article_list li.video_view {background:none;border-bottom:solid 2px #D4D4D4;}
 .article_list_box .article_list li.video_view .video_cover_box {padding-bottom:0;overflow:hidden;}
@@ -1757,7 +1758,18 @@ img.placeholderImg2 {background:url(../images/placeholderImg2.png) no-repeat 50%
   margin-left: -30px;
   display: none; }
 	
-	
+#video_controller{
+	position: fixed;top: 0;left:0;right: 0;bottom: 0;z-index:100;
+}
+#video_bg{
+	position: fixed;top: 0;left:0;right: 0;bottom: 0;z-index:101;
+	background: #000;filter:alpha(opacity:50); opacity:0.5;  -moz-opacity:0.5;-khtml-opacity: 0.5
+}
+.video_detail{z-index: 103;}
+#video_close{
+	color: #fff;padding: 10px;cursor: pointer;float: right;
+}
+.video_play_box{float: left;}
 	
 /**
 /////////////////////////////////////////////////////////////////////////////
