@@ -66,7 +66,7 @@
 								</a>
 								</div>
 								<p><a href="article_detail_{$item.id}.php">{$item.title}</a></p> 
-								<span class="lbl_green">{$item.author}</span>
+								<span class="lbl_green top_article_type" type="{$item.type}"></span>
 								<span class="view_num">{$item.pv}</span> 
 								</li>
 							</volist>        
@@ -123,10 +123,17 @@
 						$(ele).addClass("state1");
 					}else if($(ele).text() == "已结束"){
 						$(ele).addClass("state2");
-					}else if($(ele).text() == "未开始"){
+					}else if($(ele).text() == "预热中"){
 						$(ele).addClass("state3");
 					}
 				});
+				
+				
+				$(".top_article_type").each(function(){
+					var type = $(this).attr("type");
+					$(this).html($(".cnav_"+type).text());
+				});
+				
 			});
         	$(function() { 
 				var total = 0,
@@ -194,7 +201,7 @@
 														str4+='	<div class="video_cover_box f_pr"><a href="'+item.skip_url+'" class="f_db"><img src="'+img+'" width="100%"/></a><div class="play_ico f_pa"></div></div>';
 														str4+='	<div class="video_title f_toe"><a href="'+item.skip_url+'">'+item.title+'</a></div>';
 													}else {
-														str4+='	<div class="video_cover_box f_pr"><a href="video_detail.php?id='+item.id+'"" class="f_db"><img src="'+img+'" width="100%"/></a><div class="play_ico f_pa"></div></div>';
+														str4+='	<div class="video_cover_box f_pr"><a href="javascript:;" onclick="video('+item.id+');" class="f_db"><img src="'+img+'" width="100%"/></a><div class="play_ico f_pa" onclick="video('+item.id+');"></div></div>';
 														str4+='	<div class="video_title f_toe"><a href="video_detail.php?id='+item.id+'">'+item.title+'</a></div>';
 													}
 													str4+='	<div class="author_date"><span>'+item.author+'</span><i>/</i><em>'+variable_obj.formatDate(item.created*1000)+'</em></div>';
@@ -268,10 +275,13 @@
 						})
 					}
 				});
-			})
+			});
+			
+					
         </script>        
         
-        
+
+        <include file="./Home/Tpl/Index/include/video.html" />
         
     </body>
     
