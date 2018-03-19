@@ -152,7 +152,40 @@ var variable_obj={
 		"login_form_lock":false,
 		"register_form_lock":false,
 		//"html":'<div class="pop_wrapper f_pa f_dn"><div class="login_wrapper pop_box f_pa f_cf f_dn"><div class="close_pop_wrapper f_pa f_two">关闭</div><div class="title f_tac"><div class="title_dec"></div></div><form action="" class="login_form"><div class="ipt_box f_pr"><label for="login_username" class="for_text">用户名</label><input type="text" autocomplete="off" class="placeholder login_username js_noCopyCutPaste" id="login_username"><span class="error_tip f_pa"></span></div><div class="ipt_box f_pr"><label for="login_password" class="for_text">密码</label><input type="password" autocomplete="off" class="placeholder login_password js_noCopyCutPaste" id="login_password"><span class="error_tip f_pa"></span></div><div class="username_password_tip"></div><input type="submit" value="登录" class="login_btn f_two f_db"><div class="forget_register f_cf"><a href="javascript:;" class="forget_page f_fl">忘记密码？</a><span class="f_fr">新用户？去<a href="javascript:;" class="register_page">注册</a></span></div><div class="third_party_logins f_tac"><div class="f_dib f_vat qq"></div><div class="f_dib f_vat weibo"></div><div class="f_dib f_vat weixin"></div></div></form></div><div class="login_wrapper2 pop_box f_pa f_cf f_dn"><div class="close_pop_wrapper f_pa f_two">关闭</div><div class="title f_tac"><div class="title_dec"></div></div><div class="qrcode_box f_pr"><img src="images/close.png" class="f_vat" width="266"></div><div class="weixin_login_tip"></div></div><div class="register_wrapper pop_box f_pa f_cf f_dn"><div class="close_pop_wrapper f_pa f_two">关闭</div><div class="title f_tac"><div class="title_dec"></div></div><form action="" class="register_form"><div class="ipt_box f_pr"><label for="register_username" class="for_text">用户名（3-15个字符）</label><input type="text" autocomplete="off" class="placeholder register_username js_noCopyCutPaste" id="register_username"><span class="error_tip f_pa"></span></div><div class="ipt_box f_pr"><label for="register_password" class="for_text">输入密码（不小于6个字符）</label><input type="password" autocomplete="off" class="placeholder register_password js_noCopyCutPaste" id="register_password"><span class="error_tip f_pa"></span></div><div class="ipt_box f_pr"><label for="register_email" class="for_text">账号邮箱</label><input type="text" autocomplete="off" class="placeholder register_email js_noCopyCutPaste" id="register_email"><span class="error_tip f_pa"></span></div><div class="ipt_box f_pr"><label for="register_mobile" class="for_text">手机号</label><input type="tel" autocomplete="off" class="placeholder register_mobile js_noCopyCutPaste" id="register_mobile"><span class="error_tip f_pa"></span></div><div class="ipt_box ipt_last_box f_pr"><label for="register_code" class="for_text">填入验证码</label><input type="text" autocomplete="off" class="placeholder register_code js_noCopyCutPaste" id="register_code"><span class="error_tip f_pa"></span> <input type="button" class="check_code f_pa" value="获取验证码"></div><div class="username_password_email_tip"></div><input type="submit" value="注册" class="register_btn f_two f_db"><div class="to_login f_cf"><span class="f_fr">已有账户？去<a href="javascript:;" class="login_page">登录</a></span></div><div class="third_party_logins f_tac"><div class="f_dib f_vat qq"></div><div class="f_dib f_vat weibo"></div><div class="f_dib f_vat weixin"></div></div></form></div><div class="search_wrapper pop_box f_pa f_cf f_dn"><div class="close_pop_wrapper f_pa f_two">关闭</div><div class="title f_tac"><div class="title_dec"></div></div><form action="" class="search_form"><div class="ipt_box f_pr"><label for="search_register_username" class="for_text">注册邮箱</label><input type="text" autocomplete="off" class="placeholder search_register_username js_noCopyCutPaste" id="search_register_username"><span class="error_tip f_pa"></span></div><div class="ipt_box f_pr"><label for="search_register_password" class="for_text">邮箱验证码</label><input type="text" autocomplete="off" class="placeholder search_register_password js_noCopyCutPaste" id="search_register_password"><span class="error_tip f_pa"></span></div><div class="search_email_code_tip"></div><input type="submit" value="下一步" class="search_psw_btn f_two f_db"><div class="to_login f_cf"><span class="f_fr">已有账户？去<a href="javascript:;" class="login_page">登录</a></span></div><div class="third_party_logins f_tac"><div class="f_dib f_vat qq"></div><div class="f_dib f_vat weibo"></div><div class="f_dib f_vat weixin"></div></div></form></div><div class="modify_psw_wrapper pop_box f_pa f_cf f_dn"><div class="close_pop_wrapper f_pa f_two">关闭</div><div class="title f_tac"><div class="title_dec"></div></div><form action="" class="modify_psw_form"><div class="ipt_box f_pr"><label for="modify_new_psw" class="for_text">新密码</label><input type="password" autocomplete="off" class="placeholder modify_new_psw js_noCopyCutPaste" id="modify_new_psw"><span class="error_tip f_pa"></span></div><div class="ipt_box f_pr"><label for="modify_new_psw_sure" class="for_text">确认密码</label><input type="password" autocomplete="off" class="placeholder modify_new_psw_sure js_noCopyCutPaste" id="modify_new_psw_sure"><span class="error_tip f_pa"></span></div><div class="modify_new_psw_tip"></div><input type="submit" value="下一步" class="modify_new_psw_btn f_two f_db"><div class="to_login f_cf"><span class="f_fr">已有账户？去<a href="javascript:;" class="login_page">登录</a></span></div><div class="third_party_logins f_tac"><div class="f_dib f_vat qq"></div><div class="f_dib f_vat weibo"></div><div class="f_dib f_vat weixin"></div></div></form></div></div><div class="success_tip f_dn f_pf"><div class="success_tip_inner"></div></div>',
-		"html":'<div class="loginbox pop_wrapper" >        <div class="login login_wrapper" >            <span class="close pointer close_pop_wrapper"></span>            <img src="./images/相关icon/知客logo.png" alt="logo" class="l_logon">            <div class="clearfix">                <span class="fl l_btn">登录</span>                <span class="fr tips">                    新用户？去                    <span class="g_regist pointer register_page">注册</span>                </span>            </div>            <ul>                <li>                    <input type="text" class="count" placeholder="用户名／手机号／邮箱" id="login_username">                </li>                <li>                    <input type="password" class="password" placeholder="密码" id="login_password">                </li>            </ul>            <p class="wrongTip">请输入正确的用户名／手机号／邮箱</p>            <button class="loginButton pointer login_btn">登录</button>            <p class="clearfix">                <span class="forget fr pointer forget_page">忘记密码？</span>            </p>            <div class="thirdLogin">                <div class="wordtip clearfix">                    <span class="fl line"></span>                    <span class="fl wenan">第三方登录</span>                    <span class="fl line"></span>                </div>                <div class="thirdico clearfix">                    <span class="qq fl pointer"></span>                    <span class="weibo fl pointer"></span>                    <span class="weixin fl pointer"></span>                </div>            </div>        </div></div>',
+		"html":'<form action="" class="login_form"><div class="loginbox pop_wrapper" > '+       
+			 '<div class="login login_wrapper" >  '+
+			 '<span class="close pointer close_pop_wrapper"></span>     '+
+			 '<img src="./images/相关icon/知客logo.png" alt="logo" class="l_logon">        '+
+			 '     <div class="clearfix">           '+
+			 '<span class="fl l_btn">登录</span>      '+  
+			 '<span class="fr tips">             '+
+			 '新用户？去                    <span class="g_regist pointer register_page">注册</span>        '+
+			 '</span>      '+
+			 '</div>        '+
+			 '<ul>                <li>         '+
+			 '<input type="text" class="count login_username js_noCopyCutPaste" placeholder="用户名／手机号／邮箱" id="login_username">  '+
+			 '</li>               '+
+			 '<li>                '+
+			 '<input type="password" class="password login_password js_noCopyCutPaste" placeholder="密码" id="login_password">  '+
+			 '</li>           '+
+			 '</ul>           '+
+			 '<p class="wrongTip username_password_tip">请输入正确的用户名／手机号／邮箱</p>        '+
+			 '<input type="submit" class="loginButton pointer login_btn" value="登录">        '+
+			 '<p class="clearfix">           '+
+			 '<span class="forget fr pointer forget_page">忘记密码？</span>        '+
+			 '</p>            <div class="thirdLogin">           '+
+			 '<div class="wordtip clearfix">               '+
+			 '     <span class="fl line"></span>            '+
+			 '        <span class="fl wenan">第三方登录</span>     '+
+			 '               <span class="fl line"></span>         '+
+			 '       </div>                <div class="thirdico clearfix">      '+
+			 '              <span class="qq fl pointer"></span>              '+
+			 '      <span class="weibo fl pointer"></span>             '+
+			 '       <span class="weixin fl pointer"></span>            '+
+			 '    </div>       '+
+			 '     </div>      '+
+			 '  </div>'+
+			 '</div></form>',
 		"scrollT":0,
 		"et":0,
 		sys:{
@@ -247,6 +280,7 @@ function texiaoImg(){
 		
 	});
 	
+	$(".login_form .texiao").remove();
 }
 
 $(function(){
@@ -266,7 +300,7 @@ $(function(){
 	var checkCode;
 	
 	//事件委托
-	$("body").on("click submit input propertychange copy cut paste selectstart",function(e){
+	$("body").on("click submit input button propertychange copy cut paste selectstart",function(e){
 		var t=$(e.target);
 		if(e.type=="submit" && t.hasClass("login_form")){
 			//登录表单验证
