@@ -674,7 +674,7 @@ img.placeholderImg2 {background:url(../images/placeholderImg2.png) no-repeat 50%
 
 /* 专题详情页面 */
 .special_theme_page_list_box .b_title {max-width:1360px;background:#fff;line-height:300px;font-size:60px;margin:40px auto 0;color:#595c61;}
-.main_content[data-type="special_theme_page_list"] .ad1_place {max-width:1360px;}
+.main_content[data-type="special_theme_page_list"] .ad1_place {max-width:1360px;margin: 0 auto;}
 
 /* 直播列表 */
 .main_content[data-type="live_broadcast_list_page"] {padding:0 0 40px 0;}
