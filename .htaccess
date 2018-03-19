@@ -26,6 +26,7 @@ RewriteRule special_theme_page.php$ ehais.php?m=Index&a=special_theme_page&$1 [Q
 RewriteRule video_detail.php$ ehais.php?m=Index&a=video_detail&$1 [QSA,PT,L]
 RewriteRule mobile_page.php$ ehais.php?m=Index&a=mobile_fame_home_page&$1 [QSA,PT,L]
 RewriteRule mobile_home.php$ ehais.php?m=Index&a=mobile_home [QSA,PT,L]
+RewriteRule articleManagement.php$ ehais.php?m=Index&a=article_management [QSA,PT,L]
 
 
 </IfModule>

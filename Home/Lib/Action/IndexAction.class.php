@@ -35,6 +35,11 @@ class IndexAction extends Action {
 
     }
 
+    public function article_management(){
+        self::construct();
+        $this->display("article_manage");
+    }
+
 
     public function article_detail(){
         self::construct();
