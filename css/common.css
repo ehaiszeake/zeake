@@ -19,7 +19,7 @@ h5{font-size:16px;}
 h6{font-size:12px;}
 input {-webkit-appearance:none;appearance:none;}
 a {-webkit-tap-hightlight-color:rgba(0,0,0,0);}
-* {-webkit-tap-highlight-color:rgba(255,255,255,0);}
+* {-webkit-tap-highlight-color:#f6f6f6;}
 sub,sup {position:relative;line-height:0;vertical-align:baseline;font-size:75%;}
 sup {top:-0.5em;}
 sub {bottom:-0.25em;}
@@ -562,7 +562,7 @@ img.placeholderImg2 {background:url(../images/placeholderImg2.png) no-repeat 50%
 .activities_newest dd .state_intro .intro{width:258px;max-height:48px;line-height:20px;overflow:hidden;font-size:14px;}
 .activities_newest dd .state_intro .intro a {color:#263238;}
 .activities_newest dd .state_intro .intro a:hover {text-decoration:underline;color:#5ab86e}
-.activities_newest dd .activities_date {padding:10px 0 0 0;line-height:17px;color:#B6B6B6;font-size:14px;}
+.activities_newest dd .activities_date {padding:10px 0 0 0;line-height:17px;color:#A6A6A6;font-size:12px;}
 
 .news_flash {margin-top:40px;}
 .news_flash dt {border-bottom:solid 1px #E9E9EA;}
@@ -1400,7 +1400,7 @@ img.placeholderImg2 {background:url(../images/placeholderImg2.png) no-repeat 50%
 
 
 
-.loginbox {
+.loginbox,.registbox {
   position: fixed;
   width: 100vw;
   height: 100vh;
@@ -1410,7 +1410,7 @@ img.placeholderImg2 {background:url(../images/placeholderImg2.png) no-repeat 50%
   z-index: 999;
   display: none; }
   .loginbox .login,
-  .loginbox .regist,
+  .registbox .regist,
   .loginbox .findpassword,
   .loginbox .relativeZaeke {
     width: 504px;
@@ -1425,7 +1425,7 @@ img.placeholderImg2 {background:url(../images/placeholderImg2.png) no-repeat 50%
   	box-sizing:border-box;
      }
     .loginbox .login .close,
-    .loginbox .regist .close,
+    .registbox .regist .close,
     .loginbox .findpassword .close,
     .loginbox .relativeZaeke .close {
       width: 20px;
@@ -1436,13 +1436,13 @@ img.placeholderImg2 {background:url(../images/placeholderImg2.png) no-repeat 50%
       top: 24px;
       right: 32px; }
     .loginbox .login .l_logon,
-    .loginbox .regist .l_logon,
+    .registbox .regist .l_logon,
     .loginbox .findpassword .l_logon,
     .loginbox .relativeZaeke .l_logon {
       display: block;
       margin: 48px auto; }
     .loginbox .login .l_btn,
-    .loginbox .regist .l_btn,
+    .registbox .regist .l_btn,
     .loginbox .findpassword .l_btn,
     .loginbox .relativeZaeke .l_btn {
       font-family: PingFangSC-Medium;
@@ -1451,7 +1451,7 @@ img.placeholderImg2 {background:url(../images/placeholderImg2.png) no-repeat 50%
       letter-spacing: 0.4px;
       line-height: 36px; }
     .loginbox .login .tips,
-    .loginbox .regist .tips,
+    .registbox .regist .tips,
     .loginbox .findpassword .tips,
     .loginbox .relativeZaeke .tips {
       font-family: PingFangSC-Regular;
@@ -1460,7 +1460,7 @@ img.placeholderImg2 {background:url(../images/placeholderImg2.png) no-repeat 50%
       letter-spacing: 0.23px;
       margin-top: 7px; }
       .loginbox .login .tips .g_regist,
-      .loginbox .regist .tips .g_regist,
+      .registbox .regist .tips .g_regist,
       .loginbox .findpassword .tips .g_regist,
       .loginbox .relativeZaeke .tips .g_regist {
         font-family: PingFangSC-Regular;
@@ -1473,7 +1473,7 @@ img.placeholderImg2 {background:url(../images/placeholderImg2.png) no-repeat 50%
                 user-select: none;
         border-bottom: 1px solid #10CC70; }
     .loginbox .login .fontSize,
-    .loginbox .regist .fontSize,
+    .registbox .regist .fontSize,
     .loginbox .findpassword .fontSize,
     .loginbox .relativeZaeke .fontSize {
       font-size: 16px; }
@@ -1483,12 +1483,12 @@ img.placeholderImg2 {background:url(../images/placeholderImg2.png) no-repeat 50%
     .loginbox .login .verify,
     .loginbox .login .newPass,
     .loginbox .login .rePass,
-    .loginbox .regist .count,
-    .loginbox .regist .password,
-    .loginbox .regist .phone,
-    .loginbox .regist .verify,
-    .loginbox .regist .newPass,
-    .loginbox .regist .rePass,
+    .registbox .regist .count,
+    .registbox .regist .password,
+    .registbox .regist .phone,
+    .registbox .regist .verify,
+    .registbox .regist .newPass,
+    .registbox .regist .rePass,
     .loginbox .findpassword .count,
     .loginbox .findpassword .password,
     .loginbox .findpassword .phone,
@@ -1513,13 +1513,13 @@ img.placeholderImg2 {background:url(../images/placeholderImg2.png) no-repeat 50%
       border: none;
       margin-bottom: 24px; }
     .loginbox .login .verify,
-    .loginbox .regist .verify,
+    .registbox .regist .verify,
     .loginbox .findpassword .verify,
     .loginbox .relativeZaeke .verify {
       width: 280px;
       margin-bottom: 0px; }
     .loginbox .login .getcode,
-    .loginbox .regist .getcode,
+    .registbox .regist .getcode,
     .loginbox .findpassword .getcode,
     .loginbox .relativeZaeke .getcode {
       width: 136px;
@@ -1532,17 +1532,17 @@ img.placeholderImg2 {background:url(../images/placeholderImg2.png) no-repeat 50%
       background-color: #fff;
       outline: none; }
     .loginbox .login .count,
-    .loginbox .regist .count,
+    .registbox .regist .count,
     .loginbox .findpassword .count,
     .loginbox .relativeZaeke .count {
       margin-top: 16px; }
     .loginbox .login .password,
-    .loginbox .regist .password,
+    .registbox .regist .password,
     .loginbox .findpassword .password,
     .loginbox .relativeZaeke .password {
       margin-bottom: 0px; }
     .loginbox .login .wrongTip,
-    .loginbox .regist .wrongTip,
+    .registbox .regist .wrongTip,
     .loginbox .findpassword .wrongTip,
     .loginbox .relativeZaeke .wrongTip {
       font-family: PingFangSC-Regular;
@@ -1552,7 +1552,7 @@ img.placeholderImg2 {background:url(../images/placeholderImg2.png) no-repeat 50%
       margin: 16px 0;
       visibility: visible; }
     .loginbox .login .loginButton,
-    .loginbox .regist .loginButton,
+    .registbox .regist .loginButton,
     .loginbox .findpassword .loginButton,
     .loginbox .relativeZaeke .loginButton {
       width: 100%;
@@ -1564,12 +1564,12 @@ img.placeholderImg2 {background:url(../images/placeholderImg2.png) no-repeat 50%
       color: #FFFFFF;
       letter-spacing: 0.26px; }
       .loginbox .login .loginButton:hover,
-      .loginbox .regist .loginButton:hover,
+      .registbox .regist .loginButton:hover,
       .loginbox .findpassword .loginButton:hover,
       .loginbox .relativeZaeke .loginButton:hover {
         background: #10CC70; }
     .loginbox .login .agree,
-    .loginbox .regist .agree,
+    .registbox .regist .agree,
     .loginbox .findpassword .agree,
     .loginbox .relativeZaeke .agree {
       font-family: PingFangSC-Regular;
@@ -1578,7 +1578,7 @@ img.placeholderImg2 {background:url(../images/placeholderImg2.png) no-repeat 50%
       letter-spacing: 0.23px;
       margin-top: 24px; }
       .loginbox .login .agree .xieyi,
-      .loginbox .regist .agree .xieyi,
+      .registbox .regist .agree .xieyi,
       .loginbox .findpassword .agree .xieyi,
       .loginbox .relativeZaeke .agree .xieyi {
         font-family: PingFangSC-Regular;
@@ -1587,23 +1587,23 @@ img.placeholderImg2 {background:url(../images/placeholderImg2.png) no-repeat 50%
         letter-spacing: 0.23px;
         line-height: 22px; }
         .loginbox .login .agree .xieyi:hover > span,
-        .loginbox .regist .agree .xieyi:hover > span,
+        .registbox .regist .agree .xieyi:hover > span,
         .loginbox .findpassword .agree .xieyi:hover > span,
         .loginbox .relativeZaeke .agree .xieyi:hover > span {
           color: #00E676;
           border-bottom-color: #00E676; }
         .loginbox .login .agree .xieyi:hover,
-        .loginbox .regist .agree .xieyi:hover,
+        .registbox .regist .agree .xieyi:hover,
         .loginbox .findpassword .agree .xieyi:hover,
         .loginbox .relativeZaeke .agree .xieyi:hover {
           color: #00E676; }
         .loginbox .login .agree .xieyi span,
-        .loginbox .regist .agree .xieyi span,
+        .registbox .regist .agree .xieyi span,
         .loginbox .findpassword .agree .xieyi span,
         .loginbox .relativeZaeke .agree .xieyi span {
           border-bottom: 1px solid #000000; }
     .loginbox .login .forget,
-    .loginbox .regist .forget,
+    .registbox .regist .forget,
     .loginbox .findpassword .forget,
     .loginbox .relativeZaeke .forget {
       font-family: PingFangSC-Regular;
@@ -1613,13 +1613,13 @@ img.placeholderImg2 {background:url(../images/placeholderImg2.png) no-repeat 50%
       margin: 16px 0 32px 0;
       border-bottom: 1px solid #464646; }
       .loginbox .login .forget:hover,
-      .loginbox .regist .forget:hover,
+      .registbox .regist .forget:hover,
       .loginbox .findpassword .forget:hover,
       .loginbox .relativeZaeke .forget:hover {
         color: #00E676;
         border-bottom-color: #00E676; }
     .loginbox .login .thirdLogin .wordtip .line,
-    .loginbox .regist .thirdLogin .wordtip .line,
+    .registbox .regist .thirdLogin .wordtip .line,
     .loginbox .findpassword .thirdLogin .wordtip .line,
     .loginbox .relativeZaeke .thirdLogin .wordtip .line {
       width: 160px;
@@ -1627,7 +1627,7 @@ img.placeholderImg2 {background:url(../images/placeholderImg2.png) no-repeat 50%
       background-color: #d4d4d4;
       margin-top: 10px; }
     .loginbox .login .thirdLogin .wordtip .wenan,
-    .loginbox .regist .thirdLogin .wordtip .wenan,
+    .registbox .regist .thirdLogin .wordtip .wenan,
     .loginbox .findpassword .thirdLogin .wordtip .wenan,
     .loginbox .relativeZaeke .thirdLogin .wordtip .wenan {
       margin: 0 24px;
@@ -1637,56 +1637,56 @@ img.placeholderImg2 {background:url(../images/placeholderImg2.png) no-repeat 50%
       letter-spacing: 0.2px;
       margin-bottom: 32px; }
     .loginbox .login .thirdLogin .thirdico,
-    .loginbox .regist .thirdLogin .thirdico,
+    .registbox .regist .thirdLogin .thirdico,
     .loginbox .findpassword .thirdLogin .thirdico,
     .loginbox .relativeZaeke .thirdLogin .thirdico {
       width: 264px;
       margin: 0 auto; }
       .loginbox .login .thirdLogin .thirdico span,
-      .loginbox .regist .thirdLogin .thirdico span,
+      .registbox .regist .thirdLogin .thirdico span,
       .loginbox .findpassword .thirdLogin .thirdico span,
       .loginbox .relativeZaeke .thirdLogin .thirdico span {
         width: 48px;
         height: 48px; }
       .loginbox .login .thirdLogin .thirdico .qq,
-      .loginbox .regist .thirdLogin .thirdico .qq,
+      .registbox .regist .thirdLogin .thirdico .qq,
       .loginbox .findpassword .thirdLogin .thirdico .qq,
       .loginbox .relativeZaeke .thirdLogin .thirdico .qq {
         background-image: url("../images/相关icon/第三方-QQ-未选中.png"); }
         .loginbox .login .thirdLogin .thirdico .qq:hover,
-        .loginbox .regist .thirdLogin .thirdico .qq:hover,
+        .registbox .regist .thirdLogin .thirdico .qq:hover,
         .loginbox .findpassword .thirdLogin .thirdico .qq:hover,
         .loginbox .relativeZaeke .thirdLogin .thirdico .qq:hover {
           background-image: url("../images/相关icon/第三方-QQ-选中.png"); }
       .loginbox .login .thirdLogin .thirdico .weibo,
-      .loginbox .regist .thirdLogin .thirdico .weibo,
+      .registbox .regist .thirdLogin .thirdico .weibo,
       .loginbox .findpassword .thirdLogin .thirdico .weibo,
       .loginbox .relativeZaeke .thirdLogin .thirdico .weibo {
         background-image: url("../images/相关icon/第三方-微博-未选中.png");
         margin: 0 60px; }
         .loginbox .login .thirdLogin .thirdico .weibo:hover,
-        .loginbox .regist .thirdLogin .thirdico .weibo:hover,
+        .registbox .regist .thirdLogin .thirdico .weibo:hover,
         .loginbox .findpassword .thirdLogin .thirdico .weibo:hover,
         .loginbox .relativeZaeke .thirdLogin .thirdico .weibo:hover {
           background-image: url("../images/相关icon/第三方-微博-选中.png"); }
       .loginbox .login .thirdLogin .thirdico .weixin,
-      .loginbox .regist .thirdLogin .thirdico .weixin,
+      .registbox .regist .thirdLogin .thirdico .weixin,
       .loginbox .findpassword .thirdLogin .thirdico .weixin,
       .loginbox .relativeZaeke .thirdLogin .thirdico .weixin {
         background-image: url("../images/相关icon/第三方分享-微信-未选中.png"); }
         .loginbox .login .thirdLogin .thirdico .weixin:hover,
-        .loginbox .regist .thirdLogin .thirdico .weixin:hover,
+        .registbox .regist .thirdLogin .thirdico .weixin:hover,
         .loginbox .findpassword .thirdLogin .thirdico .weixin:hover,
         .loginbox .relativeZaeke .thirdLogin .thirdico .weixin:hover {
           background-image: url("../images/相关icon/第三方-微信-选中.png"); }
-  .loginbox .regist,
+  .registbox .regist,
   .loginbox .relativeZaeke {
     height: 676px;
     margin-top: -338px; }
-    .loginbox .regist .password,
+    .registbox .regist .password,
     .loginbox .relativeZaeke .password {
       margin-bottom: 24px; }
-    .loginbox .regist .forget,
+    .registbox .regist .forget,
     .loginbox .relativeZaeke .forget {
       display: none; }
   .loginbox .relativeZaeke .old .password {

@@ -163,13 +163,13 @@ var variable_obj={
 			 '</span>      '+
 			 '</div>        '+
 			 '<ul>                <li>         '+
-			 '<input type="text" class="count login_username js_noCopyCutPaste" placeholder="用户名／手机号／邮箱" id="login_username">  '+
+			 '<input type="text" class="count login_username js_noCopyCutPaste" autocomplete="off" placeholder="用户名／手机号／邮箱" id="login_username">  '+
 			 '</li>               '+
 			 '<li>                '+
-			 '<input type="password" class="password login_password js_noCopyCutPaste" placeholder="密码" id="login_password">  '+
+			 '<input type="password" class="password login_password js_noCopyCutPaste" autocomplete="off" placeholder="密码" id="login_password">  '+
 			 '</li>           '+
 			 '</ul>           '+
-			 '<p class="wrongTip username_password_tip">请输入正确的用户名／手机号／邮箱</p>        '+
+			 '<p class="wrongTip username_password_tip"></p>        '+
 			 '<input type="submit" class="loginButton pointer login_btn" value="登录">        '+
 			 '<p class="clearfix">           '+
 			 '<span class="forget fr pointer forget_page">忘记密码？</span>        '+
@@ -185,7 +185,45 @@ var variable_obj={
 			 '    </div>       '+
 			 '     </div>      '+
 			 '  </div>'+
-			 '</div></form>',
+			 '</div></form>'+
+			 '<form action="" class="register_form">'+
+			 '<div class="registbox" style="display: none;">'+
+			 '<div class="regist" >'+
+	         '   <span class="close pointer"></span>'+
+	         '   <img src="./images/相关icon/知客logo.png" alt="logo" class="l_logon">'+
+	         '   <div class="clearfix">'+
+	         '       <span class="fl l_btn">注册</span>'+
+	         '       <span class="fr tips">'+
+	         '           已有帐户？去'+
+	         '           <span class="g_regist pointer login_page">登录</span>'+
+	         '       </span>'+
+	         '   </div>'+
+	         '   <ul>'+
+	         '       <li>'+
+	         '           <input id="register_username" type="text" class="count" placeholder="用户名(3-15个字符，设置后不可更改）">'+
+	         '       </li>'+
+	         '       <li>'+
+	         '           <input id="register_password" type="password" class="password" placeholder="密码（6-20个字符）">'+
+	         '       </li>'+
+	         '       <li>'+
+	         '           <input id="register_mobile" type="text" class="phone" placeholder="手机号码">'+
+	         '       </li>'+
+	         '       <li class="clearfix">'+
+	         '           <input id="register_code" type="text" class="verify fl" placeholder="验证码">'+
+	         '           <button type="button" class="fr getcode pointer check_code">获取验证码</button>'+
+	         '       </li>'+
+	         '   </ul>'+
+	         '   <p class="wrongTip"></p>'+
+	         '   <input type="submit" class="loginButton registButton pointer register_btn" value="注册">'+
+	         '   <p class="agree tc">'+
+	         '       注册即视为同意'+
+	         '       <a href="#" class="xieyi">《'+
+	         '           <span>用户协议</span> 》</a>'+
+	         '   </p>'+
+	        '</div>'+
+	        '</div>'+
+			 '</form>'
+			 ,
 		"scrollT":0,
 		"et":0,
 		sys:{
@@ -346,29 +384,29 @@ $(function(){
 			return false;
 		}else if(e.type=="submit" && t.hasClass("register_form")){
 			//注册表单验证
-			var ipt1=t.find(".register_username"),
-				ipt2=t.find(".register_password"),
-				ipt5=t.find(".register_email"),
-				ipt3=t.find(".register_mobile"),
-				ipt4=t.find(".register_code");				
+			var ipt1=t.find("#register_username"),
+				ipt2=t.find("#register_password"),
+//				ipt5=t.find(".register_email"),
+				ipt3=t.find("#register_mobile"),
+				ipt4=t.find("#register_code");		
+			
+			$(".wrongTip").html("");
+			
 			if(units.strLen(ipt1.val())<3 || units.strLen(ipt1.val())>15){
-				$(".error_tip").html("");
-				ipt1.next(".error_tip").html("用户名（3-15个字符）");
+				$(".wrongTip").html("用户名（3-15个字符）");
 			}else if(units.strLen(ipt2.val())<6){
-				$(".error_tip").html("");
-				ipt2.next(".error_tip").html("密码（不小于6个字符）");
-			}else if(!units.regular.e.test(ipt5.val())){
-				$(".error_tip").html("");
-				ipt5.next(".error_tip").html("账号邮箱格式不正确");
-			}else if(!units.regular.m.test(ipt3.val())){
-				$(".error_tip").html("");
-				ipt3.next(".error_tip").html("手机号码格式不正确");
+				$(".wrongTip").html("密码（不小于6个字符）");
+			}
+//			else if(!units.regular.e.test(ipt5.val())){
+//				$(".error_tip").html("");
+//				ipt5.next(".error_tip").html("账号邮箱格式不正确");
+//			}
+			else if(!units.regular.m.test(ipt3.val())){
+				$(".wrongTip").html("手机号码格式不正确");
 			}else if($.trim(ipt4.val())==""){
-				$(".error_tip").html("");
-				ipt4.next(".error_tip").html("请填写验证码");
+				$(".wrongTip").html("请填写验证码");
 			}else {
 				$(".error_tip").html("");
-				
 				//锁住ajax请求
 				if(!variable_obj.register_form_lock){
 					variable_obj.register_form_lock=true;
@@ -376,7 +414,12 @@ $(function(){
 						url:golbalIp+"/user/register",
 						type:"post",
 						dataType:"json",
-						data:{"account":ipt1.val(),"password":ipt2.val(),"phone":ipt3.val(),"code":ipt4.val(),"email":ipt5.val()},
+						data:{"account":ipt1.val(),
+							"password":ipt2.val(),
+							"phone":ipt3.val(),
+							"code":ipt4.val(),
+//							"email":ipt5.val()
+							},
 						beforeSend:function(){},
 						success:function(data){
 							if(data.code==1){
@@ -385,13 +428,13 @@ $(function(){
 							}else if(data.code==4){
 								$.each(data.data,function(item){
 									if(item=="account"){
-										$(".register_username").next(".error_tip").html(data.data[item]);
+										$(".wrongTip").html(data.data[item]);
 									}else if(item=="nickname"){
-										$(".register_nickname").next(".error_tip").html(data.data[item]);
+										$(".wrongTip").html(data.data[item]);
 									}else if(item=="email"){
-										$(".register_email").next(".error_tip").html(data.data[item]);
+										$(".wrongTip").html(data.data[item]);
 									}else if(item=="code"){
-										$(".register_code").next(".error_tip").html(data.data[item]);
+										$(".wrongTip").html(data.data[item]);
 									}
 								});
 								$(".username_password_email_tip").html("");	
@@ -514,22 +557,28 @@ $(function(){
 				//重新赋值二维码
 				$(".login_wrapper2").find("img").attr("src","").end().removeClass("f_dn");
 			}else if(t.hasClass("login_page")){
-				$(".login_wrapper").find("label").removeAttr("style").end().removeClass("f_dn").find("form")[0].reset();
+//				$(".login_wrapper").find("label").removeAttr("style").end().removeClass("f_dn").find("form")[0].reset();
+//				
+//				$(".search_wrapper").addClass("f_dn").find("form")[0].reset();
+//				$(".modify_psw_wrapper").addClass("f_dn").find("form")[0].reset();
+//				$(".register_wrapper").addClass("f_dn").find("form")[0].reset();
+//				
+//				$(".login_wrapper2").addClass("f_dn");
 				
-				$(".search_wrapper").addClass("f_dn").find("form")[0].reset();
-				$(".modify_psw_wrapper").addClass("f_dn").find("form")[0].reset();
-				$(".register_wrapper").addClass("f_dn").find("form")[0].reset();
+				$(".registbox").hide();
+				$(".loginbox").show();
 				
-				$(".login_wrapper2").addClass("f_dn");
+				
 				$(".username_password_email_tip,.username_password_tip,.search_email_code_tip,.modify_new_psw_tip").html("");
 			}else if(t.hasClass("register_page")){
-				$(".register_wrapper").find("label").removeAttr("style").end().removeClass("f_dn").find("form")[0].reset();
-				
-				$(".login_wrapper").addClass("f_dn").find("form")[0].reset();
-				$(".search_wrapper").addClass("f_dn").find("form")[0].reset();
-				$(".modify_psw_wrapper").addClass("f_dn").find("form")[0].reset();
-				
-				$(".login_wrapper2").addClass("f_dn");
+//				$(".register_wrapper").find("label").removeAttr("style").end().removeClass("f_dn").find("form")[0].reset();
+				$(".registbox").show();
+				$(".loginbox").hide();
+//				$(".login_wrapper").addClass("f_dn").find("form")[0].reset();
+//				$(".search_wrapper").addClass("f_dn").find("form")[0].reset();
+//				$(".modify_psw_wrapper").addClass("f_dn").find("form")[0].reset();
+				$(".registbox .texiao").remove();
+//				$(".login_wrapper2").addClass("f_dn");
 				$(".username_password_email_tip,.username_password_tip,.search_email_code_tip,.modify_new_psw_tip").html("");
 			}else if(t.hasClass("forget_page")){
 				$(".search_wrapper").find("label").removeAttr("style").end().removeClass("f_dn").find("form")[0].reset();
@@ -549,14 +598,22 @@ $(function(){
 				});				
 			}else if(t.hasClass("js_register_pop")){
 				variable_obj.disabledScroll();
-				$(".loginbox .texiao").remove();
+				$(".registbox .texiao").remove();
 				$("html,body").scrollTop(0);
 				$(".pop_wrapper").find(".register_wrapper").removeClass("f_dn").end().fadeIn();
+				
+				$(".registbox").show();
+				$(".loginbox").hide();
+				
 			}else if(t.hasClass("js_login_pop")){
 				variable_obj.disabledScroll();
 				$(".loginbox .texiao").remove();
 				$("html,body").scrollTop(0);
 				$(".pop_wrapper").find(".login_wrapper").removeClass("f_dn").end().fadeIn();
+				
+				$(".registbox").hide();
+				$(".loginbox").show();
+				
 			}else if(t.hasClass("search_btn")){
 				if($.trim(t.prev(".keyword").val())!=""){
 					window.location.href=t.parent("form").attr("action")+"?keyword="+t.prev(".keyword").val();
@@ -800,12 +857,12 @@ $(function(){
 	var downCount=60,downCountHandle;
 	function codeDowncount(){
 		if(downCount>0){
-			$(".check_code").attr("disabled","disabled").val(downCount+"s");
+			$(".check_code").attr("disabled","disabled").html(downCount+"s");
 			downCount--;
 			if(downCountHandle){clearTimeout(downCountHandle);}
 			downCountHandle=setTimeout(arguments.callee,1000);
 		}else {
-			$(".check_code").removeAttr("disabled").val("获取验证码");
+			$(".check_code").removeAttr("disabled").html("获取验证码");
 			downCount=60;
 			if(downCountHandle){clearTimeout(downCountHandle);}
 		}
